@@ -28,4 +28,5 @@
 ----- Questions -----
 
 1) In the package example, what is in the second matrix "LCVAR_out$BestSolutionsPerCluster[[1]]$A"? I selected 1 lag, so there should only be 1 VAR matrix?
+>> There is one VAR matrix for each cluster, the 2nd matrix is the VAR matrix for the 2nd cluster
 2)
