@@ -1,0 +1,10 @@
+
+ 2 Clusters: 
+  Lags: 2 2 
+* 1   
+ 2 Clusters: 
+  Lags: 1 1 
+* 1   * 2   * Rational   * Previous   
+ 2 Clusters: 
+  Lags: 1 1 
+* 1   * 2   * Rational   * Previous   

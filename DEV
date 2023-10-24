@@ -1,0 +1,31 @@
+----- Ideas for development -----
+
+1. LCVARclust
+- Allow for Cluster=1
+- Complete manual; maybe reconsider naming of some arguments; especially output is undocumented
+- Consdider parallelize (e.g., across EM-restarts)
+- Consider a simpler progress bar
+- Consider allowing to search a nCluster sequence; this could also be a wrapper around LCVARclust
+- Structure the output object more intuitively
+    - hide results of multiple starts somewhere
+    - avoid [[1]] in LCVAR_out$BestSolutionsPerCluster
+    - Order
+- Potentially get Standard errors for parameters, to be able to test differences in specific parameters across specific groups
+
+2. S3 Methods
+- print for LCVARclust
+- summary for LCVARclust
+- plot for LCVARclust (if we run sequence of clusters)
+
+3. Add a Vignette
+- Fit cluster=2 model
+- Visualize different parameters (with native and other functions, e.g. qgraph)
+- Do model selection across Ncluster sequence
+
+4. Add unit tests
+
+
+----- Questions -----
+
+1) In the package example, what is in the second matrix "LCVAR_out$BestSolutionsPerCluster[[1]]$A"? I selected 1 lag, so there should only be 1 VAR matrix?
+2)
