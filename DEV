@@ -2,7 +2,7 @@
 
 1. LCVARclust
 - Allow for Cluster=1
-- Complete manual; maybe reconsider naming of some arguments; especially output is undocumented
+- Complete manual; maybe reconsider naming of some arguments; especially output is undocumented (Intercept should maybe be renamed within-person mean to make it more clear)
 - Consdider parallelize (e.g., across EM-restarts)
 - Consider a simpler progress bar
 - Consider allowing to search a nCluster sequence; this could also be a wrapper around LCVARclust
@@ -11,6 +11,7 @@
     - avoid [[1]] in LCVAR_out$BestSolutionsPerCluster
     - Order
 - Potentially get Standard errors for parameters, to be able to test differences in specific parameters across specific groups
+Anja:
 - Add information criteria that are considering all model parameters and not just difference in lag order
 
 2. S3 Methods
