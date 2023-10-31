@@ -11,6 +11,7 @@
     - avoid [[1]] in LCVAR_out$BestSolutionsPerCluster
     - Order
 - Potentially get Standard errors for parameters, to be able to test differences in specific parameters across specific groups
+- Add information criteria that are considering all model parameters and not just difference in lag order
 
 2. S3 Methods
 - print for LCVARclust
