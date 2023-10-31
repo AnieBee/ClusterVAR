@@ -1,0 +1,54 @@
+
+ 2 Clusters: 
+  Lags: 2 2 
+* 1   * 2   * Rational   * Previous   
+  Lags: 1 2 
+* 1   * 2   * Rational   * Previous   
+  Lags: 1 1 
+* 1   * 2   * Rational   * Previous   
+ Warning: A single/empty cluster occured in EM-iteration 0 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 0 , memberships and Sigma reset 
+
+ 2 Clusters: 
+  Lags: 2 2 
+* 1   * 2   * Rational   * Previous   
+  Lags: 1 2 
+* 1   * 2   * Rational   * Previous   
+  Lags: 1 1 
+* 1   * 2   * Rational   * Previous   
+ 2 Clusters: 
+  Lags: 2 2 
+* 1   * 2   * Rational   * Previous   
+  Lags: 1 2 
+* 1   * 2   * Rational   * Previous   
+  Lags: 1 1 
+* 1   * 2   * Rational   * Previous   
+ 2 Clusters: 
+  Lags: 2 2 
+* 1   * 2   * Rational   * Previous   
+  Lags: 1 2 
+* 1   * 2   * Rational   * Previous   
+  Lags: 1 1 
+* 1   * 2   * Rational   * Previous   
+ 2 Clusters: 
+  Lags: 2 2 
+* 1   * 2   * Rational   * Previous   
+  Lags: 1 2 
+* 1   * 2   * Rational   * Previous   
+  Lags: 1 1 
+* 1   * 2   * Rational   * Previous   
+ Warning: Sigma reset in EM-iteration 0 , 
+
+ Warning: Sigma reset in EM-iteration 0 , 
+
+ Warning: Sigma reset in EM-iteration 0 , 
+
+ 2 Clusters: 
+  Lags: 2 2 
+* 1   * 2   * Rational   * Previous   
+  Lags: 1 2 
+* 1   * 2   * Rational   * Previous   
+  Lags: 1 1 
+* 1   * 2   * Rational   * Previous   
+ EM did not converge: Number of maximum iterations reached 

@@ -47,7 +47,7 @@ LCVARclust <- function(Data, yVars, Time, ID, xContinuous = NULL, xFactor = NULL
   Data = as.data.frame(Data)
   stopifnot( ! any(is.na(Data))) # No  missing values allowed
   Data = Data[order(Data[ , ID], Data[ , Time]), ]
-  # order Data according to ID, make sure an individual's obeservations occur one after another with first obs first, second second etc
+  # order Data according to ID, make sure an individual's observations occur one after another with first obs first, second second etc
   # observations have to occur ascending in time
 
   # Endogenous Variables #-------------------

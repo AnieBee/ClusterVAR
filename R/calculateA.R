@@ -4,7 +4,7 @@ calculateA <- function(K, WkNumbVersions, N, Wk, PersPDiffStart, PersEnd, Lags, 
     {
         WkRunner = ifelse(WkNumbVersions == K, j, 1) 
         
-        AKnum = 0 # Sum of individal sums for A weighted by memb (tau), within j 
+        AKnum = 0 # Sum of individual sums for A weighted by memb (tau), within j 
         AKdenom = 0 
         for (i in 1:N)
         {
