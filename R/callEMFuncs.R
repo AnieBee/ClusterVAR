@@ -15,6 +15,7 @@ callEMFuncs <- function(Clusters, HighestLag, LowestLag, Rand, Rational, Initial
         cat(c("\n", K, "Clusters: "), file = "EMwarnings.txt", append = TRUE)
         
         LagsList = calculateLagList(K = K, HighestLag = HighestLag, LowestLag = LowestLag)
+        if (K == 1){ LagsList = t(LagsList) } # dimension changes when number of clusters is equal to 1 >> In that case, transpose to get same dimension again
         LagCombinations = dim(LagsList)[1]
         
         # OutputListAllLags[[Lags]][[Start]]
@@ -92,6 +93,23 @@ callEMFuncs <- function(Clusters, HighestLag, LowestLag, Rand, Rational, Initial
                            SigmaIncrease = SigmaIncrease)
                 
                 FitAllLags[LagCounter, StartCounter] = OutputListAllLags[[LagCounter]][[StartCounter]]$IC
+                
+                ########## Addition to speed up estimation in case K == 1 
+                #If K = 1 all partitions of individuals are the same (all people in the same cluster)
+                # so all starts will lead to the exact same outcome
+                if (K == 1){
+                    while (StartCounter != length(EMCallVec)) 
+                        # ToDo: in all EMFunc IDNames is passed but not used
+                    { 
+                        StartCounter = StartCounter + 1
+                        cat(c("*", EMCallVec[StartCounter], "  "))
+                        cat(c("*", EMCallVec[StartCounter], "  "), file = "EMwarnings.txt", append = TRUE)
+                        
+                        OutputListAllLags[[LagCounter]][[StartCounter]] = OutputListAllLags[[LagCounter]][[StartCounter - 1]]
+                        FitAllLags[LagCounter, StartCounter] = FitAllLags[LagCounter, StartCounter - 1]
+                    }
+                }
+                ################################################################
                
             } # End of Start loop
             

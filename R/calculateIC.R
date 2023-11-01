@@ -32,11 +32,11 @@ calculateIC <- function(ICType, Sigma, Lags, nDepVar, K, N, FZY, Tni, tau)
     }
     ### Check: if any clIC is negative ###
     # clIC[which(clIC < 0)] = NA 
-    if (any(clIC < 0))
-    {
-        cat(c("\n", "Negative clI:", clIC, "\n"))
-        cat(c("\n", "Negative clI:", clIC, "\n"), file = "EMwarnings.txt", append = TRUE) 
-    }
+   # if (any(clIC < 0))
+    #{
+        #cat(c("\n", "Negative clI:", clIC, "\n"))
+        #cat(c("\n", "Negative clI:", clIC, "\n"), file = "EMwarnings.txt", append = TRUE) 
+    #}
     
     invisible(sum(clIC))
     
