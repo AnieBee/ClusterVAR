@@ -1385,3 +1385,2796 @@
 * Rational   
  EM did not converge: Number of maximum iterations reached 
 * Previous   
+ 2 Clusters: 
+  Lags: 2 2 
+* 1   * 2   * Rational   * Previous   
+  Lags: 1 2 
+* 1   * 2   * Rational   * Previous   
+  Lags: 1 1 
+* 1   * 2   * Rational   * Previous   
+ 2 Clusters: 
+  Lags: 2 2 
+* 1   * 2   * Rational   * Previous   
+  Lags: 1 2 
+* 1   * 2   * Rational   * Previous   
+  Lags: 1 1 
+* 1   * 2   * Rational   * Previous   
+ 1 Clusters: 
+  Lags: 3 
+* 1   * 2   * Rational   * Previous   
+  Lags: 2 
+* 1   * 2   * Rational   * Previous   
+ 2 Clusters: 
+  Lags: 3 3 
+* 1   * 2   * Rational   * Previous   
+ 1 Clusters: 
+  Lags: 3 
+* 1   * 2   * Rational   * Previous   
+  Lags: 2 
+* 1   * 2   * Rational   * Previous   
+ 2 Clusters: 
+  Lags: 3 3 
+* 1   * 2   * Rational   * Previous   
+  Lags: 2 3 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 10 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 11 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   * Previous   
+  Lags: 2 2 
+* 1   * 2   * Rational   * Previous   
+ 2 Clusters: 
+  Lags: 2 2 
+* 1   * 2   * Rational   * Previous   
+  Lags: 1 2 
+* 1   * 2   * Rational   * Previous   
+  Lags: 1 1 
+* 1   * 2   * Rational   * Previous   
+ 1 Clusters: 
+  Lags: 3 
+* 1   * 2   * Rational   * Previous   
+  Lags: 2 
+* 1   * 2   * Rational   * Previous   
+ 1 Clusters: 
+  Lags: 1 
+* 1   * 2   * Rational   * Previous   
+ 2 Clusters: 
+  Lags: 2 2 
+* 1   * 2   * Rational   * Previous   
+ EM did not converge: Number of maximum iterations reached 
+
+  Lags: 1 2 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Previous   
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+
+  Lags: 1 1 
+* 1   * 2   * Rational   * Previous   
+ 1 Clusters: 
+  Lags: 1 
+* 1   * 2   * Rational   * Previous   
+ 2 Clusters: 
+  Lags: 1 1 
+* 1   * 2   * Rational   * Previous   
+ 1 Clusters: 
+  Lags: 1 
+* 1   * 2   * Rational   * Previous   
+ 2 Clusters: 
+  Lags: 1 1 
+* 1   * 2   * Rational   * Previous   
+ 2 Clusters: 
+  Lags: 1 1 
+* 1   * 2   * Rational   * Previous   
+ 3 Clusters: 
+  Lags: 1 1 1 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 10 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 11 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 12 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 13 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 14 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 15 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 16 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 17 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 18 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 19 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 20 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 21 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ EM did not converge: Number of maximum iterations reached 
+* Rational   * Previous   
+ 1 Clusters: 
+  Lags: 3 
+* 1   * 2   * 3   * 4   * 5   * 6   * Rational   * Previous   
+  Lags: 2 
+* 1   * 2   * 3   * 4   * 5   * 6   * Rational   * Previous   
+  Lags: 1 
+* 1   * 2   * 3   * 4   * 5   * 6   * Rational   * Previous   
+ 2 Clusters: 
+  Lags: 3 3 
+* 1   * 2   * 3   * 4   * 5   * 6   * Rational   * Previous   
+  Lags: 2 3 
+* 1   * 2   * 3   * 4   * 5   * 6   * Rational   * Previous   
+  Lags: 1 3 
+* 1   * 2   * 3   * 4   * 5   * 6   * Rational   * Previous   
+  Lags: 2 2 
+* 1   * 2   * 3   * 4   * 5   * 6   * Rational   * Previous   
+  Lags: 1 2 
+* 1   * 2   * 3   * 4   * 5   * 6   * Rational   * Previous   
+  Lags: 1 1 
+* 1   * 2   * 3   * 4   * 5   * 6   * Rational   * Previous   
+ 3 Clusters: 
+  Lags: 3 3 3 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 3   * 4   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 5   
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 6   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   * Previous   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+
+  Lags: 2 3 3 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 3   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 4   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 5   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 6   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   * Previous   
+  Lags: 1 3 3 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 3   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 4   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 5   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 6   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   * Previous   
+  Lags: 2 2 3 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 3   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 4   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 5   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 6   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Previous   
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+
+  Lags: 1 2 3 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 3   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 4   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 5   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 6   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   * Previous   
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+
+  Lags: 2 2 2 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 3   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 4   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 5   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 6   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   * Previous   
+  Lags: 1 1 3 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 3   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 4   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 5   
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 6   
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Previous   
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+
+  Lags: 1 2 2 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 3   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 4   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 5   
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 6   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   * Previous   
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+
+  Lags: 1 1 2 
+* 1   * 2   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 3   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 4   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 5   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 6   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Previous   
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+
+  Lags: 1 1 1 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 3   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 4   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 5   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 6   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   * Previous   
+ 4 Clusters: 
+  Lags: 3 3 3 3 
+* 1   * 2   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 3   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 4   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 10 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 10 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 11 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 12 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 13 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 14 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 15 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 16 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 5   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 6   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   * Previous   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+
+  Lags: 2 3 3 3 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 3   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 4   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 5   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 6   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   
+ Warning: A single/empty cluster occured in EM-iteration 20 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 21 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 22 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 23 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Previous   
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+
+  Lags: 1 3 3 3 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 3   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 4   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 5   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 6   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 10 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 10 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 11 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Previous   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+
+  Lags: 2 2 3 3 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 3   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 4   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 5   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 6   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Previous   
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+
+  Lags: 1 2 3 3 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 3   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 4   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 5   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 10 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 6   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Previous   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+
+  Lags: 2 2 2 3 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 3   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 10 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 11 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 12 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 4   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 5   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 10 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 6   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Previous   
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+
+  Lags: 1 1 3 3 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 10 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 11 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 12 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 10 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 11 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 3   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 10 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 11 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 12 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 4   
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 5   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 6   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   * Previous   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+
+  Lags: 1 2 2 3 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 3   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 4   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 5   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 6   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Previous   
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+
+  Lags: 2 2 2 2 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 3   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 4   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 5   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 6   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   * Previous   
+  Lags: 1 1 2 3 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 3   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 10 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 11 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 12 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 13 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 4   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 5   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 6   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Previous   
+  Lags: 1 2 2 2 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 3   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 4   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 5   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 6   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 10 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Previous   
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 10 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 11 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+
+  Lags: 1 1 1 3 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 3   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 4   
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 10 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 11 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 12 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 13 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 5   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 6   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 10 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Previous   
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+
+  Lags: 1 1 2 2 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 3   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 10 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 4   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 10 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 11 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 12 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 13 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 5   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 6   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 10 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 11 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Previous   
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+
+  Lags: 1 1 1 2 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 3   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 4   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 5   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 6   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Previous   
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+
+  Lags: 1 1 1 1 
+* 1   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 2   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 3   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 4   * 5   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* 6   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Rational   
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 2 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 3 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 4 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 5 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 6 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 7 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 8 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 9 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 10 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 11 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 12 , memberships and Sigma reset 
+
+ Warning: A single/empty cluster occured in EM-iteration 13 , memberships and Sigma reset 
+
+ EM did not converge: Iteration terminated after reset stagnation 
+* Previous   
+ 2 Clusters: 
+  Lags: 2 2 
+* 1   * 2   * Rational   * Previous   
+  Lags: 1 2 
+* 1   * 2   * Rational   * Previous   
+  Lags: 1 1 
+* 1   * 2   * Rational   * Previous   

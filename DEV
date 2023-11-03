@@ -13,6 +13,7 @@
 - Potentially get Standard errors for parameters, to be able to test differences in specific parameters across specific groups
 Anja:
 - Add information criteria that are considering all model parameters and not just difference in lag order
+- Return more information criteria, possibly include that in the ModelSummaryLCVAR function rather than in the LCVARclust function 
 
 2. S3 Methods
 - print for LCVARclust

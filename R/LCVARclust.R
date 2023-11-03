@@ -117,9 +117,9 @@ LCVARclust <- function(Data, yVars, Time, ID, xContinuous = NULL, xFactor = NULL
                         smallestClN = smallestClN, SigmaIncrease = SigmaIncrease)
             )
 
-} # End adaptiveESMclust
+} 
 
-# devtools::session_info()
+
 
 
 

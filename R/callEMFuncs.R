@@ -123,10 +123,14 @@ callEMFuncs <- function(Clusters, HighestLag, LowestLag, Rand, Rational, Initial
         BestRunOneK = arrayInd(which.min(FitAllLags), dim(FitAllLags))
         # ToDo: update Classification with ID
         WHOLEOutputAllK[[ClustCount]] = OutputListAllLags
+        ModelCall = list(Clusters = Clusters, HighestLag = HighestLag, LowestLag = LowestLag,
+                         Rand = Rand, Rational = Rational, Initialization = Initialization,
+                         ICType = ICType, Covariates = Covariates)
         OutputAllK[[ClustCount]] = OutputListAllLags[[BestRunOneK[1]]][[BestRunOneK[2]]]
         ClustCount = ClustCount + 1
         
     } # End of K loop
     
-    invisible(list(BestSolutionsPerCluster = OutputAllK, AllSolutions = WHOLEOutputAllK))
+    invisible(list(BestSolutionsPerCluster = OutputAllK,
+                   AllSolutions = WHOLEOutputAllK, Call = ModelCall))
 } 
