@@ -8,3 +8,6 @@
  2 Clusters: 
   Lags: 1 1 
 * 1   * 2   * Rational   * Previous   
+ 1 Clusters: 
+  Lags: 1 
+* 1   * 2   * Rational   * Previous   

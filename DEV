@@ -1,24 +1,28 @@
 ----- Ideas for development -----
 
 1. LCVARclust
-- Allow for Cluster=1
+KEY THINGS
+- Make extra function that does model selection on grid 1:K & 1:maxLag + nice outputs
+
+POLISHING
 - Complete manual; maybe reconsider naming of some arguments; especially output is undocumented (Intercept should maybe be renamed within-person mean to make it more clear)
-- Consdider parallelize (e.g., across EM-restarts)
+- Consider parallelize (e.g., across EM-restarts)
 - Consider a simpler progress bar
-- Consider allowing to search a nCluster sequence; this could also be a wrapper around LCVARclust
 - Structure the output object more intuitively
     - hide results of multiple starts somewhere
     - avoid [[1]] in LCVAR_out$BestSolutionsPerCluster
     - Order
-- Potentially get Standard errors for parameters, to be able to test differences in specific parameters across specific groups
+
 Anja:
 - Add information criteria that are considering all model parameters and not just difference in lag order
-- Return more information criteria, possibly include that in the ModelSummaryLCVAR function rather than in the LCVARclust function 
+- Return more information criteria, possibly include that in the ModelSummaryLCVAR function rather than in the LCVARclust function
+
 
 2. S3 Methods
 - print for LCVARclust
 - summary for LCVARclust
 - plot for LCVARclust (if we run sequence of clusters)
+
 
 3. Add a Vignette
 - Fit cluster=2 model
@@ -27,6 +31,12 @@ Anja:
 
 4. Add unit tests
 
+5. Things parked for (much) later
+- Potentially get Standard errors for parameters, to be able to test differences in specific parameters across specific groups [After last meeting: still has to be figured out]
+
+
 
 ----- Questions -----
-
+1. How does the data handle missing data / unequal time steps? I think there is no input arguments for things like "days" and "measurement occasion per day"? Are those two things together coded in the argument "Time"?
+2. Why not use BIC for model comparison between different numbers of cluster K? E.g., this is being done in model selection in GMMs
+3.
