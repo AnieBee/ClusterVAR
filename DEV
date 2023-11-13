@@ -2,18 +2,19 @@
 
 1. LCVARclust
 KEY THINGS
-- Make extra function that does model selection on grid 1:K & 1:maxLag + nice outputs
-  -> Jonas: I made a first stab at this for 1:K, but no function yet
-- Reconsider arguments in LCVARclust:
-  - Maybe just specify the number of lags in 1 argument + then use the new model selection function to search sequences of Lags
+- Anja: Implement additional Information Criteria (e.g., standard AIC, BIC) in LCVARclust function which might work well for K-selection
+- Jonas: Think about S3 methods to present this nicer; look into how other packages (e.g., mclust) did this
 
 POLISHING
 - Structure the output object more intuitively
-    - hide results of multiple starts somewhere
+    - On the top level there should be
+      - Call
+        - Copy *full* function call
+      - Model selection / ICs for all fitted models
+      - Then object with selected model
+      - And nested object with all fitted models
     - avoid [[1]] in LCVAR_out$BestSolutionsPerCluster
-    - Consider: Have on a first "level" global statistics, like convergence etc; and on next level the separate cluster-models in a list
     - Make the output vectors "$LogLikelihood" and "EMiterationReset" only as long as many iterations were actually run
-    - Copy *full* function call
 - Consider parallelize (e.g., across EM-restarts)
 - Consider a simpler progress bar
     - maybe across random restarts
@@ -21,13 +22,9 @@ POLISHING
     - some explanations missing, e.g. what Rational starts are
     - Description of output missing
 
-Anja:
-- Add information criteria that are considering all model parameters and not just difference in lag order
-- Return more information criteria, possibly include that in the ModelSummaryLCVAR function rather than in the LCVARclust function
-
 2. S3 Methods
-- print for LCVARclust & model selection function
-- summary for LCVARclust  & model selection function
+- print for LCVARclust incl model selection
+- summary for LCVARclust incl model selection function
 - plot for new model selection function
 
 3. Add a Vignette
@@ -41,13 +38,12 @@ Anja:
 - Potentially get Standard errors for parameters, to be able to test differences in specific parameters across specific groups [After last meeting: still has to be figured out]
 
 
-
 ----- Questions -----
+
 1. How does the data handle missing data / unequal time steps? I think there is no input arguments for things like "days" and "measurement occasion per day"? Are those two things together coded in the argument "Time"?
-2. Why not use BIC for model comparison between different numbers of cluster K? E.g., this is being done in model selection in GMMs; Implemented this now (trivial ofc) and seems to work at least for the synthetic example data in the package -> I coded this up now
-3. Why use "invisible()" instead of "return()" to return objects from functions?
-4. Why is the object LCVAR_out$BestSolutionsPerCluster a list with 1 entry, if all the cluster info is in this list entry? (I guess we already notes this last time, see above); I tried to get rid of this in callEMFuncs.R, but didn't manage
-5. What is the rational EM-start? Some mean-based clustering or so?
+2. Why use "invisible()" instead of "return()" to return objects from functions?
+3. Why is the object LCVAR_out$BestSolutionsPerCluster a list with 1 entry, if all the cluster info is in this list entry? (I guess we already notes this last time, see above); I tried to get rid of this in callEMFuncs.R, but didn't manage
+4. What is the rational EM-start? Some mean-based clustering or so?
 
 
 
