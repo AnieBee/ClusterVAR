@@ -12,6 +12,7 @@ POLISHING
     - hide results of multiple starts somewhere
     - avoid [[1]] in LCVAR_out$BestSolutionsPerCluster
     - Consider: Have on a first "level" global statistics, like convergence etc; and on next level the separate cluster-models in a list
+    - Make the output vectors "$LogLikelihood" and "EMiterationReset" only as long as many iterations were actually run
     - Copy *full* function call
 - Consider parallelize (e.g., across EM-restarts)
 - Consider a simpler progress bar
