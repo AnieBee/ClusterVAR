@@ -3,15 +3,19 @@
 1. LCVARclust
 KEY THINGS
 - Make extra function that does model selection on grid 1:K & 1:maxLag + nice outputs
+  -> Jonas: I made a first stab at this, but no function yet
 
 POLISHING
 - Complete manual; maybe reconsider naming of some arguments; especially output is undocumented (Intercept should maybe be renamed within-person mean to make it more clear)
-- Consider parallelize (e.g., across EM-restarts)
-- Consider a simpler progress bar
 - Structure the output object more intuitively
     - hide results of multiple starts somewhere
     - avoid [[1]] in LCVAR_out$BestSolutionsPerCluster
-    - Order
+    - Consider: Have on a first "level" global statistics, like convergence etc; and on next level the separate cluster-models in a list
+    - Copy full function call
+- Consider parallelize (e.g., across EM-restarts)
+- Consider a simpler progress bar
+    - maybe across random restarts
+
 
 Anja:
 - Add information criteria that are considering all model parameters and not just difference in lag order
@@ -22,7 +26,6 @@ Anja:
 - print for LCVARclust
 - summary for LCVARclust
 - plot for LCVARclust (if we run sequence of clusters)
-
 
 3. Add a Vignette
 - Fit cluster=2 model
@@ -38,5 +41,11 @@ Anja:
 
 ----- Questions -----
 1. How does the data handle missing data / unequal time steps? I think there is no input arguments for things like "days" and "measurement occasion per day"? Are those two things together coded in the argument "Time"?
-2. Why not use BIC for model comparison between different numbers of cluster K? E.g., this is being done in model selection in GMMs
-3.
+2. Why not use BIC for model comparison between different numbers of cluster K? E.g., this is being done in model selection in GMMs; Implemented this now (trivial ofc) and seems to work at least for the synthetic example data in the package
+3. Why use "invisible()" instead of "return()" to return objects from functions?
+4. Why is the object LCVAR_out$BestSolutionsPerCluster a list with 1 entry, if all the cluster info is in this list entry? (I guess we already notes this last time, see above); I tried to get rid of this in callEMFuncs.R, but didn't manage
+5. What is the rational EM-start? Some mean-based clustering or so?
+
+
+
+

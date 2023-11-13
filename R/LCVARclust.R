@@ -28,7 +28,7 @@ LCVARclust <- function(Data, yVars, Time, ID, xContinuous = NULL, xFactor = NULL
     stopifnot(HighestLag >= LowestLag)
     stopifnot(smallestClN > 1) # Smallest clustersize that is allowed
     # smallestClN is used in checkComponentsCollapsed
-    stopifnot(Clusters > 0) 
+    stopifnot(Clusters > 0)
     stopifnot(length(yVars) > 1) # So far only multivariate time-series are implemented
 
 
@@ -107,17 +107,16 @@ LCVARclust <- function(Data, yVars, Time, ID, xContinuous = NULL, xFactor = NULL
   ##### Call EM #####---------------------
   ## IDNames is passed to EMFunc, but EMFunc does not yet use it...not implemented yet
 
-  invisible(callEMFuncs(Clusters = Clusters, HighestLag = HighestLag, LowestLag = LowestLag,
+  return(callEMFuncs(Clusters = Clusters, HighestLag = HighestLag, LowestLag = LowestLag,
                         Rand = Rand, Rational = Rational, Initialization = Initialization,
                         PreviousSol = PreviousSol, IDNames = unique(Data[ , ID]), K = K, N = N, Y = Y,
                         X = X, Tni = Tni, qqq = qqq, nDepVar = nDepVar,  PersStart = PersStart,
                         PersPDiffStart = PersPDiffStart, PersEnd = PersEnd,
                         PersStartU = PersStartU, PersEndU = PersEndU, Covariates = Covariates,
                         Conv = Conv, it = it, val.init = val.init, ICType = ICType,
-                        smallestClN = smallestClN, SigmaIncrease = SigmaIncrease)
-            )
+                        smallestClN = smallestClN, SigmaIncrease = SigmaIncrease))
 
-} 
+} # eof
 
 
 
