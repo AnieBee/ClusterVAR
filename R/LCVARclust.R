@@ -4,7 +4,7 @@ LCVARclust <- function(Data, yVars, Time, ID, xContinuous = NULL, xFactor = NULL
                             Covariates = "equal-within-clusters", # "equal-accros-clusters", "individual-specific"), #Anja: so far only equal-within-clusters is implemented
                             Clusters = 2, LowestLag = 1, HighestLag = 1, smallestClN = 3,
                             # Smallest allowed cluster, smallestClN is used in checkComponentsCollapsed
-                            ICType = c("HQ", "SC", "AIC"), seme = 3,
+                            ICType = c("HQ", "SC"), seme = 3,
                             Rand = 1, Rational = c(TRUE, FALSE), Initialization = NULL,
                             SigmaIncrease = 10, it = 25, Conv = 1e-06)
 

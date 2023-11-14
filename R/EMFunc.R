@@ -146,6 +146,9 @@ EMFunc <- function(Init, IDNames, Y, X, K, N, Tni, qqq, nDepVar,
   Classification = apply(FZY, 1, which.max)
   last.lik = likelihood[EMiteration] 
   
+  BIC = calculateBIC(nPara = nPara, Lags = Lags, K = K, N = N, 
+                           FZY = FZY, Tni = Tni, last.lik = last.lik)
+  
   # Use ID names to return Classification and user knows what classification means
   
   ## the below is not implemented yet, Data is not passed to this function
@@ -162,6 +165,6 @@ EMFunc <- function(Init, IDNames, Y, X, K, N, Tni, qqq, nDepVar,
                  last.loglik = last.lik, nPara = nPara, Sigma = Sigma, LogLikelihood = likelihood,
                  EMiterationReset = iterationReset, PosteriorProbs = FZY, Lags = Lags,
                  Classification = Classification,
-                 IC = IC, SC = SC,  Proportions = tau))
+                 IC = IC, SC = SC, Proportions = tau, BIC = BIC))
   
 } # end of EMfunc

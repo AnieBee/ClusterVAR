@@ -41,9 +41,16 @@ POLISHING
 ----- Questions -----
 
 1. How does the data handle missing data / unequal time steps? I think there is no input arguments for things like "days" and "measurement occasion per day"? Are those two things together coded in the argument "Time"?
+>> Time is really just each time-point after one another, missing data is not facilitated so Time should be a sequence of integers without missings.
+
 2. Why use "invisible()" instead of "return()" to return objects from functions?
+>> I like it because it does not print stuff to the screen unless you save it somewhere, just a weird preference I have.
+
 3. Why is the object LCVAR_out$BestSolutionsPerCluster a list with 1 entry, if all the cluster info is in this list entry? (I guess we already notes this last time, see above); I tried to get rid of this in callEMFuncs.R, but didn't manage
+>> So LCVAR_out$BestSolutionsPerCluster is the result of the grid search over all solutions that shows the signle best model (best start and best time-series model) for a given number of clusters. There is only 1 entry in this because you specified in your example only 1 number of clusters. If you specify a vector of possible number of clusters in the LCVARclust input (e.g., 2:4) you will get 3 entries here (the best fitting model for 2-clusters, the best fitting model for 3-clusters, and the best fitting model for 4-clusters). The best model for a given number of clusters is slected though the time-series information criterion (e.g., either HQ or SC).
+
 4. What is the rational EM-start? Some mean-based clustering or so?
+>> Yes, basically a k-means result where the parameters of the time-series model we entered into the k-means algorithm.
 
 
 
