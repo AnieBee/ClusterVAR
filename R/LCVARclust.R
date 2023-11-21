@@ -32,7 +32,7 @@ LCVARclust <- function(Data, yVars, Time, ID, xContinuous = NULL, xFactor = NULL
     stopifnot(length(yVars) > 1) # So far only multivariate time-series are implemented
 
 
-
+    call <- match.call()
 
     # FZYcriterion = 1e-8
     PreviousSol = TRUE # Use solution of previous Lags as a start
@@ -114,7 +114,7 @@ LCVARclust <- function(Data, yVars, Time, ID, xContinuous = NULL, xFactor = NULL
                         PersPDiffStart = PersPDiffStart, PersEnd = PersEnd,
                         PersStartU = PersStartU, PersEndU = PersEndU, Covariates = Covariates,
                         Conv = Conv, it = it, val.init = val.init, ICType = ICType,
-                        smallestClN = smallestClN, SigmaIncrease = SigmaIncrease))
+                        smallestClN = smallestClN, SigmaIncrease = SigmaIncrease, call = call))
 
 } # eof
 

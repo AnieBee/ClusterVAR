@@ -1,7 +1,7 @@
 callEMFuncs <- function(Clusters, HighestLag, LowestLag, Rand, Rational, Initialization,
                         PreviousSol, IDNames, K, N, Y, X, Tni, qqq, nDepVar, 
                         PersStart, PersPDiffStart, PersEnd, PersStartU, PersEndU, Covariates,
-                        Conv, it, val.init, ICType, smallestClN, SigmaIncrease)
+                        Conv, it, val.init, ICType, smallestClN, SigmaIncrease, call)
 {
     ### Loop over different K (# of clusters) values  -------------
     OutputAllK = vector("list", length(Clusters)) # with length(Clusters) many elements, containing the best solution for every K
@@ -132,7 +132,8 @@ callEMFuncs <- function(Clusters, HighestLag, LowestLag, Rand, Rational, Initial
     } # End of K loop
     
     invisible(list(BestSolutionsPerCluster = OutputAllK,
-                   AllSolutions = WHOLEOutputAllK, Call = ModelCall))
+                   AllSolutions = WHOLEOutputAllK, call = call,
+                   Call = ModelCall))
 }  # eoF
 
 

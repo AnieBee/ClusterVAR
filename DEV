@@ -2,14 +2,13 @@
 
 1. LCVARclust
 KEY THINGS
-- Anja: Implement additional Information Criteria (e.g., standard AIC, BIC) in LCVARclust function which might work well for K-selection
 - Jonas: Think about S3 methods to present this nicer; look into how other packages (e.g., mclust) did this
 
 POLISHING
 - Structure the output object more intuitively
     - On the top level there should be
       - Call
-        - Copy *full* function call
+        - Copy *full* function call [[done ]]
       - Model selection / ICs for all fitted models
       - Then object with selected model
       - And nested object with all fitted models
@@ -52,6 +51,6 @@ POLISHING
 4. What is the rational EM-start? Some mean-based clustering or so?
 >> Yes, basically a k-means result where the parameters of the time-series model we entered into the k-means algorithm.
 
-
+5. Anja: how do you ensure a function form the correct package is called? Using ::?
 
 
