@@ -13,7 +13,7 @@ POLISHING
       - Then object with selected model
       - And nested object with all fitted models
     - avoid [[1]] in LCVAR_out$BestSolutionsPerCluster
-    - Make the output vectors "$LogLikelihood" and "EMiterationReset" only as long as many iterations were actually run
+    - Make the output vectors "$LogLikelihood" and "EMiterationReset" only as long as many iterations were actually run [[done ]]
 - Consider parallelize (e.g., across EM-restarts)
 - Consider a simpler progress bar
     - maybe across random restarts

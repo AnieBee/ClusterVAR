@@ -3,20 +3,20 @@
 ModelSummaryLCVAR <- function(LCVARclustResult,
                               Output = c("LogLikelihood", "Time-series IC", "BIC"))
 {
-  # Shall we include a check here that the LCVARclustResult input really is output from the LCVARclust function?
-
-  if(is.null(Output)){Output = "LogLikelihood"}
-  if(Output != "LogLikelihood" & Output != "Time-series IC" & Output != "BIC"){Output = "LogLikelihood"}
-
-  ModelCall = LCVARclustResult$Call
-  Summary = vector("list", length(ModelCall$Clusters))
-  #Create a name for all the list elements of summary (for each cluster)
-  listnames = NULL
-  OutputName = switch(Output, 
-                      "LogLikelihood" = "Log likelihood",
-                      "Time-series IC" = paste(c("Time-series information criteria", ModelCall$ICType), collapse = " "),
-                      "BIC" =  "Global information criteria BIC"
-  )
+    # Shall we include a check here that the LCVARclustResult input really is output from the LCVARclust function?
+    
+    if(is.null(Output)){Output = "LogLikelihood"}
+    if(Output != "LogLikelihood" & Output != "Time-series IC" & Output != "BIC"){Output = "LogLikelihood"}
+    
+    ModelCall = LCVARclustResult$Call
+    Summary = vector("list", length(ModelCall$Clusters))
+    #Create a name for all the list elements of summary (for each cluster)
+    listnames = NULL
+    OutputName = switch(Output, 
+                        "LogLikelihood" = "Log likelihood",
+                        "Time-series IC" = paste(c("Time-series information criteria", ModelCall$ICType), collapse = " "),
+                        "BIC" =  "Global information criteria BIC"
+    )
                   
   ClusterCounter = 0
   for (K in ModelCall$Clusters)
@@ -49,24 +49,25 @@ ModelSummaryLCVAR <- function(LCVARclustResult,
     if(Output == "LogLikelihood"){
       for (LagCounter in 1:LagCombinations){
         for(StartCounter in 1:(dim(AllModelsThisCluster)[2])){
-          AllModelsThisCluster[LagCounter,  StartCounter] =  LCVARclustResult$AllSolutions[[ClusterCounter]][[LagCounter]][[StartCounter]]$last.loglik
+          AllModelsThisCluster[LagCounter,  StartCounter] =  LCVARclustResult$All_Solutions_for_all_starts_all_lags_all_clusters$All_Solutions[[ClusterCounter]][[LagCounter]][[StartCounter]]$last.loglik
         }
       }
     }
     if(Output == "Time-series IC"){
       for (LagCounter in 1:LagCombinations){
         for(StartCounter in 1:(dim(AllModelsThisCluster)[2])){
-          AllModelsThisCluster[LagCounter,  StartCounter] =  LCVARclustResult$AllSolutions[[ClusterCounter]][[LagCounter]][[StartCounter]]$IC
+          AllModelsThisCluster[LagCounter,  StartCounter] =  LCVARclustResult$All_Solutions_for_all_starts_all_lags_all_clusters$All_Solutions[[ClusterCounter]][[LagCounter]][[StartCounter]]$IC
         }
       }
     }
     if(Output == "BIC"){
         for (LagCounter in 1:LagCombinations){
             for(StartCounter in 1:(dim(AllModelsThisCluster)[2])){
-                AllModelsThisCluster[LagCounter,  StartCounter] =  LCVARclustResult$AllSolutions[[ClusterCounter]][[LagCounter]][[StartCounter]]$BIC
+                AllModelsThisCluster[LagCounter,  StartCounter] =   LCVARclustResult$All_Solutions_for_all_starts_all_lags_all_clusters$All_Solutions[[ClusterCounter]][[LagCounter]][[StartCounter]]$BIC
             }
         }
     }
+   
     Summary[[ClusterCounter]] = t(AllModelsThisCluster)
 
   }

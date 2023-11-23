@@ -5,7 +5,7 @@
 Fitting Latent Class VAR Model
 }
 \description{
-Function to fit a Latent Class VAR model with a given number of classes
+Function to fit a Latent Class VAR model with a given number of latent classes
 }
 \usage{
 LCVARclust(Data, yVars, Time, ID, xContinuous = NULL,
@@ -40,7 +40,7 @@ An integer vector specifying the position of the column(s) in dataframe Data tha
 Constraints on the parameters of the exogenous variable(s). So far only \code{Covariates = "equal-within-clusters"} can be specified.
 }
   \item{Clusters}{
-An integer vector specifying the numbers of mixture components (clusters) for which LCVAR models are to be calculated.
+An integer vector specifying the numbers of latent classes (i.e., clusters) for which LCVAR models are to be calculated.
 }
   \item{LowestLag}{
 An integer specifying the lowest number of VAR(p) lags to consider in the calculation of LCVAR models.
@@ -111,7 +111,7 @@ head(ExampleData)
 
 LCVAR_out <- LCVARclust(Data = ExampleData, yVars = 1:4, Time = 6, ID = 5,
                         Covariates = "equal-within-clusters",
-                        Clusters = 2, LowestLag = 1, HighestLag = 1, smallestClN = 3,
+                        Clusters = 1:2, LowestLag = 1, HighestLag = 1, smallestClN = 3,
                         ICType = "HQ", seme = 3, Rand = 2, Rational = TRUE,
                         SigmaIncrease = 10, it = 25, Conv = 1e-06, xContinuous = 7, xFactor = 8)
 

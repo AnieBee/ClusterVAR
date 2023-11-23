@@ -5,8 +5,26 @@ callEMFuncs <- function(Clusters, HighestLag, LowestLag, Rand, Rational, Initial
 {
     ### Loop over different K (# of clusters) values  -------------
     OutputAllK = vector("list", length(Clusters)) # with length(Clusters) many elements, containing the best solution for every K
-    WHOLEOutputAllK  = vector("list", length(Clusters)) # with lenght(Clusters) many elements containing
+    BestModels = matrix(NA, nrow = length(Clusters), ncol = 1) 
+    
+    All_Solutions_for_all_starts_all_lags_all_Clusters = new.env() 
+    # Is in a hidden environment so it is not printed in the output unless it is specifically requested
+    All_Solutions_for_all_starts_all_lags_all_Clusters$All_Solutions = vector("list", length(Clusters)) # with lenght(Clusters) many elements containing
     # the OutputListAllLags of every K, which contains all solutions for all Lags and all starts for that K
+    
+
+    ### Names for Output ### ######
+    OutputAllKnames = NULL
+    for (K in Clusters)
+    {
+        OutputAllKnames = c(OutputAllKnames,
+                            paste(c("Best solution of all models where the number of clusters is:", K), collapse = " "))
+    }
+    
+    names(OutputAllK) = OutputAllKnames
+    #######
+    
+    
     
     ClustCount = 1
     for (K in Clusters)
@@ -122,18 +140,20 @@ callEMFuncs <- function(Clusters, HighestLag, LowestLag, Rand, Rational, Initial
         # ToDo: tempo = proc.time() - ptm
         BestRunOneK = arrayInd(which.min(FitAllLags), dim(FitAllLags))
         # ToDo: update Classification with ID
-        WHOLEOutputAllK[[ClustCount]] = OutputListAllLags
+        All_Solutions_for_all_starts_all_lags_all_Clusters$All_Solutions[[ClustCount]] = OutputListAllLags
         ModelCall = list(Clusters = Clusters, HighestLag = HighestLag, LowestLag = LowestLag,
                          Rand = Rand, Rational = Rational, Initialization = Initialization,
                          ICType = ICType, Covariates = Covariates)
         OutputAllK[[ClustCount]] = OutputListAllLags[[BestRunOneK[1]]][[BestRunOneK[2]]]
+        BestModels[ClustCount, ] =  paste(c("According to the selected infromation criterion, the best solution of all models where the number of clusters is", K,
+                                            "has a lag order of:", OutputListAllLags[[BestRunOneK[1]]][[BestRunOneK[2]]]$Lags), collapse = " ")
         ClustCount = ClustCount + 1
         
     } # End of K loop
     
-    invisible(list(BestSolutionsPerCluster = OutputAllK,
-                   AllSolutions = WHOLEOutputAllK, call = call,
-                   Call = ModelCall))
+    invisible(list(Best_Models = BestModels, Best_solutions_per_cluster = OutputAllK, 
+                   call = call, Call = ModelCall,
+                   All_Solutions_for_all_starts_all_lags_all_clusters = All_Solutions_for_all_starts_all_lags_all_Clusters))
 }  # eoF
 
 

@@ -161,10 +161,11 @@ EMFunc <- function(Init, IDNames, Y, X, K, N, Tni, qqq, nDepVar,
   rownames(A) = rownames(Y)
   
   #Intercept is the "reference" group in case categorical variables are included
-  invisible(list(Converged = Converged, A = A, B = B, EMRepetitions = EMiteration, 
-                 last.loglik = last.lik, nPara = nPara, Sigma = Sigma, LogLikelihood = likelihood,
-                 EMiterationReset = iterationReset, PosteriorProbs = FZY, Lags = Lags,
-                 Classification = Classification,
-                 IC = IC, SC = SC, Proportions = tau, BIC = BIC))
+  invisible(list(Converged = Converged, VAR_coefficients = A, Exogenous_coefficients = B,  Sigma = Sigma, 
+                 EMRepetitions = EMiteration, last.loglik = last.lik, nParameters = nPara,
+                 LogLikelihood = likelihood[1:EMiteration], Lags = Lags,
+                 EMiterationReset = iterationReset[1:EMiteration], Posterior_probabilities = t(FZY), 
+                 Classification = Classification, Proportions = tau,
+                 IC = IC, SC = SC,  BIC = BIC))
   
 } # end of EMfunc
