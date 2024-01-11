@@ -3,6 +3,8 @@
 1. LCVARclust
 KEY THINGS
 - Jonas: Think about S3 methods to present this nicer; look into how other packages (e.g., mclust) did this
+- Anja: When making the documentation add default values in the LCVARclust function (e.g., for ICType)
+
 
 POLISHING
 - Structure the output object more intuitively
