@@ -10,11 +10,11 @@ Function to fit a Latent Class VAR model with a given number of latent classes
 \usage{
 LCVARclust(Data, yVars, Time, ID, xContinuous = NULL,
            xFactor = NULL, Covariates = "equal-within-clusters",
-           Clusters = 2, LowestLag = 1, HighestLag = 1,
-           smallestClN = 3, ICType = c("HQ", "SC", "AIC"),
-           seme = 3, Rand = 1, Rational = c(TRUE, FALSE),
+           Clusters, Lags, smallestClN = 3,
+           ICType = c("HQ", "SC", "AIC"), RndSeed,
+           Rand = 1, Rational = c(TRUE, FALSE),
            Initialization = NULL, SigmaIncrease = 10,
-           it = 25, Conv = 1e-06)
+           it = 25, Conv = 1e-06, pbar = TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -42,11 +42,8 @@ Constraints on the parameters of the exogenous variable(s). So far only \code{Co
   \item{Clusters}{
 An integer vector specifying the numbers of latent classes (i.e., clusters) for which LCVAR models are to be calculated.
 }
-  \item{LowestLag}{
-An integer specifying the lowest number of VAR(p) lags to consider in the calculation of LCVAR models.
-}
-  \item{HighestLag}{
-An integer specifying the higest number of VAR(p) lags to consider in the calculation of LCVAR models.
+  \item{Lags}{
+An integer specifying the number of VAR(p) lags to consider. Needs to be a sequence of subsequent integers starting with 1.
 }
   \item{smallestClN}{
 An integer specifying the lowest number of individuals allowed in a cluster. When during estimation the crisp cluster membership of a cluster indicates less than \code{smallestClN} individuals, the covariance matrix and the posterior probabilities of cluster membership are reset.
@@ -54,8 +51,7 @@ An integer specifying the lowest number of individuals allowed in a cluster. Whe
   \item{ICType}{
 The information criterion used to select the ideal model for a given number of clusters across all EM-starts and lag combinations. One of \code{c("HQ", "SC", "AIC")}.
 }
-  \item{seme}{
-An integer specifying the value supplied to \code{set.seed()}. Using the same seed guarantees reproducibility of solutions.
+  \item{RndSeed}{Optional argument specifying the integer supplied to \code{set.seed()}, which guarantees reproducible results. If not specified, no seed is set.
 }
   \item{Rand}{
 The number of pseudo-random EM-starts used in fitting each possible model.
@@ -75,6 +71,8 @@ An integer specifying the maximum number of EM-iterations allowed after every EM
   \item{Conv}{
 A numerical value specifying the convergence criterion of the log likelihood to determine convergence of an EM-start. For details see Ernst et al. (2020) Inter-individual differences in multivariate time series: Latent class vector-autoregressive modelling.
 }
+  \item{pbar}{
+If TRUE, a progress bar is shown. Defaults to \code{pbar = TRUE}.}
 }
 \details{
 Some more details.
@@ -111,7 +109,7 @@ head(ExampleData)
 
 LCVAR_out <- LCVARclust(Data = ExampleData, yVars = 1:4, Time = 6, ID = 5,
                         Covariates = "equal-within-clusters",
-                        Clusters = 1:2, LowestLag = 1, HighestLag = 1, smallestClN = 3,
+                        Clusters, Lags, smallestClN = 3,
                         ICType = "HQ", seme = 3, Rand = 2, Rational = TRUE,
                         SigmaIncrease = 10, it = 25, Conv = 1e-06, xContinuous = 7, xFactor = 8)
 

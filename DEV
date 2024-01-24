@@ -1,3 +1,28 @@
+
+
+----- Questions Jonas; Meeting January 25th -----
+
+QUESTIONS:
+1) Argument "ICType"; Do we still need this? I think the idea was to provide several/all ICs in the output?
+2) Argument "SigmaIncrease"; what is "Sigma" here?
+3) Clarification: how does the rational start (Rational=TRUE) interact with random restarts (Rand=X)? Are the rational starts also random, because K-means is initialized differently?
+4) In EMFunc.R you have the if-statement K=1 to speed up things around line 184; but it seems like you execute the more general case already before? It seems like we'd want an if vs. else statement here?
+5)
+
+SUGGESTIONS:
+1) Output file: I would have a single (heavily nested structure) and avoid any redundancies; but then to make this useable, have a function (maybe "GetModel()" or even S3Method coef() ) to extract the parameters of the desired models; here, arguments should specify the model selection for
+2) Structure of Code: Accordingly, I would not do any "best model selection" etc. in callEMFuncs.R, but simply return all models; this also implies that we delete any model selection criteria as inputs in the overall LCVARClust() function
+3) The S3methods print(), summary(), and plot() then all make use of repeatedly calling this new coef() function and giving nice summary tables/plots
+
+NOTES:
+1) Now I commented out EM warnings in callEMFuncs.R; Let's make sure to still show them as actual warnings using warnings()
+2) The progress bar is not fully aligned with the algorithm, and I think this is due to Question (4) above
+
+
+-------------------------------
+----- OLD STUFF FROM 2023 -----
+-------------------------------
+
 ----- Ideas for development -----
 
 1. LCVARclust

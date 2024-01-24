@@ -1,7 +1,7 @@
 Package: ClusterVAR
 Type: Package
 Title: Model selection and fitting of Latent Class Vectorautoregressive (VAR) models
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: c(
   person("Anja", "Ernst", email = "a.f.ernst@rug.nl",role = c("aut", "cre")),
   person("Jonas", "Haslbeck", email = "jonashaslbeck@protonmail.com",role = c("aut")))

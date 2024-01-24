@@ -1,0 +1,8 @@
+Changes Version 0.0.2
+  o The number of lags are now specified in a single argument as a successive sequence of integers 1:Nlag to match the input argument of the number of clusters
+  o The random seed argument "seme" is now called "RndSeed" and is made optional
+  o The print output while running the LCVARClust has been replaced with a progress bar
+  o The runtime of the algorithm in minutes is now shown in the console and provided in the output
+  o Added a S3 print method for output object of LCVARClust() providing basic information about the fitted models
+
+
