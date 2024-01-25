@@ -4,7 +4,8 @@
 
 QUESTIONS:
 1) Argument "ICType"; Do we still need this? I think the idea was to provide several/all ICs in the output?
->> Anja: IC is used to determine "PrevBestRun" in callEMFuncs, to determine the previous best run. But we can also use a standard IC there but then we have to know which one
+>> Anja: IC is used to determine "PrevBestRun" in callEMFuncs, to determine the previous-best-run initialization. 
+I now replaced that with the "SC" criterion as a default and removed ICType from the function.
 2) Argument "SigmaIncrease"; what is "Sigma" here?
 >> Anja: Sigma is the cluster-wise innovation covariance matrix. This is the amount by which the esitmate is increased if the estimate for Sigma becomes close to non-invertible
 3) Clarification: how does the rational start (Rational=TRUE) interact with random restarts (Rand=X)? Are the rational starts also random, because K-means is initialized differently?
