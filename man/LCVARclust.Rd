@@ -43,7 +43,7 @@ Constraints on the parameters of the exogenous variable(s). So far only \code{Co
 An integer vector specifying the numbers of latent classes (i.e., clusters) for which LCVAR models are to be calculated.
 }
   \item{Lags}{
-An integer specifying the number of VAR(p) lags to consider. Needs to be a sequence of subsequent integers.
+An integer specifying the number of VAR(p) lags to consider. Needs to be a subsequent sequence of subsequent integers.
 }
   \item{smallestClN}{
 An integer specifying the lowest number of individuals allowed in a cluster. When during estimation the crisp cluster membership of a cluster indicates less than \code{smallestClN} individuals, the covariance matrix and the posterior probabilities of cluster membership are reset.
