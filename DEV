@@ -5,6 +5,7 @@
 QUESTIONS:
 1) Argument "ICType"; Do we still need this? I think the idea was to provide several/all ICs in the output?
 2) Argument "SigmaIncrease"; what is "Sigma" here?
+Sigma is the sluster-wise innovation covariance matrix. This is the amount by which the esitmate is increased if the estimate for Sigma becomes close to non-invertible
 3) Clarification: how does the rational start (Rational=TRUE) interact with random restarts (Rand=X)? Are the rational starts also random, because K-means is initialized differently?
 4) In EMFunc.R you have the if-statement K=1 to speed up things around line 184; but it seems like you execute the more general case already before? It seems like we'd want an if vs. else statement here?
 5)
