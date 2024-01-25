@@ -20,6 +20,8 @@ SUGGESTIONS:
 
 NOTES:
 1) Now I commented out EM warnings in callEMFuncs.R; Let's make sure to still show them as actual warnings using warnings()
+>> Anja: Also had to be (and now is removed) in functions: checkLikelihoodsNA, checkOutliers, checkPosteriorsNA, checkSingularitySigma, checkConvergence, checkComponentsCollapsed, calculatePsoterior
+
 2) The progress bar is not fully aligned with the algorithm, and I think this is due to Question (4) above
 
 

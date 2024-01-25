@@ -6,11 +6,11 @@ checkLikelihoodsNA <- function(FYZ, EMiteration)
     { # Check not a single posterior is NA
         if(all(is.na(FYZ)))
         {
-            cat("All likelihoods are NA in EM-iteration", EMiteration, "\n", file = "EMwarnings.txt", append = TRUE)
+            #cat("All likelihoods are NA in EM-iteration", EMiteration, "\n", file = "EMwarnings.txt", append = TRUE)
             stop("All likelihoods are NA in EM-iteration", EMiteration, "\n")
         } 
         cat("\n Warning: Some likelihoods NA in EM-iteration", EMiteration, ", likelihoods reset \n")
-        cat("\n Warning: Some likelihoods NA in EM-iteration", EMiteration, ", likelihoods reset \n", file = "EMwarnings.txt", append = TRUE)
+        #cat("\n Warning: Some likelihoods NA in EM-iteration", EMiteration, ", likelihoods reset \n", file = "EMwarnings.txt", append = TRUE)
         NAIndexFYZ = which(is.na(FYZ))
         FYZ[NAIndexFYZ] = mean(FYZ, na.rm=TRUE) # Set those p(Y|z_{ik}) that are NA for some person to the overall mean of all P(Y|Z_{ik})
         iterationReset = TRUE

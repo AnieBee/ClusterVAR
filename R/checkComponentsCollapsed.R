@@ -9,8 +9,8 @@ checkComponentsCollapsed <- function(K, N, FZY, smallestClN, EMiteration, crisp 
 
         cat(c("\n Warning: A single/empty cluster occured in EM-iteration",
               EMiteration, ", memberships and Sigma reset \n"))
-        cat(c("\n Warning: A single/empty cluster occured in EM-iteration",
-              EMiteration, ", memberships and Sigma reset \n"), file = "EMwarnings.txt", append = TRUE) 
+        # cat(c("\n Warning: A single/empty cluster occured in EM-iteration",
+        #       EMiteration, ", memberships and Sigma reset \n"), file = "EMwarnings.txt", append = TRUE) 
         resetCl = unique(c(resetCl, ComponentColapsedOntoSinglePoint))
         for (clust in ComponentColapsedOntoSinglePoint)
         {

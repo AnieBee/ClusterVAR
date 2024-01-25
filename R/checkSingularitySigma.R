@@ -10,7 +10,7 @@ checkSingularitySigma <- function(nDepVar, K, Sigma, EMiteration)
                 diag(Sigma[, , j]) = diag(Sigma[, , j]) + 0.01
                 iterationReset = TRUE
                 cat("\n Warning: Sigma reset in EM-iteration", EMiteration, ", \n")
-                cat("\n Warning: Sigma reset in EM-iteration", EMiteration, ", \n", file = "EMwarnings.txt", append = TRUE)
+                #cat("\n Warning: Sigma reset in EM-iteration", EMiteration, ", \n", file = "EMwarnings.txt", append = TRUE)
                 
             } 
         }
