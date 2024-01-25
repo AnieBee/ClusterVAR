@@ -14,7 +14,7 @@ LCVARclust <- function(Data,
                        ICType,
                        RndSeed = 3,
                        Rand = 1,
-                       Rational = c(TRUE, FALSE),
+                       Rational = TRUE,
                        Initialization = NULL,
                        SigmaIncrease = 10,
                        it = 25,
@@ -47,7 +47,7 @@ LCVARclust <- function(Data,
 
   # Lag Search Sequence
   if(missing(Lags)) stop("Specify the sequence of number of lags to search.")
-  if(LowestLag != 1) stop("The lowest specified lag must be 1.")
+  #if(LowestLag != 1) stop("The lowest specified lag must be 1.")
   if(!all(Lags == round(Lags))) stop("Lags need to be specified as integers.")
   if(!all((Lags[-1] - Lags[-length(Lags)]==1))) stop("Lags need to be specified as subsequent integers.")
 

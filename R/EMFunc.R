@@ -173,11 +173,10 @@ EMFunc <- function(Init,
       tau = tau
   )
   
-  ICL = calculateICL(BIC = BIC, K = K, N = N, FZY = FZY, 
-                     Classification = Classification)
-  
   BIC = calculateBIC(nPara = nPara, Lags = Lags, K = K, N = N,
                      FZY = FZY, Tni = Tni, last.lik = last.lik)
+  ICL = calculateICL(BIC = BIC, K = K, N = N, FZY = FZY, 
+                     Classification = Classification)
 
   # Use ID names to return Classification and user knows what classification means
 
