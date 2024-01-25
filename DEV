@@ -10,6 +10,7 @@ Sigma is the cluster-wise innovation covariance matrix. This is the amount by wh
 4) In EMFunc.R you have the if-statement K=1 to speed up things around line 184; but it seems like you execute the more general case already before? It seems like we'd want an if vs. else statement here?
 5) If we keep the new Lags arbument in the LCVARclust function, good to make clear that it has to be a successive sequence (i.e., that nothing is missing). Because that is how it is used internally. You cannot specify 1 and 3 lags, it will give you 1,2, and 3 lags. I removed "it has to start with 1", because you can also start the sequence at 2, unless you have changed that?
 
+
 SUGGESTIONS:
 1) Output file: I would have a single (heavily nested structure) and avoid any redundancies; but then to make this useable, have a function (maybe "GetModel()" or even S3Method coef() ) to extract the parameters of the desired models; here, arguments should specify the model selection for
 2) Structure of Code: Accordingly, I would not do any "best model selection" etc. in callEMFuncs.R, but simply return all models; this also implies that we delete any model selection criteria as inputs in the overall LCVARClust() function

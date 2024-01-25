@@ -59,7 +59,7 @@ callEMFuncs <- function(Clusters,
                                                                 HighestLag = HighestLag,
                                                                 LowestLag = LowestLag)
   # Compute number of fitted models
-  n_Fit <- sum(unlist(lapply(l_LagsPerCluster, nrow))) * Rand # number of models times number of random restarts
+  n_Fit <- sum(unlist(lapply(l_LagsPerCluster, nrow))) *  (Rand + as.numeric(Rational) + as.numeric(!is.null(Initialization)) + as.numeric(PreviousSol)) # number of models times number of random restarts
 
   # browser()
 
@@ -178,6 +178,10 @@ callEMFuncs <- function(Clusters,
                  SigmaIncrease = SigmaIncrease)
 
         FitAllLags[LagCounter, StartCounter] = OutputListAllLags[[LagCounter]][[StartCounter]]$IC
+        
+        # ----- Update progress bar (Jonas) -----
+        pb_counter <- pb_counter + 1 # this should be the inner loop, so that should be what I need
+        if(pbar==TRUE) setTxtProgressBar(pb, pb_counter)
 
         ########## Addition to speed up estimation in case K == 1
         #If K = 1 all partitions of individuals are the same (all people in the same cluster)
@@ -193,13 +197,13 @@ callEMFuncs <- function(Clusters,
 
             OutputListAllLags[[LagCounter]][[StartCounter]] = OutputListAllLags[[LagCounter]][[StartCounter - 1]]
             FitAllLags[LagCounter, StartCounter] = FitAllLags[LagCounter, StartCounter - 1]
+            
+            # ----- Update progress bar (Jonas) -----
+            pb_counter <- pb_counter + 1 # this should be the inner loop, so that should be what I need
+            if(pbar==TRUE) setTxtProgressBar(pb, pb_counter)
           }
         }
         ################################################################
-
-        # ----- Update progress bar (Jonas) -----
-        pb_counter <- pb_counter + 1 # this should be the inner loop, so that should be what I need
-        if(pbar==TRUE) setTxtProgressBar(pb, pb_counter)
 
       } # End of Start loop
 
@@ -209,13 +213,11 @@ callEMFuncs <- function(Clusters,
 
     } # End of Lag loop
 
-
-    # ToDo: tempo = proc.time() - ptm
     BestRunOneK = arrayInd(which.min(FitAllLags), dim(FitAllLags))
 
     # ToDo: update Classification with ID
     All_Solutions_for_all_starts_all_lags_all_Clusters$All_Solutions[[ClustCount]] = OutputListAllLags
-    ModelCall = list(Clusters = Clusters, HighestLag = HighestLag, LowestLag = LowestLag,
+    ModelCall = list(Clusters = Clusters, Lags = LowestLag:HighestLag,
                      Rand = Rand, Rational = Rational, Initialization = Initialization,
                      ICType = ICType, Covariates = Covariates)
     OutputAllK[[ClustCount]] = OutputListAllLags[[BestRunOneK[1]]][[BestRunOneK[2]]]
