@@ -4,7 +4,7 @@ calculateIC <- function(ICType, Sigma, Lags, nDepVar, K, N, FZY, Tni, tau)
     # These are not global information criteria, they can only be used to compare timeseries models across a fixed number of clusters,
     # not across a different number of clusters
 {
-
+    
     ParasCl = as.vector(rep(0, K))
     clTimepoints = as.vector(rep(0, K))
     penaltyTerm = as.vector(rep(0, K))
@@ -24,10 +24,10 @@ calculateIC <- function(ICType, Sigma, Lags, nDepVar, K, N, FZY, Tni, tau)
         }
         
         penaltyTerm[j] = switch(ICType, 
-                                 "HQ" = log(log(clTimepoints[j])), # is called HQ(n) in VARselect from vars package
-                                 "SC" = log(clTimepoints[j]),
-                                 #"AIC" = 1
-                                )
+                                "HQ" = log(log(clTimepoints[j])), # is called HQ(n) in VARselect from vars package
+                                "SC" = log(clTimepoints[j]),
+                               #"AIC" = 1
+        )
         # AIC not offered anymore to users, they would get confused why it is so different to the global BIC, 
         # this is the AIC based on the determinant of sigma (the time-series AIC), the global BIC is based on the log likelihood
         
@@ -35,7 +35,7 @@ calculateIC <- function(ICType, Sigma, Lags, nDepVar, K, N, FZY, Tni, tau)
         clIC[j] = tau[j] * ( log(det(Sigma[ , , j])) + ((2 * ParasCl[j] * penaltyTerm[j]) / clTimepoints[j]) )
         
     }
-   
+    
     
     invisible(sum(clIC))
     

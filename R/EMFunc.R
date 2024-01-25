@@ -150,7 +150,9 @@ EMFunc <- function(Init,
                                | iterationReset[EMiteration])
   nPara = calculateNPara(Lags = Lags, nDepVar = nDepVar, K = K,
                          BnumbVersions = DimensionsBasedonConstraints$BNumbVersions,
-                         ncovariates = qqq)
+                         ncovariates = qqq)  
+  Classification = apply(FZY, 1, which.max)
+  last.lik = likelihood[EMiteration]
   IC = calculateIC(ICType = ICType, Sigma = Sigma, Lags = Lags,
                    nDepVar = nDepVar, K = K, N = N, FZY = FZY,
                    Tni = Tni, tau = tau)
@@ -159,9 +161,21 @@ EMFunc <- function(Init,
                    nDepVar = nDepVar, K = K, N = N, FZY = FZY,
                    Tni = Tni, tau = tau)
 
-  Classification = apply(FZY, 1, which.max)
-  last.lik = likelihood[EMiteration]
-
+  HQ = calculateIC(
+      ICType = "HQ",
+      Sigma = Sigma,
+      Lags = Lags,
+      nDepVar = nDepVar,
+      K = K,
+      N = N,
+      FZY = FZY,
+      Tni = Tni,
+      tau = tau
+  )
+  
+  ICL = calculateICL(BIC = BIC, K = K, N = N, FZY = FZY, 
+                     Classification = Classification)
+  
   BIC = calculateBIC(nPara = nPara, Lags = Lags, K = K, N = N,
                      FZY = FZY, Tni = Tni, last.lik = last.lik)
 
@@ -196,7 +210,9 @@ EMFunc <- function(Init,
                   Proportions = tau,
                   IC = IC,
                   SC = SC,
-                  BIC = BIC)
+                  HQ = HQ,
+                  BIC = BIC,
+                  ICL = ICL)
 
   return(outlist)
 

@@ -11,7 +11,7 @@ Function to fit a Latent Class VAR model with a given number of latent classes
 LCVARclust(Data, yVars, Time, ID, xContinuous = NULL,
            xFactor = NULL, Covariates = "equal-within-clusters",
            Clusters, Lags, smallestClN = 3,
-           ICType = c("HQ", "SC", "AIC"), RndSeed,
+           ICType = c("HQ", "SC"), RndSeed,
            Rand = 1, Rational = c(TRUE, FALSE),
            Initialization = NULL, SigmaIncrease = 10,
            it = 25, Conv = 1e-06, pbar = TRUE)
@@ -49,18 +49,18 @@ An integer specifying the number of VAR(p) lags to consider. Needs to be a seque
 An integer specifying the lowest number of individuals allowed in a cluster. When during estimation the crisp cluster membership of a cluster indicates less than \code{smallestClN} individuals, the covariance matrix and the posterior probabilities of cluster membership are reset.
 }
   \item{ICType}{
-The information criterion used to select the ideal model for a given number of clusters across all EM-starts and lag combinations. One of \code{c("HQ", "SC", "AIC")}.
+The information criterion used to select the ideal model for a given number of clusters across all EM-starts and lag combinations. One of \code{c("HQ", "SC")}.
 }
   \item{RndSeed}{Optional argument specifying the integer supplied to \code{set.seed()}, which guarantees reproducible results. If not specified, no seed is set.
 }
   \item{Rand}{
-The number of pseudo-random EM-starts used in fitting each possible model.
+The number of pseudo-random EM-starts used in fitting each possible model. For pseudo-random starts K individuals are randomly selected as cluster centres. Then individuals are partitioned into the cluster to which their ideographic VAR and ideographic covariate coefficients are closest.
 }
   \item{Rational}{
-Local, indicateing whether a rational EM-start should be used. Defaults to \code{Rational = TRUE}.
+Local, indicateing whether a rational EM-start should be used. Defaults to \code{Rational = TRUE}. Rational starts are based on the k-means partitioning of individuals’ ideographic VAR and ideographic covariate coefficients.
 }
   \item{Initialization}{
-An integer specifying the position of a column in dataframe Data that contains a guess at participants' cluster membership for a fixed number of clusters, if available.
+An integer specifying the position of a column in dataframe \code{Data} that contains a guess at participants' cluster membership for a fixed number of clusters, if available.
 }
   \item{SigmaIncrease}{
 A numerical value specifying the value by which every element of Sigma will be increased when posterior probabilities of cluster memberships are reset.
