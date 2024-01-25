@@ -16,7 +16,6 @@ EMFunc <- function(Init,
                    Conv,
                    it,
                    smallestClN,
-                   ICType,
                    SigmaIncrease)
 {
 
@@ -153,9 +152,6 @@ EMFunc <- function(Init,
                          ncovariates = qqq)  
   Classification = apply(FZY, 1, which.max)
   last.lik = likelihood[EMiteration]
-  IC = calculateIC(ICType = ICType, Sigma = Sigma, Lags = Lags,
-                   nDepVar = nDepVar, K = K, N = N, FZY = FZY,
-                   Tni = Tni, tau = tau)
 
   SC = calculateIC(ICType = "SC", Sigma = Sigma, Lags = Lags,
                    nDepVar = nDepVar, K = K, N = N, FZY = FZY,
@@ -207,7 +203,6 @@ EMFunc <- function(Init,
                   Posterior_probabilities = t(FZY),
                   Classification = Classification,
                   Proportions = tau,
-                  IC = IC,
                   SC = SC,
                   HQ = HQ,
                   BIC = BIC,

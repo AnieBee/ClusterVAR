@@ -4,13 +4,14 @@
 
 QUESTIONS:
 1) Argument "ICType"; Do we still need this? I think the idea was to provide several/all ICs in the output?
-IC is used
+>> Anja: IC is used to determine "PrevBestRun" in callEMFuncs, to determine the previous best run. But we can also use a standard IC there but then we have to know which one
 2) Argument "SigmaIncrease"; what is "Sigma" here?
-Sigma is the cluster-wise innovation covariance matrix. This is the amount by which the esitmate is increased if the estimate for Sigma becomes close to non-invertible
+>> Anja: Sigma is the cluster-wise innovation covariance matrix. This is the amount by which the esitmate is increased if the estimate for Sigma becomes close to non-invertible
 3) Clarification: how does the rational start (Rational=TRUE) interact with random restarts (Rand=X)? Are the rational starts also random, because K-means is initialized differently?
 4) In EMFunc.R you have the if-statement K=1 to speed up things around line 184; but it seems like you execute the more general case already before? It seems like we'd want an if vs. else statement here?
->> I think I fixed the progress bar now
-5) If we keep the new Lags arbument in the LCVARclust function, good to make clear that it has to be a successive sequence (i.e., that nothing is missing). Because that is how it is used internally. You cannot specify 1 and 3 lags, it will give you 1,2, and 3 lags. I removed "it has to start with 1", because you can also start the sequence at 2, unless you have changed that?
+>> Anja:  I think I fixed the progress bar now
+
+5) >> Anja: If we keep the new Lags arbument in the LCVARclust function, good to make clear that it has to be a successive sequence (i.e., that nothing is missing). Because that is how it is used internally. You cannot specify 1 and 3 lags, it will give you 1,2, and 3 lags. I removed "it has to start with 1", because you can also start the sequence at 2, unless you have changed that?
 
 
 SUGGESTIONS:
@@ -23,7 +24,7 @@ NOTES:
 >> Anja: Also had to be (and now is removed) in functions: checkLikelihoodsNA, checkOutliers, checkPosteriorsNA, checkSingularitySigma, checkConvergence, checkComponentsCollapsed, calculatePsoterior
 
 2) The progress bar is not fully aligned with the algorithm, and I think this is due to Question (4) above
-
+>> Anja: I think I fixed it now
 
 -------------------------------
 ----- OLD STUFF FROM 2023 -----

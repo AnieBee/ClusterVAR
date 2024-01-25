@@ -23,7 +23,6 @@ callEMFuncs <- function(Clusters,
                         Conv,
                         it,
                         val.init,
-                        ICType,
                         smallestClN,
                         SigmaIncrease,
                         call,
@@ -174,10 +173,10 @@ callEMFuncs <- function(Clusters,
                                Covariates = Covariates, smallestClN = smallestClN, SigmaIncrease = SigmaIncrease),
                  IDNames = IDNames, Y = Y, X = X, K = K, N = N, Tni = Tni, qqq = qqq, nDepVar = nDepVar,
                  PersPDiffStart = PersPDiffStart, PersEnd = PersEnd, PersStartU = PersStartU, PersEndU = PersEndU,
-                 Covariates = Covariates, Conv = Conv, it = it, smallestClN = smallestClN, ICType = ICType,
+                 Covariates = Covariates, Conv = Conv, it = it, smallestClN = smallestClN,
                  SigmaIncrease = SigmaIncrease)
 
-        FitAllLags[LagCounter, StartCounter] = OutputListAllLags[[LagCounter]][[StartCounter]]$IC
+        FitAllLags[LagCounter, StartCounter] = OutputListAllLags[[LagCounter]][[StartCounter]]$SC
         
         # ----- Update progress bar (Jonas) -----
         pb_counter <- pb_counter + 1 # this should be the inner loop, so that should be what I need
@@ -219,7 +218,7 @@ callEMFuncs <- function(Clusters,
     All_Solutions_for_all_starts_all_lags_all_Clusters$All_Solutions[[ClustCount]] = OutputListAllLags
     ModelCall = list(Clusters = Clusters, Lags = LowestLag:HighestLag,
                      Rand = Rand, Rational = Rational, Initialization = Initialization,
-                     ICType = ICType, Covariates = Covariates)
+                     Covariates = Covariates)
     OutputAllK[[ClustCount]] = OutputListAllLags[[BestRunOneK[1]]][[BestRunOneK[2]]]
     BestModels[ClustCount, ] =  paste(c("According to the selected infromation criterion, the best solution of all models where the number of clusters is", K,
                                         "has a lag order of:", OutputListAllLags[[BestRunOneK[1]]][[BestRunOneK[2]]]$Lags), collapse = " ")
