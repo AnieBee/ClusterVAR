@@ -5354,3 +5354,109 @@
  EM did not converge: Number of maximum iterations reached 
 
  EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ Warning: A single/empty cluster occured in EM-iteration 1 , memberships and Sigma reset 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 
+
+ EM did not converge: Number of maximum iterations reached 

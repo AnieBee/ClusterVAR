@@ -34,24 +34,19 @@ LCVARclust <- function(Data,
 
   # ------ Computing Some Aux Vars ------
 
-  LowestLag <- min(Lags)
-  HighestLag <- max(Lags)
+  LowestLag = min(Lags)
+  HighestLag = max(Lags)
 
 
   # ------ Input Checks ------
 
   # Cluster Search Sequence
-  if(missing(Clusters)) stop("Specify the sequence of number of cluster to search.")
+  if(missing(Clusters)) stop("Specify the sequence of number of clusters to search.")
 
   # Lag Search Sequence
   if(missing(Lags)) stop("Specify the sequence of number of lags to search.")
-  #if(LowestLag != 1) stop("The lowest specified lag must be 1.")
   if(!all(Lags == round(Lags))) stop("Lags need to be specified as integers.")
   if(!all((Lags[-1] - Lags[-length(Lags)]==1))) stop("Lags need to be specified as subsequent integers.")
-
-
-  # Fill in defaults
-  if(missing(ICType)) ICType <- "HQ"
 
   # Set random seed, if specified
   if(!missing(RndSeed)) set.seed(RndSeed)
@@ -66,6 +61,9 @@ LCVARclust <- function(Data,
   # smallestClN is used in checkComponentsCollapsed
   stopifnot(Clusters > 0)
   stopifnot(length(yVars) > 1) # So far only multivariate time-series are implemented
+  stopifnot(all(is.numeric(Clusters)))
+  stopifnot(!any(duplicated(Clusters)))
+  Clusters = Clusters[order(Clusters)]
 
 
   call <- match.call()
@@ -180,7 +178,6 @@ LCVARclust <- function(Data,
   out_est$Call$Clusters <- Clusters
   out_est$Call$Lags <- Lags
 
-  # TODO: some restructuring
   return(out_est)
 
 
