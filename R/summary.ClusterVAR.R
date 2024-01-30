@@ -60,10 +60,9 @@ summary.ClusterVAR <- function(CVARresult, show = "Best-per-number-of-clusters",
             FunctionOutput[LagCounter, "BIC"] = GivenClusterOutput[[LagCounter]][[BestModel]]$BIC
             FunctionOutput[LagCounter, "ICL"] = GivenClusterOutput[[LagCounter]][[BestModel]]$ICL
         }
-        cat(paste0(c("--------------------------------------------------------------------------------------------------------", "\n",
+        message = paste0(c("---------------------------------------------------\n",
                      "All lags for number of clusters =", Number_of_Clusters,
-                     "\n",
-                     "--------------------------------------------------------------------------------------------------------\n")))
+                     "\n---------------------------------------------------\n"))
     }else{
         # The below calculation calculates the solution for (show == "Best-per-number-of-clusters") but all calculation steps are also needed if (show == "Best-overall") 
             # For each number of of clusters, find the single best-fitting time-series model for each cluster number
@@ -97,26 +96,26 @@ summary.ClusterVAR <- function(CVARresult, show = "Best-per-number-of-clusters",
             
             
             if(show == "Best-per-number-of-clusters"){
-                cat(paste0(c("--------------------------------------------------------------------------------------------------------", "\n",
+                message = paste0(c("---------------------------------------------------\n",
                              "The best lags for any number of clusters as selected by the", TS_criterion,
-                         "\n",
-                         "--------------------------------------------------------------------------------------------------------\n")))
+                            "\n---------------------------------------------------\n"))
                 # FunctionOutput stays as calculated above
             }
             if (show == "Best-overall"){
                 BestOverall = switch(global_criterion,
                                     "BIC" = which.min(FunctionOutput$BIC),
                                     "ICL" = which.min(FunctionOutput$ICL))
-                cat(paste0(c("--------------------------------------------------------------------------------------------------------", "\n",
+                message = paste0(c("---------------------------------------------------\n",
                              "The best lags for any number of clusters as selected by the", TS_criterion,
                              "\n",
                              "The best number of clusters as selected by the", global_criterion,
-                             "\n",
-                             "-------------------------------------------------------------------------------------------------------- \n")))
+                             "\n---------------------------------------------------\n"))
                 FunctionOutput = FunctionOutput[BestOverall, ]
             }
 
     }
     #### Return FunctionOutput here ##
+    FunctionOutput = list(message = message, FunctionOutput = FunctionOutput)
+    class(FunctionOutput) <- c("ClusterVARSummary", class(FunctionOutput))
     return(FunctionOutput)
 } # eoF

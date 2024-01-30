@@ -11,4 +11,5 @@ export(ModelSummaryLCVAR)
 
 # Exported S3 Methods
 S3method(print, ClusterVAR)
+S3method(print, ClusterVARSummary)
 S3method(summary, ClusterVAR)
