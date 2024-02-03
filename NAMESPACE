@@ -7,6 +7,7 @@ import(mvtnorm) # (v.1.0-6) for dmvnorm()
 
 # Export
 export(LCVARclust)
+export(inspectClusterVAR)
 
 
 # Exported S3 Methods
