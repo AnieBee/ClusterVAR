@@ -4,6 +4,7 @@
 
 QUESTIONS:
 1) Does the proc.time() retrun time in minutes? Or does it change to hours if more than an hour passes?
+2) I added a 2nd print() function that can be used by the summary() function, I added it to NAMESPACE, is anything required anywhere elese?
 
 
 SUGGESTIONS:
