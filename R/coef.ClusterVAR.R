@@ -4,14 +4,14 @@ coef.ClusterVAR <- function(CVARresult, Lags) {
     # Returns only the important coefficients of the best start for a given model (i.e., given the lag order and number of clusters)
     
     #get best model for this lag order and this number of clusters
-    GivenOutput = inspect(CVARresult, Lags)
+    GivenOutput = inspectClusterVAR(CVARresult, Lags = Lags)
     
     #### Return FunctionOutput here ##
-    FunctionOutput = list(VAR_coefficients = GivenOutput$VAR_coefficients,
+    FunctionOutput = list(Lags = GivenOutput$Lags,
+                          VAR_coefficients = GivenOutput$VAR_coefficients,
                           Exogenous_coefficients = GivenOutput$Exogenous_coefficients,
                           Sigma = GivenOutput$Sigma,
-                          Proportions = GivenOutput$Proportions,
-                          Posterior_probabilities = GivenOutput$Posterior_probabilities)
+                          Proportions = GivenOutput$Proportions)
     return(FunctionOutput)
 
 } # eoF
