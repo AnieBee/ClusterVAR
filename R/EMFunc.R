@@ -182,7 +182,7 @@ EMFunc <- function(Init,
 
   colnames(B) = rownames(X) # Name every col in Array with Covariates Variable name
   rownames(B) = rownames(Y) # Name every row in B with Endogenous Variable Names
-  colnames(A) = rep(rownames(Y), max(Lags))
+  colnames(A) = paste(rep(rownames(Y), max(Lags)), "_t-", sort(rep(1:max(Lags), length(rownames(Y)))), sep = "")
   rownames(A) = rownames(Y)
 
   #Intercept is the "reference" group in case categorical variables are included

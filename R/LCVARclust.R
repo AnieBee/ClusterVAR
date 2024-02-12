@@ -168,8 +168,6 @@ LCVARclust <- function(Data,
                          pbar = pbar) # For progress bar (Jonas)
 
 
-
-
   # ----- Parse Finish Message -----
   cat(paste0("\n LCVAR Model Estimation completed in ",  out_est$Runtime, " min"))
 
