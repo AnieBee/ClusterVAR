@@ -26,7 +26,11 @@ callEMFuncs <- function(Clusters,
                         smallestClN,
                         SigmaIncrease,
                         call,
-                        pbar)
+                        pbar,
+                        PredictableObs,
+                        Tni_NPred,
+                        PersStartU_NPred,
+                        PersEndU_NPred)
 {
 
   ### Loop over different K (# of clusters) values  -------------

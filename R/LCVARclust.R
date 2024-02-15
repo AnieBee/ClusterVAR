@@ -81,6 +81,10 @@ LCVARclust <- function(Data,
   # order Data according to ID, make sure an individual's observations occur one after another with first obs first, second second etc
   # observations have to occur ascending in time
 
+  
+  ### NEW------------ Insert rowwise deletion of NAs here------------------
+  
+  
   # Endogenous Variables #-------------------
   Y = t(as.matrix(Data[ , yVars]))
   nDepVar = dim(Y)[1]
@@ -129,6 +133,45 @@ LCVARclust <- function(Data,
     PersEndU[[lagRunner]] = cumsum(nObs - lagRunner) # Last obs of a pers in U
   }
 
+  ### NEW------------ Insert determination of whether an observation in Y can be predicted ------------------
+  PredictableObs = vector("list", HighestLag)  # from 1:HighestLag but only LowestLag:HighestLag elements are filled
+  for (lagRunner in LowestLag:HighestLag) 
+  {
+      PredictableObs[[lagRunner]] = rbind( rep(1, dim(Y)[2]) , Pers)
+      # assign zero to first column for non-predictable values
+      # PredictableObs[[lagRunner]][1, c(22, 44, 47)] = 0
+  }
+  
+
+  Tni_NPred = vector("list", HighestLag)  # from 1:HighestLag but only LowestLag:HighestLag elements are filled
+  PersStartU_NPred = vector("list", HighestLag)
+  PersEndU_NPred = vector("list", HighestLag)
+  for (lagRunner in LowestLag:HighestLag) 
+  {
+      Tni_NPred[[lagRunner]] = rep(0, N)
+      for (i in 1:N)
+      {# determine the total number of predictable Observations per person (Tni_NPred) differs across lag numbers
+          nPredObsPerPerson = PredictableObs[[lagRunner]][2, PredictableObs[[lagRunner]][1, ] == 1]
+          Tni_NPred[[lagRunner]][i] = length(which(nPredObsPerPerson == pers[i]))
+      }
+      ##----- NEW: do lags still have to be removed from Tni, basically this should be taken care of in PredictableObs already
+      # Tni_NPred[[lagRunner]] # length of U, lenght of sum of time series with presample of
+      # first P observations removed, length of obs per pers in U
+      # With presample of first Lags-obs removed for every individual (needed for U)
+      PersStartU_NPred[[lagRunner]] = cumsum(c(0, Tni_NPred[[lagRunner]][-length(Tni_NPred[[lagRunner]])])) + 1 # Start of individual time series for every pers in
+      # U ( = presample is removed), first obs of a pers in U
+      PersEndU_NPred[[lagRunner]] = cumsum(Tni_NPred[[lagRunner]]) # Last obs of a pers in U
+      
+  }
+  
+  ##----- NEW: PersStartU_NPred, PersEndU_NPred, Tni_NPred are new, are the old versions still needed anywhere? Also, PersPDiffStart is not 
+  # needed anymore I think, because PredictableObs already removes all the first lag-many obs of every person so PersStart in combination with PredictableObs can be used 
+  ##----- NEW: Add some kind of check that each person has enough predictable observations to estimate the model
+  
+ 
+  ### End ------------
+  
+  
   # Create val.init, a list containing memb, a vector ordered by ID that contains the cluster membership initialization ----
   if ( ! is.null(Initialization))
   {
@@ -165,7 +208,12 @@ LCVARclust <- function(Data,
                          smallestClN = smallestClN,
                          SigmaIncrease = SigmaIncrease,
                          call = call,
-                         pbar = pbar) # For progress bar (Jonas)
+                         pbar = pbar,
+                         PredictableObs = PredictableObs, 
+                         Tni_NPred = Tni_NPred,
+                         PersStartU_NPred = PersStartU_NPred,
+                         PersEndU_NPred = PersEndU_NPred
+                         )
 
 
   # ----- Parse Finish Message -----
