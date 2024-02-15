@@ -33,7 +33,6 @@ LCVARclust <- function(Data,
 {
 
   # ------ Computing Some Aux Vars ------
-
   LowestLag = min(Lags)
   HighestLag = max(Lags)
 
@@ -50,8 +49,6 @@ LCVARclust <- function(Data,
 
   # Set random seed, if specified
   if(!missing(RndSeed)) set.seed(RndSeed)
-
-  # ------ Code below is from Anja ------
 
   # Checks
   stopifnot( ! (duplicated(c(ID, xFactor, xContinuous, Initialization))) ) # Evaluate there is no overlap
@@ -76,7 +73,6 @@ LCVARclust <- function(Data,
   # ID = has to be factor
   ##### Preprocessing of Data Set #####--------------------
   Data = as.data.frame(Data)
-  stopifnot( ! any(is.na(Data))) # No  missing values allowed
   Data = Data[order(Data[ , ID], Data[ , Time]), ]
   # order Data according to ID, make sure an individual's observations occur one after another with first obs first, second second etc
   # observations have to occur ascending in time
@@ -133,31 +129,39 @@ LCVARclust <- function(Data,
     PersEndU[[lagRunner]] = cumsum(nObs - lagRunner) # Last obs of a pers in U
   }
 
-  ### NEW------------ Insert determination of whether an observation in Y can be predicted ------------------
+  ### NEW------------ Insert determination of whether an observation in Y can be predicted (PredictableObs) ------------------
   PredictableObs = vector("list", HighestLag)  # from 1:HighestLag but only LowestLag:HighestLag elements are filled
   for (lagRunner in LowestLag:HighestLag) 
   {
       PredictableObs[[lagRunner]] = rbind( rep(1, dim(Y)[2]) , Pers)
       # assign zero to first column for non-predictable values
-      # PredictableObs[[lagRunner]][1, c(22, 44, 47)] = 0
+      PredictableObs[[lagRunner]][1, c(22, 32, 42)] = 0
+      PredictableObs[[lagRunner]][1, c(PersStart)] = 0
+      if(lagRunner > 1) PredictableObs[[lagRunner]][1, c(PersStart + 1)] = 0
+      if(lagRunner > 2) PredictableObs[[lagRunner]][1, c(PersStart + 2)] = 0
+      
   }
+ ###### End of determining PredictableObs
   
-
   Tni_NPred = vector("list", HighestLag)  # from 1:HighestLag but only LowestLag:HighestLag elements are filled
   PersStartU_NPred = vector("list", HighestLag)
   PersEndU_NPred = vector("list", HighestLag)
   for (lagRunner in LowestLag:HighestLag) 
   {
       Tni_NPred[[lagRunner]] = rep(0, N)
+      nPredObsPerPerson = PredictableObs[[lagRunner]][2, PredictableObs[[lagRunner]][1, ] == 1]
       for (i in 1:N)
       {# determine the total number of predictable Observations per person (Tni_NPred) differs across lag numbers
-          nPredObsPerPerson = PredictableObs[[lagRunner]][2, PredictableObs[[lagRunner]][1, ] == 1]
           Tni_NPred[[lagRunner]][i] = length(which(nPredObsPerPerson == pers[i]))
+          ##----- NEW: do lags still have to be removed from Tni, basically this should be taken care of in PredictableObs already
+          
+          # Tni_NPred[[lagRunner]] # length of U, lenght of sum of time series with presample of
+          # first P observations removed, length of obs per pers in U
+          # With presample of first Lags-obs removed for every individual (needed for U)
       }
-      ##----- NEW: do lags still have to be removed from Tni, basically this should be taken care of in PredictableObs already
-      # Tni_NPred[[lagRunner]] # length of U, lenght of sum of time series with presample of
-      # first P observations removed, length of obs per pers in U
-      # With presample of first Lags-obs removed for every individual (needed for U)
+      ## Change PredictableObs so that it contains the position of the observations in Y, and W, and X that can be predicted
+      PredictableObs[[lagRunner]] = which(PredictableObs[[lagRunner]][1,] ==  1)
+     
       PersStartU_NPred[[lagRunner]] = cumsum(c(0, Tni_NPred[[lagRunner]][-length(Tni_NPred[[lagRunner]])])) + 1 # Start of individual time series for every pers in
       # U ( = presample is removed), first obs of a pers in U
       PersEndU_NPred[[lagRunner]] = cumsum(Tni_NPred[[lagRunner]]) # Last obs of a pers in U
@@ -170,8 +174,7 @@ LCVARclust <- function(Data,
   
  
   ### End ------------
-  
-  
+ 
   # Create val.init, a list containing memb, a vector ordered by ID that contains the cluster membership initialization ----
   if ( ! is.null(Initialization))
   {

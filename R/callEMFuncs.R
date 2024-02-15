@@ -72,7 +72,7 @@ callEMFuncs <- function(Clusters,
                                      as.numeric(!is.null(Initialization))
                                    + as.numeric(PreviousSol))) # to store fit of output
 
-
+    ### Initialization Prerequesites: calcuate coefficeints passed to initial clustering solutions ###---------------------------------
     CoeffsForRandoAndRationalList = callCalculateCoefficientsForRandoAndRational(Covariates = Covariates,
                                                                                  K = K,
                                                                                  N = N,
@@ -84,7 +84,7 @@ callEMFuncs <- function(Clusters,
                                                                                  PersStart = PersStart,
                                                                                  Y = Y,
                                                                                  X = X,
-                                                                                 PersPDiffStart = PersPDiffStart)
+                                                                                 PredictableObs = PredictableObs)
     #EMCallVec[StartCounter] gives name/type of current start (e.g., random start nr "4", or "Previous")
     EMCallVec = c(as.character(1:Rand),
                   ifelse(Rational, "Rational", NULL),
@@ -94,9 +94,7 @@ callEMFuncs <- function(Clusters,
     usePrevLagSol = FALSE   # Make sure the previous lag solution-using start is not called before a previous solution exists
     for(LagCounter in 1:LagCombinations) {
 
-       ### Initialization Prerequesites: calcuate coefficeints passed to initial clustering solutions ###---------------------------------
-      #PersPDiffStart, PersStartU etc can (must) be integers instead of vectors in calculateCoefficientsForRandoAndRational
-     
+      
          #### Random starts ###
       StartCounter = 0
       while (StartCounter != length(EMCallVec))
@@ -132,9 +130,12 @@ callEMFuncs <- function(Clusters,
                                                          CoeffsForRandoAndRationalList[[max(LagsList[LagCounter, ])]])
                                  ),
 
-                               Y = Y, X = X, Lags = LagsList[LagCounter, ], K = K, N = N, Tni = Tni, qqq = qqq, nDepVar = nDepVar,
-                               PersStart = PersStart, PersPDiffStart = PersPDiffStart, PersEnd = PersEnd,
-                               PersStartU = PersStartU, PersEndU = PersEndU,
+                               Y = Y, X = X, Lags = LagsList[LagCounter, ], K = K, N = N, qqq = qqq, nDepVar = nDepVar,
+                               PersStart = PersStart, PersEnd = PersEnd,
+                               PredictableObs = PredictableObs, 
+                               Tni_NPred = Tni_NPred,
+                               PersStartU_NPred = PersStartU_NPred,
+                               PersEndU_NPred = PersEndU_NPred,
                                Covariates = Covariates, smallestClN = smallestClN, SigmaIncrease = SigmaIncrease),
                  IDNames = IDNames, Y = Y, X = X, K = K, N = N, Tni = Tni, qqq = qqq, nDepVar = nDepVar,
                  PersPDiffStart = PersPDiffStart, PersEnd = PersEnd, PersStartU = PersStartU, PersEndU = PersEndU,

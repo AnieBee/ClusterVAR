@@ -1,5 +1,8 @@
 
-EMInit <- function(InitMT, Y, X, Lags, K, N, Tni, qqq, nDepVar, PersStart, PersPDiffStart, PersEnd, PersStartU, PersEndU, Covariates, smallestClN, SigmaIncrease)
+EMInit <- function(InitMT, Y, X, Lags, K, N, qqq, nDepVar, PersStart, PersEnd, PredictableObs, 
+                   Tni_NPred,
+                   PersStartU_NPred,
+                   PersEndU_NPred, Covariates, smallestClN, SigmaIncrease)
     # Calls determineLagOrder and reorderLags to switch Lags
 {
     ListCCC = checkComponentsCollapsed(K = K, N = N, FZY = t(InitMT),
@@ -17,7 +20,7 @@ EMInit <- function(InitMT, Y, X, Lags, K, N, Tni, qqq, nDepVar, PersStart, PersP
     
     # Partition matrices
     A = array(NA, dim = c(nDepVar, nDepVar * max(Lags), K))
-    UZero = array(NA, dim = c(nDepVar, PersEndU[[min(Lags)]][N], K)) 
+    UZero = array(NA, dim = c(nDepVar, PersEndU_NPred[[min(Lags)]][N], K)) 
     # Vector of u_{ikt}s # U is not of same length as Y, Y contains N many Lags*m pre-samles
     # U has different lenght for different clusters when clusters have different lag numbers
     Sigma = array(0, dim = c(nDepVar, nDepVar, K)) 
@@ -37,7 +40,7 @@ EMInit <- function(InitMT, Y, X, Lags, K, N, Tni, qqq, nDepVar, PersStart, PersP
     ClusterVARcoeffs = calculateA(K = K, WkNumbVersions = 1, 
                                   # One Wzero exists for all clusters, because memb is 0 or 1 set WkNumbVersions
                                   # to 1 because WZero instead of Wk is passed here
-                                  N = N, Wk = WZero, PersPDiffStart = PersPDiffStart, 
+                                  N = N, Wk = WZero, PredictableObs = PredictableObs, 
                                   PersEnd = PersEnd, Lags = rep(max(Lags), K), FZY = t(memb),
                                   A = A, nDepVar)
     
