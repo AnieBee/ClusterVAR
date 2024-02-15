@@ -5,13 +5,14 @@ EMFunc <- function(Init,
                    X,
                    K,
                    N,
-                   Tni,
+                   Tni_NPred,
                    qqq,
                    nDepVar,
-                   PersPDiffStart,
+                   PredictableObs,
                    PersEnd,
-                   PersStartU,
-                   PersEndU,
+                   PersStart,
+                   PersStartU_NPred,
+                   PersEndU_NPred,
                    Covariates,
                    Conv,
                    it,
@@ -34,7 +35,7 @@ EMFunc <- function(Init,
   Sigma = Init$Sigma # Sigma has to be checked for singularity, is checked for it at end of EMInit
   tau = Init$tau
   Lags = Init$Lags # contains switched Lags order to match lag order the clusters exhibited in EMInit
-  U = array(NA, dim = c(nDepVar, PersEndU[[min(Lags)]][N], K))
+  U = array(NA, dim = c(nDepVar, PersEndU_NPred[[min(Lags)]][N], K))
   # Vector of u_{ikt}s # U is not of same length as Y, Y contains N many Lags*m pre-samples
 
   # Constraints on B #
@@ -53,15 +54,18 @@ EMFunc <- function(Init,
     Wk = calculateW(Covariates = Covariates, K = K, Wk = Wk, Y = Y, B = B, X = X)
 
     U = calculateU(K = K, WkNumbVersions = DimensionsBasedonConstraints$WkNumbVersions,
-                   N = N, PersPDiffStart = PersPDiffStart,
-                   PersEnd = PersEnd, U = U, Wk = Wk, A = A,
+                   N = N, PredictableObs = PredictableObs,
+                   PersStart = PersStart,  PersEnd = PersEnd,
+                   U = U, Wk = Wk, A = A,
                    Lags = Lags, nDepVar = nDepVar)
 
     # calculate the FYZs -----------
     # all FYZs and FZYs are in log form to avoid underflow
     # E step, or dvmnorm could be implemented in Rcpp
-    FYZ = calculateFYZ(K = K, N = N, FYZ = FYZ, U = U, PersStartU = PersStartU,
-                       PersEndU = PersEndU, nDepVar = nDepVar, Sigma = Sigma,
+    FYZ = calculateFYZ(K = K, N = N, FYZ = FYZ, U = U, 
+                       PersStartU_NPred = PersStartU_NPred,
+                       PersEndU_NPred = PersEndU_NPred,
+                       nDepVar = nDepVar, Sigma = Sigma,
                        Lags = Lags)
 
     ## Check: likelihoods ----------
@@ -93,7 +97,8 @@ EMFunc <- function(Init,
     ########  M-STEP    ########
     ### calculate A -----------------
     A = calculateA(K = K, WkNumbVersions = DimensionsBasedonConstraints$WkNumbVersions,
-                   N = N, Wk = Wk, PersPDiffStart = PersPDiffStart,
+                   N = N, Wk = Wk, PredictableObs = PredictableObs,
+                   PersStart = PersStart, 
                    PersEnd = PersEnd, Lags = Lags, FZY = FZY,
                    A = A, nDepVar = nDepVar)
     # those places of A that will not be filled (because of lower lag number in some clusters)
@@ -101,16 +106,16 @@ EMFunc <- function(Init,
     # in EMFunc, cannot be changed back
 
     ### calculate Sigma (S) ---------------------
-    Sigma = calculateSigma(K = K, N = N, FZY = FZY, U = U, PersStartU = PersStartU,
-                           PersEndU = PersEndU, Tni = Tni, Sigma = Sigma, Lags = Lags)
+    Sigma = calculateSigma(K = K, N = N, FZY = FZY, U = U, PersStartU_NPred = PersStartU_NPred,
+                           PersEndU_NPred = PersEndU_NPred, Tni_NPred = Tni_NPred, Sigma = Sigma, Lags = Lags)
     SigmaList = checkSingularitySigma(nDepVar = nDepVar, K = K, Sigma = Sigma, EMiteration = EMiteration)
     Sigma = SigmaList$Sigma
     Sigma[ , , FZYListCCC$resetCl] = Sigma[ , , FZYListCCC$resetCl] + SigmaIncrease # Increase variance of components indicated by FZYListCCC
 
     ## Calculate B depending on Covariate constraint -------------
     B = calculateB(Covariates = Covariates, K = K, nDepVar = nDepVar, A = A,
-                   Sigma = Sigma, N = N, PersPDiffStart = PersPDiffStart,
-                   PersEnd = PersEnd, X = X, Y = Y, Lags = Lags, FZY = FZY,
+                   Sigma = Sigma, N = N, PredictableObs = PredictableObs,
+                   PersStart = PersStart,  PersEnd = PersEnd, X = X, Y = Y, Lags = Lags, FZY = FZY,
                    qqq = qqq, B = B)
 
     ### Calculate tau -------------------
@@ -155,7 +160,7 @@ EMFunc <- function(Init,
 
   SC = calculateIC(ICType = "SC", Sigma = Sigma, Lags = Lags,
                    nDepVar = nDepVar, K = K, N = N, FZY = FZY,
-                   Tni = Tni, tau = tau)
+                   Tni_NPred = Tni_NPred, tau = tau)
 
   HQ = calculateIC(
       ICType = "HQ",
@@ -165,12 +170,12 @@ EMFunc <- function(Init,
       K = K,
       N = N,
       FZY = FZY,
-      Tni = Tni,
+      Tni_NPred = Tni_NPred,
       tau = tau
   )
   
   BIC = calculateBIC(nPara = nPara, Lags = Lags, K = K, N = N,
-                     FZY = FZY, Tni = Tni, last.lik = last.lik)
+                     FZY = FZY, Tni_NPred = Tni_NPred, last.lik = last.lik)
   ICL = calculateICL(BIC = BIC, K = K, N = N, FZY = FZY, 
                      Classification = Classification)
 

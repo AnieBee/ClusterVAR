@@ -41,6 +41,7 @@ EMInit <- function(InitMT, Y, X, Lags, K, N, qqq, nDepVar, PersStart, PersEnd, P
                                   # One Wzero exists for all clusters, because memb is 0 or 1 set WkNumbVersions
                                   # to 1 because WZero instead of Wk is passed here
                                   N = N, Wk = WZero, PredictableObs = PredictableObs, 
+                                  PersStart =  PersStart,
                                   PersEnd = PersEnd, Lags = rep(max(Lags), K), FZY = t(memb),
                                   A = A, nDepVar)
     
@@ -51,16 +52,20 @@ EMInit <- function(InitMT, Y, X, Lags, K, N, qqq, nDepVar, PersStart, PersEnd, P
     ###### Calculate A (based on Lags), UZero, S and B based on W(0) = WZero --------------
     A = calculateA(K = K, WkNumbVersions = 1,
                    # One Wzero exists for all clusters, set WkNumbVersions to 1 because WZero instead of Wk is passed here
-                   N = N, Wk = WZero, PersPDiffStart = PersPDiffStart, 
+                   N = N, Wk = WZero, PredictableObs = PredictableObs,
+                   PersStart = PersStart, 
                    PersEnd = PersEnd, Lags = Lags, FZY = t(memb), A = A,
                    nDepVar = nDepVar)
     
-    UZero = calculateU(K = K, WkNumbVersions = 1, N = N, PersPDiffStart = PersPDiffStart,
-                       PersEnd = PersEnd, U = UZero, Wk = WZero, A = A, Lags = Lags,
+    UZero = calculateU(K = K, WkNumbVersions = 1, N = N, PredictableObs = PredictableObs,
+                       PersStart = PersStart,  PersEnd = PersEnd, 
+                       U = UZero, Wk = WZero, A = A, Lags = Lags,
                        nDepVar = nDepVar)
     
-    Sigma = calculateSigma(K = K, N = N, FZY = t(memb), U = UZero, PersStartU = PersStartU,
-                           PersEndU = PersEndU, Tni = Tni, Sigma = Sigma, Lags = Lags)
+    Sigma = calculateSigma(K = K, N = N, FZY = t(memb), U = UZero, 
+                           PersStartU_NPred = PersStartU_NPred,
+                           PersEndU_NPred = PersEndU_NPred, Tni_NPred = Tni_NPred, 
+                           Sigma = Sigma, Lags = Lags)
     SigmaList = checkSingularitySigma(nDepVar = nDepVar, K = K, Sigma = Sigma, EMiteration = 0)
     Sigma = SigmaList$Sigma
     Sigma[ , , ListCCC$resetCl] = Sigma[ , , ListCCC$resetCl] + SigmaIncrease
@@ -68,8 +73,9 @@ EMInit <- function(InitMT, Y, X, Lags, K, N, qqq, nDepVar, PersStart, PersEnd, P
     ## Calculate B(0) depending on Covariate constraint----------------------------
     # B(0) calculation differs from B cacluation in using memb[j, i] instead of f.z.y[ i, j]
     B = calculateB(Covariates = Covariates, K = K, nDepVar = nDepVar, A = A,
-                   Sigma = Sigma, N = N, PersPDiffStart = PersPDiffStart, 
-                   PersEnd = PersEnd, X = X, Y = Y, Lags = Lags,
+                   Sigma = Sigma, N = N, PredictableObs = PredictableObs,
+                   PersStart = PersStart,  PersEnd = PersEnd,
+                   X = X, Y = Y, Lags = Lags,
                    FZY = t(memb), qqq = qqq, B = B)
     
     #### Return initialization to EM call

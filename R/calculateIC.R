@@ -1,4 +1,4 @@
-calculateIC <- function(ICType, Sigma, Lags, nDepVar, K, N, FZY, Tni, tau)
+calculateIC <- function(ICType, Sigma, Lags, nDepVar, K, N, FZY, Tni_NPred, tau)
     # clusterTimePoints = T - k but extended to the cluster case
     # Calculate time-series IC for all clusters for a certain lag number (YWResidualCovariance, clusterTimePoints and LagsForP)
     # These are not global information criteria, they can only be used to compare timeseries models across a fixed number of clusters,
@@ -20,7 +20,7 @@ calculateIC <- function(ICType, Sigma, Lags, nDepVar, K, N, FZY, Tni, tau)
         ParasCl[j] = Lags[j] * (nDepVar * nDepVar) # only include time-series parameters
         for (i in 1:N)
         {
-            clTimepoints[j] = clTimepoints[j] + (FZY[ i, j] * (Tni[[Lags[j]]][i]))
+            clTimepoints[j] = clTimepoints[j] + (FZY[ i, j] * (Tni_NPred[[Lags[j]]][i]))
         }
         
         penaltyTerm[j] = switch(ICType, 
