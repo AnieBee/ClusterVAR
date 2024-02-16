@@ -67,6 +67,7 @@ callEMFuncs <- function(Clusters,
     FitAllLags = array(NA, dim = c(LagCombinations, Rand + as.numeric(Rational) +
                                      as.numeric(!is.null(Initialization))
                                    + as.numeric(PreviousSol))) # to store fit of output
+    
 
     ### Initialization Prerequesites: calcuate coefficeints passed to initial clustering solutions ###---------------------------------
     CoeffsForRandoAndRationalList = callCalculateCoefficientsForRandoAndRational(Covariates = Covariates,
@@ -162,8 +163,6 @@ callEMFuncs <- function(Clusters,
             if(pbar==TRUE) setTxtProgressBar(pb, pb_counter)
           }
         }
-        ################################################################
-
       } # End of Start loop
 
       PrevBestRun = arrayInd(which.min(FitAllLags), dim(FitAllLags))
