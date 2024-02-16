@@ -7,10 +7,7 @@ checkComponentsCollapsed <- function(K, N, FZY, smallestClN, EMiteration, crisp 
     while (as.logical(length(ComponentColapsedOntoSinglePoint)))
     {  # If one cluster is empty or contains less than smallestClN: ressample everyone
 
-        cat(c("\n Warning: A single/empty cluster occured in EM-iteration",
-              EMiteration, ", memberships and Sigma reset \n"))
-        # cat(c("\n Warning: A single/empty cluster occured in EM-iteration",
-        #       EMiteration, ", memberships and Sigma reset \n"), file = "EMwarnings.txt", append = TRUE) 
+        #cat(c("\n Warning: A single/empty cluster occured in EM-iteration", EMiteration, ", memberships and Sigma reset \n"))
         resetCl = unique(c(resetCl, ComponentColapsedOntoSinglePoint))
         for (clust in ComponentColapsedOntoSinglePoint)
         {

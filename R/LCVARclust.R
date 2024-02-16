@@ -109,12 +109,11 @@ LCVARclust <- function(Data,
   PersEnd = cumsum(nObs) # end of individual time series of every pers, last obs of every pers in Y or W
 
 
-  ### NEW------------ Insert determination of whether an observation in Y can be predicted (PredictableObs) ------------------
+  ### NEW------------ Still to do (Jonas? Anja?) Insert determination of whether an observation in Y can be predicted (PredictableObs) ------------------
   PredictableObs = vector("list", HighestLag)  # from 1:HighestLag but only LowestLag:HighestLag elements are filled
   for (lagRunner in LowestLag:HighestLag) 
   {
       PredictableObs[[lagRunner]] = rbind( rep(1, dim(Y)[2]) , Pers)
-      PredictableObs[[lagRunner]][1, sample(1:16000, 650, replace = FALSE)] = 0 # TEST, REMOVE LATER
       # assign zero to first column for non-predictable values
       PredictableObs[[lagRunner]][1, c(PersStart)] = 0
       if(lagRunner > 1) PredictableObs[[lagRunner]][1, c(PersStart + 1)] = 0

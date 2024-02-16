@@ -5,6 +5,7 @@
 QUESTIONS:
 1) Does the proc.time() retrun time in minutes? Or does it change to hours if more than an hour passes?
 2) I added a 2nd print() function that can be used by the summary() function, I added it to NAMESPACE, is anything required anywhere elese?
+3) what to do with warnings? I removed all warnings now becuase I don't think they are of interest to the user (i.e., what kind of estimation possibly occured or prevented convergence for some start) (convergence is still indicated in the output of every start). Only exception: checkConvergence, gives a warning if algo did not converge because number of iterations was not set high enough by user of because of something else...
 
 
 SUGGESTIONS:

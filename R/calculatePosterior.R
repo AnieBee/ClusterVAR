@@ -16,8 +16,7 @@ calculatePosterior <- function(N, K, tau, FYZ, lowest.Likelihood, EMiteration, F
         # if FZY are used they are checked later for infinite values so you can let infinite values be 
         if(any(is.infinite(PosteriorDenom)))
         { # check: no -Inf likelhioods, if there are replace with lowest.Likelihood specified at begining of EMfunc
-            cat("\n Infinite likelihood in EM-iteration", EMiteration, ", likelihood reset \n")  
-            #cat("\n Infinite likelihood in EM-iteration", EMiteration, ", likelihood reset \n", file = "EMwarnings.txt", append = TRUE) 
+            #cat("\n Infinite likelihood in EM-iteration", EMiteration, ", likelihood reset \n")  
             PosteriorDenom[which(is.infinite(PosteriorDenom))] = lowest.Likelihood 
             # PosteriorDenom = ifelse(is.finite(PosteriorDenom), PosteriorDenom, lowest.Likelihood) 
             # check: no -Inf likelhioods, if there are replace with lowest.Likelihood specified at begining of EMfunc
