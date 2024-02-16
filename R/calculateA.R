@@ -1,4 +1,4 @@
-calculateA <- function(K, WkNumbVersions, N, Wk, PersPDiffStart, PersEnd, Lags, FZY, A, nDepVar)
+calculateA <- function(K, WkNumbVersions, N, Wk, PredictableObs, PersStart, PersEnd, Lags, FZY, A, nDepVar)
 {
     for (j in 1:K)
     {
@@ -10,7 +10,7 @@ calculateA <- function(K, WkNumbVersions, N, Wk, PersPDiffStart, PersEnd, Lags, 
         {
             AKn = 0 # individual sum for A, within j
             AKd = 0
-            for (trunner in (PersPDiffStart[[Lags[j]]][i]):PersEnd[i])
+            for (trunner in c(intersect(PredictableObs[[Lags[j]]], c(PersStart[i]:PersEnd[i]))))
             {
                 AKn = AKn + Wk[, trunner, WkRunner] %*% t( as.vector(Wk[ , (trunner - 1):(trunner - Lags[j]), WkRunner]) ) # W[, (trunner-1):(trunner - Lags[j])] = Z_{it}
                 AKd = AKd + as.vector(Wk[ , (trunner - 1):(trunner - Lags[j]), WkRunner]) %*% 

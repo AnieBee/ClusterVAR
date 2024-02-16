@@ -1,4 +1,4 @@
-calculateU <- function(K, WkNumbVersions, N, PersPDiffStart, PersEnd, U, Wk, A, Lags, nDepVar)
+calculateU <- function(K, WkNumbVersions, N, PredictableObs, PersStart, PersEnd, U, Wk, A, Lags, nDepVar)
 {
 
     for(j in 1:K)
@@ -10,7 +10,7 @@ calculateU <- function(K, WkNumbVersions, N, PersPDiffStart, PersEnd, U, Wk, A, 
         Urunner = 0
         for(i in 1:N)
         {
-            for(trunner in (PersPDiffStart[[Lags[j]]][i]):PersEnd[i])
+            for(trunner in c(intersect(PredictableObs[[Lags[j]]], c(PersStart[i]:PersEnd[i]))))
             { # from Lags to T
                 Urunner = Urunner + 1  
                 # either A will always index the needed positions of itself or the runner in Wk does not have to change

@@ -10,7 +10,7 @@ calculateCoefficientsForRandoAndRational <- function(Covariates,
                                                      PersStart,
                                                      Y,
                                                      X,
-                                                     PersPDiffStart) {
+                                                     PredictableObs) {
 
 
   DimensionsBasedonConstraints = constraintsOnB(Covariates, K, N)
@@ -29,7 +29,7 @@ calculateCoefficientsForRandoAndRational <- function(Covariates,
   {
     AKn = 0
     AKd = 0
-    for(trunner in PersPDiffStart[i]:PersEnd[i])
+    for(trunner in c(intersect(PredictableObs, c(PersStart[i]:PersEnd[i]))))
     {
       AKn = AKn + WIndividual[ , trunner] %*% t(as.vector(WIndividual[ , (trunner - 1):(trunner - Lag)])) # W[, (trunner-1):(trunner - Lag)] = Z_{it}
       AKd = AKd + as.vector(WIndividual[ , (trunner - 1):(trunner - Lag)]) %*% t(as.vector(WIndividual[ , (trunner - 1):(trunner - Lag)]))

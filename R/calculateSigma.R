@@ -1,4 +1,4 @@
-calculateSigma <- function(K, N, FZY, U, PersStartU, PersEndU, Tni, Sigma, Lags)
+calculateSigma <- function(K, N, FZY, U, PersStartU_NPred, PersEndU_NPred, Tni_NPred, Sigma, Lags)
 {
     for(j in 1:K)
     {
@@ -6,9 +6,9 @@ calculateSigma <- function(K, N, FZY, U, PersStartU, PersEndU, Tni, Sigma, Lags)
         Sdenom = 0
         for(i in 1:N)
         { # there is a runner inside U for every individual i so the U multiplication result can be weighted by the posterior pi (memb)
-            Snum = Snum + (FZY[ i, j] * (U[ , (PersStartU[[Lags[j]]][i]):(PersEndU[[Lags[j]]][i]), j] %*%
-                                               t(U[ , (PersStartU[[Lags[j]]][i]):(PersEndU[[Lags[j]]][i]), j]) ) )
-            Sdenom = Sdenom + (FZY[ i, j] * (Tni[[Lags[j]]][i]) )
+            Snum = Snum + (FZY[ i, j] * (U[ , (PersStartU_NPred[[Lags[j]]][i]):(PersEndU_NPred[[Lags[j]]][i]), j] %*%
+                                               t(U[ , (PersStartU_NPred[[Lags[j]]][i]):(PersEndU_NPred[[Lags[j]]][i]), j]) ) )
+            Sdenom = Sdenom + (FZY[ i, j] * (Tni_NPred[[Lags[j]]][i]) )
         }
         Sigma[, , j] = Snum / Sdenom # Sdenom is integer
     }

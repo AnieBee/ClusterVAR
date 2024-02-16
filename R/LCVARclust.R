@@ -33,7 +33,6 @@ LCVARclust <- function(Data,
 {
 
   # ------ Computing Some Aux Vars ------
-
   LowestLag = min(Lags)
   HighestLag = max(Lags)
 
@@ -51,9 +50,8 @@ LCVARclust <- function(Data,
   # Set random seed, if specified
   if(!missing(RndSeed)) set.seed(RndSeed)
 
-  # ------ Code below is from Anja ------
-
   # Checks
+  stopifnot(HighestLag < 3)
   stopifnot( ! (duplicated(c(ID, xFactor, xContinuous, Initialization))) ) # Evaluate there is no overlap
   stopifnot(LowestLag & HighestLag)
   stopifnot(HighestLag >= LowestLag)
@@ -65,22 +63,22 @@ LCVARclust <- function(Data,
   stopifnot(!any(duplicated(Clusters)))
   Clusters = Clusters[order(Clusters)]
 
-
   call <- match.call()
 
-  # FZYcriterion = 1e-8
-  PreviousSol = TRUE # Use solution of previous Lags as a start
+    PreviousSol = TRUE # Use solution of previous Lags as a start
 
   # Y has to be numeric, X can be numeric or factor
   # Y is data of form m \times (sum^N (nObs) )
   # ID = has to be factor
   ##### Preprocessing of Data Set #####--------------------
   Data = as.data.frame(Data)
-  stopifnot( ! any(is.na(Data))) # No  missing values allowed
   Data = Data[order(Data[ , ID], Data[ , Time]), ]
   # order Data according to ID, make sure an individual's observations occur one after another with first obs first, second second etc
   # observations have to occur ascending in time
 
+  # Remove rows with NA values
+  Data <- Data[complete.cases(Data), ]
+  
   # Endogenous Variables #-------------------
   Y = t(as.matrix(Data[ , yVars]))
   nDepVar = dim(Y)[1]
@@ -102,7 +100,6 @@ LCVARclust <- function(Data,
   }
 
   stopifnot(identical(rep(pers, c(nObs)), as.factor(Data[ , ID]))) # should be superflous is a check nObs is correct
-  stopifnot(nObs > (10 + HighestLag)) # check all indivudals have 11 more obs than lags
   stopifnot(is.numeric(Y))
   stopifnot(N >= (smallestClN * max(Clusters)))# check that for the highest number of clusters requested
   # there can be at least the smallest permissable number of people per cluster
@@ -111,24 +108,51 @@ LCVARclust <- function(Data,
   PersStart = cumsum(c(0, nObs[-length(nObs)])) + 1 # Start of individual time series for every pers in Y or W
   PersEnd = cumsum(nObs) # end of individual time series of every pers, last obs of every pers in Y or W
 
-  ### Runners that depend on the number of Lags ### ----
-  PersPDiffStart = vector("list", HighestLag) # from 1:HighestLag but only LowestLag:HighestLag elements are filled
-  Tni = vector("list", HighestLag)
-  PersStartU = vector("list", HighestLag)
-  PersEndU = vector("list", HighestLag)
 
-  for (lagRunner in LowestLag:HighestLag)
+  ### NEW------------ Insert determination of whether an observation in Y can be predicted (PredictableObs) ------------------
+  PredictableObs = vector("list", HighestLag)  # from 1:HighestLag but only LowestLag:HighestLag elements are filled
+  for (lagRunner in LowestLag:HighestLag) 
   {
-    PersPDiffStart[[lagRunner]] = PersStart + lagRunner # start of individual time series when first P observations
-    # of every person are taken away, where p is the lag order of the VAR(p) process
-    Tni[[lagRunner]] =  nObs - lagRunner  # length of U, lenght of sum of time series with presample of
-    # first P observations removed, length of obs per pers in U
-    # With presample of first Lags-obs removed for every individual (needed for U)
-    PersStartU[[lagRunner]] = cumsum(c(0, nObs[-length(nObs)] - lagRunner)) + 1 # Start of individual time series for every pers in
-    # U ( = presample is removed), first obs of a pers in U
-    PersEndU[[lagRunner]] = cumsum(nObs - lagRunner) # Last obs of a pers in U
+      PredictableObs[[lagRunner]] = rbind( rep(1, dim(Y)[2]) , Pers)
+      PredictableObs[[lagRunner]][1, sample(1:16000, 650, replace = FALSE)] = 0 # TEST, REMOVE LATER
+      # assign zero to first column for non-predictable values
+      PredictableObs[[lagRunner]][1, c(PersStart)] = 0
+      if(lagRunner > 1) PredictableObs[[lagRunner]][1, c(PersStart + 1)] = 0
+      if(lagRunner > 2) PredictableObs[[lagRunner]][1, c(PersStart + 2)] = 0
+      
+  }
+ ###### End of determining PredictableObs ------------------------------
+  
+  
+  ### Runners that depend on the number of predictable obs (and thus on the number of lags) ### ----
+  Tni_NPred = vector("list", HighestLag)  # from 1:HighestLag but only LowestLag:HighestLag elements are filled
+  PersStartU_NPred = vector("list", HighestLag)
+  PersEndU_NPred = vector("list", HighestLag)
+  for (lagRunner in LowestLag:HighestLag) 
+  {
+      Tni_NPred[[lagRunner]] = rep(0, N)
+      nPredObsPerPerson = PredictableObs[[lagRunner]][2, PredictableObs[[lagRunner]][1, ] == 1]
+      for (i in 1:N)
+      {# determine the total number of predictable Observations per person (Tni_NPred) differs across lag numbers
+          Tni_NPred[[lagRunner]][i] = length(which(nPredObsPerPerson == pers[i]))
+          # Tni_NPred[[lagRunner]] # length of U per person,
+          # With presample of first Lags-obs removed for every individual and all other obs that cannot be predicted removed,
+          
+          ##----- NEW: do the first lags still have to be removed from Tni, basically this should be taken care of in PredictableObs already
+      }
+      ## Check each person has at least 5 predictable observations
+      stopifnot(all(Tni_NPred[[lagRunner]] > 4))
+      
+      ## Change PredictableObs so that it contains the position of the observations in Y, and W, and X, that can be predicted
+      PredictableObs[[lagRunner]] = which(PredictableObs[[lagRunner]][1,] ==  1)
+     
+      PersStartU_NPred[[lagRunner]] = cumsum(c(0, Tni_NPred[[lagRunner]][-length(Tni_NPred[[lagRunner]])])) + 1 
+      # Start of individual time series for every pers in U ( = non-predictables are removed)
+      PersEndU_NPred[[lagRunner]] = cumsum(Tni_NPred[[lagRunner]]) # Last obs of a pers in U
+      
   }
 
+ 
   # Create val.init, a list containing memb, a vector ordered by ID that contains the cluster membership initialization ----
   if ( ! is.null(Initialization))
   {
@@ -150,14 +174,10 @@ LCVARclust <- function(Data,
                          N = N,
                          Y = Y,
                          X = X,
-                         Tni = Tni,
                          qqq = qqq,
                          nDepVar = nDepVar,
                          PersStart = PersStart,
-                         PersPDiffStart = PersPDiffStart,
                          PersEnd = PersEnd,
-                         PersStartU = PersStartU,
-                         PersEndU = PersEndU,
                          Covariates = Covariates,
                          Conv = Conv,
                          it = it,
@@ -165,9 +185,12 @@ LCVARclust <- function(Data,
                          smallestClN = smallestClN,
                          SigmaIncrease = SigmaIncrease,
                          call = call,
-                         pbar = pbar) # For progress bar (Jonas)
-
-
+                         pbar = pbar,
+                         PredictableObs = PredictableObs, 
+                         Tni_NPred = Tni_NPred,
+                         PersStartU_NPred = PersStartU_NPred,
+                         PersEndU_NPred = PersEndU_NPred
+                         )
 
 
   # ----- Parse Finish Message -----

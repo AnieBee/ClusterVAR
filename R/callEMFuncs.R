@@ -11,14 +11,10 @@ callEMFuncs <- function(Clusters,
                         N,
                         Y,
                         X,
-                        Tni,
                         qqq,
                         nDepVar,
                         PersStart,
-                        PersPDiffStart,
                         PersEnd,
-                        PersStartU,
-                        PersEndU,
                         Covariates,
                         Conv,
                         it,
@@ -26,7 +22,11 @@ callEMFuncs <- function(Clusters,
                         smallestClN,
                         SigmaIncrease,
                         call,
-                        pbar)
+                        pbar,
+                        PredictableObs,
+                        Tni_NPred,
+                        PersStartU_NPred,
+                        PersEndU_NPred)
 {
 
   ### Loop over different K (# of clusters) values  -------------
@@ -67,8 +67,9 @@ callEMFuncs <- function(Clusters,
     FitAllLags = array(NA, dim = c(LagCombinations, Rand + as.numeric(Rational) +
                                      as.numeric(!is.null(Initialization))
                                    + as.numeric(PreviousSol))) # to store fit of output
+    
 
-
+    ### Initialization Prerequesites: calcuate coefficeints passed to initial clustering solutions ###---------------------------------
     CoeffsForRandoAndRationalList = callCalculateCoefficientsForRandoAndRational(Covariates = Covariates,
                                                                                  K = K,
                                                                                  N = N,
@@ -80,7 +81,7 @@ callEMFuncs <- function(Clusters,
                                                                                  PersStart = PersStart,
                                                                                  Y = Y,
                                                                                  X = X,
-                                                                                 PersPDiffStart = PersPDiffStart)
+                                                                                 PredictableObs = PredictableObs)
     #EMCallVec[StartCounter] gives name/type of current start (e.g., random start nr "4", or "Previous")
     EMCallVec = c(as.character(1:Rand),
                   ifelse(Rational, "Rational", NULL),
@@ -90,9 +91,7 @@ callEMFuncs <- function(Clusters,
     usePrevLagSol = FALSE   # Make sure the previous lag solution-using start is not called before a previous solution exists
     for(LagCounter in 1:LagCombinations) {
 
-       ### Initialization Prerequesites: calcuate coefficeints passed to initial clustering solutions ###---------------------------------
-      #PersPDiffStart, PersStartU etc can (must) be integers instead of vectors in calculateCoefficientsForRandoAndRational
-     
+      
          #### Random starts ###
       StartCounter = 0
       while (StartCounter != length(EMCallVec))
@@ -128,12 +127,16 @@ callEMFuncs <- function(Clusters,
                                                          CoeffsForRandoAndRationalList[[max(LagsList[LagCounter, ])]])
                                  ),
 
-                               Y = Y, X = X, Lags = LagsList[LagCounter, ], K = K, N = N, Tni = Tni, qqq = qqq, nDepVar = nDepVar,
-                               PersStart = PersStart, PersPDiffStart = PersPDiffStart, PersEnd = PersEnd,
-                               PersStartU = PersStartU, PersEndU = PersEndU,
+                               Y = Y, X = X, Lags = LagsList[LagCounter, ], K = K, N = N, qqq = qqq, nDepVar = nDepVar,
+                               PersStart = PersStart, PersEnd = PersEnd,
+                               PredictableObs = PredictableObs, 
+                               Tni_NPred = Tni_NPred,
+                               PersStartU_NPred = PersStartU_NPred,
+                               PersEndU_NPred = PersEndU_NPred,
                                Covariates = Covariates, smallestClN = smallestClN, SigmaIncrease = SigmaIncrease),
-                 IDNames = IDNames, Y = Y, X = X, K = K, N = N, Tni = Tni, qqq = qqq, nDepVar = nDepVar,
-                 PersPDiffStart = PersPDiffStart, PersEnd = PersEnd, PersStartU = PersStartU, PersEndU = PersEndU,
+                 IDNames = IDNames, Y = Y, X = X, K = K, N = N, Tni_NPred = Tni_NPred, qqq = qqq, nDepVar = nDepVar,
+                 PredictableObs = PredictableObs, PersEnd = PersEnd, PersStart = PersStart, 
+                 PersStartU_NPred = PersStartU_NPred, PersEndU_NPred = PersEndU_NPred,
                  Covariates = Covariates, Conv = Conv, it = it, smallestClN = smallestClN,
                  SigmaIncrease = SigmaIncrease)
 
@@ -160,8 +163,6 @@ callEMFuncs <- function(Clusters,
             if(pbar==TRUE) setTxtProgressBar(pb, pb_counter)
           }
         }
-        ################################################################
-
       } # End of Start loop
 
       PrevBestRun = arrayInd(which.min(FitAllLags), dim(FitAllLags))

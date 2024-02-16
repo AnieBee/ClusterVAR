@@ -1,4 +1,4 @@
-calculateB <- function(Covariates, K, nDepVar, A, Sigma, N, PersPDiffStart, PersEnd, X, Y, Lags, FZY, qqq, B)
+calculateB <- function(Covariates, K, nDepVar, A, Sigma, N, PredictableObs, PersStart, PersEnd, X, Y, Lags, FZY, qqq, B)
 {
     if(Covariates == "equal-within-clusters"){# B(0): equal-within-clusters
         for(j in 1:K)
@@ -11,7 +11,7 @@ calculateB <- function(Covariates, K, nDepVar, A, Sigma, N, PersPDiffStart, Pers
             {
                 Bn = 0
                 Bd = 0
-                for(trunner in (PersPDiffStart[[Lags[j]]][i]):(PersEnd[i]) )
+                for(trunner in c(intersect(PredictableObs[[Lags[j]]], c(PersStart[i]:PersEnd[i]))) )
                 { 
                     XtildaKron <- kronecker(t(X[ , (trunner):(trunner - Lags[j]), drop = FALSE]),
                                             diag(nDepVar)) # drop = FALSE is needed here in case of q = 1

@@ -1,4 +1,5 @@
-callCalculateCoefficientsForRandoAndRational <- function(Covariates, K, N, nDepVar, qqq, HighestLag, LowestLag, PersEnd, PersStart, Y, X, PersPDiffStart)
+callCalculateCoefficientsForRandoAndRational <- function(Covariates, K, N, nDepVar, qqq, HighestLag, LowestLag,
+                                                         PersEnd, PersStart, Y, X, PredictableObs)
 {
     
     CoeffsForRandoAndRationalList = vector(mode = "list", HighestLag) # list elements of 1 to LowestLag are empty
@@ -8,7 +9,7 @@ callCalculateCoefficientsForRandoAndRational <- function(Covariates, K, N, nDepV
             calculateCoefficientsForRandoAndRational(Covariates = Covariates, K = K, N = N,
                                                      nDepVar = nDepVar, qqq = qqq, Lag = lagCounter, 
                                                      PersEnd = PersEnd, PersStart = PersStart, Y = Y,
-                                                     X = X, PersPDiffStart = PersPDiffStart[[lagCounter]])
+                                                     X = X, PredictableObs = PredictableObs[[lagCounter]])
     }
     
     invisible(CoeffsForRandoAndRationalList)

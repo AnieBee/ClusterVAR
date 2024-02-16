@@ -42,9 +42,9 @@ summary.ClusterVAR <- function(LCVARresult,
 
         # Fit[Lags, Start]
         FitAllLags = array(NA, dim = c(LagCombinations, NumberStarts)) # to store fit of output
-        FunctionOutput = data.frame(matrix(NA, nrow = LagCombinations, ncol = 6),
+        FunctionOutput = data.frame(matrix(NA, nrow = LagCombinations, ncol = 8),
                                     row.names = apply(l_LagsPerCluster[[Number_of_Clusters]], 1, function(x) paste(c("Lags", x), collapse = " ")))
-        colnames(FunctionOutput) = c("log-likelihood", "parameters", "SC", "HQ", "BIC", "ICL")
+        colnames(FunctionOutput) = c("log-likelihood", "parameters", "SC", "HQ", "BIC", "ICL", "Converged", "Proportions")
 
 
         for(LagCounter in 1:LagCombinations) {
@@ -62,6 +62,8 @@ summary.ClusterVAR <- function(LCVARresult,
             FunctionOutput[LagCounter, "HQ"] = GivenClusterOutput[[LagCounter]][[BestModel]]$HQ
             FunctionOutput[LagCounter, "BIC"] = GivenClusterOutput[[LagCounter]][[BestModel]]$BIC
             FunctionOutput[LagCounter, "ICL"] = GivenClusterOutput[[LagCounter]][[BestModel]]$ICL
+            FunctionOutput[LagCounter, "Converged"] = GivenClusterOutput[[LagCounter]][[BestModel]]$Converged
+            FunctionOutput[LagCounter, "Proportions"] = paste(GivenClusterOutput[[LagCounter]][[BestModel]]$Proportions, collapse = " ")
         }
         message = paste0(c("---------------------------------------------------\n",
                      "All lags for number of clusters =", Number_of_Clusters,
@@ -70,9 +72,10 @@ summary.ClusterVAR <- function(LCVARresult,
         # The below calculation calculates the solution for (show == "Best-per-number-of-clusters") but all calculation steps are also needed if (show == "Best-overall")
             # For each number of of clusters, find the single best-fitting time-series model for each cluster number
 
-            FunctionOutput = data.frame(matrix(NA, nrow = length(LCVARresult$Call$Clusters), ncol = 5),
+            FunctionOutput = data.frame(matrix(NA, nrow = length(LCVARresult$Call$Clusters), ncol = 7),
                                         row.names = apply(as.matrix(LCVARresult$Call$Clusters), 1, function(x) paste(c(x, "Clusters"), collapse = " ")))
-            colnames(FunctionOutput) = c(paste(c("Lags selected by", TS_criterion), collapse = " "), "log-likelihood", "parameters", "BIC", "ICL")
+            colnames(FunctionOutput) = c(paste(c("Lags selected by", TS_criterion), collapse = " "),
+                                         "log-likelihood", "parameters", "BIC", "ICL", "Converged", "Proportions")
 
             ClustCount = 1
             for(K in LCVARresult$Call$Clusters){
@@ -93,7 +96,9 @@ summary.ClusterVAR <- function(LCVARresult,
                 FunctionOutput[ClustCount, "parameters"] = LCVARresult$All_Solutions_All_Clusters_Lags_Starts[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$nParameters
                 FunctionOutput[ClustCount, "BIC"] = LCVARresult$All_Solutions_All_Clusters_Lags_Starts[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$BIC
                 FunctionOutput[ClustCount, "ICL"] = LCVARresult$All_Solutions_All_Clusters_Lags_Starts[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$ICL
-
+                FunctionOutput[ClustCount, "Converged"] = LCVARresult$All_Solutions_All_Clusters_Lags_Starts[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$Converged
+                FunctionOutput[ClustCount, "Proportions"] = paste(LCVARresult$All_Solutions_All_Clusters_Lags_Starts[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$Proportions, collapse = " ")
+                
                 ClustCount = ClustCount + 1
             }
 
