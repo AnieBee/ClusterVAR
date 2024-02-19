@@ -112,6 +112,7 @@ EMFunc <- function(Init,
     Sigma = SigmaList$Sigma
     Sigma[ , , FZYListCCC$resetCl] = Sigma[ , , FZYListCCC$resetCl] + SigmaIncrease # Increase variance of components indicated by FZYListCCC
 
+    
     ## Calculate B depending on Covariate constraint -------------
     B = calculateB(Covariates = Covariates, K = K, nDepVar = nDepVar, A = A,
                    Sigma = Sigma, N = N, PredictableObs = PredictableObs,

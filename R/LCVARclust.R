@@ -2,7 +2,8 @@
 
 LCVARclust <- function(Data,
                        yVars,
-                       Time,
+                       Beep,
+                       Day = NULL,
                        ID,
                        xContinuous = NULL,
                        xFactor = NULL,
@@ -19,7 +20,8 @@ LCVARclust <- function(Data,
                        Conv = 1e-06,
                        pbar = TRUE,
                        ...)
-
+# If each measurement is done on the same day, don't specify day but only specify beep.
+# Only if the first measurment on each day should be removed from calculations, the 
 # Data = data frame containing one or several columns for: yVars (position of columns containing endogenous VAR process variables in dataframe Data),
 #   time point (position of column is indicated as integer with Time),
 #   ID (integer giving position of column containing ID, a different ID variable for every participant),
@@ -51,7 +53,7 @@ LCVARclust <- function(Data,
   if(!missing(RndSeed)) set.seed(RndSeed)
 
   # Checks
-  stopifnot(HighestLag < 3)
+  stopifnot(HighestLag < 3) # highest lag number that is allowed is 3
   stopifnot( ! (duplicated(c(ID, xFactor, xContinuous, Initialization))) ) # Evaluate there is no overlap
   stopifnot(LowestLag & HighestLag)
   stopifnot(HighestLag >= LowestLag)
@@ -72,7 +74,11 @@ LCVARclust <- function(Data,
   # ID = has to be factor
   ##### Preprocessing of Data Set #####--------------------
   Data = as.data.frame(Data)
-  Data = Data[order(Data[ , ID], Data[ , Time]), ]
+    if(is.null(Day)){
+        Data = Data[order(Data[ , ID], Data[ , Beep]), ]
+    }else{
+        Data = Data[order(Data[ , ID], Data[ , Day], Data[ , Beep]), ]
+    }
   # order Data according to ID, make sure an individual's observations occur one after another with first obs first, second second etc
   # observations have to occur ascending in time
 
@@ -108,17 +114,21 @@ LCVARclust <- function(Data,
   PersStart = cumsum(c(0, nObs[-length(nObs)])) + 1 # Start of individual time series for every pers in Y or W
   PersEnd = cumsum(nObs) # end of individual time series of every pers, last obs of every pers in Y or W
 
-
-  ### NEW------------ Still to do (Jonas? Anja?) Insert determination of whether an observation in Y can be predicted (PredictableObs) ------------------
+  
+  ### NEW------------ Insert determination of whether an observation in Y can be predicted (PredictableObs) ------------------
   PredictableObs = vector("list", HighestLag)  # from 1:HighestLag but only LowestLag:HighestLag elements are filled
   for (lagRunner in LowestLag:HighestLag) 
   {
-      PredictableObs[[lagRunner]] = rbind( rep(1, dim(Y)[2]) , Pers)
-      # assign zero to first column for non-predictable values
-      PredictableObs[[lagRunner]][1, c(PersStart)] = 0
-      if(lagRunner > 1) PredictableObs[[lagRunner]][1, c(PersStart + 1)] = 0
-      if(lagRunner > 2) PredictableObs[[lagRunner]][1, c(PersStart + 2)] = 0
-      
+      ind_lag_all <- lapply(1:N, function(x) {
+          dayArgument_pers = if (!is.null(Day)) Data[PersStart[x]:PersEnd[x], Day] else NULL
+          out <- DetPredSubj(beep = Data[PersStart[x]:PersEnd[x], Beep], 
+                             day = dayArgument_pers, 
+                             MaxLag = lagRunner)
+          return(out)
+      })
+      ind_lag_all <- do.call(c, ind_lag_all)
+      stopifnot(length(which(is.na(ind_lag_all))) == 0) # check that everything went well
+      PredictableObs[[lagRunner]] = rbind(ind_lag_all, Pers)
   }
  ###### End of determining PredictableObs ------------------------------
   
