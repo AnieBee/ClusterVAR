@@ -1,5 +1,6 @@
 
-EMInit <- function(InitMT, Y, X, Lags, K, N, qqq, nDepVar, PersStart, PersEnd, PredictableObs, 
+EMInit <- function(InitMT, Y, X, Lags, K, N, qqq, nDepVar, PersStart, PersEnd, PredictableObs, NewPredictableObs,
+                   LaggedPredictObs,
                    Tni_NPred,
                    PersStartU_NPred,
                    PersEndU_NPred, Covariates, smallestClN, SigmaIncrease)
@@ -40,9 +41,8 @@ EMInit <- function(InitMT, Y, X, Lags, K, N, qqq, nDepVar, PersStart, PersEnd, P
     ClusterVARcoeffs = calculateA(K = K, WkNumbVersions = 1, 
                                   # One Wzero exists for all clusters, because memb is 0 or 1 set WkNumbVersions
                                   # to 1 because WZero instead of Wk is passed here
-                                  N = N, Wk = WZero, PredictableObs = PredictableObs, 
-                                  PersStart =  PersStart,
-                                  PersEnd = PersEnd, Lags = rep(max(Lags), K), FZY = t(memb),
+                                  N = N, Wk = WZero, NewPredictableObs = NewPredictableObs, 
+                                  LaggedPredictObs = LaggedPredictObs, Lags = rep(max(Lags), K), FZY = t(memb),
                                   A = A, nDepVar)
     
     Lags = reorderLags(Lags = Lags, K = K,
@@ -52,13 +52,12 @@ EMInit <- function(InitMT, Y, X, Lags, K, N, qqq, nDepVar, PersStart, PersEnd, P
     ###### Calculate A (based on Lags), UZero, S and B based on W(0) = WZero --------------
     A = calculateA(K = K, WkNumbVersions = 1,
                    # One Wzero exists for all clusters, set WkNumbVersions to 1 because WZero instead of Wk is passed here
-                   N = N, Wk = WZero, PredictableObs = PredictableObs,
-                   PersStart = PersStart, 
-                   PersEnd = PersEnd, Lags = Lags, FZY = t(memb), A = A,
+                   N = N, Wk = WZero, NewPredictableObs = NewPredictableObs,
+                   LaggedPredictObs = LaggedPredictObs, Lags = Lags, FZY = t(memb), A = A,
                    nDepVar = nDepVar)
     
-    UZero = calculateU(K = K, WkNumbVersions = 1, N = N, PredictableObs = PredictableObs,
-                       PersStart = PersStart,  PersEnd = PersEnd, 
+    UZero = calculateU(K = K, WkNumbVersions = 1, N = N, NewPredictableObs = NewPredictableObs,
+                       LaggedPredictObs = LaggedPredictObs, PersEndU_NPred = PersEndU_NPred,
                        U = UZero, Wk = WZero, A = A, Lags = Lags,
                        nDepVar = nDepVar)
     

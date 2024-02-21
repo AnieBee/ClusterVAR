@@ -10,7 +10,8 @@ calculateCoefficientsForRandoAndRational <- function(Covariates,
                                                      PersStart,
                                                      Y,
                                                      X,
-                                                     PredictableObs) {
+                                                     NewPredictableObs,
+                                                     LaggedPredictObs) {
 
 
   DimensionsBasedonConstraints = constraintsOnB(Covariates, K, N)
@@ -27,13 +28,9 @@ calculateCoefficientsForRandoAndRational <- function(Covariates,
   }
   for(i in 1:N)
   {
-    AKn = 0
-    AKd = 0
-    for(trunner in c(intersect(PredictableObs, c(PersStart[i]:PersEnd[i]))))
-    {
-      AKn = AKn + WIndividual[ , trunner] %*% t(as.vector(WIndividual[ , (trunner - 1):(trunner - Lag)])) # W[, (trunner-1):(trunner - Lag)] = Z_{it}
-      AKd = AKd + as.vector(WIndividual[ , (trunner - 1):(trunner - Lag)]) %*% t(as.vector(WIndividual[ , (trunner - 1):(trunner - Lag)]))
-    }
+      AKn = WIndividual[ , NewPredictableObs[[i]], drop = FALSE] %*% t(matrix(WIndividual[ , LaggedPredictObs[[i]], drop = FALSE], nrow = (nDepVar * Lag)))
+      AKd = matrix(WIndividual[ , LaggedPredictObs[[i]], drop = FALSE], nrow = (nDepVar * Lag)) %*% 
+                       t(matrix(WIndividual[ , LaggedPredictObs[[i]], drop = FALSE], nrow = (nDepVar * Lag)))
     CoefficientsForRandoAndRational[1:(nDepVar * nDepVar * Lag), i] = as.vector(AKn %*% ginv(AKd)) # AIndividual # gets read in left to right
   }
   if(DimensionsBasedonConstraints$ClusterOnB)

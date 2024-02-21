@@ -115,7 +115,7 @@ LCVARclust <- function(Data,
   PersEnd = cumsum(nObs) # end of individual time series of every pers, last obs of every pers in Y or W
 
   
-  ### NEW------------ Insert determination of whether an observation in Y can be predicted (PredictableObs) ------------------
+  ### ------------ whether an observation in Y can be predicted (PredictableObs) ------------------
   PredictableObs = vector("list", HighestLag)  # from 1:HighestLag but only LowestLag:HighestLag elements are filled
   for (lagRunner in LowestLag:HighestLag) 
   {
@@ -146,9 +146,7 @@ LCVARclust <- function(Data,
           Tni_NPred[[lagRunner]][i] = length(which(nPredObsPerPerson == pers[i]))
           # Tni_NPred[[lagRunner]] # length of U per person,
           # With presample of first Lags-obs removed for every individual and all other obs that cannot be predicted removed,
-          
-          ##----- NEW: do the first lags still have to be removed from Tni, basically this should be taken care of in PredictableObs already
-      }
+        }
       ## Check each person has at least 5 predictable observations
       stopifnot(all(Tni_NPred[[lagRunner]] > 4))
       
@@ -160,7 +158,26 @@ LCVARclust <- function(Data,
       PersEndU_NPred[[lagRunner]] = cumsum(Tni_NPred[[lagRunner]]) # Last obs of a pers in U
       
   }
-
+  
+  ### Create new PredictableObs
+  NewPredictableObs = vector("list", HighestLag)  # from 1:HighestLag but only LowestLag:HighestLag elements are filled
+  LaggedPredictObs = vector("list", HighestLag)  # from 1:HighestLag but only LowestLag:HighestLag elements are filled
+  GetSequences <- function(trunner, Lag) {
+      lapply(trunner, function(t) (t - 1):(t - Lag))
+  }
+  for (lagRunner in LowestLag:HighestLag)
+  {
+      NewPredictableObsSmall = vector("list", N)
+      LaggedPredictObsSmall = vector("list", N)
+      for (i in 1:N) {
+          NewPredictableObsSmall[[i]] = c(intersect(PredictableObs[[lagRunner]], c(PersStart[i]:PersEnd[i])))
+          LaggedPredictObsSmall[[i]]  = unlist(GetSequences(NewPredictableObsSmall[[i]], lagRunner))
+      }
+      NewPredictableObs[[lagRunner]] = NewPredictableObsSmall
+      LaggedPredictObs[[lagRunner]] = LaggedPredictObsSmall
+  }
+  
+##########################
  
   # Create val.init, a list containing memb, a vector ordered by ID that contains the cluster membership initialization ----
   if ( ! is.null(Initialization))
@@ -195,7 +212,9 @@ LCVARclust <- function(Data,
                          SigmaIncrease = SigmaIncrease,
                          call = call,
                          pbar = pbar,
-                         PredictableObs = PredictableObs, 
+                         PredictableObs = PredictableObs,
+                         NewPredictableObs = NewPredictableObs, 
+                         LaggedPredictObs = LaggedPredictObs,
                          Tni_NPred = Tni_NPred,
                          PersStartU_NPred = PersStartU_NPred,
                          PersEndU_NPred = PersEndU_NPred

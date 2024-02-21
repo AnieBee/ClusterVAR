@@ -1,25 +1,18 @@
-calculateU <- function(K, WkNumbVersions, N, PredictableObs, PersStart, PersEnd, U, Wk, A, Lags, nDepVar)
+calculateU <- function(K, WkNumbVersions, N, NewPredictableObs, LaggedPredictObs, PersEndU_NPred, U, Wk, A, Lags, nDepVar)
 {
 
     for(j in 1:K)
     {
         # Determine runner for W based on the constraints on B -------------------------
         WkRunner = ifelse(WkNumbVersions == K, j, 1) 
+        PredictableObsConc = do.call(c, NewPredictableObs[[ Lags[j] ]]) 
+        LaggedPredictObsConc = do.call(c, LaggedPredictObs[[ Lags[j] ]]) 
         
         # calculate U ------
-        Urunner = 0
-        for(i in 1:N)
-        {
-            for(trunner in c(intersect(PredictableObs[[Lags[j]]], c(PersStart[i]:PersEnd[i]))))
-            { # from Lags to T
-                Urunner = Urunner + 1  
-                # either A will always index the needed positions of itself or the runner in Wk does not have to change
-                # If you would not index in A, you would not use all the Us you have at your disposal when lag number is smaller 
-                U[ , Urunner, j] = Wk[ , trunner, WkRunner] - 
-                                    ( A[ , 1:(nDepVar * Lags[j]), j] %*% as.vector(Wk[ , (trunner - 1):(trunner - Lags[j]), WkRunner]) ) 
-            }
+        # If you would not index in A, you would not use all the Us you have at your disposal, even when lag number is smaller 
+        U[ , 1:PersEndU_NPred[[ Lags[j] ]][[N]], j] = matrix(Wk[ , PredictableObsConc, WkRunner], nrow = dim(A)[1]) - 
+            ( A[ , 1:(nDepVar * Lags[j]), j] %*% matrix(Wk[ , LaggedPredictObsConc, WkRunner], nrow = (dim(A)[1] * Lags[j]) ))
 
-        }  
     }
     
     invisible(U)

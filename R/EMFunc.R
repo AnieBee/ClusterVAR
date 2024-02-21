@@ -9,6 +9,8 @@ EMFunc <- function(Init,
                    qqq,
                    nDepVar,
                    PredictableObs,
+                   NewPredictableObs,
+                   LaggedPredictObs,
                    PersEnd,
                    PersStart,
                    PersStartU_NPred,
@@ -54,8 +56,8 @@ EMFunc <- function(Init,
     Wk = calculateW(Covariates = Covariates, K = K, Wk = Wk, Y = Y, B = B, X = X)
 
     U = calculateU(K = K, WkNumbVersions = DimensionsBasedonConstraints$WkNumbVersions,
-                   N = N, PredictableObs = PredictableObs,
-                   PersStart = PersStart,  PersEnd = PersEnd,
+                   N = N, NewPredictableObs = NewPredictableObs,
+                   LaggedPredictObs = LaggedPredictObs, PersEndU_NPred = PersEndU_NPred,
                    U = U, Wk = Wk, A = A,
                    Lags = Lags, nDepVar = nDepVar)
 
@@ -97,9 +99,8 @@ EMFunc <- function(Init,
     ########  M-STEP    ########
     ### calculate A -----------------
     A = calculateA(K = K, WkNumbVersions = DimensionsBasedonConstraints$WkNumbVersions,
-                   N = N, Wk = Wk, PredictableObs = PredictableObs,
-                   PersStart = PersStart, 
-                   PersEnd = PersEnd, Lags = Lags, FZY = FZY,
+                   N = N, Wk = Wk, NewPredictableObs = NewPredictableObs,
+                   LaggedPredictObs = LaggedPredictObs, Lags = Lags, FZY = FZY,
                    A = A, nDepVar = nDepVar)
     # those places of A that will not be filled (because of lower lag number in some clusters)
     # will always be zero anyway because they are never filled, once A is calculated

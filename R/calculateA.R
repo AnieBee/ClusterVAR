@@ -1,27 +1,34 @@
-calculateA <- function(K, WkNumbVersions, N, Wk, PredictableObs, PersStart, PersEnd, Lags, FZY, A, nDepVar)
-{
-    for (j in 1:K)
+calculateA <-
+    function(K,
+             WkNumbVersions,
+             N,
+             Wk,
+             NewPredictableObs,
+             LaggedPredictObs,
+             Lags,
+             FZY,
+             A,
+             nDepVar)
     {
-        WkRunner = ifelse(WkNumbVersions == K, j, 1) 
-        
-        AKnum = 0 # Sum of individual sums for A weighted by memb (tau), within j 
-        AKdenom = 0 
-        for (i in 1:N)
+        for (j in 1:K)
         {
-            AKn = 0 # individual sum for A, within j
-            AKd = 0
-            for (trunner in c(intersect(PredictableObs[[Lags[j]]], c(PersStart[i]:PersEnd[i]))))
+            WkRunner = ifelse(WkNumbVersions == K, j, 1)
+            
+            AKnum = 0 # Sum of individual sums for A weighted by memb (tau), within j
+            AKdenom = 0
+            for (i in 1:N)
             {
-                AKn = AKn + Wk[, trunner, WkRunner] %*% t( as.vector(Wk[ , (trunner - 1):(trunner - Lags[j]), WkRunner]) ) # W[, (trunner-1):(trunner - Lags[j])] = Z_{it}
-                AKd = AKd + as.vector(Wk[ , (trunner - 1):(trunner - Lags[j]), WkRunner]) %*% 
-                    t(as.vector(Wk[ , (trunner - 1):(trunner - Lags[j]), WkRunner]))
+                WK_Lagged = matrix(Wk[, LaggedPredictObs[[ Lags[j] ]][[i]], WkRunner], nrow = (nDepVar * Lags[j]))
+                
+                AKn = Wk[, NewPredictableObs[[ Lags[j] ]][[i]], WkRunner] %*% t(WK_Lagged)
+                AKd = WK_Lagged %*% t(WK_Lagged)
+                
+                AKnum = AKnum + (FZY[i, j] * AKn)
+                AKdenom = AKdenom + (FZY[i, j] * AKd)
             }
-            AKnum = AKnum + (FZY[ i, j]*AKn)
-            AKdenom = AKdenom + (FZY[ i, j]*AKd)
+            A[, 1:(nDepVar * Lags[j]), j] = AKnum %*% ginv(AKdenom)
         }
-        A[ , 1:(nDepVar * Lags[j]), j] = AKnum%*%ginv(AKdenom) 
+        
+        invisible(A)
+        
     }
-    
-    invisible(A)
-    
-}
