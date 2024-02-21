@@ -20,11 +20,8 @@ calculateA <-
             {
                 WK_Lagged = matrix(Wk[, LaggedPredictObs[[ Lags[j] ]][[i]], WkRunner], nrow = (nDepVar * Lags[j]))
                 
-                AKn = Wk[, NewPredictableObs[[ Lags[j] ]][[i]], WkRunner] %*% t(WK_Lagged)
-                AKd = WK_Lagged %*% t(WK_Lagged)
-                
-                AKnum = AKnum + (FZY[i, j] * AKn)
-                AKdenom = AKdenom + (FZY[i, j] * AKd)
+                AKnum = AKnum + (FZY[i, j] * (Wk[, NewPredictableObs[[ Lags[j] ]][[i]], WkRunner] %*% t(WK_Lagged)))
+                AKdenom = AKdenom + (FZY[i, j] * (WK_Lagged %*% t(WK_Lagged)))
             }
             A[, 1:(nDepVar * Lags[j]), j] = AKnum %*% ginv(AKdenom)
         }
