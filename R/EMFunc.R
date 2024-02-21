@@ -57,7 +57,7 @@ EMFunc <- function(Init,
 
     U = calculateU(K = K, WkNumbVersions = DimensionsBasedonConstraints$WkNumbVersions,
                    N = N, NewPredictableObs = NewPredictableObs,
-                   LaggedPredictObs = LaggedPredictObs, PersEndU_NPred = PersEndU_NPred,
+                   LaggedPredictObs = LaggedPredictObs, Tni_NPred = Tni_NPred,
                    U = U, Wk = Wk, A = A,
                    Lags = Lags, nDepVar = nDepVar)
 

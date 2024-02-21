@@ -25,12 +25,10 @@ calculateCoefficientsForRandoAndRational <- function(Covariates,
     BIndividual[ , , i] = (Y[ , PersStart[i]:PersEnd[i]] %*% t(X[ , PersStart[i]:PersEnd[i], drop = FALSE])) %*%
       ginv(X[ , PersStart[i]:PersEnd[i], drop = FALSE] %*% t(X[ , PersStart[i]:PersEnd[i], drop = FALSE]))
     WIndividual[ , (PersStart[i]):(PersEnd[i])] = Y[ , (PersStart[i]):(PersEnd[i])] - (BIndividual[ , , i] %*% X[ , (PersStart[i]):(PersEnd[i]), drop = FALSE])
-  }
-  for(i in 1:N)
-  {
-      AKn = WIndividual[ , NewPredictableObs[[i]], drop = FALSE] %*% t(matrix(WIndividual[ , LaggedPredictObs[[i]], drop = FALSE], nrow = (nDepVar * Lag)))
-      AKd = matrix(WIndividual[ , LaggedPredictObs[[i]], drop = FALSE], nrow = (nDepVar * Lag)) %*% 
-                       t(matrix(WIndividual[ , LaggedPredictObs[[i]], drop = FALSE], nrow = (nDepVar * Lag)))
+    
+      LaggedWK = matrix(WIndividual[ , LaggedPredictObs[[i]], drop = FALSE], nrow = (nDepVar * Lag))
+      AKn = WIndividual[ , NewPredictableObs[[i]], drop = FALSE] %*% t(LaggedWK)
+      AKd = LaggedWK %*% t(LaggedWK)
     CoefficientsForRandoAndRational[1:(nDepVar * nDepVar * Lag), i] = as.vector(AKn %*% ginv(AKd)) # AIndividual # gets read in left to right
   }
   if(DimensionsBasedonConstraints$ClusterOnB)

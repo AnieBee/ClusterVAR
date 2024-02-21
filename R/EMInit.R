@@ -57,7 +57,7 @@ EMInit <- function(InitMT, Y, X, Lags, K, N, qqq, nDepVar, PersStart, PersEnd, P
                    nDepVar = nDepVar)
     
     UZero = calculateU(K = K, WkNumbVersions = 1, N = N, NewPredictableObs = NewPredictableObs,
-                       LaggedPredictObs = LaggedPredictObs, PersEndU_NPred = PersEndU_NPred,
+                       LaggedPredictObs = LaggedPredictObs, Tni_NPred = Tni_NPred,
                        U = UZero, Wk = WZero, A = A, Lags = Lags,
                        nDepVar = nDepVar)
     
