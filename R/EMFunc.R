@@ -8,9 +8,10 @@ EMFunc <- function(Init,
                    Tni_NPred,
                    qqq,
                    nDepVar,
-                   PredictableObs,
                    NewPredictableObs,
                    LaggedPredictObs,
+                   PredictableObsConc,
+                   LaggedPredictObsConc,
                    PersEnd,
                    PersStart,
                    PersStartU_NPred,
@@ -56,8 +57,8 @@ EMFunc <- function(Init,
     Wk = calculateW(Covariates = Covariates, K = K, Wk = Wk, Y = Y, B = B, X = X)
 
     U = calculateU(K = K, WkNumbVersions = DimensionsBasedonConstraints$WkNumbVersions,
-                   N = N, NewPredictableObs = NewPredictableObs,
-                   LaggedPredictObs = LaggedPredictObs, Tni_NPred = Tni_NPred,
+                   PredictableObsConc = PredictableObsConc,
+                   LaggedPredictObsConc = LaggedPredictObsConc, Tni_NPred = Tni_NPred,
                    U = U, Wk = Wk, A = A,
                    Lags = Lags, nDepVar = nDepVar)
 
@@ -116,8 +117,8 @@ EMFunc <- function(Init,
     
     ## Calculate B depending on Covariate constraint -------------
     B = calculateB(Covariates = Covariates, K = K, nDepVar = nDepVar, A = A,
-                   Sigma = Sigma, N = N, PredictableObs = PredictableObs,
-                   PersStart = PersStart,  PersEnd = PersEnd, X = X, Y = Y, Lags = Lags, FZY = FZY,
+                   Sigma = Sigma, N = N, NewPredictableObs = NewPredictableObs,
+                   X = X, Y = Y, Lags = Lags, FZY = FZY,
                    qqq = qqq, B = B)
 
     ### Calculate tau -------------------

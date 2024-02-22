@@ -162,6 +162,8 @@ LCVARclust <- function(Data,
   ### Create new PredictableObs
   NewPredictableObs = vector("list", HighestLag)  # from 1:HighestLag but only LowestLag:HighestLag elements are filled
   LaggedPredictObs = vector("list", HighestLag)  # from 1:HighestLag but only LowestLag:HighestLag elements are filled
+  PredictableObsConc = vector("list", HighestLag)  # from 1:HighestLag but only LowestLag:HighestLag elements are filled
+  LaggedPredictObsConc = vector("list", HighestLag)  # from 1:HighestLag but only LowestLag:HighestLag elements are filled
   GetSequences <- function(trunner, Lag) {
       lapply(trunner, function(t) (t - 1):(t - Lag))
   }
@@ -175,8 +177,12 @@ LCVARclust <- function(Data,
       }
       NewPredictableObs[[lagRunner]] = NewPredictableObsSmall
       LaggedPredictObs[[lagRunner]] = LaggedPredictObsSmall
+      PredictableObsConc[[lagRunner]] = do.call(c, NewPredictableObs[[lagRunner]]) 
+      LaggedPredictObsConc[[lagRunner]] = do.call(c, LaggedPredictObs[[lagRunner]]) 
   }
   
+  
+
 ##########################
  
   # Create val.init, a list containing memb, a vector ordered by ID that contains the cluster membership initialization ----
@@ -212,9 +218,10 @@ LCVARclust <- function(Data,
                          SigmaIncrease = SigmaIncrease,
                          call = call,
                          pbar = pbar,
-                         PredictableObs = PredictableObs,
                          NewPredictableObs = NewPredictableObs, 
                          LaggedPredictObs = LaggedPredictObs,
+                         PredictableObsConc = PredictableObsConc,
+                         LaggedPredictObsConc = LaggedPredictObsConc,
                          Tni_NPred = Tni_NPred,
                          PersStartU_NPred = PersStartU_NPred,
                          PersEndU_NPred = PersEndU_NPred

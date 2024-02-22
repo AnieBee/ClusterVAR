@@ -1,6 +1,9 @@
 
-EMInit <- function(InitMT, Y, X, Lags, K, N, qqq, nDepVar, PersStart, PersEnd, PredictableObs, NewPredictableObs,
+EMInit <- function(InitMT, Y, X, Lags, K, N, qqq, nDepVar, PersStart, PersEnd,
+                   NewPredictableObs,
                    LaggedPredictObs,
+                   PredictableObsConc,
+                   LaggedPredictObsConc,
                    Tni_NPred,
                    PersStartU_NPred,
                    PersEndU_NPred, Covariates, smallestClN, SigmaIncrease)
@@ -56,8 +59,8 @@ EMInit <- function(InitMT, Y, X, Lags, K, N, qqq, nDepVar, PersStart, PersEnd, P
                    LaggedPredictObs = LaggedPredictObs, Lags = Lags, FZY = t(memb), A = A,
                    nDepVar = nDepVar)
     
-    UZero = calculateU(K = K, WkNumbVersions = 1, N = N, NewPredictableObs = NewPredictableObs,
-                       LaggedPredictObs = LaggedPredictObs, Tni_NPred = Tni_NPred,
+    UZero = calculateU(K = K, WkNumbVersions = 1, PredictableObsConc = PredictableObsConc,
+                       LaggedPredictObsConc = LaggedPredictObsConc, Tni_NPred = Tni_NPred,
                        U = UZero, Wk = WZero, A = A, Lags = Lags,
                        nDepVar = nDepVar)
     
@@ -72,8 +75,7 @@ EMInit <- function(InitMT, Y, X, Lags, K, N, qqq, nDepVar, PersStart, PersEnd, P
     ## Calculate B(0) depending on Covariate constraint----------------------------
     # B(0) calculation differs from B cacluation in using memb[j, i] instead of f.z.y[ i, j]
     B = calculateB(Covariates = Covariates, K = K, nDepVar = nDepVar, A = A,
-                   Sigma = Sigma, N = N, PredictableObs = PredictableObs,
-                   PersStart = PersStart,  PersEnd = PersEnd,
+                   Sigma = Sigma, N = N, NewPredictableObs = NewPredictableObs,
                    X = X, Y = Y, Lags = Lags,
                    FZY = t(memb), qqq = qqq, B = B)
     

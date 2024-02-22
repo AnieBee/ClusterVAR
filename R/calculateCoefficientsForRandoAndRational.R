@@ -22,9 +22,10 @@ calculateCoefficientsForRandoAndRational <- function(Covariates,
   WIndividual = array(NA, dim = c(nDepVar, PersEnd[N]))
   for(i in 1:N)
   {
-    BIndividual[ , , i] = (Y[ , PersStart[i]:PersEnd[i]] %*% t(X[ , PersStart[i]:PersEnd[i], drop = FALSE])) %*%
-      ginv(X[ , PersStart[i]:PersEnd[i], drop = FALSE] %*% t(X[ , PersStart[i]:PersEnd[i], drop = FALSE]))
-    WIndividual[ , (PersStart[i]):(PersEnd[i])] = Y[ , (PersStart[i]):(PersEnd[i])] - (BIndividual[ , , i] %*% X[ , (PersStart[i]):(PersEnd[i]), drop = FALSE])
+     XPerson = X[ , PersStart[i]:PersEnd[i], drop = FALSE]
+    BIndividual[ , , i] = (Y[ , PersStart[i]:PersEnd[i]] %*% t(XPerson)) %*%
+      ginv(XPerson %*% t(XPerson))
+    WIndividual[ , (PersStart[i]):(PersEnd[i])] = Y[ , (PersStart[i]):(PersEnd[i])] - (BIndividual[ , , i] %*% XPerson)
     
       LaggedWK = matrix(WIndividual[ , LaggedPredictObs[[i]], drop = FALSE], nrow = (nDepVar * Lag))
       AKn = WIndividual[ , NewPredictableObs[[i]], drop = FALSE] %*% t(LaggedWK)
