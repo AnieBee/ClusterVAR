@@ -4,7 +4,7 @@ calculatePosterior <- function(N, K, tau, FYZ, lowest.Likelihood, EMiteration, F
     PosteriorDenom = matrix(0, N)
     iterationReset = FALSE  
     
-    for(clust in 1:K) FYZandPrior[, clust] = log(tau[clust]) + FYZ[, clust]
+    FYZandPrior = sapply(1:K, function(clust) log(tau[clust]) + FYZ[, clust])
     for(indv in 1:N)
     {
         AexpTrick = max(FYZandPrior[indv, ]) # A in the exp trick
@@ -24,10 +24,8 @@ calculatePosterior <- function(N, K, tau, FYZ, lowest.Likelihood, EMiteration, F
         }
     }
     
-    for(clust in 1:K)
-    { # calculate FZY = posterior(pi_{ik})
-        FZY[ , clust] = exp(FYZandPrior[ , clust] - PosteriorDenom) # calculate log metric posterior and take exp() to have real posterior in FZY
-    }
+    # calculate FZY = posterior(pi_{ik})
+    FZY = sapply(1:K, function(clust) exp(FYZandPrior[ , clust] - PosteriorDenom))
     
     invisible(list(FZY = FZY, logLikelihood = sum(PosteriorDenom), iterationReset = iterationReset))
 }

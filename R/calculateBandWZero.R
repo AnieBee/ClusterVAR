@@ -8,8 +8,9 @@ calculateBandWZero <- function(Covariates, K, memb, Y, X , PersStart, PersEnd, B
             BZerodenom <- 0 
             for(i in c(which(memb[j, ] == 1)))
             {  
-                BZeronum <- BZeronum + Y[ , PersStart[i]:PersEnd[i], drop = FALSE] %*% t(X[ , (PersStart[i]):(PersEnd[i]),  drop = FALSE])
-                BZerodenom <- BZerodenom + X[ , PersStart[i]:PersEnd[i], drop = FALSE] %*% t(X[ , (PersStart[i]):(PersEnd[i]), drop = FALSE])
+                XPers = X[ , (PersStart[i]):(PersEnd[i]), drop = FALSE]
+                BZeronum <- BZeronum + Y[ , PersStart[i]:PersEnd[i], drop = FALSE] %*% t(XPers)
+                BZerodenom <- BZerodenom + XPers %*% t(XPers)
             }
             BZero[ , , j] <- BZeronum%*%ginv(BZerodenom)
             for(i in c(which(memb[j, ] == 1)))
@@ -18,15 +19,15 @@ calculateBandWZero <- function(Covariates, K, memb, Y, X , PersStart, PersEnd, B
                                                             X[ , (PersStart[i]):(PersEnd[i]), drop = FALSE])
             }
         }
-    }else{# Anja if B is constraint, Wk is same for all clusters and B is same for all clusters  dim(B)[3] = 1
-        if(Covariates == "equal-across-clusters")
-        { 
-            BZero[ , , 1] <- (Y %*% t(X)) %*% ginv(X %*% t(X))
-            WZero[ , , 1] <- Y - BZero[ , , 1] %*% X
-        } # else
-        # { 
-        # }
-    }
+    }#else{# Anja if B is constraint, Wk is same for all clusters and B is same for all clusters  dim(B)[3] = 1
+    #     if(Covariates == "equal-across-clusters")
+    #     { 
+    #         BZero[ , , 1] <- (Y %*% t(X)) %*% ginv(X %*% t(X))
+    #         WZero[ , , 1] <- Y - BZero[ , , 1] %*% X
+    #     } # else
+    #     # { 
+    #     # }
+    # }
     
     invisible(WZero)
     
