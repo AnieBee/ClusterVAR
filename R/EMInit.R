@@ -11,7 +11,7 @@ EMInit <- function(InitMT, Y, X, Lags, K, N, qqq, nDepVar, PersStart, PersEnd,
 {
     ListCCC = checkComponentsCollapsed(K = K, N = N, FZY = t(InitMT),
                                        smallestClN = smallestClN,
-                                       EMiteration = 0, crisp = TRUE)
+                                       crisp = TRUE)
     memb = t(ListCCC$FZY)
     stopifnot( ! any(colSums(memb) != 1))
     # Do the EM Initialization given memb and tau as determined by either InitRat or InitRand or given by val.init

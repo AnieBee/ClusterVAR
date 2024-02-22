@@ -40,7 +40,6 @@ LCVARclust <- function(Data,
 
 
   # ------ Input Checks ------
-
   # Cluster Search Sequence
   if(missing(Clusters)) stop("Specify the sequence of number of clusters to search.")
 

@@ -8,6 +8,7 @@ QUESTIONS:
 -- missing data: what if a person has not enough data to be included >> throw an error
 -- I don't think the Fried data set is suited for fitting this model, too few observations
 1B) what if there are no values for a certain categroy of B?
+1c) What are the cran requirements (what aobut func arguments that are not implemented yet?)
 1) Does the proc.time() retrun time in minutes? Or does it change to hours if more than an hour passes?
 2) I added a 2nd print() function that can be used by the summary() function, I added it to NAMESPACE, is anything required anywhere elese?
 3) what to do with warnings? I removed all warnings now becuase I don't think they are of interest to the user (i.e., what kind of estimation possibly occured or prevented convergence for some start) (convergence is still indicated in the output of every start). Only exception: checkConvergence, gives a warning if algo did not converge because number of iterations was not set high enough by user of because of something else...

@@ -1,4 +1,4 @@
-calculatePosterior <- function(N, K, tau, FYZ, lowest.Likelihood, EMiteration, FZY, UseFZY)
+calculatePosterior <- function(N, K, tau, FYZ, lowest.Likelihood, FZY, UseFZY)
 {
     FYZandPrior = matrix(0, N, K)
     PosteriorDenom = matrix(0, N)

@@ -1,5 +1,5 @@
 
-checkPosteriorsNA <- function(FZY, K, EMiteration)
+checkPosteriorsNA <- function(FZY, K)
 {
     if(any(is.na(FZY)))
     { # FZY = ifelse(is.na(FZY), 1/K, FZY) 

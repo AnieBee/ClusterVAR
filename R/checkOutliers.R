@@ -1,4 +1,4 @@
-checkOutliers <- function(K, FZY, EMiteration)
+checkOutliers <- function(K, FZY)
 {
     Outliers = NULL
     for(j in 1:K) Outliers = unique(c(Outliers, which(!is.finite(FZY[ , j])))) # if posterior prob are infinity: 
