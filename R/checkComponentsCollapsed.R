@@ -1,4 +1,4 @@
-checkComponentsCollapsed <- function(K, N, FZY, smallestClN, EMiteration, crisp = FALSE)
+checkComponentsCollapsed <- function(K, N, FZY, smallestClN, crisp = FALSE)
 {
 
     resetCl = NULL

@@ -78,7 +78,7 @@ EMFunc <- function(Init,
     # calculate FZY
     calcPostList = calculatePosterior(N = N, K = K, tau = tau, FYZ = FYZ,
                                       lowest.Likelihood = lowest.Likelihood,
-                                      EMiteration = EMiteration, FZY = FZY,
+                                      FZY = FZY,
                                       UseFZY = TRUE)
     FZY = calcPostList$FZY
     # calculate FZY = posterior(pi_{ik})
@@ -86,15 +86,14 @@ EMFunc <- function(Init,
 
     ### Checks --------------------
     ## Check for outliers
-    FZYListCO = checkOutliers(K = K, FZY = FZY, EMiteration = EMiteration)
+    FZYListCO = checkOutliers(K = K, FZY = FZY)
 
     ## Check posteriors are not NA ##
-    FZYListCP = checkPosteriorsNA(FZY = FZYListCO$FZY, K = K, EMiteration = EMiteration)
+    FZYListCP = checkPosteriorsNA(FZY = FZYListCO$FZY, K = K)
 
     ## Check no component collapses onto a single point
     FZYListCCC = checkComponentsCollapsed(K = K, N = N, FZY = FZYListCP$FZY,
-                                          smallestClN = smallestClN,
-                                          EMiteration = EMiteration)
+                                          smallestClN = smallestClN)
     FZY = FZYListCCC$FZY
 
     ########  M-STEP    ########
@@ -130,7 +129,7 @@ EMFunc <- function(Init,
     # calculating the denominator of pi _{ik} using updated tau
     calcPostList2 = calculatePosterior(N = N, K = K, tau = tau, FYZ = FYZ,
                                        lowest.Likelihood = lowest.Likelihood,
-                                       EMiteration = EMiteration, FZY = FZY,
+                                       FZY = FZY,
                                        UseFZY = FALSE)
     likelihood[EMiteration] = calcPostList2$logLikelihood
 
@@ -197,7 +196,6 @@ EMFunc <- function(Init,
 
 
   # ----- Return Output list -----
-
   outlist <- list(Converged = Converged,
                   VAR_coefficients = A,
                   Exogenous_coefficients = B,
