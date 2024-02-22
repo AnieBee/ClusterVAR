@@ -68,7 +68,7 @@ EMInit <- function(InitMT, Y, X, Lags, K, N, qqq, nDepVar, PersStart, PersEnd,
                            PersStartU_NPred = PersStartU_NPred,
                            PersEndU_NPred = PersEndU_NPred, Tni_NPred = Tni_NPred, 
                            Sigma = Sigma, Lags = Lags)
-    SigmaList = checkSingularitySigma(nDepVar = nDepVar, K = K, Sigma = Sigma, EMiteration = 0)
+    SigmaList = checkSingularitySigma(nDepVar = nDepVar, K = K, Sigma = Sigma)
     Sigma = SigmaList$Sigma
     Sigma[ , , ListCCC$resetCl] = Sigma[ , , ListCCC$resetCl] + SigmaIncrease
     

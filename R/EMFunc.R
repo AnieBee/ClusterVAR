@@ -110,7 +110,7 @@ EMFunc <- function(Init,
     ### calculate Sigma (S) ---------------------
     Sigma = calculateSigma(K = K, N = N, FZY = FZY, U = U, PersStartU_NPred = PersStartU_NPred,
                            PersEndU_NPred = PersEndU_NPred, Tni_NPred = Tni_NPred, Sigma = Sigma, Lags = Lags)
-    SigmaList = checkSingularitySigma(nDepVar = nDepVar, K = K, Sigma = Sigma, EMiteration = EMiteration)
+    SigmaList = checkSingularitySigma(nDepVar = nDepVar, K = K, Sigma = Sigma)
     Sigma = SigmaList$Sigma
     Sigma[ , , FZYListCCC$resetCl] = Sigma[ , , FZYListCCC$resetCl] + SigmaIncrease # Increase variance of components indicated by FZYListCCC
 
@@ -122,7 +122,7 @@ EMFunc <- function(Init,
                    qqq = qqq, B = B)
 
     ### Calculate tau -------------------
-    tau = calculateTau(K = K, tau = tau, FZY = FZY, N = N)
+    tau = calculateTau(tau = tau, FZY = FZY, N = N)
 
     ### end of M-step ###
 

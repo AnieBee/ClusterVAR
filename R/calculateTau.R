@@ -1,10 +1,4 @@
-calculateTau <- function(K, tau, FZY, N)
-{
-    for (j in 1:K)
-    {
-        tau[j] = sum(FZY[, j]) / N
-        
-    }
-    
+calculateTau <- function(tau, FZY, N) {
+    tau <- colSums(FZY) / N
     invisible(tau)
 }
