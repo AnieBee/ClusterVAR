@@ -182,10 +182,8 @@ EMFunc <- function(Init,
                      Classification = Classification)
 
   # Use ID names to return Classification and user knows what classification means
-
-  ## the below is not implemented yet, Data is not passed to this function
-  #Classification <- cbind(IDNames, Classification)
-  #colnames(Classification) <- c("ID Name", "Cluster")
+  Classification <- matrix(Classification, nrow = 1)
+  colnames(Classification) <- IDNames
 
   colnames(B) = rownames(X) # Name every col in Array with Covariates Variable name
   rownames(B) = rownames(Y) # Name every row in B with Endogenous Variable Names

@@ -116,7 +116,7 @@ callEMFuncs <- function(Clusters,
                                         "Previous" = if(usePrevLagSol)
                                         {   ## Previous Sol ##
                                           t(dummy_cols(OutputListAllLags
-                                                       [[PrevBestRun[1]]][[PrevBestRun[2]]]$Classification,
+                                                       [[PrevBestRun[1]]][[PrevBestRun[2]]]$Classification[1, ],
                                                        remove_first_dummy = FALSE)[ , -1])
                                         }
                                         else
@@ -180,7 +180,6 @@ callEMFuncs <- function(Clusters,
 
     } # End of Lag loop
 
-    # ToDo: update Classification with ID
     All_Solutions[[ClustCount]] = OutputListAllLags
     ModelCall = list(Clusters = Clusters, Lags = LowestLag:HighestLag,
                      Rand = Rand, Rational = Rational, Initialization = Initialization,
