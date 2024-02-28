@@ -8,13 +8,13 @@ Fitting Latent Class VAR Model
 Function to fit a Latent Class VAR model with a given number of latent classes
 }
 \usage{
-LCVARclust(Data, yVars, Time, ID, xContinuous = NULL,
-           xFactor = NULL, Covariates = "equal-within-clusters",
+LCVARclust(Data, yVars, Beep, Day, ID, xContinuous = NULL,
+           xFactor = NULL, 
            Clusters, Lags, smallestClN = 3,
            ICType = c("HQ", "SC"), RndSeed,
-           Rand = 1, Rational = c(TRUE, FALSE),
+           Rand = 50, Rational = c(TRUE, FALSE),
            Initialization = NULL, SigmaIncrease = 10,
-           it = 25, Conv = 1e-06, pbar = TRUE)
+           it = 50, Conv = 1e-05, pbar = TRUE, Covariates = "equal-within-clusters",)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -22,25 +22,25 @@ LCVARclust(Data, yVars, Time, ID, xContinuous = NULL,
 The data provided in a data.frame.
 }
   \item{yVars}{
-An integer vector specifying the position of the column(s) in dataframe \code{Data} that contain the endogenous variables (= the VAR time series)
+An integer vector specifying the position of the column(s) in dataframe \code{Data} that contain the endogenous variables (= the VAR time series).
 }
-  \item{Time}{
+  \item{Beep}{
 An integer specifying the position of the column in dataframe \code{Data} that contains the time point.
+}
+  \item{Day}{
+Optional. An integer specifying the position of the column in dataframe \code{Data} that contains the variable that indicates on which day the measurement was made. If day is supplied here, the first measurment on each day will be removed from calculations for the VAR coefficients.
 }
   \item{ID}{
 An integer specifying the position of the column in dataframe \code{Data} that contains the ID variable for every participant.
 }
   \item{xContinuous}{
-An integer vector specifying the position of the column(s) in dataframe Data that contain the continuous exogenous variable(s), if present.
+Optional argument.  An integer vector specifying the position of the column(s) in dataframe Data that contain the continuous exogenous variable(s), if present. Exogenous variables are also known as covariates or as moderators for the within-person mean.
 }
   \item{xFactor}{
-An integer vector specifying the position of the column(s) in dataframe Data that contain the categorical exogenous variable(s), if present.
-}
-  \item{Covariates}{
-Constraints on the parameters of the exogenous variable(s). So far only \code{Covariates = "equal-within-clusters"} can be specified.
+Optional argument.  An integer vector specifying the position of the column(s) in dataframe Data that contain the categorical exogenous variable(s), if present. Exogenous variables are also known as covariates or as moderators for the within-person mean.
 }
   \item{Clusters}{
-An integer vector specifying the numbers of latent classes (i.e., clusters) for which LCVAR models are to be calculated.
+An integer or integer vector specifying the numbers of latent classes (i.e., clusters) for which LCVAR models are to be calculated.
 }
   \item{Lags}{
 An integer or integer vector specifying the number of VAR(p) lags to consider. Needs to be a subsequent sequence of subsequent integers.
@@ -48,32 +48,34 @@ An integer or integer vector specifying the number of VAR(p) lags to consider. N
   \item{smallestClN}{
 An integer specifying the lowest number of individuals allowed in a cluster. When during estimation the crisp cluster membership of a cluster indicates less than \code{smallestClN} individuals, the covariance matrix and the posterior probabilities of cluster membership are reset.
 }
-  \item{ICType}{
-The information criterion used to select the ideal model for a given number of clusters across all EM-starts and lag combinations. One of \code{c("HQ", "SC")}.
-}
-  \item{RndSeed}{Optional argument specifying the integer supplied to \code{set.seed()}, which guarantees reproducible results. If not specified, no seed is set.
+ \item{RndSeed}{
+  Optional argument. An integer specifying the value supplied to \code{set.seed()}, which guarantees reproducible results. If not specified, no seed is set.
 }
   \item{Rand}{
-The number of pseudo-random EM-starts used in fitting each possible model. For pseudo-random starts K individuals are randomly selected as cluster centres. Then individuals are partitioned into the cluster to which their ideographic VAR and ideographic covariate coefficients are closest.
+The number of pseudo-random EM-starts used in fitting each possible model. For pseudo-random starts K individuals are randomly selected as cluster centres. Then individuals are partitioned into the cluster to which their individual VAR and individual covariate coefficients are closest. Defaults to \code{Rand = 50}.
 }
   \item{Rational}{
-Local, indicateing whether a rational EM-start should be used. Defaults to \code{Rational = TRUE}. Rational starts are based on the k-means partitioning of individuals’ ideographic VAR and ideographic covariate coefficients.
+Logical, indicateing whether a rational EM-start should be used. Defaults to \code{Rational = TRUE}. Rational starts are based on the k-means partitioning of individuals’ ideographic VAR and ideographic covariate coefficients.
 }
   \item{Initialization}{
-An integer specifying the position of a column in dataframe \code{Data} that contains a guess at participants' cluster membership for a fixed number of clusters, if available.
+Optional argument. An integer specifying the position of a column in dataframe \code{Data} that contains a guess at participants' cluster membership for a fixed number of clusters, if available.
 }
   \item{SigmaIncrease}{
 A numerical value specifying the value by which every element of Sigma will be increased when posterior probabilities of cluster memberships are reset.
 }
   \item{it}{
-An integer specifying the maximum number of EM-iterations allowed after every EM-start. After \code{it} EM-iterations an EM-start is forced to terminate.
+An integer specifying the maximum number of EM-iterations allowed for every EM-start. After completing \code{it} EM-iterations, an EM-start is forced to terminate. Defaults to \code{it = 50}.
 }
   \item{Conv}{
-A numerical value specifying the convergence criterion of the log likelihood to determine convergence of an EM-start. For details see Ernst et al. (2020) Inter-individual differences in multivariate time series: Latent class vector-autoregressive modelling.
+A numerical value specifying the convergence criterion of the log likelihood to determine convergence of an EM-start. For details see Ernst et al. (2020) Inter-individual differences in multivariate time series: Latent class vector-autoregressive modelling.  Defaults to \code{Conv = 1e-05}.
 }
   \item{pbar}{
 If TRUE, a progress bar is shown. Defaults to \code{pbar = TRUE}.}
 }
+  \item{Covariates}{
+Constraints on the parameters of the exogenous variable(s). So far only \code{Covariates = "equal-within-clusters"} can be specified.
+}
+
 \details{
 Some more details.
 }

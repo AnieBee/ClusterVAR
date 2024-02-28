@@ -7,18 +7,18 @@ LCVARclust <- function(Data,
                        ID,
                        xContinuous = NULL,
                        xFactor = NULL,
-                       Covariates = "equal-within-clusters", # "equal-accros-clusters", "individual-specific"), #Anja: so far only equal-within-clusters is implemented
                        Clusters,
                        Lags,
                        smallestClN = 3,
-                       RndSeed = 3,
-                       Rand = 1,
+                       RndSeed = NULL,
+                       Rand = 50,
                        Rational = TRUE,
                        Initialization = NULL,
                        SigmaIncrease = 10,
-                       it = 25,
-                       Conv = 1e-06,
+                       it = 50,
+                       Conv = 1e-05,
                        pbar = TRUE,
+                       Covariates = "equal-within-clusters", # "equal-accros-clusters", "individual-specific"), #Anja: so far only equal-within-clusters is implemented
                        ...)
 # If each measurement is done on the same day, don't specify day but only specify beep.
 # Only if the first measurment on each day should be removed from calculations, the 
@@ -99,7 +99,7 @@ LCVARclust <- function(Data,
   if(!is.null(xFactor))
   {# create XUsedForCheck which is used later to check that all Dummies have at least 1 observation per person
       NumbCategoricalDummies = qqq - length(xContinuous)
-      XUsedForCheck = X[2:NumbCategoricalDummies, ] # NumbCategoricalDummies includes intercept, thus start at row 2 to exclude the intercept
+      XUsedForCheck = X[2:NumbCategoricalDummies, , drop = FALSE] # NumbCategoricalDummies includes intercept, thus start at row 2 to exclude the intercept
   }
   
 
@@ -177,6 +177,7 @@ LCVARclust <- function(Data,
   GetSequences <- function(trunner, Lag) {
       lapply(trunner, function(t) (t - 1):(t - Lag))
   }
+
   for (lagRunner in LowestLag:HighestLag)
   {
       NewPredictableObsSmall = vector("list", N)
@@ -184,13 +185,35 @@ LCVARclust <- function(Data,
       for (i in 1:N) {
           NewPredictableObsSmall[[i]] = c(intersect(PredictableObs[[lagRunner]], c(PersStart[i]:PersEnd[i])))
           LaggedPredictObsSmall[[i]]  = unlist(GetSequences(NewPredictableObsSmall[[i]], lagRunner))
-          #check that all Dummies have at least 1 observation per person
-          if(!is.null(xFactor)) stopifnot( all(rowSums(XUsedForCheck[ , c( NewPredictableObsSmall[[i]] , LaggedPredictObsSmall[[i]])]) >= 1))
+          if(!is.null(xFactor)){
+              #check that all Dummies have at least 1 observation per person
+              if(NumbCategoricalDummies == 2){
+                  
+              }else{ stopifnot( all(rowSums(XUsedForCheck[ , c( NewPredictableObsSmall[[i]] , LaggedPredictObsSmall[[i]])]) >= 1)) }
+
+          } 
       }
       NewPredictableObs[[lagRunner]] = NewPredictableObsSmall
       LaggedPredictObs[[lagRunner]] = LaggedPredictObsSmall
       PredictableObsConc[[lagRunner]] = do.call(c, NewPredictableObs[[lagRunner]]) 
       LaggedPredictObsConc[[lagRunner]] = do.call(c, LaggedPredictObs[[lagRunner]]) 
+  }
+  
+  if (!is.null(xFactor)) {
+      #check that all Dummies have at least 1 observation per person
+      if (NumbCategoricalDummies == 2) {
+          for (lagRunner in LowestLag:HighestLag) {
+              for (i in 1:N){
+                  stopifnot(sum(XUsedForCheck[, c(NewPredictableObs[[lagRunner]][[i]] , LaggedPredictObs[[lagRunner]][[i]])]) >= 1)
+              }
+          }
+      } else{
+          for (lagRunner in LowestLag:HighestLag) {
+              for (i in 1:N){
+                  stopifnot(all(rowSums(XUsedForCheck[, c(NewPredictableObs[[lagRunner]][[i]] , LaggedPredictObs[[lagRunner]][[i]])]) >= 1))
+              }
+          }
+      }
   }
   # Create val.init, a list containing memb, a vector ordered by ID that contains the cluster membership initialization ----
   if ( ! is.null(Initialization))
