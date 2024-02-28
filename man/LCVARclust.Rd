@@ -46,7 +46,7 @@ An integer or integer vector specifying the numbers of latent classes (i.e., clu
 An integer or integer vector specifying the number of VAR(p) lags to consider. Needs to be a subsequent sequence of subsequent integers.
 }
   \item{smallestClN}{
-An integer specifying the lowest number of individuals allowed in a cluster. When during estimation the crisp cluster membership of a cluster indicates less than \code{smallestClN} individuals, the covariance matrix and the posterior probabilities of cluster membership are reset.
+An integer specifying the lowest number of individuals allowed in a cluster. When during estimation the crisp cluster membership of a cluster indicates less than \code{smallestClN} individuals, the covariance matrix and the posterior probabilities of cluster membership are reset. Defaults to \code{smallestClN = 3}.
 }
  \item{RndSeed}{
   Optional argument. An integer specifying the value supplied to \code{set.seed()}, which guarantees reproducible results. If not specified, no seed is set.
@@ -81,12 +81,15 @@ Some more details.
 }
 
 \value{
-Describe everything in the output list ...
+An object of class 'ClusterVAR' providing several LCVAR models.
+The details of the output components are as follows:
 %%  ~Describe the value returned
 %%  If it is a LIST, use
-\item{comp1}{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+\item{call}{The original function call.}
+\item{Call}{A list of the arguments in the original function call.}
+\item{All_Solutions_All_Clusters_Lags_Starts}{All LCVAR models across all number of clusters, lag combinations, and number of starts. \code{All_Solutions_All_Clusters_Lags_Starts[[a]][[b]][[c]]}  contains all information for the LCVAR model for the \code{a}th number of clusters that was specified in \code{\Clusters}, for the \code{b}th combination of lag orders, on the \code{c}th EM-start. To find the ideal solution across all of them use \code{summary()} or \code{coef()}.}
+\item{Runtime}{The runtime the function took to complete.}
+
 }
 \references{
 Ernst, A. F., Albers, C. J., Jeronimus, B. F., & Timmerman, M. E. (2020). Inter-individual differences in multivariate time-series. European Journal of Psychological Assessment.
@@ -107,16 +110,25 @@ Anja Ernst
 
 \dontrun{
 
-head(ExampleData)
+head(Data)
 
-LCVAR_out <- LCVARclust(Data = ExampleData, yVars = 1:4, Time = 6, ID = 5,
-                        Covariates = "equal-within-clusters",
-                        Clusters, Lags, smallestClN = 3,
-                        ICType = "HQ", seme = 3, Rand = 2, Rational = TRUE,
-                        SigmaIncrease = 10, it = 25, Conv = 1e-06, xContinuous = 7, xFactor = 8)
+LCVAR_out <- LCVARclust(Data = Data, yVars = 1:4, Beep = 9, Day = 10,
+                        xContinuous = 7, xFactor = 8
+                        Clusters = 1:2, Lags = 1:2, smallestClN = 3,
+                        RndSeed = 3, Rand = 2, Rational = TRUE,
+                        SigmaIncrease = 10, it = 25, Conv = 1e-05,
+                        Covariates = "equal-within-clusters",)
 
+summary(LCVAR_out)
 
-LCVAR_out$BestSolutionsPerCluster[[1]]$A
+summary(LCVARresult = LCVAR_out, show = "Given-a-number-of-clusters", Number_of_Clusters = 2)
+
+summary(LCVARresult = LCVAR_out, show = "Best-overall")
+
+coef(LCVAR_out, Lags = c(1))
+
+coef(LCVAR_out, Lags = c(1, 1))
+
 
 
 }

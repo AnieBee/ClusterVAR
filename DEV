@@ -5,8 +5,8 @@
 
 2. Do we have a plotting function for the coefficients?
 
-4. What is the rational EM-start? Some mean-based clustering or so?
->> Yes, basically a k-means result where the parameters of the time-series model we entered into the k-means algorithm.
+3. What was the code again for compiling the package?
+
 
 5. Anja: how do you ensure a function form the correct package is called? Using ::?
 
