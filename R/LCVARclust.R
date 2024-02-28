@@ -63,6 +63,8 @@ LCVARclust <- function(Data,
   stopifnot(all(is.numeric(Clusters)))
   stopifnot(!any(duplicated(Clusters)))
   Clusters = Clusters[order(Clusters)]
+  stopifnot(is.numeric(Data[ , Beep]))
+  if(!is.null(Day)) stopifnot(is.numeric(Data[ , Day]))
 
   call <- match.call()
 
