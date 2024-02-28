@@ -1,18 +1,16 @@
 
+----- Questions -----
 
------ Open Questions -----
+1. Discuss the estimation of daytime-effects when day is specified.
 
-QUESTIONS:
-1A) Input structure: will we have one time column or day and beep column togther? Or both? (important for ordering in beginning)
+2. Do we have a plotting function for the coefficients?
+
+4. What is the rational EM-start? Some mean-based clustering or so?
+>> Yes, basically a k-means result where the parameters of the time-series model we entered into the k-means algorithm.
+
+5. Anja: how do you ensure a function form the correct package is called? Using ::?
 
 
-
-SUGGESTIONS:
-1) Output file: I would have a single (heavily nested structure) and avoid any redundancies; but then to make this useable, have a function (maybe "GetModel()" or even S3Method coef() ) to extract the parameters of the desired models; here, arguments should specify the model selection for
-2) Structure of Code: Accordingly, I would not do any "best model selection" etc. in callEMFuncs.R, but simply return all models; this also implies that we delete any model selection criteria as inputs in the overall LCVARClust() function
-3) The S3methods print(), summary(), and plot() then all make use of repeatedly calling this new coef() function and giving nice summary tables/plots
-
-NOTES:
 
 
 -------------------------------
@@ -28,26 +26,11 @@ KEY THINGS
 
 
 POLISHING
-- Structure the output object more intuitively
-    - On the top level there should be
-      - Call
-        - Copy *full* function call [[done ]]
-      - Model selection / ICs for all fitted models
-      - Then object with selected model
-      - And nested object with all fitted models
-    - avoid [[1]] in LCVAR_out$BestSolutionsPerCluster
-    - Make the output vectors "$LogLikelihood" and "EMiterationReset" only as long as many iterations were actually run [[done ]]
-- Consider parallelize (e.g., across EM-restarts)
-- Consider a simpler progress bar
-    - maybe across random restarts
+
 - Complete manual
     - some explanations missing, e.g. what Rational starts are
     - Description of output missing
 
-2. S3 Methods
-- print for LCVARclust incl model selection
-- summary for LCVARclust incl model selection function
-- plot for new model selection function
 
 3. Add a Vignette
 - Fit cluster=2 model
@@ -60,20 +43,6 @@ POLISHING
 - Potentially get Standard errors for parameters, to be able to test differences in specific parameters across specific groups [After last meeting: still has to be figured out]
 
 
------ Questions -----
 
-1. How does the data handle missing data / unequal time steps? I think there is no input arguments for things like "days" and "measurement occasion per day"? Are those two things together coded in the argument "Time"?
->> Time is really just each time-point after one another, missing data is not facilitated so Time should be a sequence of integers without missings.
-
-2. Why use "invisible()" instead of "return()" to return objects from functions?
->> I like it because it does not print stuff to the screen unless you save it somewhere, just a weird preference I have.
-
-3. Why is the object LCVAR_out$BestSolutionsPerCluster a list with 1 entry, if all the cluster info is in this list entry? (I guess we already notes this last time, see above); I tried to get rid of this in callEMFuncs.R, but didn't manage
->> So LCVAR_out$BestSolutionsPerCluster is the result of the grid search over all solutions that shows the signle best model (best start and best time-series model) for a given number of clusters. There is only 1 entry in this because you specified in your example only 1 number of clusters. If you specify a vector of possible number of clusters in the LCVARclust input (e.g., 2:4) you will get 3 entries here (the best fitting model for 2-clusters, the best fitting model for 3-clusters, and the best fitting model for 4-clusters). The best model for a given number of clusters is slected though the time-series information criterion (e.g., either HQ or SC).
-
-4. What is the rational EM-start? Some mean-based clustering or so?
->> Yes, basically a k-means result where the parameters of the time-series model we entered into the k-means algorithm.
-
-5. Anja: how do you ensure a function form the correct package is called? Using ::?
 
 

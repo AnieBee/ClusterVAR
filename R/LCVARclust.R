@@ -96,7 +96,12 @@ LCVARclust <- function(Data,
   # Exogenous Variables #-----------------------------
   X = createX(YLength = dim(Y)[2], xFactor = xFactor, Data = Data, xContinuous = xContinuous)
   qqq = dim(X)[1] # Number of covariates variables, including intercept (q)
-
+  if(!is.null(xFactor))
+  {# create XUsedForCheck which is used later to check that all Dummies have at least 1 observation per person
+      NumbCategoricalDummies = qqq - length(xContinuous)
+      XUsedForCheck = X[2:NumbCategoricalDummies, ] # NumbCategoricalDummies includes intercept, thus start at row 2 to exclude the intercept
+  }
+  
 
   # ID indicator Variable & TS length for every person #------------------------------
   Pers = as.character(Data[ , ID])
@@ -179,13 +184,14 @@ LCVARclust <- function(Data,
       for (i in 1:N) {
           NewPredictableObsSmall[[i]] = c(intersect(PredictableObs[[lagRunner]], c(PersStart[i]:PersEnd[i])))
           LaggedPredictObsSmall[[i]]  = unlist(GetSequences(NewPredictableObsSmall[[i]], lagRunner))
+          #check that all Dummies have at least 1 observation per person
+          if(!is.null(xFactor)) stopifnot( all(rowSums(XUsedForCheck[ , c( NewPredictableObsSmall[[i]] , LaggedPredictObsSmall[[i]])]) >= 1))
       }
       NewPredictableObs[[lagRunner]] = NewPredictableObsSmall
       LaggedPredictObs[[lagRunner]] = LaggedPredictObsSmall
       PredictableObsConc[[lagRunner]] = do.call(c, NewPredictableObs[[lagRunner]]) 
       LaggedPredictObsConc[[lagRunner]] = do.call(c, LaggedPredictObs[[lagRunner]]) 
   }
-  
   # Create val.init, a list containing memb, a vector ordered by ID that contains the cluster membership initialization ----
   if ( ! is.null(Initialization))
   {
