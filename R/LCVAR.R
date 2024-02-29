@@ -66,7 +66,7 @@ LCVAR <- function(Data,
   stopifnot(is.numeric(Data[ , Beep]))
   if(!is.null(Day)) stopifnot(is.numeric(Data[ , Day]))
 
-  call <- match.call()
+  #call <- match.call()
 
     PreviousSol = TRUE # Use solution of previous Lags as a start
 
@@ -244,7 +244,6 @@ LCVAR <- function(Data,
                          val.init = val.init,
                          smallestClN = smallestClN,
                          SigmaIncrease = SigmaIncrease,
-                         call = call,
                          pbar = pbar,
                          NewPredictableObs = NewPredictableObs, 
                          LaggedPredictObs = LaggedPredictObs,

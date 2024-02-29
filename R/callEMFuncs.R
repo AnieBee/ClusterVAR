@@ -21,7 +21,6 @@ callEMFuncs <- function(Clusters,
                         val.init,
                         smallestClN,
                         SigmaIncrease,
-                        call,
                         pbar,
                         NewPredictableObs,
                         LaggedPredictObs,
@@ -194,8 +193,7 @@ callEMFuncs <- function(Clusters,
   end_time_min <- round(end_time/60, 2)
 
 
-  outlist <- list(call = call,
-                  Call = ModelCall,
+  outlist <- list(Call = ModelCall,
                   All_Models = All_Solutions,
                   Runtime = end_time_min)
 
