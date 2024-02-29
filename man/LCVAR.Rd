@@ -1,5 +1,5 @@
-\name{LCVARclust}
-\alias{LCVARclust}
+\name{LCVAR}
+\alias{LCVAR}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Fitting Latent Class VAR Model
@@ -8,7 +8,7 @@ Fitting Latent Class VAR Model
 Function to fit a Latent Class VAR model with a given number of latent classes
 }
 \usage{
-LCVARclust(Data, yVars, Beep, Day = NULL, ID,
+LCVAR(Data, yVars, Beep, Day = NULL, ID,
            xContinuous = NULL, xFactor = NULL,
            Clusters, Lags, smallestClN = 3, RndSeed,
            Rand = 50, Rational = TRUE,
@@ -113,7 +113,7 @@ Anja Ernst
 
 head(Data)
 
-LCVAR_out <- LCVARclust(Data = Data,
+LCVAR_out <- LCVAR(Data = Data,
                         yVars = 1:4, ID = 5, Beep = 9, Day = 10,
                         xContinuous = 7, xFactor = 8
                         Clusters = 1:2, Lags = 1:2, smallestClN = 3,

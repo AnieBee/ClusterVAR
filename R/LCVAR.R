@@ -1,6 +1,6 @@
 
 
-LCVARclust <- function(Data,
+LCVAR <- function(Data,
                        yVars,
                        Beep,
                        Day = NULL,

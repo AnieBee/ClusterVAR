@@ -6,7 +6,7 @@ import(MASS) # (v.7.3-49) for ginv()
 import(mvtnorm) # (v.1.0-6) for dmvnorm()
 
 # Export
-export(LCVARclust)
+export(LCVAR)
 
 
 
