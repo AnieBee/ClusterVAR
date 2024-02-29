@@ -3,8 +3,8 @@ coef.ClusterVAR <- function(object, ...) {
 
   # Collect from ...
   args <- list(...)
-  if(is.null("args$Lags")) stop("Specify models via the Lags argument.")
-  Lags <- args$Lags
+  if(is.null("args$Model")) stop("Specify models via the Models argument.")
+  Lags <- args$Model
 
   # Lags: a numeric integer or vector of length equal to the number of clusters in the model of interest (do not need to be subsequent).
   # Specifies the lag order of the model for which model coefficients should be retrieved
@@ -14,10 +14,10 @@ coef.ClusterVAR <- function(object, ...) {
   nClusters = length(Lags)
   # -------------Check all input is as expected---------------
   if(!(nClusters %in% object$Call$Clusters)){
-    stop("The length of 'Lags', which specifies the number of clusters, is not contained in the Cluster Sequence of your fitted LCVAR Model Object.")
+    stop("The length of 'Models', which specifies the number of clusters, is not contained in the Cluster Sequence of your fitted LCVAR Model Object.")
   }
   if(!all(Lags %in% object$Call$Lags)){
-    stop("Lags', which specifies the lag order, is not contained in the Lag Sequence of your fitted LCVAR Model Object.")
+    stop("Models', which specifies the lag order, is not contained in the Lag Sequence of your fitted LCVAR Model Object.")
   }
   # -------------
 

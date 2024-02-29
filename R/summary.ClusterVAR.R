@@ -4,21 +4,19 @@ summary.ClusterVAR <- function(object,
 
   # Fill in defaults
   args <- list(...)
-  if(is.null(args$show)) show <- "Best-per-number-of-clusters" else show <- args$show
+  if(is.null(args$show)) show <- "BPC" else show <- args$show
   if(is.null(args$TS_criterion)) TS_criterion <- "SC" else TS_criterion <- args$TS_criterion
   if(is.null(args$global_criterion)) global_criterion <- "BIC" else global_criterion <- args$global_criterion
   if(is.null(args$Number_of_Clusters)) Number_of_Clusters <- NULL else Number_of_Clusters <- args$Number_of_Clusters
 
-
-  # browser()
-  #show = c("Best-per-number-of-clusters", "Best-overall", "Given-a-number-of-clusters")
+  #show =  c("BPC", "BO", "GNC") = c("Best-per-number-of-clusters", "Best-overall", "Given-a-number-of-clusters")
   #TS_criterion = c("SC", "HQ")
   #Global_criterion = c("BIC", "ICL")
-  # Number_of_Clusters is only used if show == "Given-a-number-of-clusters"
+  # Number_of_Clusters is only used if show == "GNC"
 
   # -------------Check all input is as expected---------------
-  if (!(show %in% c("Best-per-number-of-clusters", "Best-overall", "Given-a-number-of-clusters"))) {
-    stop("Invalid value for 'show'. Please choose from: ", paste(c("Best-per-number-of-clusters", "Best-overall", "Given-a-number-of-clusters"), collapse = ", "))
+  if (!(show %in% c("BPC", "BO", "GNC"))) {
+    stop("Invalid value for 'show'. Please choose from: ", paste(c("BPC", "BO", "GNC"), collapse = ", "))
   }
   if (!(TS_criterion %in% c("SC", "HQ"))) {
     stop("Invalid value for 'TS_criterion'. Please choose from: ", paste(c("SC", "HQ"), collapse = ", "))
@@ -26,10 +24,10 @@ summary.ClusterVAR <- function(object,
   if (!(global_criterion %in% c("BIC", "ICL"))) {
     stop("Invalid value for 'global_criterion'. Please choose from: ", paste(c("BIC", "ICL"), collapse = ", "))
   }
-  if (show == "Given-a-number-of-clusters" && is.null(Number_of_Clusters)) {
-    stop("If 'show' is 'Given-a-number-of-clusters', you must specify a value for 'Number_of_Clusters'.")
+  if (show == "GNC" && is.null(Number_of_Clusters)) {
+    stop("If 'show' is 'GNC', you must specify a value for 'Number_of_Clusters'.")
   }
-  if(show == "Given-a-number-of-clusters" && !(Number_of_Clusters %in% object$Call$Clusters)){
+  if(show == "GNC" && !(Number_of_Clusters %in% object$Call$Clusters)){
     stop("The value you specified for 'Number_of_Clusters' is not contained in the Cluster Sequence of your fitted LCVAR Model Object.")
   }
   # -------------
@@ -41,7 +39,7 @@ summary.ClusterVAR <- function(object,
 
   # -------------Create one of the three different types of FunctionOutput---------------
 
-  if(show == "Given-a-number-of-clusters"){
+  if(show == "GNC"){
 
     clusterCounter = which(object$Call$Clusters == Number_of_Clusters)
     GivenClusterOutput = object$Models[[clusterCounter]]
@@ -76,7 +74,7 @@ summary.ClusterVAR <- function(object,
                        "All lags for number of clusters =", Number_of_Clusters,
                        "\n---------------------------------------------------\n"))
   } else {
-    # The below calculation calculates the solution for (show == "Best-per-number-of-clusters") but all calculation steps are also needed if (show == "Best-overall")
+    # The below calculation calculates the solution for (show == "BPC") but all calculation steps are also needed if (show == "BO")
     # For each number of of clusters, find the single best-fitting time-series model for each cluster number
 
     FunctionOutput = data.frame(matrix(NA, nrow = length(object$Call$Clusters), ncol = 7),
@@ -113,13 +111,13 @@ summary.ClusterVAR <- function(object,
     }
 
 
-    if(show == "Best-per-number-of-clusters"){
+    if(show == "BPC"){
       message = paste0(c("---------------------------------------------------\n",
                          "The best lags for any number of clusters as selected by the", TS_criterion,
                          "\n---------------------------------------------------\n"))
       # FunctionOutput stays as calculated above
     }
-    if (show == "Best-overall"){
+    if (show == "BO"){
       BestOverall = switch(global_criterion,
                            "BIC" = which.min(FunctionOutput$BIC),
                            "ICL" = which.min(FunctionOutput$ICL))
