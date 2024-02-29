@@ -110,9 +110,9 @@ Anja Ernst
 
 \dontrun{
 
-head(Data)
+head(SyntheticData)
 
-LCVAR_out <- LCVAR(Data = Data,
+LCVAR_outExample1 <- LCVAR(Data = SyntheticData,
                         yVars = 1:4, ID = 5, Beep = 9, Day = 10,
                         xContinuous = 7, xFactor = 8
                         Clusters = 1:2, Lags = 1:2, smallestClN = 3,
@@ -120,15 +120,21 @@ LCVAR_out <- LCVAR(Data = Data,
                         SigmaIncrease = 10, it = 25, Conv = 1e-05,
                         Covariates = "equal-within-clusters",)
 
-summary(LCVAR_out)
+summary(LCVAR_outExample1)
+summary(LCVARresult = LCVAR_outExample1, show = "Given-a-number-of-clusters", Number_of_Clusters = 2)
+summary(LCVARresult = LCVAR_outExample1, show = "Best-overall")
 
-summary(LCVARresult = LCVAR_out, show = "Given-a-number-of-clusters", Number_of_Clusters = 2)
 
-summary(LCVARresult = LCVAR_out, show = "Best-overall")
-
-coef(LCVAR_out, Lags = c(1))
-
-coef(LCVAR_out, Lags = c(1, 1))
+head(ExampleData)
+LCVAR_outExample2 <- LCVAR(Data = ExampleData,
+                        yVars = 1:4, ID = 5, Beep = 6,
+                        xContinuous = 7, xFactor = 8
+                        Clusters = 2, Lags = 1, smallestClN = 3,
+                        RndSeed = 3, Rand = 2, Rational = TRUE,
+                        SigmaIncrease = 10, it = 25, Conv = 1e-05,
+                        Covariates = "equal-within-clusters",)
+summary(LCVAR_outExample2)
+coef(LCVAR_outExample2, Lags = c(1, 1))
 
 }
 
