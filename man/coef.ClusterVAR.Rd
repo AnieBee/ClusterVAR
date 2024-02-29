@@ -15,8 +15,8 @@ Extracts the parameters of a given model from the output object of the \code{LCV
   \item{object}{
 An output object of the \code{ClusterVAR} function
 }
-  \item{Lags}{
-An integer vector specifying the mode for which parameters should be shown. For example, \code{Lags = c(1,2,1)} returns the parameters of a model with three clusters, in which the first cluster has one lag, the second cluster has 2 lags, and the third cluster has 1 lag.
+  \item{Model}{
+An integer vector specifying the model for which coefficients should be shown. For example, \code{Lags = c(1,1,2)} returns the coefficients of a model with three clusters, in which the first cluster has one lag, the second cluster has 1 lag, and the third cluster has 2 lags.  The vector length indicates the number of clusters in the model of interest.
 }
   \item{\dots}{
 Pass additional arguments.

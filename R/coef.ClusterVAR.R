@@ -26,11 +26,12 @@ coef.ClusterVAR <- function(object, ...) {
   LagListClust = calculateLagList(K = nClusters, HighestLag = max(object$Call$Lags), LowestLag = min(object$Call$Lags))
   Lagscounter  = which(apply(LagListClust, 1, function(row) all(row == Lags)))
   clusterCounter = which(object$Call$Clusters == nClusters)
-  GivenOutput = object$All_Solutions_All_Clusters_Lags_Starts[[clusterCounter]][[Lagscounter]]
+  GivenOutput = object$All_Models[[clusterCounter]][[Lagscounter]]
 
   ## Start loop to find start with best loglikelihood value
   NumberStarts = (object$Call$Rand + as.numeric(object$Call$Rational) + as.numeric(!is.null(object$Call$Initialization)) + 1)
   FitAllStarts = array(NA, dim = NumberStarts) # to store fit of output
+
   for(StartCounter in 1:NumberStarts){
     FitAllStarts[StartCounter] = GivenOutput[[StartCounter]]$last.loglik
   }

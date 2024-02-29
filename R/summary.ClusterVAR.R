@@ -42,7 +42,7 @@ summary.ClusterVAR <- function(object,
   if(show == "GNC"){
 
     clusterCounter = which(object$Call$Clusters == Number_of_Clusters)
-    GivenClusterOutput = object$Models[[clusterCounter]]
+    GivenClusterOutput = object$All_Models[[clusterCounter]]
     LagCombinations = nrow(l_LagsPerCluster[[Number_of_Clusters]])
 
     # Fit[Lags, Start]
@@ -93,18 +93,18 @@ summary.ClusterVAR <- function(object,
       for(LagCounter in 1:LagCombinations) {
         for(StartCounter in 1:NumberStarts){
           FitAllLags[LagCounter, StartCounter] = switch(TS_criterion,
-                                                        "SC" = object$Models[[ClustCount]][[LagCounter]][[StartCounter]]$SC,
-                                                        "HQ" = object$Models[[ClustCount]][[LagCounter]][[StartCounter]]$HQ)
+                                                        "SC" = object$All_Models[[ClustCount]][[LagCounter]][[StartCounter]]$SC,
+                                                        "HQ" = object$All_Models[[ClustCount]][[LagCounter]][[StartCounter]]$HQ)
         }
       }
       BestRunOneK = arrayInd(which.min(FitAllLags), dim(FitAllLags))
-      FunctionOutput[ClustCount, 1] = paste(object$Models[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$Lags, collapse = " ")
-      FunctionOutput[ClustCount, "log-likelihood"] = object$Models[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$last.loglik
-      FunctionOutput[ClustCount, "parameters"] = object$Models[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$nParameters
-      FunctionOutput[ClustCount, "BIC"] = object$Models[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$BIC
-      FunctionOutput[ClustCount, "ICL"] = object$Models[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$ICL
-      FunctionOutput[ClustCount, "Converged"] = object$Models[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$Converged
-      FunctionOutput[ClustCount, "Proportions"] = paste(round(object$Models[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$Proportions, 2), collapse = " ")
+      FunctionOutput[ClustCount, 1] = paste(object$All_Models[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$Lags, collapse = " ")
+      FunctionOutput[ClustCount, "log-likelihood"] = object$All_Models[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$last.loglik
+      FunctionOutput[ClustCount, "parameters"] = object$All_Models[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$nParameters
+      FunctionOutput[ClustCount, "BIC"] = object$All_Models[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$BIC
+      FunctionOutput[ClustCount, "ICL"] = object$All_Models[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$ICL
+      FunctionOutput[ClustCount, "Converged"] = object$All_Models[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$Converged
+      FunctionOutput[ClustCount, "Proportions"] = paste(round(object$All_Models[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$Proportions, 2), collapse = " ")
 
 
       ClustCount = ClustCount + 1

@@ -196,7 +196,7 @@ callEMFuncs <- function(Clusters,
 
   outlist <- list(call = call,
                   Call = ModelCall,
-                  Models = All_Solutions,
+                  All_Models = All_Solutions,
                   Runtime = end_time_min)
 
   class(outlist) <- c("ClusterVAR", class(outlist))
