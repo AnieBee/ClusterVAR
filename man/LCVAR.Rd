@@ -86,8 +86,7 @@ An object of class 'ClusterVAR' providing several LCVAR models.
 The details of the output components are as follows:
 %%  ~Describe the value returned
 %%  If it is a LIST, use
-\item{call}{The original function call.}
-\item{Call}{A list of the arguments in the original function call.}
+\item{Call}{A list of arguments from the original function call.}
 \item{Models}{All LCVAR models across all number of clusters, lag combinations, and number of starts. \code{Models[[a]][[b]][[c]]}  contains all information for the LCVAR model for the \code{a}th number of clusters that was specified in \code{Clusters}, for the \code{b}th combination of lag orders, on the \code{c}th EM-start. To find the ideal solution across all of them use \code{summary()} or \code{coef()}.}
 \item{Runtime}{The runtime the function took to complete.}
 
