@@ -5,17 +5,17 @@
 \alias{Data}
 \alias{OneClusterDataSet}
 
-\description{Internal vlusterVAR functions.}
+\description{Internal clusterVAR functions.}
 
 \author{Anja Ernst & Jonas Haslbeck}
 
 \details{
 
-Data: XXX DESCRIBE
+SyntheticData: Follows the structure where a 'Beep' variable and a 'Day' variable together indicate the time-point of the measurement. This data has missing observations that have been removed. This data is generated from a 2 cluster model wtih 1 lag for both clusters (i.e., a c(1, 1) Model). 
 
-ExampleData: XXX DESCRIBE
+ExampleData: Follows the structure where a single 'Time' variable indicates the time-point of the measurement. This data is generated from a 2 cluster model wtih 1 lag for both clusters (i.e., a c(1, 1) Model). 
 
-OneClusterDataSet: XXX DESCRIBE
+OneClusterDataSet: Follows the structure where a single 'Time' variable indicates the time-point of the measurement. This data is generated from a 1 cluster model wtih 1 lag for the cluster (i.e., a c(1) Model). 
 
 }
 
