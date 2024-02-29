@@ -87,7 +87,7 @@ The details of the output components are as follows:
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 \item{Call}{A list of arguments from the original function call.}
-\item{Models}{All LCVAR models across all number of clusters, lag combinations, and number of starts. \code{Models[[a]][[b]][[c]]}  contains all information for the LCVAR model for the \code{a}th number of clusters that was specified in \code{Clusters}, for the \code{b}th combination of lag orders, on the \code{c}th EM-start. To find the ideal solution across all of them use \code{summary()} or \code{coef()}.}
+\item{All_Models}{All LCVAR models across all number of clusters, lag combinations, and number of starts. \code{All_Models[[a]][[b]][[c]]}  contains all information for the LCVAR model for the \code{a}th number of clusters that was specified in \code{Clusters}, for the \code{b}th combination of lag orders, on the \code{c}th EM-start. To find the ideal solution across all of them use \code{summary()} or \code{coef()}.}
 \item{Runtime}{The runtime the function took to complete.}
 
 }
@@ -115,25 +115,24 @@ head(SyntheticData)
 LCVAR_outExample1 <- LCVAR(Data = SyntheticData,
                         yVars = 1:4, ID = 5, Beep = 9, Day = 10,
                         xContinuous = 7, xFactor = 8,
-                        Clusters = 1:2, Lags = 1:2, smallestClN = 3,
+                        Clusters = 1:2, Lags = 1, smallestClN = 3,
                         RndSeed = 3, Rand = 2, Rational = TRUE,
                         SigmaIncrease = 10, it = 25, Conv = 1e-05,
                         Covariates = "equal-within-clusters",)
 
 summary(LCVAR_outExample1)
-summary(object = LCVAR_outExample1, show = "GNC", Number_of_Clusters = 2)
-summary(object = LCVAR_outExample1, show = "BO")
 
 
 head(ExampleData)
 LCVAR_outExample2 <- LCVAR(Data = ExampleData,
                         yVars = 1:4, ID = 5, Beep = 6,
                         xContinuous = 7, xFactor = 8,
-                        Clusters = 2, Lags = 1, smallestClN = 3,
+                        Clusters = 2, Lags = 1:2, smallestClN = 3,
                         RndSeed = 3, Rand = 2, Rational = TRUE,
                         SigmaIncrease = 10, it = 25, Conv = 1e-05,
                         Covariates = "equal-within-clusters",)
 summary(LCVAR_outExample2)
+summary(object = LCVAR_outExample2, show = "GNC", Number_of_Clusters = 2)
 coef(LCVAR_outExample2, Model = c(1, 1))
 
 }
