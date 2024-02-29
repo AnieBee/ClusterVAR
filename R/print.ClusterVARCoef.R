@@ -1,4 +1,4 @@
-print.ClusterVARCoef <- function(x) {
+print.ClusterVARCoef <- function(x, ...) {
     #### Return FunctionOutput here ##
     FunctionOutput = list(Lags = x$Lags,
                           VAR_coefficients = x$VAR_coefficients,

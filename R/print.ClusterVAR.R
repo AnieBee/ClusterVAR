@@ -1,6 +1,6 @@
 
 
-print.ClusterVAR <- function(x) {
+print.ClusterVAR <- function(x, ...) {
 
   cat("----- Fitted LCVAR Model Object -----")
   # cat("\n")

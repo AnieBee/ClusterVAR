@@ -8,13 +8,13 @@ Fitting Latent Class VAR Model
 Function to fit a Latent Class VAR model with a given number of latent classes
 }
 \usage{
-LCVARclust(Data, yVars, Beep, Day, ID, xContinuous = NULL,
-           xFactor = NULL, 
-           Clusters, Lags, smallestClN = 3,
-           ICType = c("HQ", "SC"), RndSeed,
-           Rand = 50, Rational = c(TRUE, FALSE),
+LCVARclust(Data, yVars, Beep, Day = NULL, ID,
+           xContinuous = NULL, xFactor = NULL,
+           Clusters, Lags, smallestClN = 3, RndSeed,
+           Rand = 50, Rational = TRUE,
            Initialization = NULL, SigmaIncrease = 10,
-           it = 50, Conv = 1e-05, pbar = TRUE, Covariates = "equal-within-clusters",)
+           it = 50, Conv = 1e-05, pbar = TRUE,
+           Covariates = "equal-within-clusters", ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -71,9 +71,10 @@ A numerical value specifying the convergence criterion of the log likelihood to 
 }
   \item{pbar}{
 If TRUE, a progress bar is shown. Defaults to \code{pbar = TRUE}.}
-}
   \item{Covariates}{
-Constraints on the parameters of the exogenous variable(s). So far only \code{Covariates = "equal-within-clusters"} can be specified.
+Constraints on the parameters of the exogenous variable(s). So far only \code{Covariates = "equal-within-clusters"} can be specified.}
+  \item{...}{
+Additional arguments passed to the function.}
 }
 
 \details{
@@ -87,7 +88,7 @@ The details of the output components are as follows:
 %%  If it is a LIST, use
 \item{call}{The original function call.}
 \item{Call}{A list of the arguments in the original function call.}
-\item{All_Solutions_All_Clusters_Lags_Starts}{All LCVAR models across all number of clusters, lag combinations, and number of starts. \code{All_Solutions_All_Clusters_Lags_Starts[[a]][[b]][[c]]}  contains all information for the LCVAR model for the \code{a}th number of clusters that was specified in \code{\Clusters}, for the \code{b}th combination of lag orders, on the \code{c}th EM-start. To find the ideal solution across all of them use \code{summary()} or \code{coef()}.}
+\item{Models}{All LCVAR models across all number of clusters, lag combinations, and number of starts. \code{Models[[a]][[b]][[c]]}  contains all information for the LCVAR model for the \code{a}th number of clusters that was specified in \code{Clusters}, for the \code{b}th combination of lag orders, on the \code{c}th EM-start. To find the ideal solution across all of them use \code{summary()} or \code{coef()}.}
 \item{Runtime}{The runtime the function took to complete.}
 
 }
@@ -112,7 +113,8 @@ Anja Ernst
 
 head(Data)
 
-LCVAR_out <- LCVARclust(Data = Data, yVars = 1:4, Beep = 9, Day = 10,
+LCVAR_out <- LCVARclust(Data = Data,
+                        yVars = 1:4, ID = 5, Beep = 9, Day = 10,
                         xContinuous = 7, xFactor = 8
                         Clusters = 1:2, Lags = 1:2, smallestClN = 3,
                         RndSeed = 3, Rand = 2, Rational = TRUE,
@@ -129,10 +131,7 @@ coef(LCVAR_out, Lags = c(1))
 
 coef(LCVAR_out, Lags = c(1, 1))
 
-
-
 }
-
 
 }
 

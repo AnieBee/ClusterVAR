@@ -1,7 +1,9 @@
 \name{clusterVAR-internal}
-\title{Internal vlusterVAR functions}
+\title{Internal ClusterVAR functions}
 
-\alias{ExampleData}
+\alias{DetPredSubj}
+\alias{calculateICL}
+\alias{calculateBIC}
 \alias{InitPseudoRand}
 \alias{InitRand}
 \alias{InitRat}

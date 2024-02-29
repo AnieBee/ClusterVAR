@@ -1,14 +1,23 @@
 
+plot.ClusterVAR <- function(x,
+                            ...) {
 
 
-plot.ClusterVAR <- function(object,
-                            show = "Best-per-number-of-clusters",
-                            Number_of_Clusters = NULL) {
+  # ----- Fill in defaults ------
+  args <- list(...)
+  if(is.null(args$show)) show <- "Best-per-number-of-clusters" else show <- args$show
+  if(is.null(args$TS_criterion)) TS_criterion <- "SC" else TS_criterion <- args$TS_criterion
+  if(is.null(args$global_criterion)) global_criterion <- "BIC" else global_criterion <- args$global_criterion
+  if(is.null(args$Number_of_Clusters)) Number_of_Clusters <- NULL else Number_of_Clusters <- args$Number_of_Clusters
+
+
 
   # ----- Get relevant data from summary method ------
 
-  out_sum <- summary(LCVARresult = object,
+  out_sum <- summary(object = x,
                      show = show,
+                     TS_criterion = TS_criterion,
+                     global_criterion = global_criterion,
                      Number_of_Clusters = Number_of_Clusters)
   out_table <- out_sum$FunctionOutput
 
@@ -32,7 +41,7 @@ plot.ClusterVAR <- function(object,
     axis(2, round(seq(yrange[1], yrange[2], length=8)), las=2)
     title(xlab="Number of Clusters")
     title(ylab="Information Criterion", line=4.5)
-    title("Models with Best Lag for each Cluster", font.main=1)
+    title("Different Number of Clusters (each with best Lag model)", font.main=1)
 
     # Plotting Data
     points(1:N_L, out_table$ICL, col=cols[1], pch=19)

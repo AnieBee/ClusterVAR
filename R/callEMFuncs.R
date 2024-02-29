@@ -45,8 +45,8 @@ callEMFuncs <- function(Clusters,
                                                                 LowestLag = LowestLag)
   # Compute number of fitted models
   n_Fit <- sum(unlist(lapply(l_LagsPerCluster, nrow))) * (Rand + as.numeric(Rational) + as.numeric(!is.null(Initialization)) + as.numeric(PreviousSol)) # number of models times number of random restarts
- 
-  
+
+
 
   # ----- Create Progress Bar -----
   # Set up progress bar
@@ -58,7 +58,7 @@ callEMFuncs <- function(Clusters,
   for(K in Clusters)  {
 
     LagCombinations <- nrow(l_LagsPerCluster[[K]]) #dim(LagsList)[1]
-    LagsList <- l_LagsPerCluster[[K]] 
+    LagsList <- l_LagsPerCluster[[K]]
 
     # OutputListAllLags[[Lags]][[Start]]
     OutputListAllLags = createOutputList(LagCombinations = LagCombinations,
@@ -70,7 +70,7 @@ callEMFuncs <- function(Clusters,
     FitAllLags = array(NA, dim = c(LagCombinations, Rand + as.numeric(Rational) +
                                      as.numeric(!is.null(Initialization))
                                    + as.numeric(PreviousSol))) # to store fit of output
-    
+
 
     ### Initialization Prerequesites: calcuate coefficeints passed to initial clustering solutions ###---------------------------------
     CoeffsForRandoAndRationalList = callCalculateCoefficientsForRandoAndRational(Covariates = Covariates,
@@ -95,7 +95,7 @@ callEMFuncs <- function(Clusters,
     usePrevLagSol = FALSE   # Make sure the previous lag solution-using start is not called before a previous solution exists
     for(LagCounter in 1:LagCombinations) {
 
-      
+
          #### Random starts ###
       StartCounter = 0
       while (StartCounter != length(EMCallVec))
@@ -142,18 +142,18 @@ callEMFuncs <- function(Clusters,
                                PersEndU_NPred = PersEndU_NPred,
                                Covariates = Covariates, smallestClN = smallestClN, SigmaIncrease = SigmaIncrease),
                  IDNames = IDNames, Y = Y, X = X, K = K, N = N, Tni_NPred = Tni_NPred, qqq = qqq, nDepVar = nDepVar,
-                 NewPredictableObs = NewPredictableObs, LaggedPredictObs = LaggedPredictObs, 
+                 NewPredictableObs = NewPredictableObs, LaggedPredictObs = LaggedPredictObs,
                  PredictableObsConc = PredictableObsConc,
                  LaggedPredictObsConc = LaggedPredictObsConc,
-                 PersEnd = PersEnd, PersStart = PersStart, 
+                 PersEnd = PersEnd, PersStart = PersStart,
                  PersStartU_NPred = PersStartU_NPred, PersEndU_NPred = PersEndU_NPred,
                  Covariates = Covariates, Conv = Conv, it = it, smallestClN = smallestClN,
                  SigmaIncrease = SigmaIncrease)
 
         FitAllLags[LagCounter, StartCounter] = OutputListAllLags[[LagCounter]][[StartCounter]]$SC
-        
+
         # ----- Update progress bar  -----
-        pb_counter <- pb_counter + 1 
+        pb_counter <- pb_counter + 1
         if(pbar==TRUE) setTxtProgressBar(pb, pb_counter)
 
         ########## Addition to speed up estimation in case K == 1
@@ -167,9 +167,9 @@ callEMFuncs <- function(Clusters,
 
             OutputListAllLags[[LagCounter]][[StartCounter]] = OutputListAllLags[[LagCounter]][[StartCounter - 1]]
             FitAllLags[LagCounter, StartCounter] = FitAllLags[LagCounter, StartCounter - 1]
-            
+
             # ----- Update progress bar  -----
-            pb_counter <- pb_counter + 1 
+            pb_counter <- pb_counter + 1
             if(pbar==TRUE) setTxtProgressBar(pb, pb_counter)
           }
         }
@@ -196,7 +196,7 @@ callEMFuncs <- function(Clusters,
 
   outlist <- list(call = call,
                   Call = ModelCall,
-                  All_Solutions_All_Clusters_Lags_Starts = All_Solutions,
+                  Models = All_Solutions,
                   Runtime = end_time_min)
 
   class(outlist) <- c("ClusterVAR", class(outlist))
