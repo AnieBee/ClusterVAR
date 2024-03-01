@@ -52,7 +52,7 @@ LCVAR <- function(Data,
   if(!missing(RndSeed)) set.seed(RndSeed)
 
   # Checks
-  stopifnot(HighestLag < 3) # highest lag number that is allowed is 3
+  stopifnot(HighestLag <= 3) # highest lag number that is allowed is 3
   stopifnot( ! (duplicated(c(ID, xFactor, xContinuous, Initialization))) ) # Evaluate there is no overlap
   stopifnot(LowestLag & HighestLag)
   stopifnot(HighestLag >= LowestLag)

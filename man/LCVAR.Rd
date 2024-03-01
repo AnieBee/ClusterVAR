@@ -118,7 +118,7 @@ LCVAR_outExample1 <- LCVAR(Data = SyntheticData,
                         Clusters = 1:2, Lags = 1, smallestClN = 3,
                         RndSeed = 3, Rand = 2, Rational = TRUE,
                         SigmaIncrease = 10, it = 25, Conv = 1e-05,
-                        Covariates = "equal-within-clusters",)
+                        Covariates = "equal-within-clusters")
 
 summary(LCVAR_outExample1)
 
@@ -130,7 +130,7 @@ LCVAR_outExample2 <- LCVAR(Data = ExampleData,
                         Clusters = 2, Lags = 1:2, smallestClN = 3,
                         RndSeed = 3, Rand = 2, Rational = TRUE,
                         SigmaIncrease = 10, it = 25, Conv = 1e-05,
-                        Covariates = "equal-within-clusters",)
+                        Covariates = "equal-within-clusters")
 summary(LCVAR_outExample2)
 summary(object = LCVAR_outExample2, show = "GNC", Number_of_Clusters = 2)
 coef(LCVAR_outExample2, Model = c(1, 1))
