@@ -7,7 +7,6 @@
 \alias{InitPseudoRand}
 \alias{InitRand}
 \alias{InitRat}
-\alias{selectA}
 \alias{reorderLags}
 \alias{determineLagOrder}
 \alias{createX}

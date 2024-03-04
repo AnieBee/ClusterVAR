@@ -103,6 +103,8 @@ callEMFuncs <- function(Clusters,
 
         StartCounter = StartCounter + 1
 
+        browser()
+        
         OutputListAllLags[[LagCounter]][[StartCounter]] =
             EMFunc(Init = EMInit(InitMT =
                                  switch(EMCallVec[StartCounter],
