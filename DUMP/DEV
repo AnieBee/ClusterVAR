@@ -1,6 +1,10 @@
 
 ----- Questions -----
 
+1A. Plot function that plots IC needs to be updated in line with updates to summary, if show = "BPC", the plot function can plot the number of parameters, becuase the TS IC and the log-likelihood IC cannot be used for comparison
+>> what shall be default of summary function? GNL or BPC?
+>> I made the default option for GNL, shall it be same default for GNC? Maybe highest number of clusters?
+
 1. Discuss the estimation of daytime-effects when day is specified.
 
 2. Do we have a plotting function for the coefficients?
@@ -8,8 +12,9 @@
 3. What was the code again for compiling the package?
 
 
-5. Anja: how do you ensure a function form the correct package is called? Using ::?
 
+
+5. Anja: how do you ensure a function form the correct package is called? Using ::?
 
 
 

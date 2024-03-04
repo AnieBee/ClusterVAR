@@ -8,7 +8,7 @@ summary.ClusterVAR <- function(object,
   if(is.null(args$TS_criterion)) TS_criterion <- "SC" else TS_criterion <- args$TS_criterion
   if(is.null(args$global_criterion)) global_criterion <- "BIC" else global_criterion <- args$global_criterion
   if(is.null(args$Number_of_Clusters)) Number_of_Clusters <- NULL else Number_of_Clusters <- args$Number_of_Clusters
-  if(is.null(args$Number_of_Lags)) Number_of_Lags <- NULL else Number_of_Lags <- args$Number_of_Lags
+  if(is.null(args$Number_of_Lags)) Number_of_Lags <- min(object$Call$Lags) else Number_of_Lags <- args$Number_of_Lags
 
   #show =  c("BPC", "GNC", "GNL") = c("Best-per-number-of-clusters", "Given-a-number-of-clusters", "Given-a-number-of-lags-for-all-Clusters")
   #TS_criterion = c("SC", "HQ")
@@ -30,9 +30,6 @@ summary.ClusterVAR <- function(object,
   }
   if(show == "GNC" && !(Number_of_Clusters %in% object$Call$Clusters)){
     stop("The value you specified for 'Number_of_Clusters' is not contained in the Cluster sequence of your fitted LCVAR Model Object.")
-  }
-  if (show == "GNL" && is.null(Number_of_Lags)) {
-      stop("If 'show' is 'GNL', you must specify a value for 'Number_of_Lags'.")
   }
   if(show == "GNL" && !(Number_of_Lags %in% object$Call$Lags)){
       stop("The value you specified for 'Number_of_Lags' is not contained in the Lag sequence of your fitted LCVAR Model Object.")
