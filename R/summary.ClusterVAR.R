@@ -120,7 +120,7 @@ summary.ClusterVAR <- function(object,
     # remove BIC and ICL from this output, because models with unequal number of lags cannot be compared to one another
      FunctionOutput = FunctionOutput[, -c(4, 5)]
       message = paste0(c("---------------------------------------------------\n",
-                         "The best lags for any number of clusters as selected by the", TS_criterion,
+                         "The best lags for each number of clusters as selected by the", TS_criterion,
                          "\n---------------------------------------------------\n"))
       # FunctionOutput stays as calculated above
     }
