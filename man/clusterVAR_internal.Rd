@@ -39,7 +39,7 @@
 \alias{EMInit}
 \alias{EMFunc}
 
-\description{Internal vlusterVAR functions.}
+\description{Internal clusterVAR functions.}
 
 \author{Anja Ernst & Jonas Haslbeck}
 

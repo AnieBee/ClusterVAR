@@ -13,7 +13,7 @@ Takes the output of the ClusterVAR object and creates a small summary of the fit
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{object}{
-An output object of the \code{ClusterVAR} function.
+An output object of the \code{LCVAR} function.
 }
   \item{show}{
 Indicate how models should be summarized, the possible choices are \code{"BPC"}, \code{"GNC"}and \code{"GNL"}. \code{show = "BPC"} compares models with different time lags for each number of clusters. For each number of clusters, the model with the best lag is selected and displayed in the output. The best lag is selected through the time-series information criterion specified with the argument \code{TS_criterion} (see below). \code{show = "GNC"} shows all models with different lags for a given number of clusters, this number of clusters is specified through \code{Number_of_Clusters} (see below). \code{show = "GNL"} shows for each number of clusters the model where all lags are fixed to a given number, this number of lags is specified through \code{Number_of_Lags} (see below). Out of these models, the best model in terms of the number of clusters is selected by the information criterion selected with the argument \code{global_criterion} (see below). Defaults to \code{show = "BPC"}.

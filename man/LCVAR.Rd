@@ -2,10 +2,10 @@
 \alias{LCVAR}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Fitting Latent Class VAR Model
+Fitting Latent Class VAR Models
 }
 \description{
-Function to fit a Latent Class VAR model with a given number of latent classes
+Function to fit a Latent Class VAR model with a given number of latent classes.
 }
 \usage{
 LCVAR(Data, yVars, Beep, Day = NULL, ID,
@@ -28,7 +28,7 @@ An integer vector specifying the position of the column(s) in dataframe \code{Da
 An integer specifying the position of the column in dataframe \code{Data} that contains the time point.
 }
   \item{Day}{
-Optional. An integer specifying the position of the column in dataframe \code{Data} that contains the variable that indicates on which day the measurement was made. If day is supplied here, the first measurment on each day will be removed from calculations for the VAR coefficients.
+Optional. An integer specifying the position of the column in dataframe \code{Data} that contains the variable that indicates on which day the measurement was made. If \code{Day} is supplied here, the first measurment on each day will be removed from calculations for the VAR coefficients.
 }
   \item{ID}{
 An integer specifying the position of the column in dataframe \code{Data} that contains the ID variable for every participant.
@@ -43,7 +43,7 @@ Optional argument.  An integer vector specifying the position of the column(s) i
 An integer or integer vector specifying the numbers of latent classes (i.e., clusters) for which LCVAR models are to be calculated.
 }
   \item{Lags}{
-An integer or integer vector specifying the number of VAR(p) lags to consider. Needs to be a subsequent sequence of subsequent integers.
+An integer or integer vector specifying the number of VAR(p) lags to consider. Needs to be a sequence of subsequent integers.
 }
   \item{smallestClN}{
 An integer specifying the lowest number of individuals allowed in a cluster. When during estimation the crisp cluster membership of a cluster indicates less than \code{smallestClN} individuals, the covariance matrix and the posterior probabilities of cluster membership are reset. Defaults to \code{smallestClN = 3}.
@@ -55,10 +55,10 @@ An integer specifying the lowest number of individuals allowed in a cluster. Whe
 The number of pseudo-random EM-starts used in fitting each possible model. For pseudo-random starts K individuals are randomly selected as cluster centres. Then individuals are partitioned into the cluster to which their individual VAR and individual covariate coefficients are closest. Defaults to \code{Rand = 50}.
 }
   \item{Rational}{
-Logical, indicateing whether a rational EM-start should be used. Defaults to \code{Rational = TRUE}. Rational starts are based on the k-means partitioning of individuals’ ideographic VAR and ideographic covariate coefficients.
+Logical, indicateing whether a rational EM-start should be used in addition to the other EM-starts. Defaults to \code{Rational = TRUE}. Rational starts are based on the k-means partitioning of individuals’ ideographic VAR and ideographic covariate coefficients.
 }
   \item{Initialization}{
-Optional argument. An integer specifying the position of a column in dataframe \code{Data} that contains a guess at participants' cluster membership for a fixed number of clusters, if available.
+Optional argument. An integer specifying the position of a column in dataframe \code{Data} that contains a guess at participants' cluster membership for a fixed number of clusters, if available. This initialization will be used as an additional EM-start.
 }
   \item{SigmaIncrease}{
 A numerical value specifying the value by which every element of Sigma will be increased when posterior probabilities of cluster memberships are reset.
@@ -70,7 +70,7 @@ An integer specifying the maximum number of EM-iterations allowed for every EM-s
 A numerical value specifying the convergence criterion of the log likelihood to determine convergence of an EM-start. For details see Ernst et al. (2020) Inter-individual differences in multivariate time series: Latent class vector-autoregressive modelling.  Defaults to \code{Conv = 1e-05}.
 }
   \item{pbar}{
-If TRUE, a progress bar is shown. Defaults to \code{pbar = TRUE}.}
+If \code{TRUE}, a progress bar is shown. Defaults to \code{pbar = TRUE}.}
   \item{Covariates}{
 Constraints on the parameters of the exogenous variable(s). So far only \code{Covariates = "equal-within-clusters"} can be specified.}
   \item{...}{
@@ -87,13 +87,12 @@ The details of the output components are as follows:
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 \item{Call}{A list of arguments from the original function call.}
-\item{All_Models}{All LCVAR models across all number of clusters, lag combinations, and number of starts. \code{All_Models[[a]][[b]][[c]]}  contains all information for the LCVAR model for the \code{a}th number of clusters that was specified in \code{Clusters}, for the \code{b}th combination of lag orders, on the \code{c}th EM-start. To find the ideal solution across all of them use \code{summary()} or \code{coef()}.}
+\item{All_Models}{All LCVAR models across all number of clusters, lag combinations, and number of EM-starts. \code{All_Models[[a]][[b]][[c]]}  contains all information for the LCVAR model for the \code{a}th number of clusters that was specified in \code{Clusters}, for the \code{b}th combination of lag orders, on the \code{c}th EM-start. To find the ideal model across all of them use \code{summary()}, to view the coefficients of a given model, use \code{coef()}.}
 \item{Runtime}{The runtime the function took to complete.}
 
 }
 \references{
-Ernst, A. F., Albers, C. J., Jeronimus, B. F., & Timmerman, M. E. (2020). Inter-individual differences in multivariate time-series. European Journal of Psychological Assessment.
-}
+Ernst, A. F., Albers, C. J., Jeronimus, B. F., & Timmerman, M. E. (2020). Inter-individual differences in multivariate time-series: Latent class vector-autoregressive modeling. European Journal of Psychological Assessment, 36(3), 482–491. https://doi.org/10.1027/1015-5759/a000578}
 \author{
 Anja Ernst
 }

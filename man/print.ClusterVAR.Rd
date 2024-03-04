@@ -13,7 +13,7 @@ Takes the output of the ClusterVAR object and prints a small overview of the fit
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-An output object of the \code{ClusterVAR} function
+An output object of the \code{LCVAR} function
 }
   \item{\dots}{
 Pass additional arguments
