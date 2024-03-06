@@ -1,12 +1,12 @@
 calculateB <- function(Covariates, K, nDepVar, A, Sigma, N, NewPredictableObs, X, Y, Lags, FZY, qqq, B)
 {
-    if(Covariates == "equal-within-clusters"){# B(0): equal-within-clusters
+    #if(Covariates == "equal-within-clusters"){# B(0): equal-within-clusters
         for(j in 1:K)
         {
             Bnum = 0
             Bdenom = 0
             Delta = cbind(diag(nDepVar), (-1) * A[ , 1:(nDepVar * Lags[j]), j])
-            NewCovaMat = t(Delta) %*% ginv(Sigma[, , j]) %*% Delta
+            NewCovaMat = t(Delta) %*% MASS::ginv(Sigma[, , j]) %*% Delta
             for(i in 1:N)
             {
                 Bn = 0
@@ -22,10 +22,10 @@ calculateB <- function(Covariates, K, nDepVar, A, Sigma, N, NewPredictableObs, X
                 Bnum = Bnum + (FZY[ i, j] * Bn)
                 Bdenom = Bdenom + (FZY[ i, j] * Bd)
             }
-            BasVec = ginv(Bdenom) %*% Bnum
+            BasVec = MASS::ginv(Bdenom) %*% Bnum
             B[, , j] = matrix(BasVec, nrow = nDepVar, ncol = qqq, byrow = FALSE)
         }
-    }
+    #}
     
     invisible(B)
     

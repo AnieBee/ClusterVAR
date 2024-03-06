@@ -42,8 +42,8 @@ registerDoParallel(cl)
 # Below: For this examples I don't need to send objects or packages to the nodes, so I left this
 # commented out; but this shows how to do it
 
-v_out2 <- foreach(i = 1:nIter
-                  # .packages = c("bgms", "IsingFit"),
+v_out2 <- foreach::foreach(i = 1:nIter,
+                  #.packages = c("bgms", "IsingFit")
                   # .export = c("n_seq", "v_n_edges_present", "n_methods", "n_dvars", "GenData_RndG", "EstimationFunction"),
                   ) %dopar% {
 

@@ -219,6 +219,8 @@ LCVAR <- function(Data,
   if ( ! is.null(Initialization))
   {
     val.init = list(memb = as.numeric(as.factor(Data[PersStart, Initialization])))
+  }else{
+      val.init = NULL
   }
 
   ##### Call EM #####---------------------

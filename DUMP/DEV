@@ -5,17 +5,15 @@
 >> what shall be default of summary function? GNL or BPC?
 >> I made the default option for GNL, shall it be same default for GNC? Maybe highest number of clusters?
 
-1. Discuss the estimation of daytime-effects when day is specified.
+1. Plot should plot Nparas for BPC
 
-2. Do we have a plotting function for the coefficients?
+2. Code snippet to compile package
 
-3. What was the code again for compiling the package?
-
-
-
-
-5. Anja: how do you ensure a function form the correct package is called? Using ::?
-
+3. I made the function parallel, does slow it down though if there is only one cluster
+>> how to remove the text that it prints?
+>> The progress bar does not work anymore, jumps between higher and lower numbers (when lags 1:2 and clusters 1:5). 
+I think we have to move it outside of the cluster calculations then, then it can only be updated with the number of clusters
+>> add the three necessary pacakges for foreach to namespace
 
 
 -------------------------------
