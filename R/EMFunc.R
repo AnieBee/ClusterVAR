@@ -159,10 +159,18 @@ EMFunc <- function(Init,
                          ncovariates = qqq)  
   Classification = apply(FZY, 1, which.max)
   last.lik = likelihood[EMiteration]
-
+  
+  ## claculate clTimepoints
+  clTimepoints = as.vector(rep(0, K))
+  for(j in 1:K)
+  {
+      for (i in 1:N)
+      {
+          clTimepoints[j] = clTimepoints[j] + (FZY[ i, j] * (Tni_NPred[[Lags[j]]][i]))
+      }
+  }##
   SC = calculateIC(ICType = "SC", Sigma = Sigma, Lags = Lags,
-                   nDepVar = nDepVar, K = K, N = N, FZY = FZY,
-                   Tni_NPred = Tni_NPred, tau = tau)
+                   nDepVar = nDepVar, K = K, clTimepoints = clTimepoints, tau = tau)
 
   HQ = calculateIC(
       ICType = "HQ",
@@ -170,14 +178,11 @@ EMFunc <- function(Init,
       Lags = Lags,
       nDepVar = nDepVar,
       K = K,
-      N = N,
-      FZY = FZY,
-      Tni_NPred = Tni_NPred,
+      clTimepoints = clTimepoints,
       tau = tau
   )
   
-  BIC = calculateBIC(nPara = nPara, Lags = Lags, K = K, N = N,
-                     FZY = FZY, Tni_NPred = Tni_NPred, last.lik = last.lik)
+  BIC = calculateBIC(nPara = nPara, clTimepoints = clTimepoints, last.lik = last.lik)
   ICL = calculateICL(BIC = BIC, K = K, N = N, FZY = FZY, 
                      Classification = Classification)
 
@@ -207,6 +212,7 @@ EMFunc <- function(Init,
                   Posterior_probabilities = t(FZY),
                   Classification = Classification,
                   Proportions = tau,
+                  PredictableTimepoints = sum(clTimepoints),
                   SC = SC,
                   HQ = HQ,
                   BIC = BIC,
