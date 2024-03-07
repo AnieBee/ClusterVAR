@@ -160,6 +160,7 @@ EMFunc <- function(Init,
   Classification = apply(FZY, 1, which.max)
   last.lik = likelihood[EMiteration]
   
+
   ## claculate clTimepoints
   clTimepoints = as.vector(rep(0, K))
   for(j in 1:K)
@@ -169,6 +170,7 @@ EMFunc <- function(Init,
           clTimepoints[j] = clTimepoints[j] + (FZY[ i, j] * (Tni_NPred[[Lags[j]]][i]))
       }
   }##
+
   SC = calculateIC(ICType = "SC", Sigma = Sigma, Lags = Lags,
                    nDepVar = nDepVar, K = K, clTimepoints = clTimepoints, tau = tau)
 

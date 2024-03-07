@@ -49,8 +49,8 @@ LCVAR <- function(Data,
   if(!all((Lags[-1] - Lags[-length(Lags)]==1))) stop("Lags need to be specified as subsequent integers.")
 
   # Set random seed, if specified
-  if(!missing(RndSeed)) set.seed(RndSeed)
-
+  if(!is.null(RndSeed)) set.seed(RndSeed)
+     
   # Checks
   stopifnot(HighestLag <= 3) # highest lag number that is allowed is 3
   stopifnot( ! (duplicated(c(ID, xFactor, xContinuous, Initialization))) ) # Evaluate there is no overlap
@@ -161,7 +161,7 @@ LCVAR <- function(Data,
       stopifnot(all(Tni_NPred[[lagRunner]] > 4))
       
       ## Change PredictableObs so that it contains the position of the observations in Y, and W, and X, that can be predicted
-      PredictableObs[[lagRunner]] = which(PredictableObs[[lagRunner]][ ,1] ==  1)
+      PredictableObs[[lagRunner]] = which(PredictableObs[[lagRunner]][ , 1] ==  1)
      
       PersStartU_NPred[[lagRunner]] = cumsum(c(0, Tni_NPred[[lagRunner]][-length(Tni_NPred[[lagRunner]])])) + 1 
       # Start of individual time series for every pers in U ( = non-predictables are removed)
@@ -243,6 +243,7 @@ LCVAR <- function(Data,
                          Covariates = Covariates,
                          Conv = Conv,
                          it = it,
+                         RndSeed = RndSeed,
                          val.init = val.init,
                          smallestClN = smallestClN,
                          SigmaIncrease = SigmaIncrease,

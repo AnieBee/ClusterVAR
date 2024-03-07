@@ -10,8 +10,7 @@ createX <- function(YLength, xFactor, Data, xContinuous)
         Data[xFactor] <- lapply(Data[xFactor], as.factor) # Make every variable that is supposed to ba a factor into a factor
         Dum <- as.matrix(Data[, xFactor])
         colnames(Dum) <- names(Data)[xFactor] # save name so it does not lose col name if it contains only a single var
-        Dum = dummy_cols(Dum, remove_first_dummy = TRUE) # Dumm contains dummies for all xFactor variables:
-        # DumDum = dummy_cols(DumDum, remove_first_dummy = T) #Dummy = model.matrix(~factor(Data[, xFactor[r]]))
+        Dum = fastDummies::dummy_cols(Dum, remove_first_dummy = TRUE) # Dumm contains dummies for all xFactor variables:
         Dum = Dum[ , -c(1:length(xFactor))] # delete xFactor variables after you added dummies, 
         # make sure dummies are always added Behind the existing variables, otherwise the above removes the wrong variables
         # qq <- dim(Dum)[2] # number of dummies

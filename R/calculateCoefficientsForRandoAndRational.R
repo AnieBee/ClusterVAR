@@ -24,13 +24,13 @@ calculateCoefficientsForRandoAndRational <- function(Covariates,
   {
      XPerson = X[ , PersStart[i]:PersEnd[i], drop = FALSE]
     BIndividual[ , , i] = (Y[ , PersStart[i]:PersEnd[i]] %*% t(XPerson)) %*%
-      ginv(XPerson %*% t(XPerson))
+        MASS::ginv(XPerson %*% t(XPerson))
     WIndividual[ , (PersStart[i]):(PersEnd[i])] = Y[ , (PersStart[i]):(PersEnd[i])] - (BIndividual[ , , i] %*% XPerson)
     
       LaggedWK = matrix(WIndividual[ , LaggedPredictObs[[i]], drop = FALSE], nrow = (nDepVar * Lag))
       AKn = WIndividual[ , NewPredictableObs[[i]], drop = FALSE] %*% t(LaggedWK)
       AKd = LaggedWK %*% t(LaggedWK)
-    CoefficientsForRandoAndRational[1:(nDepVar * nDepVar * Lag), i] = as.vector(AKn %*% ginv(AKd)) # AIndividual # gets read in left to right
+    CoefficientsForRandoAndRational[1:(nDepVar * nDepVar * Lag), i] = as.vector(AKn %*% MASS::ginv(AKd)) # AIndividual # gets read in left to right
   }
   if(DimensionsBasedonConstraints$ClusterOnB)
   {# Add B to these coefficients on which the initial clustering solutions are built

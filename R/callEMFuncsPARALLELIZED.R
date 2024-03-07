@@ -18,6 +18,7 @@ callEMFuncs <- function(Clusters,
                         Covariates,
                         Conv,
                         it,
+                        RndSeed,
                         val.init,
                         smallestClN,
                         SigmaIncrease,
@@ -52,9 +53,13 @@ callEMFuncs <- function(Clusters,
     
     ### Loop over different K (# of clusters) values  ------------
     # the OutputListAllLags of every K, which contains all solutions for all Lags and all starts for that K
-    cluster <- 6
-    cl <- makeCluster(cluster, outfile="")
+    cl <- makeCluster(6, outfile="")
     registerDoParallel(cl)
+    # Set a seed for each parallel worker , if specified
+    # This ensures that each worker has a different seed
+    if(!is.null(RndSeed)) clusterSetRNGStream(cl, iseed = RndSeed)
+    
+    
     
     All_Solutions <- foreach(K = Clusters,
                       .packages = c("MASS", "mvtnorm", "fastDummies"),
@@ -69,6 +74,9 @@ callEMFuncs <- function(Clusters,
                                   "calculateNPara", "calculateIC", "calculateBIC", "calculateICL")) %dopar% 
         {
         
+        # Use set.seed to set a seed for each iteration within the parallel worker
+        if(!is.null(RndSeed))  set.seed(RndSeed + K)   
+            
         LagCombinations <- nrow(l_LagsPerCluster[[K]]) #dim(LagsList)[1]
         LagsList <- l_LagsPerCluster[[K]]
         
@@ -128,7 +136,7 @@ callEMFuncs <- function(Clusters,
                                                     
                                                     "Previous" = if(usePrevLagSol)
                                                     {   ## Previous Sol ##
-                                                        t(dummy_cols(OutputListAllLags
+                                                        t(fastDummies::dummy_cols(OutputListAllLags
                                                                      [[PrevBestRun[1]]][[PrevBestRun[2]]]$Classification[1, ],
                                                                      remove_first_dummy = FALSE)[ , -1])
                                                     }

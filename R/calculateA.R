@@ -23,7 +23,7 @@ calculateA <-
                 AKnum = AKnum + (FZY[i, j] * (Wk[, NewPredictableObs[[ Lags[j] ]][[i]], WkRunner] %*% t(WK_Lagged)))
                 AKdenom = AKdenom + (FZY[i, j] * (WK_Lagged %*% t(WK_Lagged)))
             }
-            A[, 1:(nDepVar * Lags[j]), j] = AKnum %*% ginv(AKdenom)
+            A[, 1:(nDepVar * Lags[j]), j] = AKnum %*% MASS::ginv(AKdenom)
         }
         
         invisible(A)

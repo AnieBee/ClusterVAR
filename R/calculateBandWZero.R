@@ -12,7 +12,7 @@ calculateBandWZero <- function(Covariates, K, memb, Y, X , PersStart, PersEnd, B
                 BZeronum <- BZeronum + Y[ , PersStart[i]:PersEnd[i], drop = FALSE] %*% t(XPers)
                 BZerodenom <- BZerodenom + XPers %*% t(XPers)
             }
-            BZero[ , , j] <- BZeronum%*%ginv(BZerodenom)
+            BZero[ , , j] <- BZeronum%*%MASS::ginv(BZerodenom)
             for(i in c(which(memb[j, ] == 1)))
             {  
                 WZero[ , (PersStart[i]):(PersEnd[i]), 1] <- Y[ , (PersStart[i]):(PersEnd[i]), drop = FALSE] - (BZero[ , , j] %*% 

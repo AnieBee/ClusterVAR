@@ -5,6 +5,7 @@ print.ClusterVARCoef <- function(x, ...) {
                           Exogenous_coefficients = x$Exogenous_coefficients,
                           Sigma = x$Sigma,
                           Proportions = x$Proportions,
+                          PredictableTimepoints = x$PredictableTimepoints,
                           Converged = x$Converged)
     print(FunctionOutput)
 } # eoF

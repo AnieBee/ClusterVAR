@@ -24,6 +24,8 @@ Pass additional arguments.
 }
 \value{
 STILL NEEDS TO BE DESCRIBED (can't do that now, because the function doesn't work for me)
+
+\item{PredictableTimepoints}{The total number of time-points in this dataset that could be predicted because the previous time-point(s) were observed. In case of unequal lags across different clusters, the number of time-points for each person are weighted by posterior cluster-membership probability. }
 }
 \author{
 Anja Ernst & Jonas Haslbeck
