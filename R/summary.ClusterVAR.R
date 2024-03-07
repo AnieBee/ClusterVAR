@@ -75,8 +75,13 @@ summary.ClusterVAR <- function(object,
       FunctionOutput[LagCounter, "Proportions"] = paste(round(GivenClusterOutput[[LagCounter]][[BestModel]]$Proportions, 2), collapse = " ")
     }
     FunctionOutput = FunctionOutput[, -c(5, 6)]
+    BestOverall = switch(TS_criterion,
+                         "SC" = which.min(FunctionOutput$SC),
+                         "HQ" = which.min(FunctionOutput$HQ))
     message = paste0(c("---------------------------------------------------\n",
                        "All lags for number of clusters =", Number_of_Clusters,
+                       "\n",
+                       "For this number of clusters the", TS_criterion,"selects:", row.names(FunctionOutput)[BestOverall],
                        "\n---------------------------------------------------\n"))
     
   }
