@@ -1,6 +1,7 @@
 \name{clusterVAR-internal}
 \title{Internal ClusterVAR functions}
 
+\alias{plotHeat}
 \alias{DetPredSubj}
 \alias{calculateICL}
 \alias{calculateBIC}
