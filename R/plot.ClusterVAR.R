@@ -5,7 +5,7 @@ plot.ClusterVAR <- function(x,
 
   # ----- Fill in defaults ------
   args <- list(...)
-  if(is.null(args$show)) show <- "Best-per-number-of-clusters" else show <- args$show
+  if(is.null(args$show)) show <- "BPC" else show <- args$show
   if(is.null(args$TS_criterion)) TS_criterion <- "SC" else TS_criterion <- args$TS_criterion
   if(is.null(args$global_criterion)) global_criterion <- "BIC" else global_criterion <- args$global_criterion
   if(is.null(args$Number_of_Clusters)) Number_of_Clusters <- NULL else Number_of_Clusters <- args$Number_of_Clusters
@@ -27,7 +27,7 @@ plot.ClusterVAR <- function(x,
 
   # ----- Plotting: Best-per-number-of-clusters ------
 
-  if(show == "Best-per-number-of-clusters") {
+  if(show == "BPC") {
 
     N_L <- nrow(out_table) # number of models
     K <- nrow(out_table)
@@ -59,7 +59,7 @@ plot.ClusterVAR <- function(x,
 
   # ----- Plotting: "Given-a-number-of-clusters" ------
 
-  if(show == "Given-a-number-of-clusters") {
+  if(show == "GNC") {
 
     N_L <- nrow(out_table) # number of models
 
@@ -95,7 +95,6 @@ plot.ClusterVAR <- function(x,
 
 
   # ----- Plotting: XXX ------
-
 
 
 } # eoF
