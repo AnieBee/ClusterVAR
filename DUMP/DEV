@@ -10,13 +10,10 @@ I think we have to move it outside of the cluster calculations then, then it can
 >> add the three necessary pacakges for foreach to namespace
 >> Did you ever use this in a pacakge? Are we sure this will work on other people's computer?
 
-
 1A. Plot function that plots IC needs to be updated in line with updates to summary, if show = "BPC", the plot function can plot the number of parameters, becuase the TS IC and the log-likelihood IC cannot be used for comparison
 >> what shall be default of summary function? GNL or BPC?
 >> I made the default option for GNL, shall it be same default for GNC? Maybe highest number of clusters?
 >> Plot should plot Nparas for BPC
-
-2. Code snippet to compile package
 
 4. Should we add the option to within-person center the data?
 
