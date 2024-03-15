@@ -2,12 +2,6 @@
 # Not sure if the list that is returned is always in the same order in terms of 1:K, B[ , , j] has to return the B for the correct cluster
 calculateB <- function(Covariates, K, nDepVar, A, Sigma, N, NewPredictableObs, X, Y, Lags, FZY, qqq, B)
 {
- ############NEW
-  print("Loading ClusterVAR package...")
-  devtools::load_all("/home/anja/Desktop/ClusterVARPackage/ClusterVAR")
-  print("ClusterVAR package loaded successfully.")
-  ###########
-
     #if(Covariates == "equal-within-clusters"){# B(0): equal-within-clusters
         cluster <- 6
         cl <- makeCluster(cluster, outfile="")
