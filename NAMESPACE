@@ -12,6 +12,7 @@ import(doParallel) # for foreach()
 
 # Export
 export(LCVAR)
+export(numberPredictableObservations)
 
 
 # Exported S3 Methods
