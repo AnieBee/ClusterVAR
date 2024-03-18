@@ -28,7 +28,7 @@ An integer vector specifying the position of the column(s) in dataframe \code{Da
 An integer specifying the position of the column in dataframe \code{Data} that contains the time point.
 }
   \item{Day}{
-Optional. An integer specifying the position of the column in dataframe \code{Data} that contains the variable that indicates on which day the measurement was made. If \code{Day} is supplied here, the first measurment on each day will be removed from calculations for the VAR coefficients.
+Optional. An integer specifying the position of the column in dataframe \code{Data} that contains the variable that indicates on which day the measurement was made. If \code{Day} is supplied here, the first measurement on each day will be removed from calculations for the VAR coefficients.
 }
   \item{ID}{
 An integer specifying the position of the column in dataframe \code{Data} that contains the ID variable for every participant.
@@ -45,7 +45,10 @@ An integer or integer vector specifying the numbers of latent classes (i.e., clu
   \item{Lags}{
 An integer or integer vector specifying the number of VAR(p) lags to consider. Needs to be a sequence of subsequent integers.
 }
-  \item{smallestClN}{
+  \item{Center}{
+Logical, indicating whether the data (i.e., the endogenous variables) should be centered per person before calculations. If \code{Center = TRUE}, the differences in within-person means are removed from the data and the clustering is based only on similarity in VAR coefficients and (if exogenous variable(s) are specified) similarities in infleunces of exogenous variable(s). If \code{Center = FALSE}, the clustering is also based on similarities in within-person means. Defaults to \code{Center = FALSE}.}
+
+\item{smallestClN}{
 An integer specifying the lowest number of individuals allowed in a cluster. When during estimation the crisp cluster membership of a cluster indicates less than \code{smallestClN} individuals, the covariance matrix and the posterior probabilities of cluster membership are reset. Defaults to \code{smallestClN = 3}.
 }
  \item{RndSeed}{
@@ -55,7 +58,7 @@ An integer specifying the lowest number of individuals allowed in a cluster. Whe
 The number of pseudo-random EM-starts used in fitting each possible model. For pseudo-random starts K individuals are randomly selected as cluster centres. Then individuals are partitioned into the cluster to which their individual VAR and individual covariate coefficients are closest. Defaults to \code{Rand = 50}.
 }
   \item{Rational}{
-Logical, indicateing whether a rational EM-start should be used in addition to the other EM-starts. Defaults to \code{Rational = TRUE}. Rational starts are based on the k-means partitioning of individuals’ ideographic VAR and ideographic covariate coefficients.
+Logical, indicating whether a rational EM-start should be used in addition to the other EM-starts. Defaults to \code{Rational = TRUE}. Rational starts are based on the k-means partitioning of individuals’ ideographic VAR and ideographic covariate coefficients.
 }
   \item{Initialization}{
 Optional argument. An integer specifying the position of a column in dataframe \code{Data} that contains a guess at participants' cluster membership for a fixed number of clusters, if available. This initialization will be used as an additional EM-start.

@@ -9,6 +9,7 @@ LCVAR <- function(Data,
                   xFactor = NULL,
                   Clusters,
                   Lags,
+                  Center = FALSE,
                   smallestClN = 3,
                   RndSeed = NULL,
                   Rand = 50,
@@ -90,8 +91,14 @@ LCVAR <- function(Data,
 
 
   # Endogenous Variables #-------------------
-  Y = t(as.matrix(Data[ , yVars]))
+  Y = as.matrix(Data[ , yVars])
+  if(Center){ #within-person center the variables per person
+    WPMeans = apply(Data[, yVars], 2, function(x) ave(x, Data[, ID], FUN = mean))
+    Y = Y - WPMeans
+  }
+  Y = t(Y)
   nDepVar = dim(Y)[1]
+
 
   # Exogenous Variables #-----------------------------
   X = createX(YLength = dim(Y)[2], xFactor = xFactor, Data = Data, xContinuous = xContinuous)
