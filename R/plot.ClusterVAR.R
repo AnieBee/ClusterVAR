@@ -169,7 +169,6 @@ plot.ClusterVAR <- function(x,
     }
 
     # Loop over clusters & plot
-    par(mar=c(2.5,2.5,2,1))
     for(k in 1:K) plotHeat(phi = l_phi[[k]], k = k, main = paste0("Cluster ", k))
 
   } # end if
