@@ -2,9 +2,9 @@
 ----- Questions -----
 
 1. parallel function
->> should we avoid detectCores() in the package?
->> how to remove the text that it prints?
+>>I included a version of  detectCores() in the package but I used instead: availableCores() instead (works better on clsuter computers)
 >> The progress bar does not work anymore, jumps between higher and lower numbers (when lags 1:2 and clusters 1:5). 
+>> Needs to be updated
 
 
 

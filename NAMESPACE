@@ -9,6 +9,7 @@ import(scales) # for alpha (plotting)
 import(foreach) # for foreach()
 import(parallel) # for foreach()
 import(doParallel) # for foreach()
+import(parallelly) # for availableCores()
 
 # Export
 export(LCVAR)
