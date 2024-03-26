@@ -2,6 +2,7 @@ callCalculateCoefficientsForRandoAndRational <- function(Covariates, K, N, nDepV
                                                          PersEnd, PersStart, Y, X, NewPredictableObs, LaggedPredictObs)
 {
 
+
     CoeffsForRandoAndRationalList = vector(mode = "list", HighestLag) # list elements of 1 to LowestLag are empty
     for(lagCounter in LowestLag:HighestLag)
     {
