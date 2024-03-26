@@ -135,7 +135,6 @@ numberPredictableObservations <- function(Data,
     {
         FunctionOutput[lagRunner, ] = sum(Tni_NPred[[lagRunner]])
     }
-    browser()
     FunctionOutput = FunctionOutput[LowestLag:HighestLag, , drop = FALSE]
     #class(FunctionOutput) <- c("ClusterVARNumberPredictable", class(FunctionOutput))
 

@@ -81,7 +81,7 @@ Additional arguments passed to the function.}
 }
 
 \details{
-Some more details.
+This function estimates the latent class vector-autoregressive model to obtain latent classes of individuals who are similar in VAR coefficients, within-person means, and (if specified) infleunces of exogenous variable(s). See https://doi.org/10.1027/1015-5759/a000578 for details.
 }
 
 \value{
@@ -90,7 +90,7 @@ The details of the output components are as follows:
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 \item{Call}{A list of arguments from the original function call.}
-\item{All_Models}{All LCVAR models across all number of clusters, lag combinations, and number of EM-starts. \code{All_Models[[a]][[b]][[c]]}  contains all information for the LCVAR model for the \code{a}th number of clusters that was specified in \code{Clusters}, for the \code{b}th combination of lag orders, on the \code{c}th EM-start. To find the ideal model across all of them use \code{summary()}, to view the coefficients of a given model, use \code{coef()}.}
+\item{All_Models}{All LCVAR models across all number of clusters, lag combinations, and number of EM-starts. \code{All_Models[[a]][[b]][[c]]}  contains all information for the LCVAR model for the \code{a}th number of clusters that was specified in \code{Clusters}, for the \code{b}th combination of lag orders, based on the combination of lags that was specified in \code{Lags}, on the \code{c}th EM-start. To find the ideal model across all of them use \code{summary()}, to view the coefficients of a given model, use \code{coef()}.}
 \item{Runtime}{The runtime the function took to complete.}
 
 }

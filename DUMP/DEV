@@ -9,16 +9,13 @@
 
 
 2. Plot function 
->> If plotting Number of clusters, the x axis somtimes shows non-integer values (like, 0.8), would be good if x axis was drawn specifically as using the cluster numbers in that range (e.g., use the output elelent to see what the cluster range was that was specified)
-This happens for show = "BPC", and show = "GNL",
->> After using plot(LCVAR_outExample2, show = "specific", Model = c(1, 1)) the plotting environment continues to be split in 2
->> the names are X, but X in our notation is for exogenous variabes, these are endogenous variables which we denote as Y, so should at least be called Y but it would be best if the names of the variables would be passed on
->> color to distinguish large and small coefficients (include white for values that are close to zero)
->> inlcude the non-difference option for non lag 1 models as well
->> Plot should plot Nparas for BPC
+>> Check mail questions all implemented
+>> Heading for "GNL" should not be "Fixed max lag" but "Fixed lag"
+
 
 3. Manuals
->> I think some functions still don't have the manual function coef()
+>> I think some functions still don't have the manual function coef() and numberPredictableObservations
+>> 
 
 -------------------------------
 ----- OLD STUFF FROM 2023 -----
