@@ -2,7 +2,7 @@
 ----- Questions -----
 
 1. parallel function
->> how to make it work 
+>> should we avoid detectCores() in the package?
 >> how to remove the text that it prints?
 >> The progress bar does not work anymore, jumps between higher and lower numbers (when lags 1:2 and clusters 1:5). 
 
