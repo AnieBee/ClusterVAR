@@ -11,6 +11,7 @@ LCVAR <- function(Data,
                   Lags,
                   Center = FALSE,
                   smallestClN = 3,
+                  Cores = 1,
                   RndSeed = NULL,
                   Rand = 50,
                   Rational = TRUE,
@@ -66,6 +67,8 @@ LCVAR <- function(Data,
   Clusters = Clusters[order(Clusters)]
   stopifnot(is.numeric(Data[ , Beep]))
   if(!is.null(Day)) stopifnot(is.numeric(Data[ , Day]))
+  stopifnot(is.numeric(Cores))
+  stopifnot(Cores >= 1)
 
   #call <- match.call()
 
@@ -260,7 +263,8 @@ LCVAR <- function(Data,
                          LaggedPredictObsConc = LaggedPredictObsConc,
                          Tni_NPred = Tni_NPred,
                          PersStartU_NPred = PersStartU_NPred,
-                         PersEndU_NPred = PersEndU_NPred
+                         PersEndU_NPred = PersEndU_NPred,
+                         n_cores = Cores
   )
 
 

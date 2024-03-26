@@ -10,8 +10,8 @@ Function to fit a Latent Class VAR model with a given number of latent classes.
 \usage{
 LCVAR(Data, yVars, Beep, Day = NULL, ID,
            xContinuous = NULL, xFactor = NULL,
-           Clusters, Lags, smallestClN = 3, RndSeed,
-           Rand = 50, Rational = TRUE,
+           Clusters, Lags, smallestClN = 3, Cores = 1,
+           RndSeed, Rand = 50, Rational = TRUE,
            Initialization = NULL, SigmaIncrease = 10,
            it = 50, Conv = 1e-05, pbar = TRUE,
            Covariates = "equal-within-clusters", ...)
@@ -50,6 +50,9 @@ Logical, indicating whether the data (i.e., the endogenous variables) should be 
 
 \item{smallestClN}{
 An integer specifying the lowest number of individuals allowed in a cluster. When during estimation the crisp cluster membership of a cluster indicates less than \code{smallestClN} individuals, the covariance matrix and the posterior probabilities of cluster membership are reset. Defaults to \code{smallestClN = 3}.
+}
+\item{Cores}{
+A positive integer specifying the number of cores used for parallelization of the calculation. Defaults to \code{Cores = 1} for non-parallel computing.
 }
  \item{RndSeed}{
   Optional argument. An integer specifying the value supplied to \code{set.seed()}, which guarantees reproducible results. If not specified, no seed is set.
@@ -118,6 +121,7 @@ LCVAR_outExample1 <- LCVAR(Data = SyntheticData,
                         yVars = 1:4, ID = 5, Beep = 9, Day = 10,
                         xContinuous = 7, xFactor = 8,
                         Clusters = 1:2, Lags = 1, smallestClN = 3,
+                        Cores = parallel::detectCores(),
                         RndSeed = 3, Rand = 2, Rational = TRUE,
                         SigmaIncrease = 10, it = 25, Conv = 1e-05,
                         Covariates = "equal-within-clusters")
@@ -130,7 +134,7 @@ LCVAR_outExample2 <- LCVAR(Data = ExampleData,
                         yVars = 1:4, ID = 5, Beep = 6,
                         xContinuous = 7, xFactor = 8,
                         Clusters = 2, Lags = 1:2, smallestClN = 3,
-                        RndSeed = 3, Rand = 2, Rational = TRUE,
+                        Cores = 1, RndSeed = 3, Rand = 2, Rational = TRUE,
                         SigmaIncrease = 10, it = 25, Conv = 1e-05,
                         Covariates = "equal-within-clusters")
 summary(LCVAR_outExample2)

@@ -28,7 +28,8 @@ callEMFuncs <- function(Clusters,
                         LaggedPredictObsConc,
                         Tni_NPred,
                         PersStartU_NPred,
-                        PersEndU_NPred)
+                        PersEndU_NPred,
+                        n_cores)
 {
 
 
@@ -52,8 +53,6 @@ callEMFuncs <- function(Clusters,
 
     ### Loop over different K (# of clusters) values  ------------
     # the OutputListAllLags of every K, which contains all solutions for all Lags and all starts for that K
-    n_cores <- parallelly::availableCores() # Is apparently better for Clsuter computer etc. than parallel::detectCores()
-
     cl <- parallel::makeCluster(n_cores)
     doParallel::registerDoParallel(cl)
     # Set a seed for each parallel worker , if specified
