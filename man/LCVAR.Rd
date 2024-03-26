@@ -52,7 +52,7 @@ Logical, indicating whether the data (i.e., the endogenous variables) should be 
 An integer specifying the lowest number of individuals allowed in a cluster. When during estimation the crisp cluster membership of a cluster indicates less than \code{smallestClN} individuals, the covariance matrix and the posterior probabilities of cluster membership are reset. Defaults to \code{smallestClN = 3}.
 }
 \item{Cores}{
-A positive integer specifying the number of cores used for parallelization of the calculation. Defaults to \code{Cores = 1} for non-parallel computing.
+A positive integer specifying the number of cores used for parallelization of the calculation. Specifying a high number of available cores can speed up calculations. Defaults to \code{Cores = 1} for non-parallel computing.
 }
  \item{RndSeed}{
   Optional argument. An integer specifying the value supplied to \code{set.seed()}, which guarantees reproducible results. If not specified, no seed is set.
