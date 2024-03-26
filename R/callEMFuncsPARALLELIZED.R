@@ -52,7 +52,7 @@ callEMFuncs <- function(Clusters,
 
     ### Loop over different K (# of clusters) values  ------------
     # the OutputListAllLags of every K, which contains all solutions for all Lags and all starts for that K
-    n_cores <- detectCores()
+    n_cores <- parallel::detectCores()
     if (is.na(ncores)) ncores <- 1L
 
     cl <- parallel::makeCluster(n_cores)
