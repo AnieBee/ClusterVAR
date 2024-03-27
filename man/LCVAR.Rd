@@ -28,7 +28,7 @@ An integer vector specifying the position of the column(s) in dataframe \code{Da
 An integer specifying the position of the column in dataframe \code{Data} that contains the time-point.
 }
   \item{Day}{
-Optional. An integer specifying the position of the column in dataframe \code{Data} that contains the variable that indicates the day of measurement. If \code{Day} is supplied here, measurements on the previous day are not used to predict measurements on the current day. Instead, the first \code{Lags} observations within each day are excluded from the calculation of VAR coefficients.
+Optional argument. An integer specifying the position of the column in dataframe \code{Data} that contains the variable that indicates the day of measurement. If \code{Day} is supplied here, measurements on the previous day are not used to predict measurements on the current day. Instead, the first \code{Lags} observations within each day are excluded from the calculation of VAR coefficients.
 
 }
   \item{ID}{
