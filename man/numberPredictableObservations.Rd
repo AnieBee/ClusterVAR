@@ -36,7 +36,7 @@ Additional arguments passed to the function.}
 }
 
 \details{
-This function determines the number of observations in a given dataset that can be predicted based on previous observations. For instance, in a lag-1 model, if an observation is missing, the observation at the next time-point cannot be predicted. Similarly, in a lag-2 model, if an observation is missing, the observations at the next two time-points cannot be predicted. The output gives the number of predictable observations for each of the endogenous variable that was specified under \code{yVars}. The number of predictable observations is the same for all endogenous variables.
+This function determines the number of observations in a given dataset that can be predicted based on previous observations. For instance, in a lag-1 model, if an observation is missing, the observation at the next time-point cannot be predicted. Similarly, in a lag-2 model, if an observation is missing, the observations at the next two time-points cannot be predicted. The output gives the number of predictable observations for each of the endogenous variables that was specified under \code{yVars}. The number of predictable observations is the same for all endogenous variables.
 }
 
 \value{
