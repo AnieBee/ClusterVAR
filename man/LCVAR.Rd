@@ -25,10 +25,11 @@ The data provided in a data.frame.
 An integer vector specifying the position of the column(s) in dataframe \code{Data} that contain the endogenous variables (= the VAR time series).
 }
   \item{Beep}{
-An integer specifying the position of the column in dataframe \code{Data} that contains the time point.
+An integer specifying the position of the column in dataframe \code{Data} that contains the time-point.
 }
   \item{Day}{
-Optional. An integer specifying the position of the column in dataframe \code{Data} that contains the variable that indicates on which day the measurement was made. If \code{Day} is supplied here, the first measurement on each day will be removed from calculations for the VAR coefficients.
+Optional. An integer specifying the position of the column in dataframe \code{Data} that contains the variable that indicates the day of measurement. If \code{Day} is supplied here, measurements on the previous day are not used to predict measurements on the current day. Instead, the first \code{Lags} observations within each day are excluded from the calculation of VAR coefficients.
+
 }
   \item{ID}{
 An integer specifying the position of the column in dataframe \code{Data} that contains the ID variable for every participant.
@@ -43,7 +44,7 @@ Optional argument.  An integer vector specifying the position of the column(s) i
 An integer or integer vector specifying the numbers of latent classes (i.e., clusters) for which LCVAR models are to be calculated.
 }
   \item{Lags}{
-An integer or integer vector specifying the number of VAR(p) lags to consider. Needs to be a sequence of subsequent integers.
+An integer or integer vector specifying the number of VAR(p) lags to consider. Needs to be a sequence of subsequent integers. The maximum number supported is \code{Lags = 3}.
 }
   \item{Center}{
 Logical, indicating whether the data (i.e., the endogenous variables) should be centered per person before calculations. If \code{Center = TRUE}, the differences in within-person means are removed from the data and the clustering is based only on similarity in VAR coefficients and (if exogenous variable(s) are specified) similarities in infleunces of exogenous variable(s). If \code{Center = FALSE}, the clustering is also based on similarities in within-person means. Defaults to \code{Center = FALSE}.}
@@ -52,7 +53,7 @@ Logical, indicating whether the data (i.e., the endogenous variables) should be 
 An integer specifying the lowest number of individuals allowed in a cluster. When during estimation the crisp cluster membership of a cluster indicates less than \code{smallestClN} individuals, the covariance matrix and the posterior probabilities of cluster membership are reset. Defaults to \code{smallestClN = 3}.
 }
 \item{Cores}{
-A positive integer specifying the number of cores used for parallelization of the calculation. Specifying a high number of available cores can speed up calculations. Defaults to \code{Cores = 1} for non-parallel computing.
+A positive integer specifying the number of cores used to parallelize the computations. Specifying a high number of available cores can speed up computation. Defaults to \code{Cores = 1} for non-parallel computing.
 }
  \item{RndSeed}{
   Optional argument. An integer specifying the value supplied to \code{set.seed()}, which guarantees reproducible results. If not specified, no seed is set.
@@ -109,7 +110,7 @@ Anja Ernst
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+% \code{\link{coef.ClusterVAR}}, ~~~
 }
 \examples{
 
@@ -118,15 +119,16 @@ Anja Ernst
 head(SyntheticData)
 
 LCVAR_outExample1 <- LCVAR(Data = SyntheticData,
-                        yVars = 1:4, ID = 5, Beep = 9, Day = 10,
-                        xContinuous = 7, xFactor = 8,
-                        Clusters = 1:2, Lags = 1, smallestClN = 3,
-                        Cores = parallel::detectCores(),
-                        RndSeed = 3, Rand = 2, Rational = TRUE,
-                        SigmaIncrease = 10, it = 25, Conv = 1e-05,
-                        Covariates = "equal-within-clusters")
-
+                           yVars = 1:4, ID = 5, Beep = 9, Day = 10,
+                           xContinuous = 7, xFactor = 8,
+                           Clusters = 1:2, Lags = 1, smallestClN = 3,
+                           Cores = parallel::detectCores(),
+                           RndSeed = 3, Rand = 2, Rational = TRUE,
+                           SigmaIncrease = 10, it = 25, Conv = 1e-05,
+                           Covariates = "equal-within-clusters")
 summary(LCVAR_outExample1)
+summary(object = LCVAR_outExample1, show = "GNL", Number_of_Lags = 1)
+
 
 
 head(ExampleData)
