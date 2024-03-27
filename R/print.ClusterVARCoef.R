@@ -1,6 +1,7 @@
 print.ClusterVARCoef <- function(x, ...) {
     #### Return FunctionOutput here ##
     FunctionOutput = list(Lags = x$Lags,
+                          Classification = x$Classification,
                           VAR_coefficients = x$VAR_coefficients,
                           Exogenous_coefficients = x$Exogenous_coefficients,
                           Sigma = x$Sigma,

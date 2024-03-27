@@ -26,6 +26,8 @@ Pass additional arguments.
 
 \item{Lags}{An integer vector specifying for which model the coefficients are shown. For example, \code{Lags = c(1,1,2)} indicates a model with three clusters, in which the first cluster has one lag, the second cluster has 1 lag, and the third cluster has 2 lags. }
 
+\item{Classification}{The crisp classification for each individual into a cluster. Crisp classifications are made based on an individual's  modal cluster membership probabilities.}
+
 \item{VAR_coefficients}{The cluster-wise vector-autoregressive coefficients for each cluster.}
 
 \item{Exogenous_coefficients}{The cluster-wise exogenous coefficients for each cluster. The first column indicates the (conditional) within-person mean, the other columns indicate the influences of the exogenous variable(s), if exogenous variable(s) were specified.}
@@ -34,9 +36,9 @@ Pass additional arguments.
 
 \item{Proportions}{The mixing proportions for each cluster. These can be considered as the proportion of individuals belonging to the respective cluster.}
 
-\item{PredictableTimepoints}{The total number of time-points in this dataset that could be predicted because the previous time-point(s) were observed. In case of unequal lags across different clusters, the number of time-points for each person are weighted by posterior cluster-membership probability.}
+\item{PredictableTimepoints}{The total number of time-points in this dataset that could be predicted because the previous time-point(s) were observed. In case of unequal lags across different clusters, the number of time-points for each person are weighted by their posterior cluster-membership probability.}
 
-\item{Converged}{A logical value that indicates whether the this model converged.}
+\item{Converged}{A logical value that indicates whether this model converged.}
 
 
 }
