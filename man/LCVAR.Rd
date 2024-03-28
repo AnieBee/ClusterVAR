@@ -29,7 +29,6 @@ An integer specifying the position of the column in dataframe \code{Data} that c
 }
   \item{Day}{
 Optional argument. An integer specifying the position of the column in dataframe \code{Data} that contains the variable that indicates the day of measurement. If \code{Day} is supplied here, measurements on the previous day are not used to predict measurements on the current day. Instead, the first \code{Lags} observations within each day are excluded from the calculation of VAR coefficients.
-
 }
   \item{ID}{
 An integer specifying the position of the column in dataframe \code{Data} that contains the ID variable for every participant.
