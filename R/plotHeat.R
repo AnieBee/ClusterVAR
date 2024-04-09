@@ -1,13 +1,17 @@
 
 
-plotHeat <- function(phi, k, main) {
+plotHeat <- function(phi,
+                     k,
+                     main,
+                     labels=NULL,
+                     las.x=1,
+                     cex.axis=0.8,
+                     cex.val=0.7) {
 
   p <- ncol(phi)
 
-  # browser()
-
   # -- Make color gradient --
-  color.gradient <- function(x, colors=c("#E41A1C","#377EB8"), colsteps=201) {
+  color.gradient <- function(x, colors=c("#E41A1C", "white", "#377EB8"), colsteps=201) {
     return( colorRampPalette(colors) (colsteps) [ findInterval(x, seq(min(x),max(x), length.out=colsteps)) ] )
   }
   x <- 1:201
@@ -48,25 +52,52 @@ plotHeat <- function(phi, k, main) {
   sfm <- 1/(p*2)
   seq_mp_x <- seq(0, 1, length=p+1)[-(p+1)] + sfm
 
-  # Plot Axes
-  axis(1, labels = paste0("X", 1:p, "(t-1)"), at=seq_mp_x, cex.axis=0.8)
-  axis(2, labels = paste0("X", p:1, "(t)"), at=seq_mp_x, las=2, cex.axis=0.8)
+  # Plot Axes & Axis labels
+  if(is.null(labels)) {
+    labels_tm1 <- paste0("Y", 1:p, "(t-1)")
+    labels_t1 <- paste0("Y", p:1, "(t)")
+  } else {
+    labels_tm1 <- paste0(labels, "(t-1)")
+    labels_t1 <- paste0(labels, "(t)")
+  }
+  axis(1, labels = labels_tm1, at=seq_mp_x, cex.axis=cex.axis)
+  axis(2, labels = labels_t1, at=seq_mp_x, las=2, cex.axis=cex.axis)
   title(main, font.main=1)
 
   # Plot Data
   for(i in 1:p) {
     for(j in 1:p) {
+
+      # Get color
+      phi_ij <- phi[p:1, ][j, i]
+      if(phi_ij < -1) {
+        col_ij <- grad[1]
+      } else if(phi_ij > 1 ) {
+        col_ij <- grad[201]
+      } else {
+        col_ij <- grad[phi[p:1, ][j, i] * 100 + 101]
+      }
+
+      # Plot box
       rect(xleft = seq_mp_x[i]-sfm,
            ybottom = seq_mp_x[j]-sfm,
            xright = seq_mp_x[i]+sfm,
            ytop = seq_mp_x[j]+sfm,
-           col = grad[phi[p:1, ][j, i] * 100 + 101])
-      text(seq_mp_x[i], seq_mp_x[j], round(phi[p:1, ][j,i] , 2), cex=.7, col="black")
+           col = col_ij)
+      # Plot text
+      text(seq_mp_x[i], seq_mp_x[j], round(phi_ij , 2), cex=cex.val, col="black")
     }
   }
 
 
 } # eoF
+
+
+
+
+
+
+
 
 
 
