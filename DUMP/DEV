@@ -9,11 +9,20 @@
 
 2. Plot function 
 >> Check mail questions all implemented
->> Heading for "GNL" should not be "Fixed max lag" but "Fixed lag"
-
+>> 
 
 3. Manuals
 >> how to do see also links in manuals? (at bottom of functions but also in coef explanation for preidctable time-points)
+>> Do we need manuals for the datasets? Should we remove the one-cluster dataset?
+>> Include formula in LCVAR discription
+
+5. What is the timeline with the package submission to CRAN? I want to present the package in May in SF
+
+6. Shall we implement test for the package then?
+
+4. What is the empirical analyisis doing, do we have a good dataset?
+
+7. delete the dump folder before publishing
 
 -------------------------------
 ----- OLD STUFF FROM 2023 -----
