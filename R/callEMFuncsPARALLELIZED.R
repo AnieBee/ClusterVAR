@@ -52,7 +52,7 @@ callEMFuncs <- function(Clusters,
   # pb_counter <- 0
   start_time <- proc.time()[3]
 
-  pb <- txtProgressBar(max = max(Clusters), style = 3)
+  pb <- txtProgressBar(max = length(Clusters), style = 3)
   progress <- function(n) setTxtProgressBar(pb, n)
   opts <- list(progress = progress)
 
