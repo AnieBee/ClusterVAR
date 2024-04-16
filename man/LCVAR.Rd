@@ -109,8 +109,9 @@ Anja Ernst
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-% \code{\link{coef.ClusterVAR}}, ~~~
+\code{\link{summary.ClusterVAR()}}, \code{\link{coef.ClusterVAR()}}, \code{plot.ClusterVAR()}.
 }
+
 \examples{
 
 \dontrun{

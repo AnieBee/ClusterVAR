@@ -61,7 +61,7 @@ Schwarz, G. (1978). Estimating the Dimension of a Model. The Annals of Statistic
 }
 
 
-%\seealso{\code{\link{plot.ClusterVAR}, \code{\link{coef.ClusterVAR}}}
+\seealso{\code{plot.ClusterVAR()}, \code{coef.ClusterVAR()}}
 
 
 
