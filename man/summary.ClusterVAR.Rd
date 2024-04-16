@@ -25,10 +25,10 @@ The information criterion to select the best model between models with a differe
 The information criterion to select the best model between models with different numbers of clusters but with the same number of lags. The possible choices are \code{"BIC"} and \code{"ICL"}. Defaults to \code{global_criterion = "BIC"}.
 }
 \item{Number_of_Clusters}{
-An integer. Specify the fixed number of clusters when specifying \code{show = "GNC"}. Defaults to \code{Number_of_Clusters = NULL}.
+An integer. Specify the fixed number of clusters when using \code{show = "GNC"}. Defaults to \code{Number_of_Clusters = NULL}.
 }
 \item{Number_of_Lags}{
-An integer. Specify the fixed number of lags when specifying \code{show = "GNL"}. Defaults to \code{Number_of_Lags = } the lowest number of lags specified in object.
+An integer. Specify the fixed number of lags when using \code{show = "GNL"}. Defaults to \code{Number_of_Lags = } the lowest number of lags specified in object.
 }
   \item{\dots}{
 Pass additional arguments.

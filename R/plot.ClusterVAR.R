@@ -8,10 +8,8 @@ plot.ClusterVAR <- function(x,
 
   if(!args$show %in% c("GNC", "GNL", "specific", "specificDiff")) stop("Inadmissible input for argument 'show'. see ?plot.ClusterVAR")
   if(is.null(args$show)) stop("Select which plot should be shown (see ?plot.ClusterVAR).") else show <- args$show
-  if(is.null(args$TS_criterion)) TS_criterion <- "SC" else TS_criterion <- args$TS_criterion
-  if(is.null(args$global_criterion)) global_criterion <- "BIC" else global_criterion <- args$global_criterion
   if(is.null(args$Number_of_Clusters)) Number_of_Clusters <- NULL else Number_of_Clusters <- args$Number_of_Clusters
-  if(is.null(args$Number_of_Lags)) Number_of_Lags <- 1 else Number_of_Lags <- args$Number_of_Lags
+  if(is.null(args$Number_of_Lags)) Number_of_Lags <- min(x$Call$Lags) else Number_of_Lags <- args$Number_of_Lags
   if(is.null(args$Model)) Model <- NULL else Model <- args$Model
   if(is.null(args$labels)) labels <- NULL else labels <- args$labels
   if(is.null(args$cex.axis)) cex.axis <- 0.8 else cex.axis <- args$cex.axis
@@ -24,8 +22,6 @@ plot.ClusterVAR <- function(x,
 
     out_sum <- summary(object = x,
                        show = show,
-                       TS_criterion = TS_criterion,
-                       global_criterion = global_criterion,
                        Number_of_Clusters = Number_of_Clusters,
                        Number_of_Lags = Number_of_Lags)
     out_table <- out_sum$FunctionOutput

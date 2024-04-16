@@ -51,9 +51,9 @@ summary.ClusterVAR <- function(object,
 
     # Fit[Lags, Start]
     FitAllLags = array(NA, dim = c(LagCombinations, NumberStarts)) # to store fit of output
-    FunctionOutput = data.frame(matrix(NA, nrow = LagCombinations, ncol = 8),
+    FunctionOutput = data.frame(matrix(NA, nrow = LagCombinations, ncol = 7),
                                 row.names = apply(l_LagsPerCluster[[Number_of_Clusters]], 1, function(x) paste(c("Lags", x), collapse = " ")))
-    colnames(FunctionOutput) = c("log-likelihood", "parameters", "SC", "HQ", "BIC", "ICL", "Converged", "Proportions")
+    colnames(FunctionOutput) = c("Lags", "log-likelihood", "parameters", "SC", "HQ", "Converged", "Proportions")
 
 
     for(LagCounter in 1:LagCombinations) {
@@ -64,17 +64,14 @@ summary.ClusterVAR <- function(object,
 
       }
       BestModel = which.min(FitAllLags[LagCounter, ]) # Best model for this LagCounter across all starts
-      #ModelNamesLags[LagCounter] = paste(GivenClusterOutput[[LagCounter]][[BestModel]]$Lags, collapse = " ")
+      FunctionOutput[LagCounter, "Lags"] = paste(GivenClusterOutput[[LagCounter]][[BestModel]]$Lags, collapse = " ")
       FunctionOutput[LagCounter, "log-likelihood"] = GivenClusterOutput[[LagCounter]][[BestModel]]$last.loglik
       FunctionOutput[LagCounter, "parameters"] = GivenClusterOutput[[LagCounter]][[BestModel]]$nParameters
       FunctionOutput[LagCounter, "SC"] = GivenClusterOutput[[LagCounter]][[BestModel]]$SC
       FunctionOutput[LagCounter, "HQ"] = GivenClusterOutput[[LagCounter]][[BestModel]]$HQ
-      FunctionOutput[LagCounter, "BIC"] = GivenClusterOutput[[LagCounter]][[BestModel]]$BIC
-      FunctionOutput[LagCounter, "ICL"] = GivenClusterOutput[[LagCounter]][[BestModel]]$ICL
       FunctionOutput[LagCounter, "Converged"] = GivenClusterOutput[[LagCounter]][[BestModel]]$Converged
       FunctionOutput[LagCounter, "Proportions"] = paste(round(GivenClusterOutput[[LagCounter]][[BestModel]]$Proportions, 2), collapse = " ")
     }
-    FunctionOutput = FunctionOutput[, -c(5, 6)]
     BestOverall = switch(TS_criterion,
                          "SC" = which.min(FunctionOutput$SC),
                          "HQ" = which.min(FunctionOutput$HQ))
