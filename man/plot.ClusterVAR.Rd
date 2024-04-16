@@ -44,5 +44,19 @@ Anja Ernst & Jonas Haslbeck
 }
 
 \examples{
-# Add example
+\dontrun{
+LCVAR_outExample <- LCVAR(Data = ExampleData,
+                           yVars = 1:4, ID = 5, Beep = 6,
+                           xContinuous = 7, xFactor = 8,
+                           Clusters = 1:2, Lags = 1:2, smallestClN = 3,
+                           Cores = 2, RndSeed = 3, Rand = 2, Rational = TRUE,
+                           SigmaIncrease = 10, it = 25, Conv = 1e-05,
+                           Covariates = "equal-within-clusters")
+
+plot(LCVAR_outExample, show = "GNL", Number_of_Lags = 1)
+plot(LCVAR_outExample, show = "GNC", Number_of_Clusters = 2)
+plot(LCVAR_outExample, show = "specific", Model = c(1, 1))
+plot(LCVAR_outExample, show = "specificDiff", Model = c(1, 1))
 }
+}
+
