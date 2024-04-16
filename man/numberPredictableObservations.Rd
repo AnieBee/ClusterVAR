@@ -43,8 +43,9 @@ This function determines the number of observations in a given dataset that can 
 The total number of predictable observations for each endogenous variable, considering a specified time-lag.
 }
 \author{
-Anja Ernst
+Anja Ernst & Jonas Haslbeck
 }
+
 \note{
 %%  ~~further notes~~
 }

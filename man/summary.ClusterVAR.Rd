@@ -37,6 +37,11 @@ Pass additional arguments.
 \value{
 \item{FunctionOutput}{Is a data frame containing summaries of the fitted models.}
 }
+
+\author{
+Anja Ernst & Jonas Haslbeck
+}
+
 \references{
 Hamilton, J. (1994), Time Series Analysis, Princeton University Press, Princeton.
 
@@ -55,22 +60,13 @@ Schwarz, G. (1978). Estimating the Dimension of a Model. The Annals of Statistic
 
 }
 
-\author{
-Anja Ernst
-}
-\author{
-Anja Ernst & Jonas Haslbeck
-}
 
-Hamilton, J. (1994), Time Series Analysis, Princeton University Press, Princeton.
+%\seealso{\code{\link{plot.ClusterVAR}, \code{\link{coef.ClusterVAR}}}
 
-Hannan, E. J. and B. G. Quinn (1979), The determination of the order of an autoregression, Journal of the Royal Statistical Society, B41: 190-195.
 
-Lütkepohl, H. (2006), New Introduction to Multiple Time Series Analysis, Springer, New York.
-
-Quinn, B. (1980), Order determination for a multivariate autoregression, Journal of the Royal Statistical Society, B42: 182-185.
 
 \examples{
+
 \dontrun{
 LCVAR_outExample <- LCVAR(Data = ExampleData,
                            yVars = 1:4, ID = 5, Beep = 6,
@@ -86,5 +82,9 @@ summary(object = LCVAR_outExample, show = "GNC", Number_of_Clusters = 2)
 }
 
 
+
+\author{
+Anja Ernst & Jonas Haslbeck
+}
 
 

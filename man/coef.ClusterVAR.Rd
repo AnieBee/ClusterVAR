@@ -36,7 +36,10 @@ Pass additional arguments.
 
 \item{Proportions}{The mixing proportions for each cluster. These can be considered as the proportion of individuals belonging to the respective cluster.}
 
-\item{PredictableTimepoints}{The total number of time-points in this dataset that could be predicted because the previous time-point(s) were observed. In case of unequal lags across different clusters, the number of time-points for each person are weighted by their posterior cluster-membership probability.}
+\item{PredictableTimepoints}{The total number of time-points in this dataset that could be predicted because the previous time-point(s) were observed. In case of unequal lags across different clusters, the number of time-points for each person are weighted by their posterior cluster-membership probability.  See also \code{numberPredictableObservations()}.}
+}
+
+}
 
 \item{Converged}{A logical value that indicates whether this model converged.}
 
