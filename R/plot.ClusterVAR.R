@@ -79,7 +79,8 @@ plot.ClusterVAR <- function(x,
 
     # Cut x-axis labels out of rownames of summary table
     # labels <- out_table$Lags
-    labels <- substr(rownames(out_table), 6, nchar(rownames(out_table)))
+    # labels <- substr(rownames(out_table), 6, nchar(rownames(out_table)))
+    labels <- out_table$Lags[N_L:1]
     yrange <- range(c(out_table$HQ, out_table$SC))
 
     # Plotting canvas
@@ -94,10 +95,10 @@ plot.ClusterVAR <- function(x,
     title(paste0("Lags Combinations for ", Number_of_Clusters, " Clusters"), font.main=1)
 
     # Data
-    points(1:N_L, out_table$HQ, col=cols[1], pch=19)
-    points(1:N_L, out_table$SC, col=cols[2], lty=2, pch=17)
-    lines(1:N_L, out_table$HQ, col=cols[1])
-    lines(1:N_L, out_table$SC, col=cols[2], lty=2)
+    points(1:N_L, out_table$HQ[N_L:1], col=cols[1], pch=19)
+    points(1:N_L, out_table$SC[N_L:1], col=cols[2], lty=2, pch=17)
+    lines(1:N_L, out_table$HQ[N_L:1], col=cols[1])
+    lines(1:N_L, out_table$SC[N_L:1], col=cols[2], lty=2)
 
     # Legend
     legend("topleft", legend=c("HQ", "SC"),
@@ -231,7 +232,7 @@ plot.ClusterVAR <- function(x,
 
 
   # Set graphic settings back to initial
-  par(old_par)
+  par(mfrow=old_par$mfrow, mar=old_par$mar)
 
 
 } # eoF
