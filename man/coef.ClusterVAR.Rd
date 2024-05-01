@@ -16,7 +16,7 @@ Extracts the coefficients of a given model from the output object of the \code{L
 An output object of the \code{LCVAR} function.
 }
   \item{Model}{
-An integer vector specifying the model for which coefficients should be shown. For example, \code{Model = c(1,1,2)} returns the coefficients of a model with three clusters, in which the first cluster has one lag, the second cluster has 1 lag, and the third cluster has 2 lags. The vector length indicates the number of clusters in the model of interest.
+An integer vector specifying the model for which coefficients should be shown. For example, \code{Model = c(1,1,2)} returns the coefficients of a model with three clusters (i.e., latent classes), in which the first cluster has one lag, the second cluster has 1 lag, and the third cluster has 2 lags. The vector length indicates the number of clusters in the model of interest.
 }
   \item{\dots}{
 Pass additional arguments.
@@ -30,7 +30,7 @@ Pass additional arguments.
 
 \item{VAR_coefficients}{The cluster-wise vector-autoregressive coefficients for each cluster.}
 
-\item{Exogenous_coefficients}{The cluster-wise exogenous coefficients for each cluster. The first column indicates the (conditional) within-person mean, the other columns indicate the influences of the exogenous variable(s), if exogenous variable(s) were specified.}
+\item{Exogenous_coefficients}{The cluster-wise exogenous coefficients for each cluster. The first column in each array indicates the (conditional) within-person mean in that cluster. If exogenous variable(s) were specified, the other columns indicate the influences of the exogenous variable(s) in that cluster.}
 
 \item{Sigma}{The cluster-wise innovation covariance matrix for each cluster.}
 
@@ -45,15 +45,15 @@ Pass additional arguments.
 Anja Ernst & Jonas Haslbeck
 }
 \examples{
-LCVAR_outExample2 <- LCVAR(Data = ExampleData,
+LCVAR_outExample <- LCVAR(Data = ExampleData,
                            yVars = 1:4, ID = 5, Beep = 6,
                            xContinuous = 7, xFactor = 8,
                            Clusters = 2, Lags = 1:2, smallestClN = 3,
-                           Cores = 1, RndSeed = 3, Rand = 2, Rational = TRUE,
-                           SigmaIncrease = 10, it = 25, Conv = 1e-05,
-                           Covariates = "equal-within-clusters")
-coef(LCVAR_outExample2, Model = c(1, 1))
-coef(LCVAR_outExample2, Model = c(2, 2))
+                           Cores = 1, RndSeed = 3, Rand = 2,
+                           it = 25)
+
+coef(LCVAR_outExample, Model = c(1, 1))
+coef(LCVAR_outExample, Model = c(2, 2))
 }
 
 

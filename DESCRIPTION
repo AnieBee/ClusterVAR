@@ -1,12 +1,12 @@
 Package: ClusterVAR
 Type: Package
-Title: Model selection and fitting of Latent Class Vectorautoregressive (VAR) models
+Title: Fitting Latent Class Vector-autoregressive (VAR) models
 Version: 0.0.2
 Authors@R: c(
   person("Anja", "Ernst", email = "a.f.ernst@rug.nl",role = c("aut", "cre")),
   person("Jonas", "Haslbeck", email = "jonashaslbeck@protonmail.com",role = c("aut")))
 Maintainer: Anja Ernst <a.f.ernst@rug.nl>
-Description: Model selection and fitting of Latent Class Vectorautoregressive (VAR) models.
+Description: Fitting Latent Class Vector-autoregressive (VAR) models.
 BugReports: https://github.com/anieBee/ClusterVAR/issues
 Encoding: UTF-8
 LazyData: true

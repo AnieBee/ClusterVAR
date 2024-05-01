@@ -16,7 +16,7 @@ Takes the output of the LCVAR function and creates a small summary of the fitted
 An output object of the \code{LCVAR} function.
 }
   \item{show}{
-Indicate how models should be summarized, the possible choices are \code{"BPC"}, \code{"GNC"}and \code{"GNL"}. \code{show = "BPC"} compares models with different time lags for each number of clusters. For each number of clusters, the model with the best lag is selected and displayed in the output. The best lag is selected through the time-series information criterion specified with the argument \code{TS_criterion} (see below). \code{show = "GNC"} shows all models with different lags for a given number of clusters, this number of clusters is specified through \code{Number_of_Clusters} (see below). \code{show = "GNL"} shows for each number of clusters the model where all lags are fixed to a given number, this number of lags is specified through \code{Number_of_Lags} (see below). Out of these models, the best model in terms of the number of clusters is selected by the information criterion selected with the argument \code{global_criterion} (see below). Defaults to \code{show = "BPC"}.
+Indicate how models should be summarized, the possible choices are \code{"BPC"}, \code{"GNC"}and \code{"GNL"}. \code{show = "BPC"} compares models with different time lags for each number of clusters. If \code{show = "BPC"}, for each number of clusters the model with the best lag is selected and displayed in the output. The best lag is selected through the time-series information criterion specified with the argument \code{TS_criterion} (see below). \code{show = "GNC"} shows all models with different lags for a given number of clusters, this number of clusters is specified through \code{Number_of_Clusters} (see below). \code{show = "GNL"} shows for each number of clusters the model where all lags are fixed to a given number, this number of lags is specified through \code{Number_of_Lags} (see below). Out of these models, the best model in terms of the number of clusters is selected by the information criterion selected with the argument \code{global_criterion} (see below). Defaults to \code{show = "BPC"}.
 }
 \item{TS_criterion}{
 The information criterion to select the best model between models with a different number of lags but with the same number of clusters. The possible choices are \code{"SC"} and \code{"HQ"}. Defaults to \code{TS_criterion = "SC"}.
@@ -69,15 +69,18 @@ Schwarz, G. (1978). Estimating the Dimension of a Model. The Annals of Statistic
 
 \dontrun{
 LCVAR_outExample <- LCVAR(Data = ExampleData,
-                           yVars = 1:4, ID = 5, Beep = 6,
-                           xContinuous = 7, xFactor = 8,
-                           Clusters = 1:2, Lags = 1:2, smallestClN = 3,
-                           Cores = 2, RndSeed = 3, Rand = 2, Rational = TRUE,
-                           SigmaIncrease = 10, it = 25, Conv = 1e-05,
-                           Covariates = "equal-within-clusters")
+                          yVars = 1:4, ID = 5, Beep = 6,
+                          xContinuous = 7, xFactor = 8,
+                          Clusters = 1:2, Lags = 1:2,
+                          Cores = 2, RndSeed = 3,
+                          Rand = 2, it = 25)
+
 summary(LCVAR_outExample)
 summary(object = LCVAR_outExample, show = "GNL", Number_of_Lags = 1)
+summary(object = LCVAR_outExample, show = "GNL", Number_of_Lags = 1, global_criterion = "ICL")
 summary(object = LCVAR_outExample, show = "GNC", Number_of_Clusters = 2)
+summary(object = LCVAR_outExample, show = "GNC", Number_of_Clusters = 2, TS_criterion = "HQ")
+
 }
 }
 

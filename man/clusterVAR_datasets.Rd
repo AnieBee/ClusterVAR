@@ -27,40 +27,27 @@ ExampleData: Follows the structure where a single 'Time' variable indicates the 
 head(SyntheticData)
 
 LCVAR_outExample1 <- LCVAR(Data = SyntheticData,
-                        yVars = 1:4, ID = 5, Beep = 9, Day = 10,
-                        xContinuous = 7, xFactor = 8,
-                        Clusters = 1:2, Lags = 1, smallestClN = 3,
-                        RndSeed = 3, Rand = 10, Rational = TRUE,
-                        SigmaIncrease = 10, it = 25, Conv = 1e-05,
-                        Covariates = "equal-within-clusters")
+                           yVars = 1:4, ID = 5, Beep = 9, Day = 10,
+                           xContinuous = 7, xFactor = 8,
+                           Clusters = 1:2, Lags = 1,
+                           Center = FALSE,
+                           Cores = parallel::detectCores(),
+                           RndSeed = 3, Rand = 2,
+                           Rational = TRUE, it = 25)
 summary(LCVAR_outExample1)
-
 
 
 head(ExampleData)
 LCVAR_outExample2 <- LCVAR(Data = ExampleData,
-                        yVars = 1:4, ID = 5, Beep = 6,
-                        xContinuous = 7, xFactor = 8,
-                        Clusters = 1:2, Lags = 1:2, smallestClN = 3,
-                        RndSeed = 3, Rand = 2, Rational = TRUE,
-                        SigmaIncrease = 10, it = 25, Conv = 1e-05,
-                        Covariates = "equal-within-clusters")
+                           yVars = 1:4, ID = 5, Beep = 6,
+                           xContinuous = 7, xFactor = 8,
+                           Clusters = 1:2, Lags = 1:2, Center = FALSE,
+                           Cores = 2, RndSeed = 3,
+                           Rand = 2, Rational = TRUE,
+                           it = 25, Conv = 1e-05)
 summary(LCVAR_outExample2)
 summary(object = LCVAR_outExample2, show = "GNC", Number_of_Clusters = 2)
-coef(LCVAR_outExample2, Model = c(1, 1))
 
-
-
-head(OneClusterDataSet)
-LCVAR_outExample3 <- LCVAR(Data = OneClusterDataSet,
-                        yVars = 1:4, ID = 5, Beep = 6,
-                        xContinuous = 7, xFactor = 8,
-                        Clusters = 1:2, Lags = 1, smallestClN = 3,
-                        RndSeed = 3, Rand = 2, Rational = TRUE,
-                        SigmaIncrease = 10, it = 25, Conv = 1e-05,
-                        Covariates = "equal-within-clusters")
-summary(LCVAR_outExample3)
-coef(LCVAR_outExample3, Model = c(1))
 
 
 }

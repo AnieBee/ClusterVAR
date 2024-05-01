@@ -58,7 +58,7 @@ A positive integer specifying the number of cores used to parallelize the comput
   Optional argument. An integer specifying the value supplied to \code{set.seed()}, which guarantees reproducible results. If not specified, no seed is set.
 }
   \item{Rand}{
-The number of pseudo-random EM-starts used in fitting each possible model. For pseudo-random starts K individuals are randomly selected as cluster centres. Then individuals are partitioned into the cluster to which their individual VAR and individual covariate coefficients are closest. Defaults to \code{Rand = 50}.
+The number of pseudo-random EM-starts used in fitting each possible model. For pseudo-random starts K individuals are randomly selected as cluster centres. Then individuals are partitioned into the cluster to which their individual VAR and individual covariate coefficients are closest. High numbers (e.g., 50 and above) ensure that a global optimum will be found, but will take longer to compute. Defaults to \code{Rand = 50}.
 }
   \item{Rational}{
 Logical, indicating whether a rational EM-start should be used in addition to the other EM-starts. Defaults to \code{Rational = TRUE}. Rational starts are based on the k-means partitioning of individuals’ ideographic VAR and ideographic covariate coefficients.
@@ -67,10 +67,10 @@ Logical, indicating whether a rational EM-start should be used in addition to th
 Optional argument. An integer specifying the position of a column in dataframe \code{Data} that contains a guess at participants' cluster membership for a fixed number of clusters, if available. This initialization will be used as an additional EM-start.
 }
   \item{SigmaIncrease}{
-A numerical value specifying the value by which every element of Sigma will be increased when posterior probabilities of cluster memberships are reset.
+A numerical value specifying the value by which every element of Sigma will be increased when posterior probabilities of cluster memberships are reset. Defaults to \code{SigmaIncrease = 10}.
 }
   \item{it}{
-An integer specifying the maximum number of EM-iterations allowed for every EM-start. After completing \code{it} EM-iterations, an EM-start is forced to terminate. Defaults to \code{it = 50}.
+An integer specifying the maximum number of EM-iterations allowed for every EM-start. After completing \code{it} EM-iterations, an EM-start is forced to terminate. High numbers (e.g., 100 and above) ensure convergence, but will take longer to compute. Defaults to \code{it = 50}.
 }
   \item{Conv}{
 A numerical value specifying the convergence criterion of the log likelihood to determine convergence of an EM-start. For details see Ernst et al. (2020) Inter-individual differences in multivariate time series: Latent class vector-autoregressive modelling.  Defaults to \code{Conv = 1e-05}.
@@ -120,28 +120,29 @@ head(SyntheticData)
 LCVAR_outExample1 <- LCVAR(Data = SyntheticData,
                            yVars = 1:4, ID = 5, Beep = 9, Day = 10,
                            xContinuous = 7, xFactor = 8,
-                           Clusters = 1:2, Lags = 1, smallestClN = 3,
+                           Clusters = 1:2, Lags = 1,
+                           Center = TRUE,
                            Cores = parallel::detectCores(),
-                           RndSeed = 3, Rand = 2, Rational = TRUE,
-                           SigmaIncrease = 10, it = 25, Conv = 1e-05,
-                           Covariates = "equal-within-clusters")
+                           RndSeed = 3, Rand = 2, it = 25)
 summary(LCVAR_outExample1)
 summary(object = LCVAR_outExample1, show = "GNL", Number_of_Lags = 1)
-coef(LCVAR_outExample2, Model = c(1, 1))
+coef(LCVAR_outExample1, Model = c(1, 1))
 
 
 head(ExampleData)
 LCVAR_outExample2 <- LCVAR(Data = ExampleData,
                            yVars = 1:4, ID = 5, Beep = 6,
                            xContinuous = 7, xFactor = 8,
-                           Clusters = 1:2, Lags = 1:2, smallestClN = 3,
-                           Cores = 2, RndSeed = 3, Rand = 2, Rational = TRUE,
-                           SigmaIncrease = 10, it = 25, Conv = 1e-05,
-                           Covariates = "equal-within-clusters")
+                           Clusters = 1:2, Lags = 1:2,
+                           Center = FALSE,
+                           Cores = 2, RndSeed = 3,
+                           Rand = 2,
+                           it = 25, Conv = 1e-05)
 summary(LCVAR_outExample2)
 summary(object = LCVAR_outExample2, show = "GNL", Number_of_Lags = 1)
 summary(object = LCVAR_outExample2, show = "GNC", Number_of_Clusters = 2)
 coef(LCVAR_outExample2, Model = c(1, 1))
+plot(LCVAR_outExample2, show = "specific", Model = c(1, 1))
 }
 
 }

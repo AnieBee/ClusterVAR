@@ -45,32 +45,24 @@ summary.ClusterVAR <- function(object,
 
   if(show == "GNC"){
 
-    clusterCounter = which(object$Call$Clusters == Number_of_Clusters)
-    GivenClusterOutput = object$All_Models[[clusterCounter]]
     LagCombinations = nrow(l_LagsPerCluster[[Number_of_Clusters]])
-
-    # Fit[Lags, Start]
-    FitAllLags = array(NA, dim = c(LagCombinations, NumberStarts)) # to store fit of output
     FunctionOutput = data.frame(matrix(NA, nrow = LagCombinations, ncol = 7),
                                 row.names = apply(l_LagsPerCluster[[Number_of_Clusters]], 1, function(x) paste(c("Lags", x), collapse = " ")))
-    colnames(FunctionOutput) = c("Lags", "log-likelihood", "parameters", "SC", "HQ", "Converged", "Proportions")
+    colnames(FunctionOutput) = c("log-likelihood", "parameters", "Lags", "SC", "HQ", "Converged", "Proportions")
 
 
     for(LagCounter in 1:LagCombinations) {
-      for(StartCounter in 1:NumberStarts){
-        FitAllLags[LagCounter, StartCounter] = switch(TS_criterion,
-                                                      "SC" = GivenClusterOutput[[LagCounter]][[StartCounter]]$SC,
-                                                      "HQ" = GivenClusterOutput[[LagCounter]][[StartCounter]]$HQ)
-
-      }
-      BestModel = which.min(FitAllLags[LagCounter, ]) # Best model for this LagCounter across all starts
-      FunctionOutput[LagCounter, "Lags"] = paste(GivenClusterOutput[[LagCounter]][[BestModel]]$Lags, collapse = " ")
-      FunctionOutput[LagCounter, "log-likelihood"] = GivenClusterOutput[[LagCounter]][[BestModel]]$last.loglik
-      FunctionOutput[LagCounter, "parameters"] = GivenClusterOutput[[LagCounter]][[BestModel]]$nParameters
-      FunctionOutput[LagCounter, "SC"] = GivenClusterOutput[[LagCounter]][[BestModel]]$SC
-      FunctionOutput[LagCounter, "HQ"] = GivenClusterOutput[[LagCounter]][[BestModel]]$HQ
-      FunctionOutput[LagCounter, "Converged"] = GivenClusterOutput[[LagCounter]][[BestModel]]$Converged
-      FunctionOutput[LagCounter, "Proportions"] = paste(round(GivenClusterOutput[[LagCounter]][[BestModel]]$Proportions, 2), collapse = " ")
+      BestModel = coef(object, Model = l_LagsPerCluster[[Number_of_Clusters]][LagCounter, ])  # Best model for this LagCounter across all starts (based on likelihood)
+      ExtractedLags = BestModel$Lags
+      OrderedLags = ExtractedLags[order(ExtractedLags)]
+      OrderedProportions = BestModel$Proportions[order(ExtractedLags)]
+      FunctionOutput[LagCounter, "log-likelihood"] = BestModel$last.loglik
+      FunctionOutput[LagCounter, "parameters"] = BestModel$nParameters
+      FunctionOutput[LagCounter, "Lags"] = paste(OrderedLags, collapse = " ")
+      FunctionOutput[LagCounter, "SC"] = BestModel$SC
+      FunctionOutput[LagCounter, "HQ"] = BestModel$HQ
+      FunctionOutput[LagCounter, "Converged"] = BestModel$Converged
+      FunctionOutput[LagCounter, "Proportions"] = paste(round(OrderedProportions, 2), collapse = " ")
     }
     BestOverall = switch(TS_criterion,
                          "SC" = which.min(FunctionOutput$SC),
@@ -83,7 +75,7 @@ summary.ClusterVAR <- function(object,
 
   }
   if(show == "BPC"){
-    # The below calculation calculates the solution for (show == "BPC")
+    # The below calculates the solution for (show == "BPC")
     # For each number of clusters, find the single best-fitting time-series model for each cluster number
 
     FunctionOutput = data.frame(matrix(NA, nrow = length(object$Call$Clusters), ncol = 7),
@@ -95,25 +87,33 @@ summary.ClusterVAR <- function(object,
     for(K in object$Call$Clusters){
 
       LagCombinations = nrow(l_LagsPerCluster[[K]])
-      FitAllLags = array(NA, dim = c(LagCombinations, NumberStarts)) # to store fit of output
+      FitAllLags = array(NA, dim = c(LagCombinations, 2)) # to store fit of output
+      FitStartsWithinLag = array(NA, dim = c(NumberStarts))
 
       for(LagCounter in 1:LagCombinations) {
         for(StartCounter in 1:NumberStarts){
-          FitAllLags[LagCounter, StartCounter] = switch(TS_criterion,
-                                                        "SC" = object$All_Models[[ClustCount]][[LagCounter]][[StartCounter]]$SC,
-                                                        "HQ" = object$All_Models[[ClustCount]][[LagCounter]][[StartCounter]]$HQ)
+          FitStartsWithinLag[StartCounter] = object$All_Models[[ClustCount]][[LagCounter]][[StartCounter]]$last.loglik
         }
+        FitAllLags[LagCounter, 1] = which.max(FitStartsWithinLag)[1] # determines the best start for each lag based on likelihood
+        FitAllLags[LagCounter, 2] = switch(TS_criterion,
+                                                  "SC" = object$All_Models[[ClustCount]][[LagCounter]][[FitAllLags[LagCounter, 1]]]$SC,
+                                                  "HQ" = object$All_Models[[ClustCount]][[LagCounter]][[FitAllLags[LagCounter, 1]]]$HQ)
       }
-      BestRunOneK = arrayInd(which.min(FitAllLags), dim(FitAllLags))
-      FunctionOutput[ClustCount, 1] = paste(object$All_Models[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$Lags, collapse = " ")
-      FunctionOutput[ClustCount, "log-likelihood"] = object$All_Models[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$last.loglik
-      FunctionOutput[ClustCount, "parameters"] = object$All_Models[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$nParameters
-      FunctionOutput[ClustCount, "BIC"] = object$All_Models[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$BIC
-      FunctionOutput[ClustCount, "ICL"] = object$All_Models[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$ICL
-      FunctionOutput[ClustCount, "Converged"] = object$All_Models[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$Converged
-      FunctionOutput[ClustCount, "Proportions"] = paste(round(object$All_Models[[ClustCount]][[BestRunOneK[1]]][[BestRunOneK[2]]]$Proportions, 2), collapse = " ")
+      BestRunOneK = which.min(FitAllLags[, 2])[1]
+      BPCFinalModel = object$All_Models[[ClustCount]][[BestRunOneK]][[FitAllLags[BestRunOneK, 1]]]
+      ExtractedLags = BPCFinalModel$Lags
+      OrderedLags = ExtractedLags[order(ExtractedLags)]
+      OrderedProportions = BPCFinalModel$Proportions[order(ExtractedLags)]
+      FunctionOutput[ClustCount, 1] = paste(OrderedLags, collapse = " ")
+      FunctionOutput[ClustCount, "log-likelihood"] = BPCFinalModel$last.loglik
+      FunctionOutput[ClustCount, "parameters"] = BPCFinalModel$nParameters
+      FunctionOutput[ClustCount, "BIC"] = BPCFinalModel$BIC
+      FunctionOutput[ClustCount, "ICL"] = BPCFinalModel$ICL
+      FunctionOutput[ClustCount, "Converged"] = BPCFinalModel$Converged
+      FunctionOutput[ClustCount, "Proportions"] = paste(round(OrderedProportions, 2), collapse = " ")
 
       ClustCount = ClustCount + 1
+
     }
 
     # remove BIC and ICL from this output, because models with unequal number of lags cannot be compared to one another
@@ -142,7 +142,8 @@ summary.ClusterVAR <- function(object,
         FitAllLags[StartCounter] = object$All_Models[[ClustCount]][[LagCounter]][[StartCounter]]$last.loglik
       }
       BestRunOneK = which.max(FitAllLags)[1]
-      FunctionOutput[ClustCount, 1] = paste(object$All_Models[[ClustCount]][[LagCounter]][[BestRunOneK]]$Lags, collapse = " ")
+      ExtractedLags = object$All_Models[[ClustCount]][[LagCounter]][[BestRunOneK]]$Lags # Don't need to be ordered because they are all ordered by default of being all the same lag
+      FunctionOutput[ClustCount, 1] = paste(ExtractedLags, collapse = " ")
       FunctionOutput[ClustCount, "log-likelihood"] = object$All_Models[[ClustCount]][[LagCounter]][[BestRunOneK]]$last.loglik
       FunctionOutput[ClustCount, "parameters"] = object$All_Models[[ClustCount]][[LagCounter]][[BestRunOneK]]$nParameters
       FunctionOutput[ClustCount, "BIC"] = object$All_Models[[ClustCount]][[LagCounter]][[BestRunOneK]]$BIC

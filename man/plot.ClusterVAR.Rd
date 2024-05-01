@@ -18,7 +18,7 @@ An output object of the \code{ClusterVAR} function
   \item{show}{
 Indicate summaries to plot. \code{show = "GNC"} compares models with different lags for a given number of clusters, specified with \code{Number_of_Clusters}. \code{show = "GNL"} compares models with different number of clusters, given the a number of lags specified with \code{Number_of_Lags}.
 
-Alternatively, the VAR matrices of a specific model can be visualized. \code{show = specific} visualizes the VAR matrices across clusters for a given model which is specified with the argument \code{Model}. \code{show = specificDiff} displays the pairwise differences between clusters for a specific model, also specified with the argument\code{Model}. \code{show = specific} and \code{show = specificDiff} are currently only implemented for models with lag equal 1.
+Alternatively, the VAR matrices of a specific model can be visualized. \code{show = specific} visualizes the VAR matrices across clusters for a given model which is specified with the argument \code{Model}. \code{show = specificDiff} displays the pairwise differences between clusters for a specific model, also specified with the argument \code{Model}. \code{show = specific} and \code{show = specificDiff} are currently only implemented for models with 1 lag.
 }
 
 \item{Number_of_Clusters}{
@@ -46,12 +46,12 @@ Anja Ernst & Jonas Haslbeck
 \examples{
 \dontrun{
 LCVAR_outExample <- LCVAR(Data = ExampleData,
-                           yVars = 1:4, ID = 5, Beep = 6,
-                           xContinuous = 7, xFactor = 8,
-                           Clusters = 1:2, Lags = 1:2, smallestClN = 3,
-                           Cores = 2, RndSeed = 3, Rand = 2, Rational = TRUE,
-                           SigmaIncrease = 10, it = 25, Conv = 1e-05,
-                           Covariates = "equal-within-clusters")
+                          yVars = 1:4, ID = 5, Beep = 6,
+                          xContinuous = 7, xFactor = 8,
+                          Clusters = 1:2, Lags = 1:2,
+                          Center = FALSE, Cores = 2,
+                          RndSeed = 3, Rand = 2,
+                          it = 25)
 
 plot(LCVAR_outExample, show = "GNL", Number_of_Lags = 1)
 plot(LCVAR_outExample, show = "GNC", Number_of_Clusters = 2)
