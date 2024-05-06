@@ -44,20 +44,16 @@ callEMFuncs <- function(Clusters,
   n_Fit <- sum(unlist(lapply(l_LagsPerCluster, nrow))) * (Rand + as.numeric(Rational) + as.numeric(!is.null(Initialization)) + as.numeric(PreviousSol)) # number of models times number of random restarts
 
 
-
-  # ----- Create Progress Bar -----
-  # Set up progress bar
-  # if(pbar==TRUE)
-  # pb <- txtProgressBar(min = 0, max=max(Clusters), initial=0, char="-", style = 3)
-  # pb_counter <- 0
   start_time <- proc.time()[3]
 
-  pb <- txtProgressBar(max = length(Clusters), style = 3)
-  progress <- function(n) setTxtProgressBar(pb, n)
-  opts <- list(progress = progress)
-
-
-  # browser()
+  # ----- Create Progress Bar -----
+  if(pbar==TRUE) {
+    pb <- txtProgressBar(max = length(Clusters), style = 3)
+    progress <- function(n) setTxtProgressBar(pb, n)
+    opts <- list(progress = progress)
+  } else {
+    opts <- NULL
+  }
 
   ### Loop over different K (# of clusters) values  ------------
   # the OutputListAllLags of every K, which contains all solutions for all Lags and all starts for that K
