@@ -86,8 +86,3 @@ summary(object = LCVAR_outExample, show = "GNC", Number_of_Clusters = 2, TS_crit
 
 
 
-\author{
-Anja Ernst & Jonas Haslbeck
-}
-
-

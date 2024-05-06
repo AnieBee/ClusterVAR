@@ -12,7 +12,7 @@ plot.ClusterVAR(x, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{object}{
+  \item{x}{
 An output object of the \code{ClusterVAR} function
 }
   \item{show}{

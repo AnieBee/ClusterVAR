@@ -1,5 +1,5 @@
 
-test_that("Result test", {
+test_that("clusterVAR", {
 
   # Reproducibility
 

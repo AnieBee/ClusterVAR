@@ -1,4 +1,4 @@
 library(testthat)
-#library(clusterVAR)
+library(ClusterVAR)
 
-#test_check("clusterVAR")
+test_check("clusterVAR")
