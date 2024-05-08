@@ -1,6 +1,6 @@
 Package: ClusterVAR
 Type: Package
-Title: Fitting Latent Class Vector-autoregressive (VAR) models
+Title: Fitting latent class vector-autoregressive (VAR) models
 Version: 0.0.2
 Authors@R: c(
   person("Anja", "Ernst", email = "a.f.ernst@rug.nl",role = c("aut", "cre")),

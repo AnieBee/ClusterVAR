@@ -84,7 +84,13 @@ Additional arguments passed to the function.}
 }
 
 \details{
-This function estimates the latent class vector-autoregressive model to obtain latent classes of individuals who are similar in VAR coefficients, within-person means, and (if specified) infleunces of exogenous variable(s). See https://doi.org/10.1027/1015-5759/a000578 for details.
+This function estimates the latent class vector-autoregressive model to obtain latent classes (i.e., clusters) of individuals who are similar in VAR coefficients and (if specified) in within-person means and infleunces of exogenous variable(s).
+\deqn{y_{i, t} =  w_{i, t} + \mu_{k} + \beta_{k} x_{i, t}}
+
+\deqn{ w_{i, t} = (\sum_{a = 1}^{p} \Phi_{k, a} w_{i, t-a}) + u_{i, t}\qquad u_{i, t} \sim N(0, \Sigma_{k})}
+
+Here \eqn{ \mu_{k}} represents an m x 1 vector that contains the cluster-wise conditional within-person mean for each y-variable in cluster k. \eqn{\beta_{k}} represents an m x q matrix that expresses the cluster-wise moderating influence of q exogenous variables (x_{i, t}) on the within-person means in cluster k.
+\eqn{\Phi_{k, a} represents an m×m matrix containing the cluster-wise VAR coefficients at lag a for cluster k. See the references below for details.}
 }
 
 \value{
@@ -98,7 +104,7 @@ The details of the output components are as follows:
 
 }
 \references{
-Ernst, A. F., Albers, C. J., Jeronimus, B. F., & Timmerman, M. E. (2020). Inter-individual differences in multivariate time-series: Latent class vector-autoregressive modeling. European Journal of Psychological Assessment, 36(3), 482–491. https://doi.org/10.1027/1015-5759/a000578}
+Ernst, A. F., Albers, C. J., Jeronimus, B. F., & Timmerman, M. E. (2020). Inter-individual differences in multivariate time-series: Latent class vector-autoregressive modeling. European Journal of Psychological Assessment, 36(3), 482–491. \url{https://doi.org/10.1027/1015-5759/a000578}}
 \author{
 Anja Ernst
 }
