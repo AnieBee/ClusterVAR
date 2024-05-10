@@ -8,7 +8,12 @@ Visualizing Model fit and information criteria
 Creates a variety of plots summarizing fitted LCVAR models.
 }
 \usage{
-plot.ClusterVAR(x, ...)
+\method{plot}{ClusterVAR}(x,
+    show,
+    Number_of_Clusters = NULL,
+    Number_of_Lags = NULL,
+    Model = NULL,
+    ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -56,6 +61,7 @@ LCVAR_outExample <- LCVAR(Data = ExampleData,
 plot(LCVAR_outExample, show = "GNL", Number_of_Lags = 1)
 plot(LCVAR_outExample, show = "GNC", Number_of_Clusters = 2)
 plot(LCVAR_outExample, show = "specific", Model = c(1, 1))
+plot(LCVAR_outExample, show = "specific", Model = c(1, 1), labels = c("A", "B", "C","D"))
 plot(LCVAR_outExample, show = "specificDiff", Model = c(1, 1))
 }
 }

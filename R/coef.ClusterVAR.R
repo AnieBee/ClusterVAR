@@ -1,10 +1,12 @@
 
-coef.ClusterVAR <- function(object, ...) {
+coef.ClusterVAR <- function(object, Model, ...) {
 
   # Collect from ...
-  args <- list(...)
-  if(is.null("args$Model")) stop("Specify models via the Models argument.")
-  Lags <- args$Model
+  # args <- list(...)
+  # if(is.null("args$Model")) stop("Specify models via the Models argument.")
+  # Lags <- args$Model
+  if(is.null("Model")) stop("Specify models via the Models argument.")
+  Lags <- Model
 
   # Lags: a numeric integer or vector of length equal to the number of clusters in the model of interest (do not need to be subsequent).
   # Specifies the lag order of the model for which model coefficients should be retrieved

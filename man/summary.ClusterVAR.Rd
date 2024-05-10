@@ -8,7 +8,13 @@ Summary of ClusterVAR objects
 Takes the output of the LCVAR function and creates a small summary of the fitted model(s).
 }
 \usage{
-\method{summary}{ClusterVAR}(object, ...)
+\method{summary}{ClusterVAR}(object,
+  show = "BPC",
+  TS_criterion = "SC",
+  global_criterion = "BIC",
+  Number_of_Clusters = NULL,
+  Number_of_Lags = NULL,
+  ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

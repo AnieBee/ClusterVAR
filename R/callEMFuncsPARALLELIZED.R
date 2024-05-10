@@ -48,8 +48,8 @@ callEMFuncs <- function(Clusters,
 
   # ----- Create Progress Bar -----
   if(pbar==TRUE) {
-    pb <- txtProgressBar(max = length(Clusters), style = 3)
-    progress <- function(n) setTxtProgressBar(pb, n)
+    pb <- utils::txtProgressBar(max = length(Clusters), style = 3)
+    progress <- function(n) utils::setTxtProgressBar(pb, n)
     opts <- list(progress = progress)
   } else {
     opts <- NULL
@@ -183,7 +183,7 @@ callEMFuncs <- function(Clusters,
 
           # ----- Update progress bar  -----
           # pb_counter <- pb_counter + 1
-          # if(pbar==TRUE) setTxtProgressBar(pb, pb_counter)
+          # if(pbar==TRUE) utils::setTxtProgressBar(pb, pb_counter)
 
           ########## Addition to speed up estimation in case K == 1
           #If K = 1 all partitions of individuals are the same (all people in the same cluster)
@@ -199,7 +199,7 @@ callEMFuncs <- function(Clusters,
 
               # # ----- Update progress bar  -----
               # pb_counter <- pb_counter + 1
-              # if(pbar==TRUE) setTxtProgressBar(pb, pb_counter)
+              # if(pbar==TRUE) utils::setTxtProgressBar(pb, pb_counter)
             }
           }
         } # End of Start loop

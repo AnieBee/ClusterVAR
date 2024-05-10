@@ -6,7 +6,6 @@
 \alias{calculateICL}
 \alias{calculateBIC}
 \alias{InitPseudoRand}
-\alias{InitRand}
 \alias{InitRat}
 \alias{reorderLags}
 \alias{determineLagOrder}

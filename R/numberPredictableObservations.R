@@ -46,7 +46,7 @@ numberPredictableObservations <- function(Data,
 
 
     # Remove rows with NA values
-    Data <- Data[complete.cases(Data),]
+    Data <- Data[stats::complete.cases(Data),]
     ##### Preprocessing of Data Set #####--------------------
     Data = as.data.frame(Data)
     if (is.null(Day)) {

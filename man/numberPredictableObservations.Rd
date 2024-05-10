@@ -46,15 +46,6 @@ The total number of predictable observations for each endogenous variable, consi
 Anja Ernst & Jonas Haslbeck
 }
 
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 
 \dontrun{

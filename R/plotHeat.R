@@ -12,7 +12,7 @@ plotHeat <- function(phi,
 
   # -- Make color gradient --
   color.gradient <- function(x, colors=c("#E41A1C", "white", "#377EB8"), colsteps=201) {
-    return( colorRampPalette(colors) (colsteps) [ findInterval(x, seq(min(x),max(x), length.out=colsteps)) ] )
+    return( grDevices::colorRampPalette(colors) (colsteps) [ findInterval(x, seq(min(x),max(x), length.out=colsteps)) ] )
   }
   x <- 1:201
   grad <- color.gradient(x)
@@ -21,14 +21,14 @@ plotHeat <- function(phi,
   # # -- Make Legend --
   # # Create a sequence from -1 to 1
   # f_colLeg <- function() {
-  #   par(mar=c(2.5,1,2,2.5))
+  #   graphics::par(mar=c(2.5,1,2,2.5))
   #   values <- seq(-1, 1, length.out = max(x))
   #   # Generate the colors for the gradient
   #   colors <- color.gradient(values)
   #   # Create an empty plot
   #   plot(1, type = "n", xlab = "", ylab = "", xlim = c(0, 1), ylim = c(-1, 1), axes = FALSE)
   #   # Add the color gradient as a vertical legend
-  #   for (i in 1:(length(values) - 1)) rect(0, values[i], 1, values[i+1], col = colors[i], border = NA)
+  #   for (i in 1:(length(values) - 1)) graphics::rect(0, values[i], 1, values[i+1], col = colors[i], border = NA)
   #   x_axis <- seq(-1, 1, length=5)
   #   axis(4, at=x_axis, labels=x_axis, las=2, cex.axis=0.8)
   #   # for (i in 1:length(x_axis)) mtext(text = x_axis[i], side = 4, at = x_axis[i], las = 2, cex = .75, adj = 0, line=3) # Increase adj to move text left
@@ -44,9 +44,9 @@ plotHeat <- function(phi,
   # f_colLeg()
 
   # Make canvas
-  par(mar=c(2.5,2.5,2,1))
-  plot.new()
-  plot.window(xlim=c(0,1), ylim=c(0, 1))
+  graphics::par(mar=c(2.5,2.5,2,1))
+  graphics::plot.new()
+  graphics::plot.window(xlim=c(0,1), ylim=c(0, 1))
 
   # Auxiliary plotting variables
   sfm <- 1/(p*2)
@@ -58,11 +58,11 @@ plotHeat <- function(phi,
     labels_t1 <- paste0("Y", p:1, "(t)")
   } else {
     labels_tm1 <- paste0(labels, "(t-1)")
-    labels_t1 <- paste0(labels, "(t)")
+    labels_t1 <- paste0(rev(labels), "(t)")
   }
-  axis(1, labels = labels_tm1, at=seq_mp_x, cex.axis=cex.axis)
-  axis(2, labels = labels_t1, at=seq_mp_x, las=2, cex.axis=cex.axis)
-  title(main, font.main=1)
+  graphics::axis(1, labels = labels_tm1, at=seq_mp_x, cex.axis=cex.axis)
+  graphics::axis(2, labels = labels_t1, at=seq_mp_x, las=2, cex.axis=cex.axis)
+  graphics::title(main, font.main=1)
 
   # Plot Data
   for(i in 1:p) {
@@ -79,13 +79,13 @@ plotHeat <- function(phi,
       }
 
       # Plot box
-      rect(xleft = seq_mp_x[i]-sfm,
+      graphics::rect(xleft = seq_mp_x[i]-sfm,
            ybottom = seq_mp_x[j]-sfm,
            xright = seq_mp_x[i]+sfm,
            ytop = seq_mp_x[j]+sfm,
            col = col_ij)
       # Plot text
-      text(seq_mp_x[i], seq_mp_x[j], round(phi_ij , 2), cex=cex.val, col="black")
+      graphics::text(seq_mp_x[i], seq_mp_x[j], round(phi_ij , 2), cex=cex.val, col="black")
     }
   }
 

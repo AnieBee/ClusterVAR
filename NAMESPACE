@@ -1,6 +1,10 @@
 exportPattern("^[[:alpha:]]+")
 
 # Import packages
+import(stats) # for dist, kmeans, etc.
+import(utils) # for txtProgressBar etc. 
+import(graphics)
+import(grDevices)
 import(fastDummies) # (v.1.1.0) for dummy_cols()
 import(MASS) # (v.7.3-49) for ginv()
 import(mvtnorm) # (v.1.0-6) for dmvnorm()

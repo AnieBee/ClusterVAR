@@ -1,16 +1,19 @@
 
-summary.ClusterVAR <- function(object,
+summary.ClusterVAR <- function(object, show = "BPC",  TS_criterion = "SC",
+                               global_criterion = "BIC",
+                               Number_of_Clusters = NULL,
+                               Number_of_Lags = NULL,
                                ...) {
 
   # Fill in defaults
-  args <- list(...)
-  if(is.null(args$show)) show <- "BPC" else show <- args$show
-  if(is.null(args$TS_criterion)) TS_criterion <- "SC" else TS_criterion <- args$TS_criterion
-  if(is.null(args$global_criterion)) global_criterion <- "BIC" else global_criterion <- args$global_criterion
-  if(is.null(args$Number_of_Clusters)) Number_of_Clusters <- NULL else Number_of_Clusters <- args$Number_of_Clusters
-  if(is.null(args$Number_of_Lags)) Number_of_Lags <- min(object$Call$Lags) else Number_of_Lags <- args$Number_of_Lags
+  # args <- list(...)
+  # if(is.null(args$show)) show <- "BPC" else show <- args$show
+  # if(is.null(args$TS_criterion)) TS_criterion <- "SC" else TS_criterion <- args$TS_criterion
+  # if(is.null(args$global_criterion)) global_criterion <- "BIC" else global_criterion <- args$global_criterion
+  # if(is.null(args$Number_of_Clusters)) Number_of_Clusters <- NULL else Number_of_Clusters <- args$Number_of_Clusters
+  # if(is.null(args$Number_of_Lags)) Number_of_Lags <- min(object$Call$Lags) else Number_of_Lags <- args$Number_of_Lags
+  if(is.null(Number_of_Lags)) Number_of_Lags <- min(object$Call$Lags)
 
-  #show =  c("BPC", "GNC", "GNL") = c("Best-per-number-of-clusters", "Given-a-number-of-clusters", "Given-a-number-of-lags-for-all-Clusters")
   #TS_criterion = c("SC", "HQ")
   #Global_criterion = c("BIC", "ICL")
   # Number_of_Clusters is only used if show == "GNC"

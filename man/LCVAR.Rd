@@ -10,8 +10,9 @@ Function to fit a Latent Class VAR model with a given number of latent classes.
 \usage{
 LCVAR(Data, yVars, Beep, Day = NULL, ID,
            xContinuous = NULL, xFactor = NULL,
-           Clusters, Lags, smallestClN = 3, Cores = 1,
-           RndSeed, Rand = 50, Rational = TRUE,
+           Clusters, Lags, Center = FALSE,
+           smallestClN = 3, Cores = 1,
+           RndSeed = NULL, Rand = 50, Rational = TRUE,
            Initialization = NULL, SigmaIncrease = 10,
            it = 50, Conv = 1e-05, pbar = TRUE,
            Covariates = "equal-within-clusters", ...)
@@ -108,15 +109,10 @@ Ernst, A. F., Albers, C. J., Jeronimus, B. F., & Timmerman, M. E. (2020). Inter-
 \author{
 Anja Ernst
 }
-\note{
-%%  ~~further notes~~
-}
+
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-\code{\link{summary.ClusterVAR()}}, \code{\link{coef.ClusterVAR()}}, \code{plot.ClusterVAR()}.
-}
 
 \examples{
 

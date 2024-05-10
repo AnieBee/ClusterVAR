@@ -1,19 +1,23 @@
 
-plot.ClusterVAR <- function(x,
-                            ...) {
+plot.ClusterVAR <- function(x, show,Number_of_Clusters = NULL, Number_of_Lags = NULL, Model = NULL, ...) {
 
 
   # ----- Fill in defaults ------
   args <- list(...)
+  # if(!args$show %in% c("GNC", "GNL", "specific", "specificDiff")) stop("Inadmissible input for argument 'show'. see ?plot.ClusterVAR")
+  # if(is.null(args$show)) stop("Select which plot should be shown (see ?plot.ClusterVAR).") else show <- args$show
+  # if(is.null(args$Number_of_Clusters)) Number_of_Clusters <- NULL else Number_of_Clusters <- args$Number_of_Clusters
+  # if(is.null(args$Number_of_Lags)) Number_of_Lags <- min(x$Call$Lags) else Number_of_Lags <- args$Number_of_Lags
+  # if(is.null(args$Model)) Model <- NULL else Model <- args$Model
 
-  if(!args$show %in% c("GNC", "GNL", "specific", "specificDiff")) stop("Inadmissible input for argument 'show'. see ?plot.ClusterVAR")
-  if(is.null(args$show)) stop("Select which plot should be shown (see ?plot.ClusterVAR).") else show <- args$show
-  if(is.null(args$Number_of_Clusters)) Number_of_Clusters <- NULL else Number_of_Clusters <- args$Number_of_Clusters
-  if(is.null(args$Number_of_Lags)) Number_of_Lags <- min(x$Call$Lags) else Number_of_Lags <- args$Number_of_Lags
-  if(is.null(args$Model)) Model <- NULL else Model <- args$Model
   if(is.null(args$labels)) labels <- NULL else labels <- args$labels
   if(is.null(args$cex.axis)) cex.axis <- 0.8 else cex.axis <- args$cex.axis
   if(is.null(args$cex.val)) cex.val <- 0.7 else cex.val <- args$cex.val
+
+  if(!show %in% c("GNC", "GNL", "specific", "specificDiff")) stop("Inadmissible input for argument 'show'. see ?plot.ClusterVAR")
+  if(is.null(show)) stop("Select which plot should be shown (see ?plot.ClusterVAR).")
+  if(is.null(Number_of_Lags)) Number_of_Lags <- min(x$Call$Lags)
+
 
   # ----- Get relevant data from summary method ------
   # (if relevant)
@@ -40,7 +44,7 @@ plot.ClusterVAR <- function(x,
 
   # ----- Global Plotting Settings ------
   cols <- c("#E41A1C", "#377EB8", "#4DAF4A")
-  old_par <- par() # save old graphic settings
+  old_par <- graphics::par() # save old graphic settings
 
   # ----- Plotting: Best-per-number-of-clusters ------
 
@@ -50,11 +54,11 @@ plot.ClusterVAR <- function(x,
   #   yrange <- range(out_table$`log-likelihood`)
   #
   #   # Plotting canvas
-  #   par(mar=c(4.4, 5.5, 2, 1.2))
-  #   plot.new()
-  #   plot.window(xlim=c(1,K), ylim=yrange)
-  #   axis(1)
-  #   axis(2, round(seq(yrange[1], yrange[2], length=8)), las=2)
+  #   graphics::par(mar=c(4.4, 5.5, 2, 1.2))
+  #   graphics::plot.new()
+  #   graphics::plot.window(xlim=c(1,K), ylim=yrange)
+  #   graphics::axis(1)
+  #   graphics::axis(2, round(seq(yrange[1], yrange[2], length=8)), las=2)
   #   title(xlab="Number of Clusters")
   #   title(ylab="Log-likelihood", line=4.5)
   #   title("Different Number of Clusters (each with best Lag model)", font.main=1)
@@ -84,11 +88,11 @@ plot.ClusterVAR <- function(x,
     yrange <- range(c(out_table$HQ, out_table$SC))
 
     # Plotting canvas
-    par(mar=c(4.4, 5.5, 2, 1.2))
-    plot.new()
-    plot.window(xlim=c(1,N_L), ylim=yrange)
-    axis(1, labels = labels, at=1:N_L)
-    axis(2, labels=round(seq(yrange[1], yrange[2], length=8), 4),
+    graphics::par(mar=c(4.4, 5.5, 2, 1.2))
+    graphics::plot.new()
+    graphics::plot.window(xlim=c(1,N_L), ylim=yrange)
+    graphics::axis(1, labels = labels, at=1:N_L)
+    graphics::axis(2, labels=round(seq(yrange[1], yrange[2], length=8), 4),
          at=seq(yrange[1], yrange[2], length=8), las=2)
     title(xlab="Lag-Combinations")
     title(ylab="Information Criterion", line=4.5)
@@ -119,23 +123,23 @@ plot.ClusterVAR <- function(x,
     yrange <- range(c(out_table$BIC, out_table$ICL))
 
     # Plotting canvas
-    par(mar=c(4.4, 5.5, 2, 1.2))
-    plot.new()
-    plot.window(xlim=c(1,K), ylim=yrange)
-    axis(1, labels = labels, at=1:K)
-    axis(2, round(seq(yrange[1], yrange[2], length=8)), las=2)
-    title(xlab="Models with different #Clusters")
-    title(ylab="Information Criterion", line=4.5)
-    title(paste0("Different Number of Clusters (Fixed lag = ", Number_of_Lags, ")"), font.main=1)
+    graphics::par(mar=c(4.4, 5.5, 2, 1.2))
+    graphics::plot.new()
+    graphics::plot.window(xlim=c(1,K), ylim=yrange)
+    graphics::axis(1, labels = labels, at=1:K)
+    graphics::axis(2, round(seq(yrange[1], yrange[2], length=8)), las=2)
+    graphics::title(xlab="Models with different #Clusters")
+    graphics::title(ylab="Information Criterion", line=4.5)
+    graphics::title(paste0("Different Number of Clusters (Fixed lag = ", Number_of_Lags, ")"), font.main=1)
 
     # Plotting Data
-    points(1:K, out_table$ICL, col=cols[1], pch=19)
-    points(1:K, out_table$BIC, col=cols[2], lty=2, pch=17)
-    lines(1:K, out_table$ICL, col=cols[1])
-    lines(1:K, out_table$BIC, col=cols[2], lty=2)
+    graphics::points(1:K, out_table$ICL, col=cols[1], pch=19)
+    graphics::points(1:K, out_table$BIC, col=cols[2], lty=2, pch=17)
+    graphics::lines(1:K, out_table$ICL, col=cols[1])
+    graphics::lines(1:K, out_table$BIC, col=cols[2], lty=2)
 
     # Legend
-    legend("topright", legend=c("ICL", "BIC"),
+    graphics::legend("topright", legend=c("ICL", "BIC"),
            lty=1, col=cols[1:2], text.col=cols[1:2],
            bty="n", cex=1.2, pch=c(19, 17))
 
@@ -156,13 +160,13 @@ plot.ClusterVAR <- function(x,
     for(k in 1:K) l_phi[[k]] <-  l_coef$VAR_coefficients[, , k]
 
     # Decide on layout
-    if(K == 1) par(mfrow=c(1,1))
-    if(K == 2) par(mfrow=c(1,2))
-    if(K %in% 3:4) par(mfrow=c(2,2))
-    if(K %in% 5:9) par(mfrow=c(3,3))
+    if(K == 1) graphics::par(mfrow=c(1,1))
+    if(K == 2) graphics::par(mfrow=c(1,2))
+    if(K %in% 3:4) graphics::par(mfrow=c(2,2))
+    if(K %in% 5:9) graphics::par(mfrow=c(3,3))
     if(K > 10) {
       ldim <- ceiling(sqrt(K))
-      par(mfrow=c(ldim,ldim))
+      graphics::par(mfrow=c(ldim,ldim))
     }
 
     # browser()
@@ -194,17 +198,17 @@ plot.ClusterVAR <- function(x,
     lmat <- matrix((2*(K-1)+1):((2*(K-1)) + (K-1)^2), K-1, K-1, byrow=TRUE)
     lmat <- rbind(1:(K-1), lmat)
     lmat <- cbind(c(0, K:(2*(K-1))), lmat)
-    layout(mat=lmat,
+    graphics::layout(mat=lmat,
            widths = c(0.2, rep(1, K-1)),
            heights =  c(0.2, rep(1, K-1)))
 
     # Plot Labels
     plotLabel <- function(x, srt=0, col="black",
                           xpos=.6, ypos=.6, cex=1.4) {
-      par(mar=rep(0, 4))
-      plot.new()
-      plot.window(xlim=c(0,1), ylim=c(0,1))
-      text(xpos, ypos, x, srt=srt, cex=cex, col=col)
+      graphics::par(mar=rep(0, 4))
+      graphics::plot.new()
+      graphics::plot.window(xlim=c(0,1), ylim=c(0,1))
+      graphics::text(xpos, ypos, x, srt=srt, cex=cex, col=col)
     }
     for(k in 2:K) plotLabel(paste0("Cluster ", k), cex=1.5)
     for(k in 1:(K-1)) plotLabel(paste0("Cluster ", k), cex=1.5, srt=90)
@@ -214,11 +218,11 @@ plot.ClusterVAR <- function(x,
       for(k2 in 2:K) {
 
         if(k1==k2) {
-          plot.new()
-          plot.window(xlim=c(0,1), ylim=c(0,1))
+          graphics::plot.new()
+          graphics::plot.window(xlim=c(0,1), ylim=c(0,1))
         } else {
           phi_diff <- l_phi[[k1]] - l_phi[[k2]]
-          par(mar=c(2.5,2.5,2,1))
+          graphics::par(mar=c(2.5,2.5,2,1))
           plotHeat(phi = phi_diff, k = k, main = paste0("Difference: Cluster ", k1, " - Cluster ", k2))
         }
 
@@ -232,7 +236,7 @@ plot.ClusterVAR <- function(x,
 
 
   # Set graphic settings back to initial
-  par(mfrow=old_par$mfrow, mar=old_par$mar)
+  graphics::par(mfrow=old_par$mfrow, mar=old_par$mar)
 
 
 } # eoF

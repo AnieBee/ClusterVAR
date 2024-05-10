@@ -8,7 +8,7 @@ Show coefficients of given Model
 Extracts the coefficients of a given model from the output object of the \code{LCVAR} function.
 }
 \usage{
-\method{coef}{ClusterVAR}(object, ...)
+\method{coef}{ClusterVAR}(object, Model,...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

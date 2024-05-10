@@ -80,7 +80,7 @@ LCVAR <- function(Data,
 
 
   # Remove rows with NA values
-  Data <- Data[complete.cases(Data), ]
+  Data <- Data[stats::complete.cases(Data), ]
   ##### Preprocessing of Data Set #####--------------------
   Data = as.data.frame(Data)
   if(is.null(Day)){
@@ -96,7 +96,7 @@ LCVAR <- function(Data,
   # Endogenous Variables #-------------------
   Y = as.matrix(Data[ , yVars])
   if(Center){ #within-person center the variables per person
-    WPMeans = apply(Data[, yVars], 2, function(x) ave(x, Data[, ID], FUN = mean))
+    WPMeans = apply(Data[, yVars], 2, function(x) stats::ave(x, Data[, ID], FUN = mean))
     Y = Y - WPMeans
   }
   Y = t(Y)
