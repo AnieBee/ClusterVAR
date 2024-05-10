@@ -45,6 +45,7 @@ Pass additional arguments.
 Anja Ernst & Jonas Haslbeck
 }
 \examples{
+\dontrun{
 LCVAR_outExample <- LCVAR(Data = ExampleData,
                            yVars = 1:4, ID = 5, Beep = 6,
                            xContinuous = 7, xFactor = 8,
@@ -54,6 +55,7 @@ LCVAR_outExample <- LCVAR(Data = ExampleData,
 
 coef(LCVAR_outExample, Model = c(1, 1))
 coef(LCVAR_outExample, Model = c(2, 2))
+}
 }
 
 

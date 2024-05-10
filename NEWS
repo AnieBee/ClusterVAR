@@ -1,10 +1,10 @@
-Changes Version 0.0.2
+Changes Version 0.0.3
   o The number of lags are now specified in a single argument as a successive sequence of integers 1:Nlag 
   o Missing data is now accomodated: if an observation is missing, the next lag-many observations are excluded from calculations for the VAR coefficients
   o The print output while running the LCVARClust has been replaced with a progress bar
   o the runtime of the algorithm was decreased through parallelization and vectorization of the functions
   o The runtime of the algorithm in minutes is now shown in the console and provided in the output
-  o Added a S3 print method, summary(), and coef() function for output object of LCVARClust() providing basic information about the fitted models
+
   
 
 
