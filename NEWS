@@ -1,4 +1,4 @@
-Changes Version 0.0.3
+Changes Version 0.0.4
   o The number of lags are now specified in a single argument as a successive sequence of integers 1:Nlag 
   o Missing data is now accomodated: if an observation is missing, the next lag-many observations are excluded from calculations for the VAR coefficients
   o The print output while running the LCVARClust has been replaced with a progress bar

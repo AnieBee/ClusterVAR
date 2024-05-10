@@ -107,7 +107,7 @@ The details of the output components are as follows:
 
 }
 \references{
-Ernst, A. F., Albers, C. J., Jeronimus, B. F., & Timmerman, M. E. (2020). Inter-individual differences in multivariate time-series: Latent class vector-autoregressive modeling. European Journal of Psychological Assessment, 36(3), 482–491. \url{https://doi.org/10.1027/1015-5759/a000578}
+Ernst, A. F., Albers, C. J., Jeronimus, B. F., & Timmerman, M. E. (2020). Inter-individual differences in multivariate time-series: Latent class vector-autoregressive modeling. European Journal of Psychological Assessment, 36(3), 482–491. \doi{10.1027/1015-5759/a000578}
 }
 \author{
 Anja Ernst
