@@ -1,6 +1,6 @@
 \name{print.ClusterVAR}
 \alias{print.ClusterVAR}
-%- Also NEED an '\alias' for EACH other topic documented here.
+
 \title{
 Prints description of ClusterVAR objects
 }
@@ -10,7 +10,7 @@ Takes the output of the ClusterVAR object and prints a small overview of the fit
 \usage{
 \method{print}{ClusterVAR}(x, ...)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{x}{
 An output object of the \code{LCVAR} function

@@ -22,7 +22,7 @@ ExampleData: Follows the structure where a single 'Time' variable indicates the 
 
 \examples{
 
-\dontrun{
+\donttest{
 
 head(SyntheticData)
 

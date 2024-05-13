@@ -1,6 +1,6 @@
 \name{coef.ClusterVAR}
 \alias{coef.ClusterVAR}
-%- Also NEED an '\alias' for EACH other topic documented here.
+
 \title{
 Show coefficients of given Model
 }
@@ -10,7 +10,7 @@ Extracts the coefficients of a given model from the output object of the \code{L
 \usage{
 \method{coef}{ClusterVAR}(object, Model,...)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{object}{
 An output object of the \code{LCVAR} function.
@@ -45,7 +45,7 @@ Pass additional arguments.
 Anja Ernst & Jonas Haslbeck
 }
 \examples{
-\dontrun{
+\donttest{
 LCVAR_outExample <- LCVAR(Data = ExampleData,
                            yVars = 1:4, ID = 5, Beep = 6,
                            xContinuous = 7, xFactor = 8,

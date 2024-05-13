@@ -6,7 +6,7 @@ Authors@R: c(
   person("Anja", "Ernst", email = "a.f.ernst@rug.nl",role = c("aut", "cre")),
   person("Jonas", "Haslbeck", email = "jonashaslbeck@protonmail.com",role = c("aut")))
 Maintainer: Anja Ernst <a.f.ernst@rug.nl>
-Description: Fitting Latent Class Vector-Autoregressive (VAR) Models.
+Description: Estimates latent class vector-autoregressive models via EM algorithm on time-series data for model-based clustering and classification. Includes model selection criteria for selecting the number of lags and clusters.
 BugReports: https://github.com/anieBee/ClusterVAR/issues
 Encoding: UTF-8
 LazyData: true

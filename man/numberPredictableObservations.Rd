@@ -1,6 +1,6 @@
 \name{numberPredictableObservations}
 \alias{numberPredictableObservations}
-%- Also NEED an '\alias' for EACH other topic documented here.
+
 \title{
 Determine the number of observations that can be predicted
 }
@@ -11,7 +11,7 @@ Determine the number of observations that can be predicted
 numberPredictableObservations(Data, yVars, Beep, Day = NULL, ID, Lags, ...)
 
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{Data}{
 The data provided in a data.frame.
@@ -48,7 +48,7 @@ Anja Ernst & Jonas Haslbeck
 
 \examples{
 
-\dontrun{
+\donttest{
 
 head(SyntheticData)
 
@@ -60,12 +60,4 @@ Obs
 
 }
 
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory (show via RShowDoc("KEYWORDS")):
-% \keyword{ ~kwd1 }
-% \keyword{ ~kwd2 }
-% Use only one keyword per line.
-% For non-standard keywords, use \concept instead of \keyword:
-% \concept{ ~cpt1 }
-% \concept{ ~cpt2 }
-% Use only one concept per line.
+

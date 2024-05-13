@@ -1,6 +1,6 @@
 \name{summary.ClusterVAR}
 \alias{summary.ClusterVAR}
-%- Also NEED an '\alias' for EACH other topic documented here.
+
 \title{
 Summary of ClusterVAR objects
 }
@@ -16,7 +16,7 @@ Takes the output of the LCVAR function and creates a small summary of the fitted
   Number_of_Lags = NULL,
   ...)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{object}{
 An output object of the \code{LCVAR} function.
@@ -73,7 +73,7 @@ Schwarz, G. (1978). Estimating the Dimension of a Model. The Annals of Statistic
 
 \examples{
 
-\dontrun{
+\donttest{
 LCVAR_outExample <- LCVAR(Data = ExampleData,
                           yVars = 1:4, ID = 5, Beep = 6,
                           xContinuous = 7, xFactor = 8,

@@ -1,6 +1,6 @@
 \name{LCVAR}
 \alias{LCVAR}
-%- Also NEED an '\alias' for EACH other topic documented here.
+
 \title{
 Fitting Latent Class VAR Models
 }
@@ -17,7 +17,6 @@ LCVAR(Data, yVars, Beep, Day = NULL, ID,
            it = 50, Conv = 1e-05, pbar = TRUE,
            Covariates = "equal-within-clusters", ...)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{Data}{
 The data provided in a data.frame.
@@ -99,8 +98,6 @@ Here \eqn{ \mu_{k}} represents an m x 1 vector that contains the cluster-wise co
 \value{
 An object of class 'ClusterVAR' providing several LCVAR models.
 The details of the output components are as follows:
-%%  ~Describe the value returned
-%%  If it is a LIST, use
 \item{Call}{A list of arguments from the original function call.}
 \item{All_Models}{All LCVAR models across all number of clusters, lag combinations, and number of EM-starts. \code{All_Models[[a]][[b]][[c]]}  contains all information for the LCVAR model for the \code{a}th number of clusters that was specified in \code{Clusters}, for the \code{b}th combination of lag orders, based on the combination of lags that was specified in \code{Lags}, on the \code{c}th EM-start. To find the ideal model across all of them use \code{summary()}, to view the coefficients of a given model, use \code{coef()}.}
 \item{Runtime}{The runtime the function took to complete.}
@@ -114,12 +111,9 @@ Anja Ernst
 }
 
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-
 \examples{
 
-\dontrun{
+\donttest{
 
 head(SyntheticData)
 LCVAR_outExample1 <- LCVAR(Data = SyntheticData,
@@ -152,12 +146,4 @@ plot(LCVAR_outExample2, show = "specific", Model = c(1, 1))
 
 }
 
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory (show via RShowDoc("KEYWORDS")):
-% \keyword{ ~kwd1 }
-% \keyword{ ~kwd2 }
-% Use only one keyword per line.
-% For non-standard keywords, use \concept instead of \keyword:
-% \concept{ ~cpt1 }
-% \concept{ ~cpt2 }
-% Use only one concept per line.
+

@@ -15,7 +15,7 @@ Creates a variety of plots summarizing fitted LCVAR models.
     Model = NULL,
     ...)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{x}{
 An output object of the \code{ClusterVAR} function
@@ -49,7 +49,7 @@ Anja Ernst & Jonas Haslbeck
 }
 
 \examples{
-\dontrun{
+\donttest{
 LCVAR_outExample <- LCVAR(Data = ExampleData,
                           yVars = 1:4, ID = 5, Beep = 6,
                           xContinuous = 7, xFactor = 8,
