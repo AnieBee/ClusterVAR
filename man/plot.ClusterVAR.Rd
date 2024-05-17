@@ -44,6 +44,8 @@ Pass additional arguments.
 Creates different plots showing either a fitted LCVAR model or fit indices for a specified set of LCVAR models.
 }
 
+\value{No return value, just plots figure.}
+
 \author{
 Anja Ernst & Jonas Haslbeck
 }

@@ -22,6 +22,8 @@ Pass additional arguments.
 \value{
 Prints the summary of the fitted models in the console.
 }
+
+
 \author{
 Anja Ernst & Jonas Haslbeck
 }

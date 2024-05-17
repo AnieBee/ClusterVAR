@@ -113,7 +113,7 @@ Anja Ernst
 
 \examples{
 
-\donttest{
+\dontrun{
 
 head(SyntheticData)
 LCVAR_outExample1 <- LCVAR(Data = SyntheticData,
@@ -121,7 +121,7 @@ LCVAR_outExample1 <- LCVAR(Data = SyntheticData,
                            xContinuous = 7, xFactor = 8,
                            Clusters = 1:2, Lags = 1,
                            Center = TRUE,
-                           Cores = parallel::detectCores(),
+                           Cores = 4, # Adapt to local machine
                            RndSeed = 3, Rand = 2, it = 25)
 summary(LCVAR_outExample1)
 summary(object = LCVAR_outExample1, show = "GNL", Number_of_Lags = 1)
@@ -142,6 +142,7 @@ summary(object = LCVAR_outExample2, show = "GNL", Number_of_Lags = 1)
 summary(object = LCVAR_outExample2, show = "GNC", Number_of_Clusters = 2)
 coef(LCVAR_outExample2, Model = c(1, 1))
 plot(LCVAR_outExample2, show = "specific", Model = c(1, 1))
+
 }
 
 }

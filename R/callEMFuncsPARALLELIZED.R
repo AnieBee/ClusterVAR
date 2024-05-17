@@ -61,15 +61,22 @@ callEMFuncs <- function(Clusters,
   # doParallel::registerDoParallel(cl)
 
   cl <- makeCluster(n_cores)
-  registerDoSNOW(cl)
+  registerDoParallel(cl)
+
+  # Using Mihais package
+  # backend <- start_backend(cores = n_cores, cluster_type = "psock", backend_type = "async")
+
+  # configure_bar(type = "modern", format = "[:bar] :percent")
 
   # Set a seed for each parallel worker , if specified
   # This ensures that each worker has a different seed
   if(!is.null(RndSeed)) clusterSetRNGStream(cl, iseed = RndSeed)
 
 
-  All_Solutions <- foreach(K = Clusters,
-                           .options.snow = opts,
+  # browser()
+
+  All_Solutions <- invisible(foreach(K = Clusters,
+                           # .options.snow = opts,
                            .packages = c("MASS", "mvtnorm", "fastDummies"),
                            .export = c("createOutputList", "callCalculateCoefficientsForRandoAndRational",
                                        "calculateCoefficientsForRandoAndRational", "EMInit",
@@ -81,6 +88,12 @@ callEMFuncs <- function(Clusters,
                                        "checkConvergence", "checkOutliers", "checkPosteriorsNA",
                                        "calculateNPara", "calculateIC", "calculateBIC", "calculateICL")) %dopar%
     {
+
+      # Update progress bar
+      # setTxtProgressBar(pb, K)
+
+
+
 
       # Use set.seed to set a seed for each iteration within the parallel worker
       if(!is.null(RndSeed))  set.seed(RndSeed + K)
@@ -212,7 +225,8 @@ callEMFuncs <- function(Clusters,
 
       return(OutputListAllLags)
 
-    } # End of K cluster loop
+    }) # End of K cluster loop
+
   parallel::stopCluster(cl)
 
   if(pbar) close(pb) # Close progress bar

@@ -1,7 +1,6 @@
 
 plot.ClusterVAR <- function(x, show,Number_of_Clusters = NULL, Number_of_Lags = NULL, Model = NULL, ...) {
 
-
   # ----- Fill in defaults ------
   args <- list(...)
   # if(!args$show %in% c("GNC", "GNL", "specific", "specificDiff")) stop("Inadmissible input for argument 'show'. see ?plot.ClusterVAR")
@@ -31,20 +30,15 @@ plot.ClusterVAR <- function(x, show,Number_of_Clusters = NULL, Number_of_Lags = 
     out_table <- out_sum$FunctionOutput
   }
 
-
   # ----- Get relevant data from coef method ------
-  # (if relevant): plots specific VAR model
-
-  if(show %in% c("specific", "specificDiff")) {
-
-    l_coef <- coef(x, Model = Model)
-
-  }
-
+  if(show %in% c("specific", "specificDiff")) l_coef <- coef(x, Model = Model)
 
   # ----- Global Plotting Settings ------
   cols <- c("#E41A1C", "#377EB8", "#4DAF4A")
-  old_par <- graphics::par() # save old graphic settings
+
+  # Ensure graphics settings are restored after calling function
+  oldpar <- par(no.readonly = TRUE) # code line i
+  on.exit(par(oldpar)) # code line i + 1
 
   # ----- Plotting: Best-per-number-of-clusters ------
 
@@ -233,10 +227,6 @@ plot.ClusterVAR <- function(x, show,Number_of_Clusters = NULL, Number_of_Lags = 
 
 
   } # end if
-
-
-  # Set graphic settings back to initial
-  graphics::par(mfrow=old_par$mfrow, mar=old_par$mar)
 
 
 } # eoF

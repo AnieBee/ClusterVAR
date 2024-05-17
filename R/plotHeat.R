@@ -8,7 +8,15 @@ plotHeat <- function(phi,
                      cex.axis=0.8,
                      cex.val=0.7) {
 
+
+  # -- Aux Variables --
   p <- ncol(phi)
+
+
+  # -- Recover graphics settings --
+  # Ensure graphics settings are restored after calling function
+  oldpar <- par(no.readonly = TRUE) # code line i
+  on.exit(par(oldpar)) # code line i + 1
 
   # -- Make color gradient --
   color.gradient <- function(x, colors=c("#E41A1C", "white", "#377EB8"), colsteps=201) {

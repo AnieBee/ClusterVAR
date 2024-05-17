@@ -11,7 +11,7 @@ BugReports: https://github.com/anieBee/ClusterVAR/issues
 Encoding: UTF-8
 LazyData: true
 License: GPL-2
-Imports: stats, utils, graphics, grDevices, fastDummies, MASS, mvtnorm, scales, foreach, parallel, doParallel, doSNOW
+Imports: stats, utils, graphics, grDevices, fastDummies, MASS, mvtnorm, scales, foreach, parallel, doParallel, parabar
 Suggests: 
     knitr,
     rmarkdown,

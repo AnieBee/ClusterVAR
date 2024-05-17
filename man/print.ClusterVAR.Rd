@@ -23,6 +23,8 @@ Pass additional arguments
 Prints an overview of the fitted model(s) in the console.
 }
 
+\value{No return value, just returns summary in console.}
+
 \author{
 Anja Ernst & Jonas Haslbeck
 }
