@@ -113,6 +113,9 @@ callEMFuncs <- function(Clusters,
     )
   }
 
+  # Show progress bar?
+  set_option("progress_track", pbar)
+
   backend <- parabar::start_backend(cores = 4, cluster_type = "psock", backend_type = "async")
 
   # Register it with the `foreach` package.
