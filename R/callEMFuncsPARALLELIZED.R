@@ -132,7 +132,7 @@ callEMFuncs <- function(Clusters,
 
 
   # --- Start Foreach ---
-  All_Solutions <- invisible(foreach(K = Clusters,
+  All_Solutions <- invisible(foreach::foreach(K = Clusters,
                                      # .options.snow = opts,
                                      .packages = c("MASS", "mvtnorm", "fastDummies"),
                                      .export = c("createOutputList", "callCalculateCoefficientsForRandoAndRational",
