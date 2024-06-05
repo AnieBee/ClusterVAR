@@ -281,8 +281,6 @@ callEMFuncs <- function(Clusters,
   # # Commented out: replaced by solution Mihai, see above
   # parallel::stopCluster(cl)
 
-  if(pbar) close(pb) # Close progress bar
-
   ModelCall = list(Clusters = Clusters, Lags = LowestLag:HighestLag,
                    Rand = Rand, Rational = Rational, Initialization = Initialization,
                    Covariates = Covariates)
