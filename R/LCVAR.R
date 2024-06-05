@@ -168,7 +168,9 @@ LCVAR <- function(Data,
       # With presample of first Lags-obs removed for every individual and all other obs that cannot be predicted removed,
     }
     ## Check each person has at least 5 predictable observations
-    stopifnot(all(Tni_NPred[[lagRunner]] > 4))
+    if(!all(Tni_NPred[[lagRunner]] > 4)){
+      stop("At least one subject has less than 5 predictable time-points. Remove subjects who have not enough observations from your dataframe.")
+    }
 
     ## Change PredictableObs so that it contains the position of the observations in Y, and W, and X, that can be predicted
     PredictableObs[[lagRunner]] = which(PredictableObs[[lagRunner]][ , 1] ==  1)
