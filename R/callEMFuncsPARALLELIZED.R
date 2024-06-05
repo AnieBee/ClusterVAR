@@ -46,15 +46,6 @@ callEMFuncs <- function(Clusters,
 
   start_time <- proc.time()[3]
 
-  # ----- Create Progress Bar -----
-  if(pbar==TRUE) {
-    pb <- utils::txtProgressBar(max = length(Clusters), style = 3)
-    progress <- function(n) utils::setTxtProgressBar(pb, n)
-    opts <- list(progress = progress)
-  } else {
-    opts <- NULL
-  }
-
   ### Loop over different K (# of clusters) values  ------------
   # # Commented out May 30, replaced by code Mihai, see below
   # cl <- makeCluster(n_cores)
@@ -114,7 +105,7 @@ callEMFuncs <- function(Clusters,
   }
 
   # Show progress bar?
-  set_option("progress_track", pbar)
+  parabar::set_option("progress_track", pbar)
 
   backend <- parabar::start_backend(cores = n_cores, cluster_type = "psock", backend_type = "async")
 
