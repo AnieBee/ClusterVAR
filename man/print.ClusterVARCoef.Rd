@@ -26,8 +26,6 @@ Prints an overview of the fitted model in the console.
 \author{
 Anja Ernst & Jonas Haslbeck
 }
-\examples{
-# Add example later
-}
+
 
 
