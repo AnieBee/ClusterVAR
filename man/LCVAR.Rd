@@ -14,7 +14,7 @@ LCVAR(Data, yVars, Beep, Day = NULL, ID,
            smallestClN = 3, Cores = 1,
            RndSeed = NULL, Rand = 50, Rational = TRUE,
            Initialization = NULL, SigmaIncrease = 10,
-           it = 50, Conv = 1e-05, pbar = TRUE,
+           it = 50, Conv = 1e-05, pbar = TRUE, verbose = TRUE,
            Covariates = "equal-within-clusters", ...)
 }
 \arguments{
@@ -76,7 +76,10 @@ An integer specifying the maximum number of EM-iterations allowed for every EM-s
 A numerical value specifying the convergence criterion of the log likelihood to determine convergence of an EM-start. For details see Ernst et al. (2020) Inter-individual differences in multivariate time series: Latent class vector-autoregressive modelling.  Defaults to \code{Conv = 1e-05}.
 }
   \item{pbar}{
-If \code{TRUE}, a progress bar is shown. Defaults to \code{pbar = TRUE}.}
+If \code{pbar = TRUE}, a progress bar is shown. Defaults to \code{pbar = TRUE}.}
+
+\item{verbose}{If \code{verbose = FALSE}, output messages are limited. Additionally, the \code{pbar} argument is overridden, so the progress bar is not printed. Defaults to \code{verbose = TRUE}.}
+
   \item{Covariates}{
 Constraints on the parameters of the exogenous variable(s). So far only \code{Covariates = "equal-within-clusters"} can be specified.}
   \item{...}{

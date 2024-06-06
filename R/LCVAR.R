@@ -20,6 +20,7 @@ LCVAR <- function(Data,
                   it = 50,
                   Conv = 1e-05,
                   pbar = TRUE,
+                  verbose = TRUE,
                   Covariates = "equal-within-clusters", # "equal-accros-clusters", "individual-specific"), #Anja: so far only equal-within-clusters is implemented
                   ...)
 # If each measurement is done on the same day, don't specify day but only specify beep.
@@ -35,6 +36,8 @@ LCVAR <- function(Data,
 
 
 {
+
+  if(!verbose) pbar = FALSE
 
   # ------ Computing Some Aux Vars ------
   LowestLag = min(Lags)
@@ -271,7 +274,7 @@ LCVAR <- function(Data,
 
 
   # ----- Parse Finish Message -----
-  cat(paste0("\n LCVAR Model Estimation completed in ",  out_est$Runtime, " min"))
+  if(verbose) cat(paste0("\n LCVAR Model Estimation completed in ",  out_est$Runtime, " min"))
 
   # ----- Return Output Object -----
 
