@@ -46,7 +46,11 @@ numberPredictableObservations <- function(Data,
 
 
     # Remove rows with NA values
-    Data <- Data[stats::complete.cases(Data[, c(yVars, Beep, Day)]), ] # only consider relevant columns to avoid issues with irrelevant NA-structures in other
+    if(!is.null(Day)){
+      Data <- Data[stats::complete.cases(Data[, c(yVars, Beep, Day, ID)]), ]
+    }else{
+      Data <- Data[stats::complete.cases(Data[, c(yVars, Beep, ID)]), ]
+    }
 
     ##### Preprocessing of Data Set #####--------------------
     Data = as.data.frame(Data)
