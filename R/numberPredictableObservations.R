@@ -130,12 +130,6 @@ numberPredictableObservations <- function(Data,
 
     }
 
-    names(Tni_NPred) = apply(as.matrix(1:HighestLag), 1, function(x) paste(c(x, "Lag"), collapse = " ")) # check this works for lag combis
-    for (lagRunner in LowestLag:HighestLag)
-    {
-      names(Tni_NPred[[lagRunner]]) = pers
-    }
-
     FunctionOutput = data.frame(matrix(NA, nrow = HighestLag, ncol = 1),
                                 row.names = apply(as.matrix(1:HighestLag), 1, function(x) paste(c(x, "Lag"), collapse = " ")))
     colnames(FunctionOutput) = c("Total predictable observations")
@@ -146,8 +140,19 @@ numberPredictableObservations <- function(Data,
     }
     FunctionOutput = FunctionOutput[LowestLag:HighestLag, , drop = FALSE]
 
+    names(Tni_NPred) = apply(as.matrix(1:HighestLag), 1, function(x) paste(c(x, "Lag"), collapse = " "))
+
+    for (lagRunner in LowestLag:HighestLag)
+    {
+      Tni_NPred[[lagRunner]] = data.frame(pers, Tni_NPred[[lagRunner]])
+      colnames(Tni_NPred[[lagRunner]]) = c("ID", "Predictable observations")
+    }
+
+
     OutList = list(Tni_NPred, FunctionOutput)
     names(OutList) = c("Predictable observations per subject", "Total predictable observations")
+
+    class(OutList) <- c("PredictableObs", class(OutList))
 
     return(OutList)
 

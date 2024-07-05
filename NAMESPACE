@@ -27,6 +27,8 @@ export(numberPredictableObservations)
 S3method(print, ClusterVAR)
 S3method(print, ClusterVARSummary)
 S3method(print, ClusterVARCoef)
+S3method(print, PredictableObs)
 S3method(summary, ClusterVAR)
 S3method(coef, ClusterVAR)
 S3method(plot, ClusterVAR)
+

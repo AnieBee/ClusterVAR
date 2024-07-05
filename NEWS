@@ -1,9 +1,7 @@
-Changes Version 0.0.4
-  o The number of lags are now specified in a single argument as a successive sequence of integers 1:Nlag 
-  o Missing data is now accomodated: if an observation is missing, the next lag-many observations are excluded from calculations for the VAR coefficients
-  o The print output while running the LCVARClust has been replaced with a progress bar
-  o the runtime of the algorithm was decreased through parallelization and vectorization of the functions
-  o The runtime of the algorithm in minutes is now shown in the console and provided in the output
+Changes Version 0.0.7
+  o A bug was fixed that did not check properly the numbmer of predictable observations when the lag number
+  was larger than 1 and a Day argument was specified
+  o The function numberPredictableObservations shows the output now also per subject in addition to the total number of predictable observations
 
   
 
