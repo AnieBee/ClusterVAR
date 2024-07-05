@@ -15,7 +15,6 @@ numberPredictableObservations <- function(Data,
     LowestLag = min(Lags)
     HighestLag = max(Lags)
 
-
     # ------ Input Checks ------
     # Cluster Search Sequence
 
@@ -130,7 +129,6 @@ numberPredictableObservations <- function(Data,
         }
 
     }
-
 
     FunctionOutput = data.frame(matrix(NA, nrow = HighestLag, ncol = 1),
                                 row.names = apply(as.matrix(1:HighestLag), 1, function(x) paste(c(x, "Lag"), collapse = " ")))

@@ -17,27 +17,29 @@
 # Output
 # 1) n x 1 vector, indicating whether each time point can be predicted
 
-DetPredSubj <- function(beep, day, MaxLag=1) {
-    
-    Nt <- length(beep)
-    ind_pred <- rep(NA, Nt)
-    ind_pred[1:MaxLag] <- FALSE # First MaxLag can never be predicted
-    for(i in (MaxLag+1):Nt) { 
-        # Check lags
-        v_check1 <- rep(NA, MaxLag)
-        for(j in 1:MaxLag) v_check1[j] <- (beep[i] - beep[i-j]) == j
-        check1 <- all(v_check1)
-        
-        if(!is.null(day)){
-            # Same day?
-            check2 <- day[i] == day[i-1]
-            # Make time vector
-            ind_pred[i] <- ifelse(check1 & check2, 1, 0)
-        }else{
-            ind_pred[i] <- ifelse(check1, 1, 0)
-        }
-    } # end for
-    return(ind_pred)
+DetPredSubj <- function(beep, day, MaxLag = 1) {
+  Nt <- length(beep)
+  ind_pred <- rep(NA, Nt)
+  ind_pred[1:MaxLag] <- FALSE # First MaxLag can never be predicted
+
+  for(i in (MaxLag+1):Nt) {
+    check1 <- check2 <- check3 <- FALSE
+    if(!is.null(day)){
+      check1 <- (day[i-1] == day[i]) & ((beep[i] - beep[i-1]) == 1)
+      if(MaxLag > 1) check2 <- (day[i-2] == day[i]) & ((beep[i] - beep[i-2]) == 2)
+      if(MaxLag > 2) check3 <- (day[i-3] == day[i]) & ((beep[i] - beep[i-3]) == 3)
+    } else{
+      check1 <- ((beep[i] - beep[i-1]) == 1)
+      if(MaxLag > 1) check2 <-((beep[i] - beep[i-2]) == 2)
+      if(MaxLag > 2) check3 <- ((beep[i] - beep[i-3]) == 3)
+    }
+
+    if(MaxLag==1) ind_pred[i] = as.numeric(check1)
+    if(MaxLag==2) ind_pred[i] = as.numeric(check1 & check2)
+    if(MaxLag==3) ind_pred[i] = as.numeric(check1 & check2 & check3)
+  }
+
+  return(ind_pred)
 } # eoF
 
 
