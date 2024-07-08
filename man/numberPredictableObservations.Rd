@@ -40,22 +40,23 @@ This function determines the number of observations in a given dataset that can 
 }
 
 \value{
-The total number of predictable observations for each endogenous variable, considering a specified time-lag.
+\item{Predictable observations per subject}{The number of predictable observations for each endogenous variable per subject, considering a specified time-lag.}
+\item{Total predictable observations}{The total number of predictable observations summed over all subjects in the dataset for each endogenous variable, considering a specified time-lag.}
 }
 \author{
 Anja Ernst & Jonas Haslbeck
 }
 
 \examples{
-
 \donttest{
-
 head(SyntheticData)
 
 Obs <- numberPredictableObservations(Data = SyntheticData, yVars = 1:4,
                                       Beep = 9, Day = 10,  ID = 5, Lags = 1:3)
 
 Obs
+
+Obs$`Predictable observations per subject`$`1 Lag`
 }
 
 }
