@@ -5,6 +5,8 @@ numberPredictableObservations <- function(Data,
                                           Beep,
                                           Day = NULL,
                                           ID,
+                                          xContinuous = NULL,
+                                          xFactor = NULL,
                                           Lags,
                                           ...)
     # If each measurement is done on the same day, don't specify day but only specify beep.
@@ -45,11 +47,8 @@ numberPredictableObservations <- function(Data,
 
 
     # Remove rows with NA values
-    if(!is.null(Day)){
-      Data <- Data[stats::complete.cases(Data[, c(yVars, Beep, Day, ID)]), ]
-    }else{
-      Data <- Data[stats::complete.cases(Data[, c(yVars, Beep, ID)]), ]
-    }
+    Data <- Data[stats::complete.cases(Data[, c(yVars, Beep, Day, ID, xFactor, xContinuous)]), ]
+
 
     ##### Preprocessing of Data Set #####--------------------
     Data = as.data.frame(Data)

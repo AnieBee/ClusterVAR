@@ -5,10 +5,11 @@
 Determine the number of observations that can be predicted
 }
 \description{
-\code{numberPredictableObservations} is a function to determine the number of observations in a given dataset that can be predicted based on previous observations, considering a specified time-lag.
+\code{numberPredictableObservations} is a function to determine the number of observations in a given dataset that can be predicted based on the availability of previous observations, considering a specified time-lag.
 }
 \usage{
-numberPredictableObservations(Data, yVars, Beep, Day = NULL, ID, Lags, ...)
+numberPredictableObservations(Data, yVars, Beep, Day = NULL, ID,
+                              xContinuous = NULL, xFactor = NULL, Lags, ...)
 
 }
 
@@ -27,6 +28,12 @@ Optional. An integer specifying the position of the column in dataframe \code{Da
 }
   \item{ID}{
 An integer specifying the position of the column in dataframe \code{Data} that contains the ID variable for every participant.
+}
+ \item{xContinuous}{
+Optional argument.  An integer vector specifying the position of the column(s) in dataframe Data that contain the continuous exogenous variable(s), if present. Exogenous variables are also known as covariates or as moderators for the within-person mean.
+}
+  \item{xFactor}{
+Optional argument.  An integer vector specifying the position of the column(s) in dataframe Data that contain the categorical exogenous variable(s), if present. Exogenous variables are also known as covariates or as moderators for the within-person mean.
 }
   \item{Lags}{
 An integer or integer vector specifying the number of VAR(p) lags to consider. Needs to be a sequence of subsequent integers. The maximum number supported is \code{Lags = 3}.
