@@ -2,7 +2,7 @@ checkSingularitySigma <- function(nDepVar, K, Sigma) {
     iterationReset <- FALSE
 
     # Check for singularity using a vectorized approach
-    singular_components <- sapply(1:K, function(j) det(Sigma[, , j]) < 1.0e-200)
+    singular_components <- sapply(1:K, function(j) det(Sigma[, , j]) < 1.0e-100)
 
     # Identify the singular components
     singular_indices <- which(singular_components)

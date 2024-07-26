@@ -231,6 +231,10 @@ LCVAR <- function(Data,
       }
     }
   }
+
+  checkVarianceY(Y = Y, NewPredictableObs = NewPredictableObs, N = N, HighestLag = HighestLag, pers = pers)
+
+
   # Create val.init, a list containing memb, a vector ordered by ID that contains the cluster membership initialization ----
   if ( ! is.null(Initialization))
   {
