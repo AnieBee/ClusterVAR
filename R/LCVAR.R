@@ -203,6 +203,7 @@ LCVAR <- function(Data,
       LaggedPredictObsSmall[[i]]  = unlist(GetSequences(NewPredictableObsSmall[[i]], lagRunner))
       if(!is.null(xFactor)){
         #check that all Dummies have at least 1 observation per person
+
         if(NumbCategoricalDummies == 2){
 
         }else{ stopifnot( all(rowSums(XUsedForCheck[ , c( NewPredictableObsSmall[[i]] , LaggedPredictObsSmall[[i]])]) >= 1)) }
