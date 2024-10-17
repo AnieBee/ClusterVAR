@@ -7,3 +7,5 @@ Changes Version 0.0.7
 Changes Version 0.0.8
   o The threshold to determine wheter a covariance matrix is non-invertible was changed from 1.0e-200 to 1.0e-100
   o A warning was added to alert users in case the data they input has not enough variance for any individuals
+  o A bug was fixed that prevented plots of VAR coefficients from being displayed
+  
