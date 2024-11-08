@@ -189,7 +189,6 @@ callEMFuncs <- function(Clusters,
                                    #### Random starts ###
                                    StartCounter = 0
                                    while (StartCounter != length(EMCallVec))
-                                     # ToDo: in all EMFunc IDNames is passed but not used
                                    {
 
                                      StartCounter = StartCounter + 1
