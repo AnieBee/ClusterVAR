@@ -8,5 +8,5 @@ Changes Version 0.0.8
   o A warning was added to alert users in case the data they input has not enough variance for any individuals
   o A bug was fixed that prevented plots of VAR coefficients from being displayed
   o The threshold to determine wheter a covariance matrix is non-invertible was changed from 1.0e-200 to 1.0e-100
-  o Warning messages that are issued in case one subject has no predictable time-points at one level of a categorical exogenous variable have been rewritten in more user-friendly language
+  o An error message that is issued in case one subject has no predictable time-points at one level of a categorical exogenous variable has been rewritten in more user-friendly language
   
