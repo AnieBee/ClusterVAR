@@ -146,6 +146,19 @@ summary(object = LCVAR_outExample2, show = "GNC", Number_of_Clusters = 2)
 coef(LCVAR_outExample2, Model = c(1, 1))
 plot(LCVAR_outExample2, show = "specific", Model = c(1, 1))
 
+
+LCVAR_outExample3 <- LCVAR(Data = ExampleData,
+                           yVars = c("Item1", "Item2","Item3", "Item4"),
+                           ID = "Person", Beep = "Timepoint",
+                           xContinuous = "ContiniousVariable",
+                           xFactor = "CategoricalVariable",
+                           Clusters = 1:2, Lags = 1:2,
+                           Center = FALSE,
+                           Cores = 2, RndSeed = 123,
+                           Rand = 1,
+                           it = 25, Conv = 1e-05)
+plot(LCVAR_outExample3, show = "GNL", Number_of_Lags = 1)
+plot(LCVAR_outExample3, show = "GNC", Number_of_Clusters = 2)
 }
 
 }
