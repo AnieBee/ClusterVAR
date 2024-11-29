@@ -1,5 +1,11 @@
 
-plot.ClusterVAR <- function(x, show,Number_of_Clusters = NULL, Number_of_Lags = NULL, Model = NULL, ...) {
+plot.ClusterVAR <- function(x,
+                            show,
+                            Number_of_Clusters = NULL,
+                            Number_of_Lags = NULL,
+                            Model = NULL,
+                            mar_heat = c(2.5,2.5,2,1),
+                            ...) {
 
   # ----- Fill in defaults ------
   args <- list(...)
@@ -38,7 +44,7 @@ plot.ClusterVAR <- function(x, show,Number_of_Clusters = NULL, Number_of_Lags = 
 
   # Ensure graphics settings are restored after calling function
   oldpar <- par(no.readonly = TRUE) # code line i
-  on.exit(par(oldpar)) # code line i + 1
+  # print(oldpar$mar)
 
   # ----- Plotting: Best-per-number-of-clusters ------
 
@@ -181,7 +187,7 @@ plot.ClusterVAR <- function(x, show,Number_of_Clusters = NULL, Number_of_Lags = 
                            main = paste0("Cluster ", k),
                            labels = labels,
                            cex.axis = cex.axis,
-                           cex.val = cex.val)
+                           cex.val = cex.val, mar = mar_heat)
 
 
   } # end if
@@ -238,6 +244,8 @@ plot.ClusterVAR <- function(x, show,Number_of_Clusters = NULL, Number_of_Lags = 
 
 
   } # end if
+
+  on.exit(par(oldpar)) # code line i + 1
 
 
 } # eoF

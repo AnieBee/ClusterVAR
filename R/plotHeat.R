@@ -18,8 +18,6 @@ plotHeat <- function(phi,
 
 
   # -- Recover graphics settings --
-  # Ensure graphics settings are restored after calling function
-
   # Jonas Oct 9th: DON'T DO THIS HERE, because otherwise the layouts get reset when we repeatedly call this
   # oldpar <- par(no.readonly = TRUE) # code line i
   # on.exit(par(oldpar)) # code line i + 1
@@ -30,32 +28,6 @@ plotHeat <- function(phi,
   }
   x <- 1:201
   grad <- color.gradient(x)
-  # grad <- scales::alpha(grad, .75)
-
-  # # -- Make Legend --
-  # # Create a sequence from -1 to 1
-  # f_colLeg <- function() {
-  #   par(mar=c(2.5,1,2,2.5))
-  #   values <- seq(-1, 1, length.out = max(x))
-  #   # Generate the colors for the gradient
-  #   colors <- color.gradient(values)
-  #   # Create an empty plot
-  #   plot(1, type = "n", xlab = "", ylab = "", xlim = c(0, 1), ylim = c(-1, 1), axes = FALSE)
-  #   # Add the color gradient as a vertical legend
-  #   for (i in 1:(length(values) - 1)) rect(0, values[i], 1, values[i+1], col = colors[i], border = NA)
-  #   x_axis <- seq(-1, 1, length=5)
-  #   axis(4, at=x_axis, labels=x_axis, las=2, cex.axis=0.8)
-  #   # for (i in 1:length(x_axis)) mtext(text = x_axis[i], side = 4, at = x_axis[i], las = 2, cex = .75, adj = 0, line=3) # Increase adj to move text left
-  # }
-  #
-  # # -- Plotting --
-  # # Make Layout
-  # lmat <- matrix(2:1, nrow=1)
-  # layout(mat = lmat, widths = c(1,.2))
-  #
-  #
-  # # Plot Legend
-  # f_colLeg()
 
   # Make canvas
   par(mar=mar)
@@ -93,6 +65,7 @@ plotHeat <- function(phi,
            xright = seq_mp_x[i]+sfm,
            ytop = seq_mp_x[j]+sfm,
            col = col_ij)
+
       # Plot text
       text(seq_mp_x[i], seq_mp_x[j], round(phi_ij , 2), cex=cex.val, col="black")
     }
@@ -100,17 +73,6 @@ plotHeat <- function(phi,
 
 
 } # eoF
-
-
-
-
-
-
-
-
-
-
-
 
 
 
