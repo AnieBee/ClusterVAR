@@ -12,6 +12,8 @@ plotHeat <- function(phi,
   # -- Aux Variables --
   p <- ncol(phi)
 
+  if(is.null(labels)) labels <-  paste0("Y", 1:p)
+
 
   # -- Recover graphics settings --
   # Ensure graphics settings are restored after calling function
@@ -63,15 +65,10 @@ plotHeat <- function(phi,
   seq_mp_x <- seq(0, 1, length=p+1)[-(p+1)] + sfm
 
   # Plot Axes & Axis labels
-  if(is.null(labels)) {
-    labels_tm1 <- paste0("Y", 1:p, "(t-1)")
-    labels_t1 <- paste0("Y", p:1, "(t)")
-  } else {
-    labels_tm1 <- paste0(labels, "(t-1)")
-    labels_t1 <- paste0(rev(labels), "(t)")
-  }
-  axis(1, labels = labels_tm1, at=seq_mp_x, cex.axis=cex.axis)
-  axis(2, labels = labels_t1, at=seq_mp_x, las=2, cex.axis=cex.axis)
+  labels_tm1 <- sapply(labels, function(label) bquote(.(label)[t-1]), simplify = FALSE)
+  labels_t1 <- sapply(labels, function(label) bquote(.(label)[t]), simplify = FALSE)
+  axis(1, labels = do.call(expression, labels_tm1), at=seq_mp_x, cex.axis=cex.axis)
+  axis(2, labels = do.call(expression, labels_t1), at=seq_mp_x, las=2, cex.axis=cex.axis)
   title(main, font.main=1)
 
   # Plot Data
