@@ -6,12 +6,14 @@ plotHeat <- function(phi,
                      labels=NULL,
                      las.x=1,
                      cex.axis=0.8,
-                     cex.val=0.7) {
+                     cex.val=0.7,
+                     mar = c(2.5,2.5,2,1)) {
 
 
   # -- Aux Variables --
   p <- ncol(phi)
 
+  # Fill in default labels
   if(is.null(labels)) labels <-  paste0("Y", 1:p)
 
 
@@ -56,7 +58,7 @@ plotHeat <- function(phi,
   # f_colLeg()
 
   # Make canvas
-  par(mar=c(2.5,2.5,2,1))
+  par(mar=mar)
   plot.new()
   plot.window(xlim=c(0,1), ylim=c(0, 1))
 
