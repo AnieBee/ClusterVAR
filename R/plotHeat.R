@@ -41,7 +41,7 @@ plotHeat <- function(phi,
   # Plot Axes & Axis labels
   labels_tm1 <- sapply(labels, function(label) bquote(.(label)[t-1]), simplify = FALSE)
   labels_t1 <- sapply(labels, function(label) bquote(.(label)[t]), simplify = FALSE)
-  axis(1, labels = do.call(expression, labels_tm1), at=seq_mp_x, cex.axis=cex.axis)
+  axis(1, labels = do.call(expression, labels_tm1[p:1]), at=seq_mp_x, cex.axis=cex.axis)
   axis(2, labels = do.call(expression, labels_t1), at=seq_mp_x, las=2, cex.axis=cex.axis)
   title(main, font.main=1)
 
