@@ -13,6 +13,7 @@ Creates a variety of plots summarizing fitted LCVAR models.
     Number_of_Clusters = NULL,
     Number_of_Lags = NULL,
     Model = NULL,
+    mar_heat = c(2.5,2.5,2,1),
     ...)
 }
 
@@ -34,6 +35,9 @@ An integer. Specify the fixed number of lags when using \code{show = "GNL"}. Def
 }
 \item{Model}{
 An integer vector. Specify when using \code{show = "specific"} or \code{show = specificDef}. Indicates the model for which coefficients should be plotted. For example, \code{Model = c(1,1,1)} plots a model with three clusters and each cluster has 1 lag. Defaults to \code{Model = NULL}.
+}
+\item{mar_heat}{
+A numeric vector. Optional when using \code{show = "specific"} to specify the margins of the heatplot. Defaults to \code{mar_heat = c(2.5,2.5,2,1)}.
 }
   \item{\dots}{
 Pass additional arguments.

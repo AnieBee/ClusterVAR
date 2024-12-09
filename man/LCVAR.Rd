@@ -11,7 +11,7 @@ Function to fit a Latent Class VAR model with a given number of latent classes.
 LCVAR(Data, yVars, Beep, Day = NULL, ID,
            xContinuous = NULL, xFactor = NULL,
            Clusters, Lags, Center = FALSE,
-           smallestClN = 3, Cores = 1,
+           smallestClN = 3, Cores = 2,
            RndSeed = NULL, Rand = 50, Rational = TRUE,
            Initialization = NULL, SigmaIncrease = 10,
            it = 50, Conv = 1e-05, pbar = TRUE, verbose = TRUE,
@@ -52,7 +52,7 @@ Logical, indicating whether the data (i.e., the endogenous variables) should be 
 An integer specifying the lowest number of individuals allowed in a cluster. When during estimation the crisp cluster membership of a cluster indicates less than \code{smallestClN} individuals, the covariance matrix and the posterior probabilities of cluster membership are reset. Defaults to \code{smallestClN = 3}.
 }
 \item{Cores}{
-A positive integer specifying the number of cores used to parallelize the computations. Specifying a high number of available cores can speed up computation. Defaults to \code{Cores = 1} for non-parallel computing.
+A positive integer specifying the number of cores used to parallelize the computations. Specifying a high number of available cores can speed up computation. Defaults to \code{Cores = 2}.
 }
  \item{RndSeed}{
   Optional argument. An integer specifying the value supplied to \code{set.seed()}, which guarantees reproducible results. If not specified, no seed is set.

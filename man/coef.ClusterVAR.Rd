@@ -51,7 +51,7 @@ LCVAR_outExample <- LCVAR(Data = ExampleData,
                            yVars = 1:4, ID = 5, Beep = 6,
                            xContinuous = 7, xFactor = 8,
                            Clusters = 2, Lags = 1:2, smallestClN = 3,
-                           Cores = 1, RndSeed = 3, Rand = 2,
+                           Cores = 2, RndSeed = 3, Rand = 2,
                            it = 25)
 
 coef(LCVAR_outExample, Model = c(1, 1))

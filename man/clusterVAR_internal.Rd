@@ -1,6 +1,7 @@
 \name{clusterVAR-internal}
 \title{Internal ClusterVAR functions}
 
+\alias{checkVarianceY}
 \alias{plotHeat}
 \alias{DetPredSubj}
 \alias{calculateICL}
@@ -38,7 +39,7 @@
 \alias{EMInit}
 \alias{EMFunc}
 
-\description{Internal clusterVAR functions.}
+\description{Internal ClusterVAR functions.}
 
 \author{Anja Ernst & Jonas Haslbeck}
 
