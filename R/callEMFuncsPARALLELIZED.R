@@ -106,7 +106,6 @@ callEMFuncs <- function(Clusters,
 
   # Show progress bar?
   parabar::set_option("progress_track", pbar)
-  #parabar::set_option("cores_minimum", 1)
 
   backend <- parabar::start_backend(cores = n_cores, cluster_type = "psock", backend_type = "async")
 
