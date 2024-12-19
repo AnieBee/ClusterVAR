@@ -65,11 +65,13 @@ callEMFuncs <- function(Clusters,
   doParabar::registerDoParabar(backend)
 
   # Configure type of progress bar (as before)
-  configure_bar(type = "basic",
-                max = length(Clusters),
-                initial = min(Clusters),
-                char = "=", style = 3)
-
+  parabar::configure_bar(
+      type = "basic",
+      max = length(Clusters),
+      initial = min(Clusters),
+      char = "=",
+      style = 3
+  )
 
   # ---- End: Code by Mihai ----
 
@@ -267,11 +269,3 @@ callEMFuncs <- function(Clusters,
   return(outlist)
 
 }  # eoF
-
-
-
-
-
-
-
-
