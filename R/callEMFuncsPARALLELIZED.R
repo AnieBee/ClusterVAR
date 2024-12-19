@@ -56,86 +56,57 @@ callEMFuncs <- function(Clusters,
 
   # ---- Start: Code by Mihai ----
 
-  # Implementation for the `%dopar%` operator.
-  doParabar <- function(obj, expr, envir, data) {
-    # Extract the `backend` from the data argument.
-    backend <- data$backend
-
-    # Create an iterator object from the input object.
-    iterator <- iterators::iter(obj)
-
-    # Create an accumulator function for the iterator.
-    accumulator <- foreach::makeAccum(iterator)
-
-    # Prepare the items to be processed.
-    items <- as.list(iterator)
-
-    # Define the task to be evaluated for each item.
-    task <- function(arguments) {
-      # Evaluate the task for the current item.
-      eval(expr, envir = arguments, enclos = envir)
-    }
-
-    # Export any objects to the cluster.
-    parabar::export(backend, variables = ls(envir), environment = envir)
-
-    # Apply the task function to each item using `parabar::par_lapply`.
-    results <- parabar::par_lapply(backend, items, task)
-
-    # Accumulate the results.
-    accumulator(results, seq_along(results))
-
-    # Return the results.
-    return(foreach::getResult(iterator))
-  }
-
-  # The user function for registering the `parabar`-compatible `%dopar%` implementation.
-  registerDoParabar <- function(backend) {
-    # Register the `%dopar%` operator implementation.
-    foreach::setDoPar(
-      # The implementation.
-      fun = doParabar,
-
-      # Infomration to be passed to the regiserered implementation.
-      data = list(backend = backend),
-
-      # Information about the implementation.
-      info = function(data, item) NULL
-    )
-  }
-
   # Show progress bar?
   parabar::set_option("progress_track", pbar)
-  #parabar::set_option("cores_minimum", 1)
 
   backend <- parabar::start_backend(cores = n_cores, cluster_type = "psock", backend_type = "async")
 
   # Register it with the `foreach` package.
-  registerDoParabar(backend)
+  doParabar::registerDoParabar(backend)
 
   # Configure type of progress bar (as before)
-  configure_bar(type = "basic",
-                max = length(Clusters),
-                initial = min(Clusters),
-                char = "=", style = 3)
-
+  parabar::configure_bar(
+      type = "basic",
+      max = length(Clusters),
+      initial = min(Clusters),
+      char = "=",
+      style = 3
+  )
 
   # ---- End: Code by Mihai ----
+
+  # Packages to export.
+  packages <- c("MASS", "mvtnorm", "fastDummies")
+
+  # Objects to export.
+  exports <- c(
+      "createOutputList", "callCalculateCoefficientsForRandoAndRational",
+      "calculateCoefficientsForRandoAndRational", "EMInit",
+      "EMFunc", "InitRat", "constraintsOnB", "checkComponentsCollapsed",
+      "InitPseudoRand", "calculateBandWZero", "reorderLags", "calculateA",
+      "determineLagOrder", "calculateU", "calculateW", "calculateRatio",
+      "calculateTau", "calculatePosterior", "calculateFYZ", "calculateB",
+      "calculateSigma", "checkSingularitySigma", "checkLikelihoodsNA",
+      "checkConvergence", "checkOutliers", "checkPosteriorsNA",
+      "calculateNPara", "calculateIC", "calculateBIC", "calculateICL",
+
+      # The following imports were missing, please double check them.
+      # Also, please see https://parabar.mihaiconstantin.com/articles/foreach
+      # for how `doParabar` handles the imports.
+      "RndSeed", "l_LagsPerCluster", "Rand", "Rational", "Initialization",
+      "PreviousSol", "HighestLag", "LowestLag", "Covariates", "nDepVar",
+      "qqq", "N", "PersEnd", "X", "PersStart", "Y", "LaggedPredictObs",
+      "NewPredictableObs", "it", "smallestClN", "PersEndU_NPred",
+      "PredictableObsConc", "LaggedPredictObsConc", "Tni_NPred",
+      "PersStartU_NPred", "SigmaIncrease", "Conv", "IDNames"
+  )
 
 
   # --- Start Foreach ---
   All_Solutions <- invisible(foreach::foreach(K = Clusters,
                                      # .options.snow = opts,
-                                     .packages = c("MASS", "mvtnorm", "fastDummies"),
-                                     .export = c("createOutputList", "callCalculateCoefficientsForRandoAndRational",
-                                                 "calculateCoefficientsForRandoAndRational", "EMInit",
-                                                 "EMFunc", "InitRat", "constraintsOnB", "checkComponentsCollapsed",
-                                                 "InitPseudoRand", "calculateBandWZero", "reorderLags", "calculateA",
-                                                 "determineLagOrder", "calculateU", "calculateW", "calculateRatio",
-                                                 "calculateTau", "calculatePosterior", "calculateFYZ", "calculateB",
-                                                 "calculateSigma", "checkSingularitySigma", "checkLikelihoodsNA",
-                                                 "checkConvergence", "checkOutliers", "checkPosteriorsNA",
-                                                 "calculateNPara", "calculateIC", "calculateBIC", "calculateICL")) %dopar%
+                                     .packages = packages,
+                                     .export = exports) %dopar%
                                {
 
                                  # Update progress bar
@@ -298,11 +269,3 @@ callEMFuncs <- function(Clusters,
   return(outlist)
 
 }  # eoF
-
-
-
-
-
-
-
-
