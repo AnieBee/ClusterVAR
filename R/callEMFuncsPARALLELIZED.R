@@ -73,20 +73,38 @@ callEMFuncs <- function(Clusters,
 
   # ---- End: Code by Mihai ----
 
+  # Packages to export.
+  packages <- c("MASS", "mvtnorm", "fastDummies")
+
+  # Objects to export.
+  exports <- c(
+      "createOutputList", "callCalculateCoefficientsForRandoAndRational",
+      "calculateCoefficientsForRandoAndRational", "EMInit",
+      "EMFunc", "InitRat", "constraintsOnB", "checkComponentsCollapsed",
+      "InitPseudoRand", "calculateBandWZero", "reorderLags", "calculateA",
+      "determineLagOrder", "calculateU", "calculateW", "calculateRatio",
+      "calculateTau", "calculatePosterior", "calculateFYZ", "calculateB",
+      "calculateSigma", "checkSingularitySigma", "checkLikelihoodsNA",
+      "checkConvergence", "checkOutliers", "checkPosteriorsNA",
+      "calculateNPara", "calculateIC", "calculateBIC", "calculateICL",
+
+      # The following imports were missing, please double check them.
+      # Also, please see https://parabar.mihaiconstantin.com/articles/foreach
+      # for how `doParabar` handles the imports.
+      "RndSeed", "l_LagsPerCluster", "Rand", "Rational", "Initialization",
+      "PreviousSol", "HighestLag", "LowestLag", "Covariates", "nDepVar",
+      "qqq", "N", "PersEnd", "X", "PersStart", "Y", "LaggedPredictObs",
+      "NewPredictableObs", "it", "smallestClN", "PersEndU_NPred",
+      "PredictableObsConc", "LaggedPredictObsConc", "Tni_NPred",
+      "PersStartU_NPred", "SigmaIncrease", "Conv", "IDNames"
+  )
+
 
   # --- Start Foreach ---
   All_Solutions <- invisible(foreach::foreach(K = Clusters,
                                      # .options.snow = opts,
-                                     .packages = c("MASS", "mvtnorm", "fastDummies"),
-                                     .export = c("createOutputList", "callCalculateCoefficientsForRandoAndRational",
-                                                 "calculateCoefficientsForRandoAndRational", "EMInit",
-                                                 "EMFunc", "InitRat", "constraintsOnB", "checkComponentsCollapsed",
-                                                 "InitPseudoRand", "calculateBandWZero", "reorderLags", "calculateA",
-                                                 "determineLagOrder", "calculateU", "calculateW", "calculateRatio",
-                                                 "calculateTau", "calculatePosterior", "calculateFYZ", "calculateB",
-                                                 "calculateSigma", "checkSingularitySigma", "checkLikelihoodsNA",
-                                                 "checkConvergence", "checkOutliers", "checkPosteriorsNA",
-                                                 "calculateNPara", "calculateIC", "calculateBIC", "calculateICL")) %dopar%
+                                     .packages = packages,
+                                     .export = exports) %dopar%
                                {
 
                                  # Update progress bar
