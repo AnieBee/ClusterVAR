@@ -56,61 +56,13 @@ callEMFuncs <- function(Clusters,
 
   # ---- Start: Code by Mihai ----
 
-  # Implementation for the `%dopar%` operator.
-  doParabar <- function(obj, expr, envir, data) {
-    # Extract the `backend` from the data argument.
-    backend <- data$backend
-
-    # Create an iterator object from the input object.
-    iterator <- iterators::iter(obj)
-
-    # Create an accumulator function for the iterator.
-    accumulator <- foreach::makeAccum(iterator)
-
-    # Prepare the items to be processed.
-    items <- as.list(iterator)
-
-    # Define the task to be evaluated for each item.
-    task <- function(arguments) {
-      # Evaluate the task for the current item.
-      eval(expr, envir = arguments, enclos = envir)
-    }
-
-    # Export any objects to the cluster.
-    parabar::export(backend, variables = ls(envir), environment = envir)
-
-    # Apply the task function to each item using `parabar::par_lapply`.
-    results <- parabar::par_lapply(backend, items, task)
-
-    # Accumulate the results.
-    accumulator(results, seq_along(results))
-
-    # Return the results.
-    return(foreach::getResult(iterator))
-  }
-
-  # The user function for registering the `parabar`-compatible `%dopar%` implementation.
-  registerDoParabar <- function(backend) {
-    # Register the `%dopar%` operator implementation.
-    foreach::setDoPar(
-      # The implementation.
-      fun = doParabar,
-
-      # Infomration to be passed to the regiserered implementation.
-      data = list(backend = backend),
-
-      # Information about the implementation.
-      info = function(data, item) NULL
-    )
-  }
-
   # Show progress bar?
   parabar::set_option("progress_track", pbar)
 
   backend <- parabar::start_backend(cores = n_cores, cluster_type = "psock", backend_type = "async")
 
   # Register it with the `foreach` package.
-  registerDoParabar(backend)
+  doParabar::registerDoParabar(backend)
 
   # Configure type of progress bar (as before)
   configure_bar(type = "basic",
