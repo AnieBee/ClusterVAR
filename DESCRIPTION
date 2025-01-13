@@ -1,7 +1,7 @@
 Package: ClusterVAR
 Type: Package
 Title: Fitting Latent Class Vector-Autoregressive (VAR) Models
-Version: 0.0.8
+Version: 0.0.9
 Authors@R: c(
   person("Anja", "Ernst", email = "a.f.ernst@rug.nl",role = c("aut", "cre")),
   person("Jonas", "Haslbeck", email = "jonashaslbeck@protonmail.com",role = c("aut")))
@@ -11,7 +11,7 @@ BugReports: https://github.com/anieBee/ClusterVAR/issues
 Encoding: UTF-8
 LazyData: true
 License: GPL-2
-Imports: stats, utils, graphics, grDevices, fastDummies, MASS, mvtnorm, scales, foreach, parallel, doParallel, parabar, doParabar
+Imports: stats, utils, graphics, grDevices, fastDummies, MASS, mvtnorm, scales, foreach, parabar, doParabar
 Suggests:
     knitr,
     rmarkdown,

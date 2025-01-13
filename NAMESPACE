@@ -11,8 +11,6 @@ import(mvtnorm) # (v.1.0-6) for dmvnorm()
 
 import(scales) # for alpha (plotting)
 import(foreach) # for foreach()
-import(parallel) # for foreach()
-import(doParallel) # for foreach()
 # import(doSNOW) # for foreach(); we use this to make the progress bar work in foreach
 
 import(parabar) # for progress bar (package by Mihai)
