@@ -1,4 +1,13 @@
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
+*.Rproj.user
+*.Rhistory
+*.RData
+*.Ruserdata
+*.Rcheck
+**/*.DS_Store
+**/*.cache
+**/*.temp
+**/*.tar.gz
+**/temp*.*
+.vscode
+/doc/
+/Meta/

@@ -16,7 +16,7 @@ import(doParallel) # for foreach()
 # import(doSNOW) # for foreach(); we use this to make the progress bar work in foreach
 
 import(parabar) # for progress bar (package by Mihai)
-import(iterators) # Also for Mihai's progress bar solution
+import(doParabar) # for `parabar` compatibility with `foreach` (package by Mihai)
 
 # Export
 export(LCVAR)
@@ -31,4 +31,3 @@ S3method(print, PredictableObs)
 S3method(summary, ClusterVAR)
 S3method(coef, ClusterVAR)
 S3method(plot, ClusterVAR)
-
