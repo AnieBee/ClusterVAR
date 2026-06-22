@@ -282,6 +282,7 @@ LCVAR <- function(Data,
 
   out_est$Call$Clusters <- Clusters
   out_est$Call$Lags <- Lags
+  out_est$Call$Center <- Center # so far this was left "NULL" because Center had not been passed to other functions
 
   return(out_est)
 

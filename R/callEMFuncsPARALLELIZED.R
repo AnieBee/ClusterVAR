@@ -254,7 +254,7 @@ callEMFuncs <- function(Clusters,
 
   ModelCall = list(Clusters = Clusters, Lags = LowestLag:HighestLag,
                    Rand = Rand, Rational = Rational, Initialization = Initialization,
-                   Covariates = Covariates)
+                   Covariates = Covariates, Center = NULL)
   # ----- Timer -----
   end_time <- proc.time()[3] - start_time
   end_time_min <- round(end_time/60, 2)
